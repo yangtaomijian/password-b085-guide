@@ -15,7 +15,7 @@ toc: true
 
 ## b0.85 剧情线路逻辑图
 
-![Password b0.85 剧情线路逻辑图](../assets/route-map-b085.png){width=100% fig-alt="Password b0.85 的时间轴、角色线、字母线、密码检定和 Bad Ending 分支图"}
+![Password b0.85 剧情线路逻辑图](../assets/route-map-b085-web.webp){width=100% fig-alt="Password b0.85 的时间轴、角色线、字母线、密码检定和 Bad Ending 分支图"}
 
 这张图基于 b0.85 制作，同时整合了时间轴和主要条件判断。为便于查阅，图中使用了以下标记：
 
