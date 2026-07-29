@@ -886,21 +886,29 @@
   columnSelect.value = String(column);
   searchInput.value = initialQuery;
 
-  if (hasValidLocationParameters) {
-    const initialRecord = recordsByPosition.get(
-      positionKey(tab, row, column)
-    );
-
-    if (initialRecord) {
-      locateRecord(initialRecord, {
-        updateUrl: false,
-        mode: "location"
-      });
-    }
-  }
+  const initialRecord = hasValidLocationParameters
+    ? recordsByPosition.get(
+        positionKey(tab, row, column)
+      )
+    : null;
 
   if (initialQuery.trim()) {
-    applySearch({ updateUrl: false });
+    const initialResults = applySearch({ updateUrl: false });
+
+    if (initialRecord && initialResults.includes(initialRecord)) {
+      tabSelect.value = initialRecord.tab;
+      populateRows(initialRecord.tab, initialRecord.row);
+      columnSelect.value = String(initialRecord.column);
+      locateRecord(initialRecord, {
+        updateUrl: false,
+        mode: "search"
+      });
+    }
+  } else if (initialRecord) {
+    locateRecord(initialRecord, {
+      updateUrl: false,
+      mode: "location"
+    });
   }
 
   window.addEventListener("pageshow", () => {

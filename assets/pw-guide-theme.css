@@ -1,8 +1,6 @@
-/*
-  Password b0.85 中文攻略 — 视觉主题 v1
-  适用于 Quarto Website + Bootstrap 5
-  建议路径：03_working/site/assets/pw-guide-theme.css
-*/
+/* Password b0.85 中文攻略 — 固定浅色主题 */
+
+/* Design tokens */
 
 :root {
   --pw-font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", "Source Han Sans SC", sans-serif;
@@ -21,15 +19,15 @@ body.quarto-light,
   --pw-surface: #fffdf9;
   --pw-surface-soft: #f1ede5;
   --pw-surface-hover: #ebe5da;
-  --pw-text: #2d3034;
-  --pw-text-soft: #696963;
+  --pw-text: #292b2f;
+  --pw-text-soft: #666862;
   --pw-text-faint: #87847d;
-  --pw-primary: #354a5d;
-  --pw-primary-hover: #263b4e;
+  --pw-primary: #40566a;
+  --pw-primary-hover: #2f4354;
   --pw-primary-soft: #e7edf1;
-  --pw-accent: #a4773f;
-  --pw-accent-hover: #855e2f;
-  --pw-accent-soft: #f3e9da;
+  --pw-accent: #b58242;
+  --pw-accent-hover: #94682f;
+  --pw-accent-soft: rgb(181 130 66 / 0.13);
   --pw-border: #ddd7cc;
   --pw-border-strong: #c7beb0;
   --pw-code-bg: #f1efeb;
@@ -47,50 +45,16 @@ body.quarto-light,
   --pw-important-border: #a85f52;
   --pw-caution-bg: #f7e9e9;
   --pw-caution-border: #a84d4d;
+  --pw-heading-3: #62574d;
 }
 
-body.quarto-dark,
-.quarto-dark body {
-  --pw-bg: #181b1e;
-  --pw-surface: #202428;
-  --pw-surface-soft: #272c31;
-  --pw-surface-hover: #30363c;
-  --pw-text: #e6e2da;
-  --pw-text-soft: #beb9af;
-  --pw-text-faint: #918d85;
-  --pw-primary: #aebfcb;
-  --pw-primary-hover: #d2dde4;
-  --pw-primary-soft: #293741;
-  --pw-accent: #d2a76d;
-  --pw-accent-hover: #e5c28e;
-  --pw-accent-soft: #3c3125;
-  --pw-border: #3a4046;
-  --pw-border-strong: #50575e;
-  --pw-code-bg: #292d31;
-  --pw-code-text: #d4a2ff;
-  --pw-table-head: #2b3035;
-  --pw-table-stripe: #23282c;
-  --pw-table-hover: #30363a;
-  --pw-note-bg: #24323a;
-  --pw-note-border: #7ea2b5;
-  --pw-tip-bg: #26372c;
-  --pw-tip-border: #82a88a;
-  --pw-warning-bg: #3a3022;
-  --pw-warning-border: #d0a060;
-  --pw-important-bg: #392927;
-  --pw-important-border: #c47b70;
-  --pw-caution-bg: #3b2728;
-  --pw-caution-border: #c86c6c;
-}
-
+/* Base document styles */
 html { scroll-behavior: smooth; }
 
 body {
   background: var(--pw-bg);
   color: var(--pw-text);
   font-family: var(--pw-font-sans);
-  font-size: 1rem;
-  line-height: 1.78;
   letter-spacing: 0.006em;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -100,7 +64,6 @@ body {
 main.content { padding-top: 2.25rem; padding-bottom: 4rem; }
 main.content > :first-child { margin-top: 0; }
 p, li, dd, td, th { color: var(--pw-text); }
-p { margin-bottom: 1rem; }
 strong { font-weight: 650; }
 hr { border-color: var(--pw-border); opacity: 1; margin: 2.25rem 0; }
 ::selection { background: var(--pw-accent-soft); color: var(--pw-text); }
@@ -117,14 +80,6 @@ a:hover, a:focus-visible { color: var(--pw-accent-hover); text-decoration-color:
 main.content a:not(.anchorjs-link):not(.nav-link):not(.btn) { font-weight: 520; }
 
 .quarto-title-block { margin-bottom: 2.2rem; }
-.quarto-title h1, h1.title {
-  color: var(--pw-text);
-  font-size: clamp(2rem, 2.5vw, 2.55rem);
-  font-weight: 750;
-  line-height: 1.22;
-  letter-spacing: -0.025em;
-  margin-bottom: 0.55rem;
-}
 .quarto-title .subtitle, .description {
   color: var(--pw-text-soft);
   font-size: 1.04rem;
@@ -135,8 +90,6 @@ main.content a:not(.anchorjs-link):not(.nav-link):not(.btn) { font-weight: 520; 
 main.content h2 {
   position: relative;
   color: var(--pw-text);
-  font-size: 1.52rem;
-  font-weight: 720;
   line-height: 1.35;
   letter-spacing: -0.012em;
   margin-top: 3.25rem;
@@ -147,19 +100,13 @@ main.content h2 {
 main.content h2::before {
   content: "";
   position: absolute;
-  left: 0;
   top: 0.18em;
   bottom: 0.72em;
-  width: 4px;
   border-radius: 999px;
-  background: var(--pw-accent);
 }
 main.content h3 {
   color: var(--pw-primary);
-  font-size: 1.16rem;
-  font-weight: 690;
   line-height: 1.45;
-  margin-top: 2.2rem;
   margin-bottom: 0.75rem;
 }
 main.content h4 {
@@ -176,27 +123,12 @@ h1 .anchorjs-link, h2 .anchorjs-link, h3 .anchorjs-link, h4 .anchorjs-link {
 }
 h1:hover .anchorjs-link, h2:hover .anchorjs-link, h3:hover .anchorjs-link, h4:hover .anchorjs-link { opacity: 0.65; }
 
-.navbar {
-  min-height: 4rem;
-  background: var(--pw-primary-hover) !important;
-  border-bottom: 1px solid color-mix(in srgb, var(--pw-border) 60%, transparent);
-  box-shadow: 0 1px 0 rgb(0 0 0 / 0.05);
-}
-body.quarto-dark .navbar, .quarto-dark body .navbar { background: #20272d !important; }
-.navbar-brand { color: #f7f3eb !important; font-size: 1.12rem; font-weight: 680; letter-spacing: 0.01em; }
+.navbar-brand { letter-spacing: 0.01em; }
 .navbar .nav-link, .navbar .dropdown-toggle, .navbar .quarto-navbar-tools .quarto-navigation-tool {
-  color: rgb(255 255 255 / 0.82) !important;
   font-weight: 540;
 }
-.navbar .nav-link:hover, .navbar .nav-link:focus, .navbar .nav-link.active, .navbar .dropdown-toggle:hover { color: #fff !important; }
-.navbar .nav-link.active {
-  text-decoration: underline;
-  text-decoration-color: var(--pw-accent);
-  text-decoration-thickness: 2px;
-  text-underline-offset: 0.38rem;
-}
+.navbar .nav-link:hover, .navbar .nav-link:focus, .navbar .dropdown-toggle:hover { color: #fff !important; }
 .navbar .dropdown-menu {
-  background: var(--pw-surface);
   border: 1px solid var(--pw-border);
   border-radius: var(--pw-radius-md);
   box-shadow: var(--pw-shadow-float);
@@ -212,17 +144,9 @@ body.quarto-dark .navbar, .quarto-dark body .navbar { background: #20272d !impor
 .sidebar { color: var(--pw-text-soft); }
 .sidebar-navigation { padding-top: 1.25rem; }
 .sidebar-section { margin-bottom: 0.5rem; }
-.sidebar-section .sidebar-section-item { color: var(--pw-text); font-size: 0.92rem; font-weight: 680; letter-spacing: 0.012em; }
 .sidebar-item .sidebar-link {
   color: var(--pw-text-soft);
-  border-radius: 0 var(--pw-radius-sm) var(--pw-radius-sm) 0;
-  border-left: 3px solid transparent;
-  margin: 0.08rem 0;
-  padding-top: 0.38rem;
-  padding-bottom: 0.38rem;
-  transition: color var(--pw-transition), background-color var(--pw-transition), border-color var(--pw-transition);
 }
-.sidebar-item .sidebar-link:hover { color: var(--pw-primary); background: color-mix(in srgb, var(--pw-surface-hover) 72%, transparent); }
 .sidebar-item .sidebar-link.active {
   color: var(--pw-primary-hover);
   background: var(--pw-accent-soft);
@@ -235,7 +159,6 @@ body.quarto-dark .navbar, .quarto-dark body .navbar { background: #20272d !impor
 #TOC { border-left: 1px solid var(--pw-border); padding-left: 0.8rem; }
 #TOC .nav-link {
   color: var(--pw-text-soft);
-  font-size: 0.86rem;
   line-height: 1.45;
   border-left: 2px solid transparent;
   margin-left: -0.86rem;
@@ -281,9 +204,7 @@ body.quarto-dark .navbar, .quarto-dark body .navbar { background: #20272d !impor
 .table > tbody > tr:nth-child(even), main.content table > tbody > tr:nth-child(even) { background: var(--pw-table-stripe); }
 .table > tbody > tr:hover, main.content table > tbody > tr:hover { background: var(--pw-table-hover); }
 .quarto-table-container, .table-responsive {
-  overflow-x: auto;
   border-radius: var(--pw-radius-md);
-  scrollbar-width: thin;
   scrollbar-color: var(--pw-border-strong) transparent;
 }
 
@@ -303,22 +224,9 @@ pre code { color: var(--pw-text); font-size: 0.9rem; line-height: 1.65; }
 .code-copy-button { color: var(--pw-text-soft); border-radius: var(--pw-radius-sm); }
 .code-copy-button:hover { color: var(--pw-primary); background: var(--pw-surface-hover); }
 
-.callout {
-  border: 1px solid var(--pw-border);
-  border-left-width: 4px;
-  border-radius: var(--pw-radius-md);
-  box-shadow: none;
-  margin: 1.45rem 0;
-  overflow: hidden;
-}
 .callout .callout-header, .callout .callout-title-container { font-size: 0.95rem; font-weight: 700; }
 .callout .callout-body-container { font-size: 0.95rem; line-height: 1.72; }
 .callout .callout-body-container > :last-child { margin-bottom: 0; }
-.callout-note { background: var(--pw-note-bg); border-left-color: var(--pw-note-border); }
-.callout-tip { background: var(--pw-tip-bg); border-left-color: var(--pw-tip-border); }
-.callout-warning { background: var(--pw-warning-bg); border-left-color: var(--pw-warning-border); }
-.callout-important { background: var(--pw-important-bg); border-left-color: var(--pw-important-border); }
-.callout-caution { background: var(--pw-caution-bg); border-left-color: var(--pw-caution-border); }
 
 main.content details {
   background: var(--pw-surface-soft);
@@ -386,9 +294,7 @@ main.content figcaption { color: var(--pw-text-faint); font-size: 0.86rem; line-
 .nav-footer a { color: var(--pw-text-soft); }
 
 .aa-DetachedFormContainer, .aa-Panel, .aa-DetachedContainer { background: var(--pw-surface); color: var(--pw-text); }
-.aa-Input { color: var(--pw-text) !important; background: var(--pw-surface-soft) !important; border-color: var(--pw-border) !important; }
-.aa-Item[aria-selected="true"] { background: var(--pw-primary-soft); }
-
+.aa-Input { border-color: var(--pw-border) !important; }
 @media (min-width: 992px) {
   main.content { max-width: 58rem; }
 }
@@ -418,44 +324,10 @@ main.content figcaption { color: var(--pw-text-faint); font-size: 0.86rem; line-
 }
 
 /* =========================================================
-   Password Guide Theme v1.1
-   导航玻璃感、Callout 层次与标题色修正
-   直接追加到 pw-guide-theme.css 末尾
+   Visual refinements
    ========================================================= */
 
-/* ---------------------------------------------------------
-   1. 细调全局颜色
-   --------------------------------------------------------- */
-
-body.quarto-light,
-.quarto-light body {
-  --pw-text: #292b2f;
-  --pw-text-soft: #666862;
-
-  --pw-primary: #40566a;
-  --pw-primary-hover: #2f4354;
-
-  --pw-accent: #b58242;
-  --pw-accent-hover: #94682f;
-  --pw-accent-soft: rgb(181 130 66 / 0.13);
-}
-
-body.quarto-dark,
-.quarto-dark body {
-  --pw-text: #ece8e0;
-  --pw-text-soft: #bbb7ae;
-
-  --pw-primary: #b4c5d1;
-  --pw-primary-hover: #d7e1e7;
-
-  --pw-accent: #d5a96d;
-  --pw-accent-hover: #e8c68f;
-  --pw-accent-soft: rgb(213 169 109 / 0.15);
-}
-
-/* ---------------------------------------------------------
-   2. 页面主标题：改成更中性的炭黑
-   --------------------------------------------------------- */
+/* Page title */
 
 .quarto-title h1,
 h1.title {
@@ -465,42 +337,13 @@ h1.title {
   text-shadow: none;
 }
 
-body.quarto-dark .quarto-title h1,
-body.quarto-dark h1.title,
-.quarto-dark body .quarto-title h1,
-.quarto-dark body h1.title {
-  color: #f0ece4 !important;
-}
-
 .quarto-title .subtitle,
 .quarto-title-block .description {
   color: var(--pw-text-soft);
   font-weight: 420;
 }
 
-/* ---------------------------------------------------------
-   3. 顶部栏：轻度磨砂，不追求夸张液态玻璃
-   --------------------------------------------------------- */
-
-.navbar {
-  background: rgb(38 55 70 / 0.92) !important;
-  border-bottom: 1px solid rgb(255 255 255 / 0.1);
-  box-shadow:
-    inset 0 -1px 0 rgb(255 255 255 / 0.035),
-    0 4px 20px rgb(20 28 35 / 0.08);
-
-  -webkit-backdrop-filter: blur(18px) saturate(135%);
-  backdrop-filter: blur(18px) saturate(135%);
-}
-
-body.quarto-dark .navbar,
-.quarto-dark body .navbar {
-  background: rgb(29 36 42 / 0.9) !important;
-}
-
-/* ---------------------------------------------------------
-   4. 左侧导航项目：增加呼吸空间
-   --------------------------------------------------------- */
+/* Left navigation items */
 
 .sidebar-item .sidebar-link {
   position: relative;
@@ -589,29 +432,6 @@ body.quarto-light .sidebar-item .sidebar-link.active,
   font-weight: 680;
 }
 
-body.quarto-dark .sidebar-item .sidebar-link.active,
-.quarto-dark body .sidebar-item .sidebar-link.active {
-  color: var(--pw-primary-hover);
-
-  background:
-    linear-gradient(
-      135deg,
-      rgb(255 255 255 / 0.09),
-      rgb(213 169 109 / 0.1)
-    );
-
-  border-color: rgb(213 169 109 / 0.22);
-
-  box-shadow:
-    inset 0 1px 0 rgb(255 255 255 / 0.09),
-    0 6px 18px rgb(0 0 0 / 0.18);
-
-  -webkit-backdrop-filter: blur(14px) saturate(125%);
-  backdrop-filter: blur(14px) saturate(125%);
-
-  font-weight: 680;
-}
-
 .sidebar-item .sidebar-link.active::before {
   background: var(--pw-accent);
 
@@ -632,137 +452,6 @@ body.quarto-dark .sidebar-item .sidebar-link.active,
 
 .sidebar-section .sidebar-section-item:hover {
   color: var(--pw-text);
-}
-
-/* ---------------------------------------------------------
-   7. Callout：将标题带与正文真正分开
-   --------------------------------------------------------- */
-
-.callout {
-  background: transparent !important;
-  border-radius: 11px;
-
-  box-shadow:
-    0 1px 2px rgb(31 34 37 / 0.025),
-    0 5px 18px rgb(31 34 37 / 0.025);
-}
-
-.callout .callout-header {
-  padding-top: 0.62rem;
-  padding-bottom: 0.62rem;
-
-  border-bottom:
-    1px solid
-    color-mix(in srgb, var(--pw-border) 76%, transparent);
-}
-
-.callout .callout-title-container {
-  font-weight: 720;
-  letter-spacing: 0.005em;
-}
-
-.callout .callout-body {
-  background: var(--pw-surface);
-}
-
-.callout .callout-body-container {
-  padding-top: 0.88rem;
-  padding-bottom: 0.9rem;
-}
-
-/* Warning：标题稍深，正文更浅 */
-.callout-warning .callout-header {
-  background:
-    color-mix(
-      in srgb,
-      var(--pw-warning-border) 19%,
-      var(--pw-surface)
-    );
-}
-
-.callout-warning .callout-body {
-  background:
-    color-mix(
-      in srgb,
-      var(--pw-warning-bg) 38%,
-      var(--pw-surface)
-    );
-}
-
-/* Important */
-.callout-important .callout-header {
-  background:
-    color-mix(
-      in srgb,
-      var(--pw-important-border) 18%,
-      var(--pw-surface)
-    );
-}
-
-.callout-important .callout-body {
-  background:
-    color-mix(
-      in srgb,
-      var(--pw-important-bg) 38%,
-      var(--pw-surface)
-    );
-}
-
-/* Note */
-.callout-note .callout-header {
-  background:
-    color-mix(
-      in srgb,
-      var(--pw-note-border) 17%,
-      var(--pw-surface)
-    );
-}
-
-.callout-note .callout-body {
-  background:
-    color-mix(
-      in srgb,
-      var(--pw-note-bg) 42%,
-      var(--pw-surface)
-    );
-}
-
-/* Tip */
-.callout-tip .callout-header {
-  background:
-    color-mix(
-      in srgb,
-      var(--pw-tip-border) 17%,
-      var(--pw-surface)
-    );
-}
-
-.callout-tip .callout-body {
-  background:
-    color-mix(
-      in srgb,
-      var(--pw-tip-bg) 42%,
-      var(--pw-surface)
-    );
-}
-
-/* Caution */
-.callout-caution .callout-header {
-  background:
-    color-mix(
-      in srgb,
-      var(--pw-caution-border) 18%,
-      var(--pw-surface)
-    );
-}
-
-.callout-caution .callout-body {
-  background:
-    color-mix(
-      in srgb,
-      var(--pw-caution-bg) 38%,
-      var(--pw-surface)
-    );
 }
 
 /* ---------------------------------------------------------
@@ -796,21 +485,20 @@ main.content h2::before {
 }
 
 /* =========================================================
-   Password Guide Theme v1.2
-   独立侧栏、浅色顶栏、紧凑字体与正文扩展
+   Layout tokens and compact typography
    ========================================================= */
 
 :root {
   --pw-navbar-height: 4rem;
 
-  --pw-left-panel-width: 240px;
-  --pw-right-panel-width: 210px;
+  --pw-left-panel-width: 220px;
+  --pw-right-panel-width: 190px;
 
-  --pw-body-width-normal: 900px;
-  --pw-body-width-one-panel: 1040px;
-  --pw-body-width-no-panels: 1160px;
+  --pw-body-width-normal: 960px;
+  --pw-body-width-one-panel: 1060px;
+  --pw-body-width-no-panels: 1180px;
 
-  --pw-layout-gap: 1.55rem;
+  --pw-layout-gap: 1rem;
   --pw-layout-speed: 240ms;
 }
 
@@ -856,7 +544,7 @@ main.content h3 {
 }
 
 /* ---------------------------------------------------------
-   2. 顶部栏改为 OpenAI 文档式浅色表面
+   2. 顶部栏改为浅色表面
    --------------------------------------------------------- */
 
 .navbar {
@@ -872,12 +560,6 @@ main.content h3 {
 
   -webkit-backdrop-filter: blur(20px) saturate(135%);
   backdrop-filter: blur(20px) saturate(135%);
-}
-
-body.quarto-dark .navbar,
-.quarto-dark body .navbar {
-  background: rgb(31 35 39 / 0.91) !important;
-  border-bottom-color: var(--pw-border);
 }
 
 .navbar-brand {
@@ -913,11 +595,6 @@ body.quarto-dark .navbar,
 
   -webkit-backdrop-filter: blur(22px) saturate(135%);
   backdrop-filter: blur(22px) saturate(135%);
-}
-
-body.quarto-dark .navbar .dropdown-menu,
-.quarto-dark body .navbar .dropdown-menu {
-  background: rgb(32 36 40 / 0.96);
 }
 
 /* ---------------------------------------------------------
@@ -983,158 +660,9 @@ body.quarto-dark .navbar .dropdown-menu,
   display: none !important;
 }
 
-/* ---------------------------------------------------------
-   4. 桌面端重新定义最外层三栏布局
-   --------------------------------------------------------- */
+/* The current desktop layout is defined in the fixed-panel section below. */
 
 @media (min-width: 1100px) {
-  body.pw-custom-layout-ready #quarto-content {
-    --pw-current-left-width: var(--pw-left-panel-width);
-    --pw-current-right-width: var(--pw-right-panel-width);
-    --pw-current-body-width: var(--pw-body-width-normal);
-
-    display: grid !important;
-
-    grid-template-columns:
-      var(--pw-current-left-width)
-      minmax(0, var(--pw-current-body-width))
-      var(--pw-current-right-width) !important;
-
-    column-gap: var(--pw-layout-gap) !important;
-
-    justify-content: center;
-    align-items: start;
-
-    width: 100%;
-    max-width: none !important;
-
-    transition:
-      grid-template-columns var(--pw-layout-speed) ease;
-  }
-
-  body.pw-left-collapsed #quarto-content {
-    --pw-current-left-width: 0px;
-    --pw-current-body-width: var(--pw-body-width-one-panel);
-  }
-
-  body.pw-right-collapsed #quarto-content {
-    --pw-current-right-width: 0px;
-    --pw-current-body-width: var(--pw-body-width-one-panel);
-  }
-
-  body.pw-left-collapsed.pw-right-collapsed #quarto-content {
-    --pw-current-left-width: 0px;
-    --pw-current-right-width: 0px;
-    --pw-current-body-width: var(--pw-body-width-no-panels);
-  }
-
-  #quarto-sidebar {
-    grid-column: 1 !important;
-
-    position: sticky !important;
-    top: var(--pw-navbar-height) !important;
-
-    width: var(--pw-left-panel-width) !important;
-    max-width: var(--pw-left-panel-width) !important;
-    height: calc(100vh - var(--pw-navbar-height)) !important;
-
-    overflow-y: auto;
-    overflow-x: hidden;
-
-    align-self: start;
-
-    background: rgb(247 244 238 / 0.94) !important;
-    border-right: 1px solid var(--pw-border) !important;
-
-    -webkit-backdrop-filter: blur(18px) saturate(120%);
-    backdrop-filter: blur(18px) saturate(120%);
-
-    transition:
-      opacity var(--pw-layout-speed) ease,
-      transform var(--pw-layout-speed) ease,
-      width var(--pw-layout-speed) ease,
-      max-width var(--pw-layout-speed) ease,
-      visibility var(--pw-layout-speed) step-end;
-  }
-
-  body.quarto-dark #quarto-sidebar,
-  .quarto-dark body #quarto-sidebar {
-    background: rgb(31 35 39 / 0.94) !important;
-  }
-
-  main.content {
-    grid-column: 2 !important;
-
-    width: 100% !important;
-    max-width: none !important;
-    min-width: 0;
-
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-
-    padding-left: 0.25rem;
-    padding-right: 0.25rem;
-  }
-
-  #quarto-margin-sidebar {
-    grid-column: 3 !important;
-
-    position: sticky !important;
-    top: var(--pw-navbar-height) !important;
-
-    width: var(--pw-right-panel-width) !important;
-    max-width: var(--pw-right-panel-width) !important;
-    height: calc(100vh - var(--pw-navbar-height)) !important;
-
-    overflow-y: auto;
-    overflow-x: hidden;
-
-    align-self: start;
-
-    padding-left: 0.15rem;
-
-    background: rgb(255 253 249 / 0.72) !important;
-
-    -webkit-backdrop-filter: blur(16px) saturate(115%);
-    backdrop-filter: blur(16px) saturate(115%);
-
-    transition:
-      opacity var(--pw-layout-speed) ease,
-      transform var(--pw-layout-speed) ease,
-      width var(--pw-layout-speed) ease,
-      max-width var(--pw-layout-speed) ease,
-      visibility var(--pw-layout-speed) step-end;
-  }
-
-  body.quarto-dark #quarto-margin-sidebar,
-  .quarto-dark body #quarto-margin-sidebar {
-    background: rgb(31 35 39 / 0.72) !important;
-  }
-
-  body.pw-left-collapsed #quarto-sidebar {
-    width: 0 !important;
-    max-width: 0 !important;
-
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-
-    transform: translateX(-2rem);
-
-    border-right-color: transparent !important;
-  }
-
-  body.pw-right-collapsed #quarto-margin-sidebar {
-    width: 0 !important;
-    max-width: 0 !important;
-
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-
-    transform: translateX(2rem);
-  }
-
   #quarto-sidebar-glass {
     display: none !important;
   }
@@ -1202,13 +730,6 @@ body.quarto-dark .navbar .dropdown-menu,
     transform 150ms ease;
 }
 
-body.quarto-dark .pw-panel-toggle,
-body.quarto-dark .pw-edge-toggle,
-.quarto-dark body .pw-panel-toggle,
-.quarto-dark body .pw-edge-toggle {
-  background: rgb(255 255 255 / 0.055);
-}
-
 .pw-panel-toggle:hover,
 .pw-edge-toggle:hover {
   color: var(--pw-text);
@@ -1250,19 +771,6 @@ body.quarto-dark .pw-edge-toggle,
     0 5px 18px rgb(27 29 32 / 0.09);
 }
 
-body.quarto-dark .pw-edge-toggle,
-.quarto-dark body .pw-edge-toggle {
-  background: rgb(31 35 39 / 0.9);
-}
-
-.pw-edge-toggle-left {
-  left: 0.55rem;
-}
-
-.pw-edge-toggle-right {
-  right: 0.55rem;
-}
-
 @media (min-width: 1100px) {
   body.pw-left-collapsed .pw-edge-toggle-left {
     display: inline-grid;
@@ -1288,30 +796,16 @@ body.quarto-dark .pw-edge-toggle,
   display: none !important;
 }
 
-#quarto-margin-sidebar #TOC {
-  border-left: 0;
-  padding: 0.65rem 0.4rem 1.2rem 0.45rem;
-}
-
-#quarto-margin-sidebar #TOC .nav-link {
-  margin-left: 0;
-}
-
 /* ---------------------------------------------------------
    8. 剧情线路逻辑图缩小并居中
    --------------------------------------------------------- */
 
 main.content img[src*="route-map-b085"] {
   display: block;
-
   width: min(86%, 880px);
   max-width: 880px;
-
   margin-left: auto;
   margin-right: auto;
-}
-
-main.content img[src*="route-map-b085"] {
   cursor: zoom-in;
 }
 
@@ -1336,19 +830,8 @@ main.content img[src*="route-map-b085"] {
 }
 
 /* =========================================================
-   Password Guide Theme v1.3
-   修复三栏布局、侧栏单行显示、搜索按钮和分类层级
+   Navbar tools and sidebar hierarchy
    ========================================================= */
-
-:root {
-  --pw-left-panel-width: 220px;
-  --pw-right-panel-width: 190px;
-  --pw-layout-gap: 1rem;
-
-  --pw-body-width-normal: 960px;
-  --pw-body-width-one-panel: 1060px;
-  --pw-body-width-no-panels: 1180px;
-}
 
 /* ---------------------------------------------------------
    1. 顶部导航中的工具区与搜索
@@ -1362,18 +845,6 @@ main.content img[src*="route-map-b085"] {
 
 .navbar .navbar-collapse {
   min-width: 0;
-}
-
-.navbar .quarto-navbar-tools {
-  display: flex !important;
-  align-items: center;
-  gap: 0.2rem;
-
-  margin-left: auto !important;
-  flex: 0 0 auto;
-
-  visibility: visible !important;
-  opacity: 1 !important;
 }
 
 #quarto-search {
@@ -1417,117 +888,6 @@ main.content img[src*="route-map-b085"] {
 .aa-DetachedSearchButtonIcon {
   width: 1.1rem !important;
   height: 1.1rem !important;
-}
-
-/* ---------------------------------------------------------
-   2. 修复桌面端三栏布局
-   --------------------------------------------------------- */
-
-@media (min-width: 1100px) {
-  body.pw-custom-layout-ready #quarto-content {
-    --pw-current-left-width: var(--pw-left-panel-width);
-    --pw-current-right-width: var(--pw-right-panel-width);
-    --pw-current-main-max: var(--pw-body-width-normal);
-
-    display: grid !important;
-
-    /*
-      与 v1.2 的区别：
-      中间列使用 1fr 填满剩余空间，
-      右侧目录真正贴到页面右侧，
-      不再把整个固定宽度网格居中。
-    */
-    grid-template-columns:
-      var(--pw-current-left-width)
-      minmax(0, 1fr)
-      var(--pw-current-right-width) !important;
-
-    column-gap: var(--pw-layout-gap) !important;
-
-    width: 100% !important;
-    max-width: none !important;
-
-    margin: 0 !important;
-    padding: 0 !important;
-
-    justify-content: stretch !important;
-    align-items: start;
-
-    transition:
-      grid-template-columns var(--pw-layout-speed) ease;
-  }
-
-  body.pw-left-collapsed #quarto-content {
-    --pw-current-left-width: 0px;
-    --pw-current-main-max: var(--pw-body-width-one-panel);
-  }
-
-  body.pw-right-collapsed #quarto-content {
-    --pw-current-right-width: 0px;
-    --pw-current-main-max: var(--pw-body-width-one-panel);
-  }
-
-  body.pw-left-collapsed.pw-right-collapsed #quarto-content {
-    --pw-current-left-width: 0px;
-    --pw-current-right-width: 0px;
-    --pw-current-main-max: var(--pw-body-width-no-panels);
-  }
-
-  main.content {
-    grid-column: 2 !important;
-
-    width: min(100%, var(--pw-current-main-max)) !important;
-    max-width: var(--pw-current-main-max) !important;
-    min-width: 0;
-
-    justify-self: center;
-
-    margin: 0 !important;
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
-
-    transition:
-      width var(--pw-layout-speed) ease,
-      max-width var(--pw-layout-speed) ease;
-  }
-
-  #quarto-sidebar {
-    grid-column: 1 !important;
-
-    width: var(--pw-left-panel-width) !important;
-    max-width: var(--pw-left-panel-width) !important;
-
-    margin: 0 !important;
-  }
-
-  #quarto-margin-sidebar {
-    grid-column: 3 !important;
-
-    width: var(--pw-right-panel-width) !important;
-    max-width: var(--pw-right-panel-width) !important;
-
-    margin: 0 !important;
-    padding: 0 0.55rem 1.5rem 0.75rem !important;
-
-    border-left: 1px solid
-      color-mix(in srgb, var(--pw-border) 70%, transparent);
-
-    background: transparent !important;
-  }
-
-  body.pw-left-collapsed #quarto-sidebar {
-    width: 0 !important;
-    max-width: 0 !important;
-  }
-
-  body.pw-right-collapsed #quarto-margin-sidebar {
-    width: 0 !important;
-    max-width: 0 !important;
-
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-    border-left-color: transparent;
-  }
 }
 
 /* ---------------------------------------------------------
@@ -1642,6 +1002,7 @@ main.content img[src*="route-map-b085"] {
 }
 
 #quarto-margin-sidebar #TOC {
+  border-left: 0;
   padding:
     0.55rem
     0
@@ -1678,8 +1039,7 @@ main.content img[src*="route-map-b085"] {
 }
 
 /* =========================================================
-   Password Guide Theme v1.4
-   放弃自定义三列 Grid，改为左右固定面板
+   Fixed desktop panels and collapsible layout
    ========================================================= */
 
 @media (min-width: 1100px) {
@@ -1770,14 +1130,6 @@ main.content img[src*="route-map-b085"] {
       visibility var(--pw-layout-speed) step-start;
   }
 
-  body.pw-left-collapsed #quarto-sidebar {
-    transform: translateX(-100%);
-
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-  }
-
   /* 右侧目录固定贴住窗口右边 */
   body.pw-custom-layout-ready #quarto-margin-sidebar {
     position: fixed !important;
@@ -1815,11 +1167,6 @@ main.content img[src*="route-map-b085"] {
       visibility var(--pw-layout-speed) step-start;
   }
 
-  body.quarto-dark #quarto-margin-sidebar,
-  .quarto-dark body #quarto-margin-sidebar {
-    background: rgb(31 35 39 / 0.92) !important;
-  }
-
   body.pw-right-collapsed #quarto-margin-sidebar {
     transform: translateX(100%);
 
@@ -1827,26 +1174,6 @@ main.content img[src*="route-map-b085"] {
     visibility: hidden;
     pointer-events: none;
   }
-}
-
-/* 强制显示并固定顶部搜索工具区 */
-.navbar .quarto-navbar-tools {
-  display: flex !important;
-  align-items: center;
-
-  margin-left: auto !important;
-
-  visibility: visible !important;
-  opacity: 1 !important;
-}
-
-.navbar #quarto-search {
-  display: flex !important;
-  align-items: center;
-  justify-content: center;
-
-  visibility: visible !important;
-  opacity: 1 !important;
 }
 
 /* =========================================================
@@ -1920,6 +1247,7 @@ main.content img[src*="route-map-b085"] {
   gap: 0.22rem;
 
   margin-left: auto !important;
+  flex: 0 0 auto;
 
   visibility: visible !important;
   opacity: 1 !important;
@@ -2011,11 +1339,6 @@ main.content img[src*="route-map-b085"] {
     overflow-x: hidden !important;
   }
 
-  body.quarto-dark #quarto-sidebar,
-  .quarto-dark body #quarto-sidebar {
-    background: rgb(31 35 39 / 0.96) !important;
-  }
-
   #quarto-sidebar .sidebar-menu-container,
   #quarto-sidebar .sidebar-navigation {
     min-height: 100%;
@@ -2103,7 +1426,7 @@ main.content details[open] > :last-child {
 }
 
 /* =========================================================
-   Callout v2：中性正文 + 低饱和语义色
+   Callouts: neutral body and semantic accents
    ========================================================= */
 
 .callout {
@@ -2125,6 +1448,8 @@ main.content details[open] > :last-child {
     var(--pw-callout-color) !important;
 
   border-radius: 10px;
+
+  margin: 1.45rem 0;
 
   box-shadow:
     0 1px 2px rgb(31 34 37 / 0.025);
@@ -2156,6 +1481,7 @@ main.content details[open] > :last-child {
 
   font-size: 0.91rem;
   font-weight: 700;
+  letter-spacing: 0.005em;
 }
 
 .callout .callout-icon-container {
@@ -2208,17 +1534,6 @@ main.content details[open] > :last-child {
   --pw-callout-tint: rgb(142 98 95 / 0.07);
 }
 
-/* 深色模式略微提高标题底色 */
-body.quarto-dark .callout,
-.quarto-dark body .callout {
-  --pw-callout-tint:
-    color-mix(
-      in srgb,
-      var(--pw-callout-color) 10%,
-      var(--pw-surface)
-    );
-}
-
 /* =========================================================
    左侧一级分类标题加粗
    ========================================================= */
@@ -2260,19 +1575,8 @@ body.quarto-dark .callout,
 }
 
 /* =========================================================
-   Password Guide Theme v1.5
-   侧栏箭头、标题层级、图片说明、导图与表格优化
+   Typography, media, and table refinements
    ========================================================= */
-
-body.quarto-light,
-.quarto-light body {
-  --pw-heading-3: #62574d;
-}
-
-body.quarto-dark,
-.quarto-dark body {
-  --pw-heading-3: #c6b8a8;
-}
 
 /* ---------------------------------------------------------
    1. 左侧一级分类标题和展开箭头垂直居中
@@ -2558,106 +1862,8 @@ main.content table:has(> thead > tr > :nth-child(3):last-child) {
   min-width: min(100%, 36rem);
 }
 
-/* ---------------------------------------------------------
-   7. 可选：专门用于紧凑型表格
-   --------------------------------------------------------- */
-
-/*
-  未来某张表格仍然很别扭时，可以在 Markdown 外包一层：
-
-  ::: {.table-compact}
-  | ... |
-  :::
-
-  不需要修改其他表格。
-*/
-
-main.content .table-compact table {
-  width: fit-content !important;
-  min-width: 0 !important;
-  max-width: 100% !important;
-}
-
-main.content .table-compact th,
-main.content .table-compact td {
-  padding-left: 0.72rem;
-  padding-right: 0.72rem;
-  white-space: nowrap;
-}
-
-/*
-  最后一列通常是解释文字。
-  紧凑表中仍允许最后一列换行。
-*/
-main.content .table-compact th:last-child,
-main.content .table-compact td:last-child {
-  min-width: 16rem;
-  max-width: 30rem;
-
-  white-space: normal;
-}
-
 /* =========================================================
-   Cast Files 顺序表：定点列宽
-   ========================================================= */
-
-.table-cast-order {
-  width: 100%;
-  max-width: 100%;
-  overflow-x: auto;
-}
-
-.table-cast-order table {
-  width: 100% !important;
-  min-width: 56rem;
-  max-width: none !important;
-
-  table-layout: fixed !important;
-
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-}
-
-/* 顺序 */
-.table-cast-order th:nth-child(1),
-.table-cast-order td:nth-child(1) {
-  width: 4.5rem !important;
-  min-width: 4.5rem;
-  max-width: 4.5rem;
-
-  text-align: center;
-  white-space: nowrap;
-}
-
-/* 档案 */
-.table-cast-order th:nth-child(2),
-.table-cast-order td:nth-child(2) {
-  width: 8.5rem !important;
-  min-width: 8.5rem;
-
-  white-space: nowrap;
-}
-
-/* 解锁变量 */
-.table-cast-order th:nth-child(3),
-.table-cast-order td:nth-child(3) {
-  width: 19rem !important;
-  min-width: 19rem;
-
-  white-space: nowrap;
-}
-
-/* 主要解锁条件自动使用剩余宽度 */
-.table-cast-order th:nth-child(4),
-.table-cast-order td:nth-child(4) {
-  width: auto !important;
-
-  white-space: normal;
-  overflow-wrap: break-word;
-}
-
-/* =========================================================
-   Search Overlay v2
+   Search overlay base
    ========================================================= */
 
 /* 背景遮罩 */
@@ -2686,11 +1892,6 @@ main.content .table-compact td:last-child {
     inset 0 1px 0 rgb(255 255 255 / 0.8);
 
   overflow: hidden;
-}
-
-body.quarto-dark .aa-DetachedContainer,
-.quarto-dark body .aa-DetachedContainer {
-  background: rgb(31 35 39 / 0.97) !important;
 }
 
 /* 搜索框所在的顶部 */
@@ -2807,19 +2008,6 @@ body.quarto-dark .aa-DetachedContainer,
     border-color 120ms ease;
 }
 
-/* 当前键盘或鼠标选中项 */
-.aa-Item[aria-selected="true"] {
-  color: var(--pw-text) !important;
-  background: var(--pw-accent-soft) !important;
-
-  border-color:
-    color-mix(
-      in srgb,
-      var(--pw-accent) 24%,
-      var(--pw-border)
-    ) !important;
-}
-
 /* 结果标题 */
 .aa-ItemContentTitle,
 .search-result-title {
@@ -2844,22 +2032,6 @@ body.quarto-dark .aa-DetachedContainer,
 
   font-size: 0.88rem !important;
   line-height: 1.55 !important;
-}
-
-/* 匹配词高亮 */
-.aa-Item mark,
-.search-result-text mark {
-  color: var(--pw-text) !important;
-  background:
-    color-mix(
-      in srgb,
-      var(--pw-accent) 22%,
-      transparent
-    ) !important;
-
-  border-radius: 3px;
-
-  padding: 0 0.08em;
 }
 
 /* 结果之间的分隔 */
@@ -3044,7 +2216,7 @@ body.quarto-dark .aa-DetachedContainer,
 }
 
 /* =========================================================
-   Search Overlay v3：紧凑尺寸
+   Search overlay compact sizing
    ========================================================= */
 
 .aa-DetachedContainer {
@@ -3147,128 +2319,11 @@ body.quarto-dark .aa-DetachedContainer,
   line-height: 1.43 !important;
 }
 
-/* 强制覆盖 Quarto 默认的鲜蓝选中项 */
-.aa-Item[aria-selected="true"],
-.aa-Item[aria-selected="true"] > *,
-.aa-Item[aria-selected="true"] .search-result-section,
-.aa-Item[aria-selected="true"] .search-result-item {
-  color: var(--pw-text) !important;
-  background: var(--pw-accent-soft) !important;
-}
-
-.aa-Item[aria-selected="true"] .aa-ItemContentTitle,
-.aa-Item[aria-selected="true"] .search-result-title,
-.aa-Item[aria-selected="true"] .aa-ItemContentDescription,
-.aa-Item[aria-selected="true"] .search-result-context,
-.aa-Item[aria-selected="true"] .search-result-text {
-  color: var(--pw-text) !important;
-}
-
 /* “更多匹配结果” */
 .search-result-more {
   padding: 0.48rem 0.68rem !important;
 
   font-size: 0.78rem !important;
-}
-
-/* =========================================================
-   Cast Files 表格：覆盖 Quarto colgroup
-   ========================================================= */
-
-.table-cast-order {
-  width: 100%;
-  max-width: 100%;
-
-  overflow-x: auto;
-}
-
-.table-cast-order table {
-  width: 100% !important;
-  min-width: 54rem !important;
-  max-width: none !important;
-
-  table-layout: fixed !important;
-
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-}
-
-/*
-  关键：直接覆盖 Quarto 生成的 colgroup。
-*/
-.table-cast-order col:nth-child(1) {
-  width: 4.25rem !important;
-}
-
-.table-cast-order col:nth-child(2) {
-  width: 8.5rem !important;
-}
-
-.table-cast-order col:nth-child(3) {
-  width: 19rem !important;
-}
-
-.table-cast-order col:nth-child(4) {
-  width: auto !important;
-}
-
-/* 第一列 */
-.table-cast-order th:nth-child(1),
-.table-cast-order td:nth-child(1) {
-  width: 4.25rem !important;
-  min-width: 4.25rem !important;
-  max-width: 4.25rem !important;
-
-  padding-left: 0.45rem !important;
-  padding-right: 0.45rem !important;
-
-  text-align: center !important;
-  white-space: nowrap !important;
-}
-
-/* 档案 */
-.table-cast-order th:nth-child(2),
-.table-cast-order td:nth-child(2) {
-  width: 8.5rem !important;
-  white-space: nowrap !important;
-}
-
-/* 变量 */
-.table-cast-order th:nth-child(3),
-.table-cast-order td:nth-child(3) {
-  width: 19rem !important;
-  white-space: nowrap !important;
-}
-
-/* 主要条件 */
-.table-cast-order th:nth-child(4),
-.table-cast-order td:nth-child(4) {
-  width: auto !important;
-
-  white-space: normal !important;
-  overflow-wrap: break-word;
-}
-
-/* 通用数字首列 */
-.table-number-first table {
-  width: fit-content !important;
-  max-width: 100% !important;
-
-  table-layout: auto !important;
-}
-
-.table-number-first col:first-child {
-  width: 5rem !important;
-}
-
-.table-number-first th:first-child,
-.table-number-first td:first-child {
-  width: 5rem !important;
-  min-width: 5rem !important;
-  max-width: 5rem !important;
-
-  text-align: center !important;
-  white-space: nowrap !important;
 }
 
 /* =========================================================
@@ -3315,7 +2370,7 @@ html {
 }
 
 /* =========================================================
-   Search Overlay v4：统一选中状态与文字选择颜色
+   Search overlay selected states and text selection
    ========================================================= */
 
 /* 键盘或鼠标当前选中的搜索结果 */
@@ -4079,74 +3134,99 @@ main.content img[src*="easter-passwords-b085-zh"] {
   }
 }
 
-/* Affection differences: wide threshold tables */
+/* =========================================================
+   Affection differences: wide threshold tables
+   ========================================================= */
+
 .affection-difference-table {
   width: 100%;
   max-width: 100%;
+  min-width: 0;
+
   margin: 0.8rem 0 1.2rem;
+
   overflow-x: auto;
   overflow-y: hidden;
+
   overscroll-behavior-inline: contain;
   -webkit-overflow-scrolling: touch;
+
+  scrollbar-width: thin;
+  scrollbar-color: var(--pw-border-strong) transparent;
 }
 
-.affection-difference-table table {
-  width: 100%;
-  min-width: 68rem;
+/*
+  覆盖全局表格的 fit-content、max-width 和 auto layout。
+  该表必须使用固定布局，列宽比例才能稳定生效。
+*/
+main.content .affection-difference-table table {
+  width: 100% !important;
+  min-width: 68rem !important;
   max-width: none !important;
-  margin: 0;
-  table-layout: fixed;
+
+  margin: 0 !important;
+
+  table-layout: fixed !important;
 }
 
 /* 检定条件 */
-.affection-difference-table col:nth-child(1),
-.affection-difference-table th:nth-child(1),
-.affection-difference-table td:nth-child(1) {
-  width: 16%;
+main.content .affection-difference-table col:nth-child(1),
+main.content .affection-difference-table th:nth-child(1),
+main.content .affection-difference-table td:nth-child(1) {
+  width: 15% !important;
 }
 
 /* 主要剧情节点 */
-.affection-difference-table col:nth-child(2),
-.affection-difference-table th:nth-child(2),
-.affection-difference-table td:nth-child(2) {
-  width: 17%;
+main.content .affection-difference-table col:nth-child(2),
+main.content .affection-difference-table th:nth-child(2),
+main.content .affection-difference-table td:nth-child(2) {
+  width: 22% !important;
 }
 
 /* 附加条件 */
-.affection-difference-table col:nth-child(3),
-.affection-difference-table th:nth-child(3),
-.affection-difference-table td:nth-child(3) {
-  width: 25%;
+main.content .affection-difference-table col:nth-child(3),
+main.content .affection-difference-table th:nth-child(3),
+main.content .affection-difference-table td:nth-child(3) {
+  width: 25% !important;
 }
 
 /* 实际文本或流程差异 */
-.affection-difference-table col:nth-child(4),
-.affection-difference-table th:nth-child(4),
-.affection-difference-table td:nth-child(4) {
-  width: 42%;
+main.content .affection-difference-table col:nth-child(4),
+main.content .affection-difference-table th:nth-child(4),
+main.content .affection-difference-table td:nth-child(4) {
+  width: 38% !important;
 }
 
-.affection-difference-table th,
-.affection-difference-table td {
+/*
+  允许单元格正常换行。
+  否则全局 :has(> code) 规则可能使整个附加条件单元格不换行。
+*/
+main.content .affection-difference-table th,
+main.content .affection-difference-table td {
   vertical-align: top;
-  white-space: normal;
+
+  white-space: normal !important;
   overflow-wrap: anywhere;
+  word-break: normal;
 }
 
-.affection-difference-table td:nth-child(4) {
+main.content .affection-difference-table td:nth-child(4) {
   font-size: 0.94rem;
   line-height: 1.62;
 }
 
-/* 脚本变量和条件应保持为完整代码标签 */
-.affection-difference-table code {
+/*
+  单个变量和条件代码标签保持完整，
+  但同一单元格中的普通文字仍然可以换行。
+*/
+main.content .affection-difference-table code {
   white-space: nowrap;
   overflow-wrap: normal;
   word-break: normal;
 }
 
 @media (max-width: 760px) {
-  .affection-difference-table table {
-    min-width: 64rem;
+  main.content .affection-difference-table table {
+    min-width: 64rem !important;
   }
 }

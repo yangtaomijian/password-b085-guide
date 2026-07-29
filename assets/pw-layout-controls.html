@@ -6,10 +6,27 @@
   const RIGHT_KEY = "pw-guide-right-toc-collapsed";
   const DESKTOP_QUERY = window.matchMedia("(min-width: 1100px)");
 
+  const safeStorageGet = (key) => {
+    try {
+      return localStorage.getItem(key);
+    } catch {
+      return null;
+    }
+  };
+
+  const safeStorageSet = (key, value) => {
+    try {
+      localStorage.setItem(key, value);
+    } catch {
+      /* Storage is optional; the current-page state still works. */
+    }
+  };
+
   const createButton = ({
     className,
     label,
     icon,
+    controls,
     onClick
   }) => {
     const button = document.createElement("button");
@@ -17,6 +34,7 @@
     button.type = "button";
     button.className = className;
     button.setAttribute("aria-label", label);
+    button.setAttribute("aria-controls", controls);
     button.setAttribute("title", label);
 
     const iconElement = document.createElement("span");
@@ -44,6 +62,14 @@
 
   const initialise = () => {
     const body = document.body;
+    const rootElement = document.documentElement;
+
+    if (rootElement.dataset.pwLayoutControlsInitialized === "true") {
+      return;
+    }
+
+    rootElement.dataset.pwLayoutControlsInitialized = "true";
+
     const leftSidebar = document.querySelector("#quarto-sidebar");
     const rightSidebar = document.querySelector("#quarto-margin-sidebar");
 
@@ -106,10 +132,6 @@
         document.dispatchEvent(
         new KeyboardEvent("keydown", eventOptions)
         );
-
-        window.dispatchEvent(
-        new KeyboardEvent("keydown", eventOptions)
-        );
     });
 
     navbarTools.append(launcher);
@@ -132,28 +154,44 @@
       className: "pw-panel-toggle pw-panel-toggle-left",
       label: "收起左侧导航",
       icon: "←",
-      onClick: () => setLeftCollapsed(true)
+      controls: "quarto-sidebar",
+      onClick: () => {
+        setLeftCollapsed(true);
+        requestAnimationFrame(() => leftOpenButton.focus());
+      }
     });
 
     const rightCollapseButton = createButton({
       className: "pw-panel-toggle pw-panel-toggle-right",
       label: "收起本页目录",
       icon: "→",
-      onClick: () => setRightCollapsed(true)
+      controls: "quarto-margin-sidebar",
+      onClick: () => {
+        setRightCollapsed(true);
+        requestAnimationFrame(() => rightOpenButton.focus());
+      }
     });
 
     const leftOpenButton = createButton({
       className: "pw-edge-toggle pw-edge-toggle-left",
       label: "展开左侧导航",
       icon: "→",
-      onClick: () => setLeftCollapsed(false)
+      controls: "quarto-sidebar",
+      onClick: () => {
+        setLeftCollapsed(false);
+        requestAnimationFrame(() => leftCollapseButton.focus());
+      }
     });
 
     const rightOpenButton = createButton({
       className: "pw-edge-toggle pw-edge-toggle-right",
       label: "展开本页目录",
       icon: "←",
-      onClick: () => setRightCollapsed(false)
+      controls: "quarto-margin-sidebar",
+      onClick: () => {
+        setRightCollapsed(false);
+        requestAnimationFrame(() => rightCollapseButton.focus());
+      }
     });
 
     if (leftSidebar) {
@@ -194,8 +232,14 @@
         leftSidebar.inert = collapsed;
       }
 
+      syncPanelControls(
+        leftCollapseButton,
+        leftOpenButton,
+        collapsed
+      );
+
       if (persist) {
-        localStorage.setItem(LEFT_KEY, collapsed ? "1" : "0");
+        safeStorageSet(LEFT_KEY, collapsed ? "1" : "0");
       }
     }
 
@@ -212,9 +256,23 @@
         rightSidebar.inert = collapsed;
       }
 
+      syncPanelControls(
+        rightCollapseButton,
+        rightOpenButton,
+        collapsed
+      );
+
       if (persist) {
-        localStorage.setItem(RIGHT_KEY, collapsed ? "1" : "0");
+        safeStorageSet(RIGHT_KEY, collapsed ? "1" : "0");
       }
+    }
+
+    function syncPanelControls(collapseButton, openButton, collapsed) {
+      const expanded = collapsed ? "false" : "true";
+
+      collapseButton.setAttribute("aria-expanded", expanded);
+      openButton.setAttribute("aria-expanded", expanded);
+      openButton.hidden = !collapsed;
     }
 
     function applyResponsiveState() {
@@ -227,23 +285,25 @@
         if (leftSidebar) {
           leftSidebar.removeAttribute("aria-hidden");
           if ("inert" in leftSidebar) leftSidebar.inert = false;
+          syncPanelControls(leftCollapseButton, leftOpenButton, false);
         }
 
         if (rightSidebar) {
           rightSidebar.removeAttribute("aria-hidden");
           if ("inert" in rightSidebar) rightSidebar.inert = false;
+          syncPanelControls(rightCollapseButton, rightOpenButton, false);
         }
 
         return;
       }
 
       setLeftCollapsed(
-        localStorage.getItem(LEFT_KEY) === "1",
+        safeStorageGet(LEFT_KEY) === "1",
         false
       );
 
       setRightCollapsed(
-        localStorage.getItem(RIGHT_KEY) === "1",
+        safeStorageGet(RIGHT_KEY) === "1",
         false
       );
     }

@@ -303,7 +303,7 @@ Tyson 个人 Bad Ending 与正式 Path P 内容之间相隔了较长的开发时
 - D8 Oswin 自由问答：见[旧版本机制档案](../versions/legacy-mechanics.md#d8-oswin-自由问答)；
 - D11 `METEMPSYCHOSIS`：见[旧版本密码档案](../versions/legacy-passwords.md#d11-可选密码)；
 - Oswin Cast File：见[Compendium 解锁索引](../collectibles/compendium.md#oswin-为什么不在-cast-files-中)；
-- `CGdump`、`deanlove` 和不计入画廊的图片：见[CG 画廊查漏索引](../collectibles/gallery.md#不在画廊统计中的-cg)；
+- `CGdump`、`deanlove` 和不计入画廊的图片：见[CG 画廊查漏索引](../collectibles/gallery.md#gallery-non-gallery-index)；
 - 旧 Dean 成人 CG：见[b0.85 版本主要变化](../versions/b085-changes.md#dean-线调整)。
 
 ## 相关页面
