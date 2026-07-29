@@ -3,6 +3,7 @@ title: "Password"
 subtitle: "b0.85 中文攻略与机制资料库"
 description: "《Password》b0.85 的剧情线路、密码提示、奖牌、CG、Compendium 与底层机制整理"
 toc: false
+comments: false
 ---
 
 本站是一份面向《Password》玩家的 **b0.85 中文攻略与机制资料库**，主要整理剧情路线、密码提示、收集内容、好感度及相关代码机制。

@@ -130,6 +130,19 @@ website:
     left: "Password b0.85 中文攻略与机制资料库"
     right: "玩家整理资料，仅供攻略与考据参考"
 
+  comments:
+    giscus:
+      repo: yangtaomijian/password-b085-guide
+      repo-id: R_kgDOTnI-GQ
+      category: 页面反馈
+      category-id: DIC_kwDOTnI-Gc4DCPAP
+      mapping: pathname
+      reactions-enabled: true
+      input-position: top
+      theme: light
+      language: zh-CN
+      loading: lazy
+
 format:
   html:
     theme:
