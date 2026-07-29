@@ -4078,3 +4078,75 @@ main.content img[src*="easter-passwords-b085-zh"] {
     width: min(88%, 480px);
   }
 }
+
+/* Affection differences: wide threshold tables */
+.affection-difference-table {
+  width: 100%;
+  max-width: 100%;
+  margin: 0.8rem 0 1.2rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  overscroll-behavior-inline: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+.affection-difference-table table {
+  width: 100%;
+  min-width: 68rem;
+  max-width: none !important;
+  margin: 0;
+  table-layout: fixed;
+}
+
+/* 检定条件 */
+.affection-difference-table col:nth-child(1),
+.affection-difference-table th:nth-child(1),
+.affection-difference-table td:nth-child(1) {
+  width: 16%;
+}
+
+/* 主要剧情节点 */
+.affection-difference-table col:nth-child(2),
+.affection-difference-table th:nth-child(2),
+.affection-difference-table td:nth-child(2) {
+  width: 17%;
+}
+
+/* 附加条件 */
+.affection-difference-table col:nth-child(3),
+.affection-difference-table th:nth-child(3),
+.affection-difference-table td:nth-child(3) {
+  width: 25%;
+}
+
+/* 实际文本或流程差异 */
+.affection-difference-table col:nth-child(4),
+.affection-difference-table th:nth-child(4),
+.affection-difference-table td:nth-child(4) {
+  width: 42%;
+}
+
+.affection-difference-table th,
+.affection-difference-table td {
+  vertical-align: top;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.affection-difference-table td:nth-child(4) {
+  font-size: 0.94rem;
+  line-height: 1.62;
+}
+
+/* 脚本变量和条件应保持为完整代码标签 */
+.affection-difference-table code {
+  white-space: nowrap;
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+@media (max-width: 760px) {
+  .affection-difference-table table {
+    min-width: 64rem;
+  }
+}

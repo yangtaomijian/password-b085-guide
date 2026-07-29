@@ -89,6 +89,9 @@ Tyson 线可以绕过 D17 的路线失败结果，不会因此转入 Path F 或 
 
 当前整理的 b0.85 正常剧情中没有发现明确的好感度减分项。
 
+- 需要查询加点选项时，见[好感度机制与加点](../mechanics/affection.md)；
+- 需要确认达到阈值后具体改变哪些对话和关系分支时，见[好感度检定与剧情文本差异](../mechanics/affection-differences.md)。
+
 ## Compendium
 
 ### 星座 Lore 和奖牌是两套收集吗？

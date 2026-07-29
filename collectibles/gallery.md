@@ -316,5 +316,7 @@ b0.7 版本它们仍存在游戏文件中，但游戏过程中不会展示 CG，
 - [字母线系统](../guide/path-system.md)
 - [密码分级提示](../guide/password-hints.md)
 - [十二枚奖牌收集指南](medals.md)
+- [好感度机制与加点](../mechanics/affection.md)
+- [好感度检定与剧情文本差异](../mechanics/affection-differences.md)
 
 <script src="../assets/gallery-locator.js" defer></script>

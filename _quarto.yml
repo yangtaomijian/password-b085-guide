@@ -53,6 +53,8 @@ website:
         menu:
           - href: mechanics/affection.md
             text: 好感度机制
+          - text: "好感度剧情差异"
+            href: mechanics/affection-differences.md
           - href: mechanics/medal-persistence.md
             text: 奖牌持久化
           - href: mechanics/password-checks.md
@@ -106,6 +108,8 @@ website:
         contents:
           - href: mechanics/affection.md
             text: 好感度机制与加点
+          - text: "好感度剧情差异"
+            href: mechanics/affection-differences.md
           - href: mechanics/medal-persistence.md
             text: 奖牌持久化与最终检定
           - href: mechanics/password-checks.md
