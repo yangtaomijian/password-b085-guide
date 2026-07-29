@@ -14,6 +14,7 @@ lang: zh-CN
 website:
   title: "Password b0.85 中文攻略与机制资料库"
   description: "《Password》b0.85 中文路线、密码提示、收集与机制攻略"
+  site-url: "https://yangtaomijian.github.io/password-b085-guide/"
   search:
     location: navbar
     type: overlay
