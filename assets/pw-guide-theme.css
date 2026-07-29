@@ -1,0 +1,4080 @@
+/*
+  Password b0.85 中文攻略 — 视觉主题 v1
+  适用于 Quarto Website + Bootstrap 5
+  建议路径：03_working/site/assets/pw-guide-theme.css
+*/
+
+:root {
+  --pw-font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", "Source Han Sans SC", sans-serif;
+  --pw-font-mono: "SFMono-Regular", "SF Mono", "Cascadia Code", "JetBrains Mono", "Noto Sans Mono CJK SC", Consolas, monospace;
+  --pw-radius-sm: 6px;
+  --pw-radius-md: 10px;
+  --pw-radius-lg: 14px;
+  --pw-shadow-soft: 0 1px 2px rgb(25 30 35 / 0.04);
+  --pw-shadow-float: 0 8px 28px rgb(25 30 35 / 0.08);
+  --pw-transition: 150ms ease;
+}
+
+body.quarto-light,
+.quarto-light body {
+  --pw-bg: #f6f3ed;
+  --pw-surface: #fffdf9;
+  --pw-surface-soft: #f1ede5;
+  --pw-surface-hover: #ebe5da;
+  --pw-text: #2d3034;
+  --pw-text-soft: #696963;
+  --pw-text-faint: #87847d;
+  --pw-primary: #354a5d;
+  --pw-primary-hover: #263b4e;
+  --pw-primary-soft: #e7edf1;
+  --pw-accent: #a4773f;
+  --pw-accent-hover: #855e2f;
+  --pw-accent-soft: #f3e9da;
+  --pw-border: #ddd7cc;
+  --pw-border-strong: #c7beb0;
+  --pw-code-bg: #f1efeb;
+  --pw-code-text: #7346a8;
+  --pw-table-head: #ece7de;
+  --pw-table-stripe: #faf7f1;
+  --pw-table-hover: #f4eee4;
+  --pw-note-bg: #edf3f6;
+  --pw-note-border: #718fa2;
+  --pw-tip-bg: #eef5ef;
+  --pw-tip-border: #6f9475;
+  --pw-warning-bg: #fbf2e6;
+  --pw-warning-border: #b87b37;
+  --pw-important-bg: #f8ece9;
+  --pw-important-border: #a85f52;
+  --pw-caution-bg: #f7e9e9;
+  --pw-caution-border: #a84d4d;
+}
+
+body.quarto-dark,
+.quarto-dark body {
+  --pw-bg: #181b1e;
+  --pw-surface: #202428;
+  --pw-surface-soft: #272c31;
+  --pw-surface-hover: #30363c;
+  --pw-text: #e6e2da;
+  --pw-text-soft: #beb9af;
+  --pw-text-faint: #918d85;
+  --pw-primary: #aebfcb;
+  --pw-primary-hover: #d2dde4;
+  --pw-primary-soft: #293741;
+  --pw-accent: #d2a76d;
+  --pw-accent-hover: #e5c28e;
+  --pw-accent-soft: #3c3125;
+  --pw-border: #3a4046;
+  --pw-border-strong: #50575e;
+  --pw-code-bg: #292d31;
+  --pw-code-text: #d4a2ff;
+  --pw-table-head: #2b3035;
+  --pw-table-stripe: #23282c;
+  --pw-table-hover: #30363a;
+  --pw-note-bg: #24323a;
+  --pw-note-border: #7ea2b5;
+  --pw-tip-bg: #26372c;
+  --pw-tip-border: #82a88a;
+  --pw-warning-bg: #3a3022;
+  --pw-warning-border: #d0a060;
+  --pw-important-bg: #392927;
+  --pw-important-border: #c47b70;
+  --pw-caution-bg: #3b2728;
+  --pw-caution-border: #c86c6c;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--pw-bg);
+  color: var(--pw-text);
+  font-family: var(--pw-font-sans);
+  font-size: 1rem;
+  line-height: 1.78;
+  letter-spacing: 0.006em;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+#quarto-content { background: var(--pw-surface); }
+main.content { padding-top: 2.25rem; padding-bottom: 4rem; }
+main.content > :first-child { margin-top: 0; }
+p, li, dd, td, th { color: var(--pw-text); }
+p { margin-bottom: 1rem; }
+strong { font-weight: 650; }
+hr { border-color: var(--pw-border); opacity: 1; margin: 2.25rem 0; }
+::selection { background: var(--pw-accent-soft); color: var(--pw-text); }
+
+a {
+  color: var(--pw-primary);
+  text-decoration-color: color-mix(in srgb, var(--pw-primary) 38%, transparent);
+  text-underline-offset: 0.16em;
+  text-decoration-thickness: 0.075em;
+  transition: color var(--pw-transition), text-decoration-color var(--pw-transition);
+}
+
+a:hover, a:focus-visible { color: var(--pw-accent-hover); text-decoration-color: currentColor; }
+main.content a:not(.anchorjs-link):not(.nav-link):not(.btn) { font-weight: 520; }
+
+.quarto-title-block { margin-bottom: 2.2rem; }
+.quarto-title h1, h1.title {
+  color: var(--pw-text);
+  font-size: clamp(2rem, 2.5vw, 2.55rem);
+  font-weight: 750;
+  line-height: 1.22;
+  letter-spacing: -0.025em;
+  margin-bottom: 0.55rem;
+}
+.quarto-title .subtitle, .description {
+  color: var(--pw-text-soft);
+  font-size: 1.04rem;
+  line-height: 1.65;
+  max-width: 52rem;
+}
+
+main.content h2 {
+  position: relative;
+  color: var(--pw-text);
+  font-size: 1.52rem;
+  font-weight: 720;
+  line-height: 1.35;
+  letter-spacing: -0.012em;
+  margin-top: 3.25rem;
+  margin-bottom: 1.15rem;
+  padding: 0 0 0.58rem 0.9rem;
+  border-bottom: 1px solid var(--pw-border);
+}
+main.content h2::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.18em;
+  bottom: 0.72em;
+  width: 4px;
+  border-radius: 999px;
+  background: var(--pw-accent);
+}
+main.content h3 {
+  color: var(--pw-primary);
+  font-size: 1.16rem;
+  font-weight: 690;
+  line-height: 1.45;
+  margin-top: 2.2rem;
+  margin-bottom: 0.75rem;
+}
+main.content h4 {
+  color: var(--pw-text);
+  font-size: 1.02rem;
+  font-weight: 680;
+  margin-top: 1.7rem;
+  margin-bottom: 0.55rem;
+}
+h1 .anchorjs-link, h2 .anchorjs-link, h3 .anchorjs-link, h4 .anchorjs-link {
+  color: var(--pw-text-faint) !important;
+  opacity: 0;
+  transition: opacity var(--pw-transition);
+}
+h1:hover .anchorjs-link, h2:hover .anchorjs-link, h3:hover .anchorjs-link, h4:hover .anchorjs-link { opacity: 0.65; }
+
+.navbar {
+  min-height: 4rem;
+  background: var(--pw-primary-hover) !important;
+  border-bottom: 1px solid color-mix(in srgb, var(--pw-border) 60%, transparent);
+  box-shadow: 0 1px 0 rgb(0 0 0 / 0.05);
+}
+body.quarto-dark .navbar, .quarto-dark body .navbar { background: #20272d !important; }
+.navbar-brand { color: #f7f3eb !important; font-size: 1.12rem; font-weight: 680; letter-spacing: 0.01em; }
+.navbar .nav-link, .navbar .dropdown-toggle, .navbar .quarto-navbar-tools .quarto-navigation-tool {
+  color: rgb(255 255 255 / 0.82) !important;
+  font-weight: 540;
+}
+.navbar .nav-link:hover, .navbar .nav-link:focus, .navbar .nav-link.active, .navbar .dropdown-toggle:hover { color: #fff !important; }
+.navbar .nav-link.active {
+  text-decoration: underline;
+  text-decoration-color: var(--pw-accent);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.38rem;
+}
+.navbar .dropdown-menu {
+  background: var(--pw-surface);
+  border: 1px solid var(--pw-border);
+  border-radius: var(--pw-radius-md);
+  box-shadow: var(--pw-shadow-float);
+  padding: 0.45rem;
+}
+.navbar .dropdown-item { color: var(--pw-text); border-radius: var(--pw-radius-sm); padding: 0.52rem 0.75rem; }
+.navbar .dropdown-item:hover, .navbar .dropdown-item:focus, .navbar .dropdown-item.active {
+  color: var(--pw-primary-hover);
+  background: var(--pw-primary-soft);
+}
+
+#quarto-sidebar { background: var(--pw-surface-soft); border-right: 1px solid var(--pw-border); }
+.sidebar { color: var(--pw-text-soft); }
+.sidebar-navigation { padding-top: 1.25rem; }
+.sidebar-section { margin-bottom: 0.5rem; }
+.sidebar-section .sidebar-section-item { color: var(--pw-text); font-size: 0.92rem; font-weight: 680; letter-spacing: 0.012em; }
+.sidebar-item .sidebar-link {
+  color: var(--pw-text-soft);
+  border-radius: 0 var(--pw-radius-sm) var(--pw-radius-sm) 0;
+  border-left: 3px solid transparent;
+  margin: 0.08rem 0;
+  padding-top: 0.38rem;
+  padding-bottom: 0.38rem;
+  transition: color var(--pw-transition), background-color var(--pw-transition), border-color var(--pw-transition);
+}
+.sidebar-item .sidebar-link:hover { color: var(--pw-primary); background: color-mix(in srgb, var(--pw-surface-hover) 72%, transparent); }
+.sidebar-item .sidebar-link.active {
+  color: var(--pw-primary-hover);
+  background: var(--pw-accent-soft);
+  border-left-color: var(--pw-accent);
+  font-weight: 670;
+}
+.sidebar-item-toggle { color: var(--pw-text-faint); }
+
+#quarto-margin-sidebar { color: var(--pw-text-soft); }
+#TOC { border-left: 1px solid var(--pw-border); padding-left: 0.8rem; }
+#TOC .nav-link {
+  color: var(--pw-text-soft);
+  font-size: 0.86rem;
+  line-height: 1.45;
+  border-left: 2px solid transparent;
+  margin-left: -0.86rem;
+  padding: 0.28rem 0 0.28rem 0.72rem;
+}
+#TOC .nav-link:hover { color: var(--pw-primary); }
+#TOC .nav-link.active { color: var(--pw-primary-hover); border-left-color: var(--pw-accent); font-weight: 650; }
+.sidebar nav[role="doc-toc"] > h2, .sidebar nav[role="doc-toc"] > .h2 {
+  color: var(--pw-text);
+  font-size: 0.92rem;
+  font-weight: 700;
+  margin-bottom: 0.65rem;
+}
+
+.table, main.content table {
+  --bs-table-bg: transparent;
+  --bs-table-color: var(--pw-text);
+  width: 100%;
+  margin: 1.35rem 0 1.8rem;
+  color: var(--pw-text);
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid var(--pw-border);
+  border-radius: var(--pw-radius-md);
+  overflow: hidden;
+  box-shadow: var(--pw-shadow-soft);
+}
+.table > thead, main.content table > thead { background: var(--pw-table-head); }
+.table > thead > tr > th, main.content table > thead > tr > th {
+  color: var(--pw-text);
+  font-weight: 690;
+  letter-spacing: 0.01em;
+  border-bottom: 1px solid var(--pw-border-strong);
+  padding: 0.72rem 0.78rem;
+  vertical-align: bottom;
+}
+.table > tbody > tr > td, main.content table > tbody > tr > td {
+  padding: 0.67rem 0.78rem;
+  border-bottom: 1px solid var(--pw-border);
+  vertical-align: top;
+}
+.table > tbody > tr:last-child > td, main.content table > tbody > tr:last-child > td { border-bottom: 0; }
+.table > tbody > tr:nth-child(even), main.content table > tbody > tr:nth-child(even) { background: var(--pw-table-stripe); }
+.table > tbody > tr:hover, main.content table > tbody > tr:hover { background: var(--pw-table-hover); }
+.quarto-table-container, .table-responsive {
+  overflow-x: auto;
+  border-radius: var(--pw-radius-md);
+  scrollbar-width: thin;
+  scrollbar-color: var(--pw-border-strong) transparent;
+}
+
+code { font-family: var(--pw-font-mono); }
+:not(pre) > code {
+  color: var(--pw-code-text);
+  background: var(--pw-code-bg);
+  border: 1px solid color-mix(in srgb, var(--pw-border) 72%, transparent);
+  border-radius: 4px;
+  padding: 0.12em 0.32em;
+  font-size: 0.9em;
+  font-weight: 520;
+}
+div.sourceCode, pre { border: 1px solid var(--pw-border); border-radius: var(--pw-radius-md); box-shadow: var(--pw-shadow-soft); }
+pre { background: var(--pw-code-bg); padding: 1rem 1.05rem; }
+pre code { color: var(--pw-text); font-size: 0.9rem; line-height: 1.65; }
+.code-copy-button { color: var(--pw-text-soft); border-radius: var(--pw-radius-sm); }
+.code-copy-button:hover { color: var(--pw-primary); background: var(--pw-surface-hover); }
+
+.callout {
+  border: 1px solid var(--pw-border);
+  border-left-width: 4px;
+  border-radius: var(--pw-radius-md);
+  box-shadow: none;
+  margin: 1.45rem 0;
+  overflow: hidden;
+}
+.callout .callout-header, .callout .callout-title-container { font-size: 0.95rem; font-weight: 700; }
+.callout .callout-body-container { font-size: 0.95rem; line-height: 1.72; }
+.callout .callout-body-container > :last-child { margin-bottom: 0; }
+.callout-note { background: var(--pw-note-bg); border-left-color: var(--pw-note-border); }
+.callout-tip { background: var(--pw-tip-bg); border-left-color: var(--pw-tip-border); }
+.callout-warning { background: var(--pw-warning-bg); border-left-color: var(--pw-warning-border); }
+.callout-important { background: var(--pw-important-bg); border-left-color: var(--pw-important-border); }
+.callout-caution { background: var(--pw-caution-bg); border-left-color: var(--pw-caution-border); }
+
+main.content details {
+  background: var(--pw-surface-soft);
+  border: 1px solid var(--pw-border);
+  border-radius: var(--pw-radius-md);
+  margin: 0.8rem 0;
+  padding: 0;
+  overflow: clip;
+  transition: border-color var(--pw-transition), background-color var(--pw-transition);
+}
+main.content details:hover { border-color: var(--pw-border-strong); }
+main.content details[open] { background: var(--pw-surface); border-color: color-mix(in srgb, var(--pw-accent) 58%, var(--pw-border)); }
+main.content details > summary {
+  color: var(--pw-primary);
+  cursor: pointer;
+  list-style: none;
+  font-weight: 680;
+  padding: 0.72rem 0.9rem;
+  user-select: none;
+}
+main.content details > summary::-webkit-details-marker { display: none; }
+main.content details > summary::before {
+  content: "▸";
+  display: inline-block;
+  color: var(--pw-accent);
+  margin-right: 0.52rem;
+  transform-origin: center;
+  transition: transform var(--pw-transition);
+}
+main.content details[open] > summary::before { transform: rotate(90deg); }
+main.content details > :not(summary) { margin-left: 0.95rem; margin-right: 0.95rem; }
+main.content details > :last-child { margin-bottom: 0.9rem; }
+
+main.content ul, main.content ol { padding-left: 1.5rem; }
+main.content li { margin-bottom: 0.26rem; }
+main.content li::marker { color: var(--pw-accent); }
+blockquote {
+  color: var(--pw-text-soft);
+  background: var(--pw-surface-soft);
+  border-left: 4px solid var(--pw-accent);
+  border-radius: 0 var(--pw-radius-sm) var(--pw-radius-sm) 0;
+  margin: 1.35rem 0;
+  padding: 0.8rem 1rem;
+}
+blockquote > :last-child { margin-bottom: 0; }
+
+main.content img { border-radius: var(--pw-radius-sm); }
+main.content figure { margin: 1.6rem 0 2rem; }
+main.content figcaption { color: var(--pw-text-faint); font-size: 0.86rem; line-height: 1.55; margin-top: 0.5rem; }
+
+.quarto-page-breadcrumbs { color: var(--pw-text-faint); font-size: 0.88rem; margin-bottom: 1.1rem; }
+.quarto-page-breadcrumbs a { color: var(--pw-text-soft); }
+.nav-page { border-top: 1px solid var(--pw-border); margin-top: 3.5rem; padding-top: 1.35rem; }
+.nav-page .nav-page-text { color: var(--pw-text-soft); }
+.nav-page a:hover .nav-page-text { color: var(--pw-primary); }
+#quarto-back-to-top {
+  color: var(--pw-text-soft);
+  background: var(--pw-surface);
+  border: 1px solid var(--pw-border);
+  border-radius: var(--pw-radius-sm);
+  box-shadow: var(--pw-shadow-float);
+}
+#quarto-back-to-top:hover { color: var(--pw-primary); border-color: var(--pw-border-strong); }
+.nav-footer { color: var(--pw-text-faint); background: var(--pw-surface-soft); border-top: 1px solid var(--pw-border); font-size: 0.85rem; }
+.nav-footer a { color: var(--pw-text-soft); }
+
+.aa-DetachedFormContainer, .aa-Panel, .aa-DetachedContainer { background: var(--pw-surface); color: var(--pw-text); }
+.aa-Input { color: var(--pw-text) !important; background: var(--pw-surface-soft) !important; border-color: var(--pw-border) !important; }
+.aa-Item[aria-selected="true"] { background: var(--pw-primary-soft); }
+
+@media (min-width: 992px) {
+  main.content { max-width: 58rem; }
+}
+
+@media (max-width: 1199.98px) {
+  main.content { padding-left: 1rem; padding-right: 1rem; }
+}
+
+@media (max-width: 767.98px) {
+  body { font-size: 0.97rem; line-height: 1.72; }
+  main.content { padding-top: 1.35rem; padding-bottom: 3rem; }
+  .quarto-title h1, h1.title { font-size: 1.8rem; }
+  main.content h2 { font-size: 1.35rem; margin-top: 2.55rem; }
+  main.content h3 { font-size: 1.08rem; margin-top: 1.85rem; }
+  .table > thead > tr > th, main.content table > thead > tr > th,
+  .table > tbody > tr > td, main.content table > tbody > tr > td { padding: 0.58rem 0.64rem; }
+  .callout .callout-body-container { font-size: 0.93rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+/* =========================================================
+   Password Guide Theme v1.1
+   导航玻璃感、Callout 层次与标题色修正
+   直接追加到 pw-guide-theme.css 末尾
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   1. 细调全局颜色
+   --------------------------------------------------------- */
+
+body.quarto-light,
+.quarto-light body {
+  --pw-text: #292b2f;
+  --pw-text-soft: #666862;
+
+  --pw-primary: #40566a;
+  --pw-primary-hover: #2f4354;
+
+  --pw-accent: #b58242;
+  --pw-accent-hover: #94682f;
+  --pw-accent-soft: rgb(181 130 66 / 0.13);
+}
+
+body.quarto-dark,
+.quarto-dark body {
+  --pw-text: #ece8e0;
+  --pw-text-soft: #bbb7ae;
+
+  --pw-primary: #b4c5d1;
+  --pw-primary-hover: #d7e1e7;
+
+  --pw-accent: #d5a96d;
+  --pw-accent-hover: #e8c68f;
+  --pw-accent-soft: rgb(213 169 109 / 0.15);
+}
+
+/* ---------------------------------------------------------
+   2. 页面主标题：改成更中性的炭黑
+   --------------------------------------------------------- */
+
+.quarto-title h1,
+h1.title {
+  color: #292b2f !important;
+  font-weight: 720;
+  letter-spacing: -0.035em;
+  text-shadow: none;
+}
+
+body.quarto-dark .quarto-title h1,
+body.quarto-dark h1.title,
+.quarto-dark body .quarto-title h1,
+.quarto-dark body h1.title {
+  color: #f0ece4 !important;
+}
+
+.quarto-title .subtitle,
+.quarto-title-block .description {
+  color: var(--pw-text-soft);
+  font-weight: 420;
+}
+
+/* ---------------------------------------------------------
+   3. 顶部栏：轻度磨砂，不追求夸张液态玻璃
+   --------------------------------------------------------- */
+
+.navbar {
+  background: rgb(38 55 70 / 0.92) !important;
+  border-bottom: 1px solid rgb(255 255 255 / 0.1);
+  box-shadow:
+    inset 0 -1px 0 rgb(255 255 255 / 0.035),
+    0 4px 20px rgb(20 28 35 / 0.08);
+
+  -webkit-backdrop-filter: blur(18px) saturate(135%);
+  backdrop-filter: blur(18px) saturate(135%);
+}
+
+body.quarto-dark .navbar,
+.quarto-dark body .navbar {
+  background: rgb(29 36 42 / 0.9) !important;
+}
+
+/* ---------------------------------------------------------
+   4. 左侧导航项目：增加呼吸空间
+   --------------------------------------------------------- */
+
+.sidebar-item .sidebar-link {
+  position: relative;
+
+  /* 与侧栏左右边缘保持距离 */
+  margin: 0.12rem 0.72rem 0.12rem 0.92rem;
+
+  /* 文字不再紧贴选中标记 */
+  padding:
+    0.48rem
+    0.82rem
+    0.48rem
+    1rem;
+
+  border: 1px solid transparent;
+  border-left: 1px solid transparent;
+  border-radius: 11px;
+
+  overflow: visible;
+
+  transition:
+    color 150ms ease,
+    background-color 150ms ease,
+    border-color 150ms ease,
+    box-shadow 150ms ease,
+    transform 150ms ease;
+}
+
+/* 原来的 border-left 改为独立标记，避免贴着文字 */
+.sidebar-item .sidebar-link::before {
+  content: "";
+
+  position: absolute;
+  left: -0.58rem;
+  top: 0.53rem;
+  bottom: 0.53rem;
+
+  width: 3px;
+  border-radius: 999px;
+
+  background: transparent;
+
+  transition:
+    background-color 150ms ease,
+    box-shadow 150ms ease;
+}
+
+.sidebar-item .sidebar-link:hover {
+  color: var(--pw-primary-hover);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgb(255 255 255 / 0.36),
+      rgb(255 255 255 / 0.14)
+    );
+
+  border-color: rgb(255 255 255 / 0.28);
+}
+
+/* ---------------------------------------------------------
+   5. 左侧选中项：半透明玻璃卡片
+   --------------------------------------------------------- */
+
+body.quarto-light .sidebar-item .sidebar-link.active,
+.quarto-light body .sidebar-item .sidebar-link.active {
+  color: var(--pw-primary-hover);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgb(255 255 255 / 0.76),
+      rgb(242 228 207 / 0.64)
+    );
+
+  border-color: rgb(181 130 66 / 0.22);
+
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.78),
+    inset 0 -1px 0 rgb(181 130 66 / 0.06),
+    0 5px 16px rgb(54 47 38 / 0.07);
+
+  -webkit-backdrop-filter: blur(14px) saturate(135%);
+  backdrop-filter: blur(14px) saturate(135%);
+
+  font-weight: 680;
+}
+
+body.quarto-dark .sidebar-item .sidebar-link.active,
+.quarto-dark body .sidebar-item .sidebar-link.active {
+  color: var(--pw-primary-hover);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgb(255 255 255 / 0.09),
+      rgb(213 169 109 / 0.1)
+    );
+
+  border-color: rgb(213 169 109 / 0.22);
+
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.09),
+    0 6px 18px rgb(0 0 0 / 0.18);
+
+  -webkit-backdrop-filter: blur(14px) saturate(125%);
+  backdrop-filter: blur(14px) saturate(125%);
+
+  font-weight: 680;
+}
+
+.sidebar-item .sidebar-link.active::before {
+  background: var(--pw-accent);
+
+  box-shadow:
+    0 0 0 1px rgb(255 255 255 / 0.24),
+    0 1px 5px rgb(181 130 66 / 0.26);
+}
+
+/* ---------------------------------------------------------
+   6. 左侧分类标题稍微降低存在感
+   --------------------------------------------------------- */
+
+.sidebar-section .sidebar-section-item {
+  color: var(--pw-text-soft);
+  font-size: 0.89rem;
+  font-weight: 680;
+}
+
+.sidebar-section .sidebar-section-item:hover {
+  color: var(--pw-text);
+}
+
+/* ---------------------------------------------------------
+   7. Callout：将标题带与正文真正分开
+   --------------------------------------------------------- */
+
+.callout {
+  background: transparent !important;
+  border-radius: 11px;
+
+  box-shadow:
+    0 1px 2px rgb(31 34 37 / 0.025),
+    0 5px 18px rgb(31 34 37 / 0.025);
+}
+
+.callout .callout-header {
+  padding-top: 0.62rem;
+  padding-bottom: 0.62rem;
+
+  border-bottom:
+    1px solid
+    color-mix(in srgb, var(--pw-border) 76%, transparent);
+}
+
+.callout .callout-title-container {
+  font-weight: 720;
+  letter-spacing: 0.005em;
+}
+
+.callout .callout-body {
+  background: var(--pw-surface);
+}
+
+.callout .callout-body-container {
+  padding-top: 0.88rem;
+  padding-bottom: 0.9rem;
+}
+
+/* Warning：标题稍深，正文更浅 */
+.callout-warning .callout-header {
+  background:
+    color-mix(
+      in srgb,
+      var(--pw-warning-border) 19%,
+      var(--pw-surface)
+    );
+}
+
+.callout-warning .callout-body {
+  background:
+    color-mix(
+      in srgb,
+      var(--pw-warning-bg) 38%,
+      var(--pw-surface)
+    );
+}
+
+/* Important */
+.callout-important .callout-header {
+  background:
+    color-mix(
+      in srgb,
+      var(--pw-important-border) 18%,
+      var(--pw-surface)
+    );
+}
+
+.callout-important .callout-body {
+  background:
+    color-mix(
+      in srgb,
+      var(--pw-important-bg) 38%,
+      var(--pw-surface)
+    );
+}
+
+/* Note */
+.callout-note .callout-header {
+  background:
+    color-mix(
+      in srgb,
+      var(--pw-note-border) 17%,
+      var(--pw-surface)
+    );
+}
+
+.callout-note .callout-body {
+  background:
+    color-mix(
+      in srgb,
+      var(--pw-note-bg) 42%,
+      var(--pw-surface)
+    );
+}
+
+/* Tip */
+.callout-tip .callout-header {
+  background:
+    color-mix(
+      in srgb,
+      var(--pw-tip-border) 17%,
+      var(--pw-surface)
+    );
+}
+
+.callout-tip .callout-body {
+  background:
+    color-mix(
+      in srgb,
+      var(--pw-tip-bg) 42%,
+      var(--pw-surface)
+    );
+}
+
+/* Caution */
+.callout-caution .callout-header {
+  background:
+    color-mix(
+      in srgb,
+      var(--pw-caution-border) 18%,
+      var(--pw-surface)
+    );
+}
+
+.callout-caution .callout-body {
+  background:
+    color-mix(
+      in srgb,
+      var(--pw-caution-bg) 38%,
+      var(--pw-surface)
+    );
+}
+
+/* ---------------------------------------------------------
+   8. H2 再克制一点
+   --------------------------------------------------------- */
+
+main.content h2 {
+  font-size: 1.46rem;
+  font-weight: 700;
+
+  padding-left: 1rem;
+
+  border-bottom-color:
+    color-mix(
+      in srgb,
+      var(--pw-border) 78%,
+      transparent
+    );
+}
+
+main.content h2::before {
+  left: 0.08rem;
+  width: 3px;
+
+  background:
+    linear-gradient(
+      to bottom,
+      var(--pw-accent),
+      color-mix(in srgb, var(--pw-accent) 40%, transparent)
+    );
+}
+
+/* =========================================================
+   Password Guide Theme v1.2
+   独立侧栏、浅色顶栏、紧凑字体与正文扩展
+   ========================================================= */
+
+:root {
+  --pw-navbar-height: 4rem;
+
+  --pw-left-panel-width: 240px;
+  --pw-right-panel-width: 210px;
+
+  --pw-body-width-normal: 900px;
+  --pw-body-width-one-panel: 1040px;
+  --pw-body-width-no-panels: 1160px;
+
+  --pw-layout-gap: 1.55rem;
+  --pw-layout-speed: 240ms;
+}
+
+/* ---------------------------------------------------------
+   1. 全站缩放感：约等于浏览器 90%—93%
+   --------------------------------------------------------- */
+
+body {
+  font-size: 0.93rem;
+  line-height: 1.72;
+}
+
+p {
+  margin-bottom: 0.88rem;
+}
+
+.quarto-title h1,
+h1.title {
+  font-size: clamp(1.85rem, 2.25vw, 2.3rem);
+}
+
+.quarto-title .subtitle,
+.description {
+  font-size: 0.98rem;
+}
+
+main.content h2 {
+  font-size: 1.36rem;
+  margin-top: 2.8rem;
+}
+
+main.content h3 {
+  font-size: 1.08rem;
+  margin-top: 1.9rem;
+}
+
+.sidebar-item .sidebar-link {
+  font-size: 0.9rem;
+}
+
+#TOC .nav-link {
+  font-size: 0.82rem;
+}
+
+/* ---------------------------------------------------------
+   2. 顶部栏改为 OpenAI 文档式浅色表面
+   --------------------------------------------------------- */
+
+.navbar {
+  min-height: var(--pw-navbar-height);
+
+  background: rgb(255 253 249 / 0.91) !important;
+  color: var(--pw-text) !important;
+
+  border-bottom: 1px solid var(--pw-border);
+  box-shadow:
+    0 1px 0 rgb(28 31 34 / 0.03),
+    0 5px 20px rgb(28 31 34 / 0.035);
+
+  -webkit-backdrop-filter: blur(20px) saturate(135%);
+  backdrop-filter: blur(20px) saturate(135%);
+}
+
+body.quarto-dark .navbar,
+.quarto-dark body .navbar {
+  background: rgb(31 35 39 / 0.91) !important;
+  border-bottom-color: var(--pw-border);
+}
+
+.navbar-brand {
+  color: var(--pw-text) !important;
+  font-size: 1rem;
+  font-weight: 680;
+}
+
+.navbar .nav-link,
+.navbar .dropdown-toggle,
+.navbar .quarto-navbar-tools .quarto-navigation-tool {
+  color: var(--pw-text-soft) !important;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link:focus,
+.navbar .dropdown-toggle:hover {
+  color: var(--pw-text) !important;
+}
+
+.navbar .nav-link.active {
+  color: var(--pw-text) !important;
+
+  background: var(--pw-surface-soft);
+
+  border-radius: 9px;
+
+  text-decoration: none;
+}
+
+.navbar .dropdown-menu {
+  background: rgb(255 253 249 / 0.96);
+
+  -webkit-backdrop-filter: blur(22px) saturate(135%);
+  backdrop-filter: blur(22px) saturate(135%);
+}
+
+body.quarto-dark .navbar .dropdown-menu,
+.quarto-dark body .navbar .dropdown-menu {
+  background: rgb(32 36 40 / 0.96);
+}
+
+/* ---------------------------------------------------------
+   3. 右上角图标全部统一
+   --------------------------------------------------------- */
+
+.quarto-navbar-tools {
+  display: flex;
+  align-items: center;
+  gap: 0.22rem;
+}
+
+.quarto-navbar-tools .quarto-navigation-tool,
+#quarto-search .aa-DetachedSearchButton,
+.quarto-search-button {
+  display: inline-grid !important;
+  place-items: center;
+
+  width: 2.25rem !important;
+  height: 2.25rem !important;
+
+  min-width: 2.25rem !important;
+  min-height: 2.25rem !important;
+
+  padding: 0 !important;
+  margin: 0 !important;
+
+  border: 1px solid transparent !important;
+  border-radius: 10px !important;
+
+  color: var(--pw-text-soft) !important;
+  background: transparent !important;
+
+  transition:
+    color 150ms ease,
+    background-color 150ms ease,
+    border-color 150ms ease;
+}
+
+.quarto-navbar-tools .quarto-navigation-tool:hover,
+#quarto-search .aa-DetachedSearchButton:hover,
+.quarto-search-button:hover {
+  color: var(--pw-text) !important;
+  background: var(--pw-surface-soft) !important;
+  border-color: var(--pw-border) !important;
+}
+
+.quarto-color-scheme-toggle .bi::before {
+  width: 1.12rem !important;
+  height: 1.12rem !important;
+
+  background-size: 1.12rem 1.12rem !important;
+}
+
+#quarto-search svg,
+.aa-DetachedSearchButtonIcon {
+  width: 1.12rem !important;
+  height: 1.12rem !important;
+}
+
+/* 原生 reader-mode 不再使用 */
+.quarto-reader-toggle {
+  display: none !important;
+}
+
+/* ---------------------------------------------------------
+   4. 桌面端重新定义最外层三栏布局
+   --------------------------------------------------------- */
+
+@media (min-width: 1100px) {
+  body.pw-custom-layout-ready #quarto-content {
+    --pw-current-left-width: var(--pw-left-panel-width);
+    --pw-current-right-width: var(--pw-right-panel-width);
+    --pw-current-body-width: var(--pw-body-width-normal);
+
+    display: grid !important;
+
+    grid-template-columns:
+      var(--pw-current-left-width)
+      minmax(0, var(--pw-current-body-width))
+      var(--pw-current-right-width) !important;
+
+    column-gap: var(--pw-layout-gap) !important;
+
+    justify-content: center;
+    align-items: start;
+
+    width: 100%;
+    max-width: none !important;
+
+    transition:
+      grid-template-columns var(--pw-layout-speed) ease;
+  }
+
+  body.pw-left-collapsed #quarto-content {
+    --pw-current-left-width: 0px;
+    --pw-current-body-width: var(--pw-body-width-one-panel);
+  }
+
+  body.pw-right-collapsed #quarto-content {
+    --pw-current-right-width: 0px;
+    --pw-current-body-width: var(--pw-body-width-one-panel);
+  }
+
+  body.pw-left-collapsed.pw-right-collapsed #quarto-content {
+    --pw-current-left-width: 0px;
+    --pw-current-right-width: 0px;
+    --pw-current-body-width: var(--pw-body-width-no-panels);
+  }
+
+  #quarto-sidebar {
+    grid-column: 1 !important;
+
+    position: sticky !important;
+    top: var(--pw-navbar-height) !important;
+
+    width: var(--pw-left-panel-width) !important;
+    max-width: var(--pw-left-panel-width) !important;
+    height: calc(100vh - var(--pw-navbar-height)) !important;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    align-self: start;
+
+    background: rgb(247 244 238 / 0.94) !important;
+    border-right: 1px solid var(--pw-border) !important;
+
+    -webkit-backdrop-filter: blur(18px) saturate(120%);
+    backdrop-filter: blur(18px) saturate(120%);
+
+    transition:
+      opacity var(--pw-layout-speed) ease,
+      transform var(--pw-layout-speed) ease,
+      width var(--pw-layout-speed) ease,
+      max-width var(--pw-layout-speed) ease,
+      visibility var(--pw-layout-speed) step-end;
+  }
+
+  body.quarto-dark #quarto-sidebar,
+  .quarto-dark body #quarto-sidebar {
+    background: rgb(31 35 39 / 0.94) !important;
+  }
+
+  main.content {
+    grid-column: 2 !important;
+
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0;
+
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+  }
+
+  #quarto-margin-sidebar {
+    grid-column: 3 !important;
+
+    position: sticky !important;
+    top: var(--pw-navbar-height) !important;
+
+    width: var(--pw-right-panel-width) !important;
+    max-width: var(--pw-right-panel-width) !important;
+    height: calc(100vh - var(--pw-navbar-height)) !important;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    align-self: start;
+
+    padding-left: 0.15rem;
+
+    background: rgb(255 253 249 / 0.72) !important;
+
+    -webkit-backdrop-filter: blur(16px) saturate(115%);
+    backdrop-filter: blur(16px) saturate(115%);
+
+    transition:
+      opacity var(--pw-layout-speed) ease,
+      transform var(--pw-layout-speed) ease,
+      width var(--pw-layout-speed) ease,
+      max-width var(--pw-layout-speed) ease,
+      visibility var(--pw-layout-speed) step-end;
+  }
+
+  body.quarto-dark #quarto-margin-sidebar,
+  .quarto-dark body #quarto-margin-sidebar {
+    background: rgb(31 35 39 / 0.72) !important;
+  }
+
+  body.pw-left-collapsed #quarto-sidebar {
+    width: 0 !important;
+    max-width: 0 !important;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transform: translateX(-2rem);
+
+    border-right-color: transparent !important;
+  }
+
+  body.pw-right-collapsed #quarto-margin-sidebar {
+    width: 0 !important;
+    max-width: 0 !important;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transform: translateX(2rem);
+  }
+
+  #quarto-sidebar-glass {
+    display: none !important;
+  }
+}
+
+/* ---------------------------------------------------------
+   5. 侧栏内部工具条
+   --------------------------------------------------------- */
+
+.pw-panel-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  min-height: 3rem;
+
+  padding: 0.48rem 0.65rem;
+
+  color: var(--pw-text-soft);
+
+  background: inherit;
+
+  border-bottom: 1px solid var(--pw-border);
+
+  -webkit-backdrop-filter: blur(18px) saturate(125%);
+  backdrop-filter: blur(18px) saturate(125%);
+}
+
+.pw-panel-toolbar-title {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.pw-panel-toggle,
+.pw-edge-toggle {
+  display: inline-grid;
+  place-items: center;
+
+  width: 2rem;
+  height: 2rem;
+
+  padding: 0;
+
+  color: var(--pw-text-soft);
+  background: rgb(255 255 255 / 0.42);
+
+  border: 1px solid var(--pw-border);
+  border-radius: 9px;
+
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.5),
+    0 2px 8px rgb(30 32 35 / 0.035);
+
+  cursor: pointer;
+
+  transition:
+    color 150ms ease,
+    background-color 150ms ease,
+    border-color 150ms ease,
+    transform 150ms ease;
+}
+
+body.quarto-dark .pw-panel-toggle,
+body.quarto-dark .pw-edge-toggle,
+.quarto-dark body .pw-panel-toggle,
+.quarto-dark body .pw-edge-toggle {
+  background: rgb(255 255 255 / 0.055);
+}
+
+.pw-panel-toggle:hover,
+.pw-edge-toggle:hover {
+  color: var(--pw-text);
+
+  background: var(--pw-surface-hover);
+  border-color: var(--pw-border-strong);
+}
+
+.pw-panel-toggle:active,
+.pw-edge-toggle:active {
+  transform: scale(0.94);
+}
+
+.pw-panel-toggle-icon {
+  font-size: 1.15rem;
+  line-height: 1;
+}
+
+/* ---------------------------------------------------------
+   6. 侧栏收起后的边缘展开按钮
+   --------------------------------------------------------- */
+
+.pw-edge-toggle {
+  display: none;
+
+  position: fixed;
+  top: calc(var(--pw-navbar-height) + 0.7rem);
+  z-index: 1040;
+
+  width: 2.15rem;
+  height: 2.35rem;
+
+  background: rgb(255 253 249 / 0.9);
+
+  -webkit-backdrop-filter: blur(18px) saturate(130%);
+  backdrop-filter: blur(18px) saturate(130%);
+
+  box-shadow:
+    0 5px 18px rgb(27 29 32 / 0.09);
+}
+
+body.quarto-dark .pw-edge-toggle,
+.quarto-dark body .pw-edge-toggle {
+  background: rgb(31 35 39 / 0.9);
+}
+
+.pw-edge-toggle-left {
+  left: 0.55rem;
+}
+
+.pw-edge-toggle-right {
+  right: 0.55rem;
+}
+
+@media (min-width: 1100px) {
+  body.pw-left-collapsed .pw-edge-toggle-left {
+    display: inline-grid;
+  }
+
+  body.pw-right-collapsed .pw-edge-toggle-right {
+    display: inline-grid;
+  }
+}
+
+/* ---------------------------------------------------------
+   7. 左右侧栏背景始终保持一致
+   --------------------------------------------------------- */
+
+#quarto-sidebar .sidebar-navigation,
+#quarto-sidebar .sidebar-menu-container,
+#quarto-margin-sidebar nav[role="doc-toc"],
+#TOC {
+  background: transparent !important;
+}
+
+.pw-hide-default-toc-title {
+  display: none !important;
+}
+
+#quarto-margin-sidebar #TOC {
+  border-left: 0;
+  padding: 0.65rem 0.4rem 1.2rem 0.45rem;
+}
+
+#quarto-margin-sidebar #TOC .nav-link {
+  margin-left: 0;
+}
+
+/* ---------------------------------------------------------
+   8. 剧情线路逻辑图缩小并居中
+   --------------------------------------------------------- */
+
+main.content img[src*="route-map-b085"] {
+  display: block;
+
+  width: min(86%, 880px);
+  max-width: 880px;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+main.content img[src*="route-map-b085"] {
+  cursor: zoom-in;
+}
+
+/* ---------------------------------------------------------
+   9. 小屏幕交还 Quarto 原生导航
+   --------------------------------------------------------- */
+
+@media (max-width: 1099.98px) {
+  .pw-panel-toolbar,
+  .pw-edge-toggle {
+    display: none !important;
+  }
+
+  #quarto-content {
+    display: grid;
+  }
+
+  #quarto-sidebar,
+  #quarto-margin-sidebar {
+    background: var(--pw-surface) !important;
+  }
+}
+
+/* =========================================================
+   Password Guide Theme v1.3
+   修复三栏布局、侧栏单行显示、搜索按钮和分类层级
+   ========================================================= */
+
+:root {
+  --pw-left-panel-width: 220px;
+  --pw-right-panel-width: 190px;
+  --pw-layout-gap: 1rem;
+
+  --pw-body-width-normal: 960px;
+  --pw-body-width-one-panel: 1060px;
+  --pw-body-width-no-panels: 1180px;
+}
+
+/* ---------------------------------------------------------
+   1. 顶部导航中的工具区与搜索
+   --------------------------------------------------------- */
+
+.navbar .container-fluid {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.navbar .navbar-collapse {
+  min-width: 0;
+}
+
+.navbar .quarto-navbar-tools {
+  display: flex !important;
+  align-items: center;
+  gap: 0.2rem;
+
+  margin-left: auto !important;
+  flex: 0 0 auto;
+
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+#quarto-search {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* 搜索按钮统一尺寸 */
+#quarto-search .aa-DetachedSearchButton,
+.navbar .quarto-search-button {
+  display: inline-grid !important;
+  place-items: center;
+
+  width: 2.2rem !important;
+  height: 2.2rem !important;
+  min-width: 2.2rem !important;
+  min-height: 2.2rem !important;
+
+  padding: 0 !important;
+  margin: 0 !important;
+
+  color: var(--pw-text-soft) !important;
+  background: transparent !important;
+
+  border: 1px solid transparent !important;
+  border-radius: 9px !important;
+}
+
+#quarto-search .aa-DetachedSearchButton:hover,
+.navbar .quarto-search-button:hover {
+  color: var(--pw-text) !important;
+  background: var(--pw-surface-soft) !important;
+  border-color: var(--pw-border) !important;
+}
+
+#quarto-search svg,
+.aa-DetachedSearchButtonIcon {
+  width: 1.1rem !important;
+  height: 1.1rem !important;
+}
+
+/* ---------------------------------------------------------
+   2. 修复桌面端三栏布局
+   --------------------------------------------------------- */
+
+@media (min-width: 1100px) {
+  body.pw-custom-layout-ready #quarto-content {
+    --pw-current-left-width: var(--pw-left-panel-width);
+    --pw-current-right-width: var(--pw-right-panel-width);
+    --pw-current-main-max: var(--pw-body-width-normal);
+
+    display: grid !important;
+
+    /*
+      与 v1.2 的区别：
+      中间列使用 1fr 填满剩余空间，
+      右侧目录真正贴到页面右侧，
+      不再把整个固定宽度网格居中。
+    */
+    grid-template-columns:
+      var(--pw-current-left-width)
+      minmax(0, 1fr)
+      var(--pw-current-right-width) !important;
+
+    column-gap: var(--pw-layout-gap) !important;
+
+    width: 100% !important;
+    max-width: none !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    justify-content: stretch !important;
+    align-items: start;
+
+    transition:
+      grid-template-columns var(--pw-layout-speed) ease;
+  }
+
+  body.pw-left-collapsed #quarto-content {
+    --pw-current-left-width: 0px;
+    --pw-current-main-max: var(--pw-body-width-one-panel);
+  }
+
+  body.pw-right-collapsed #quarto-content {
+    --pw-current-right-width: 0px;
+    --pw-current-main-max: var(--pw-body-width-one-panel);
+  }
+
+  body.pw-left-collapsed.pw-right-collapsed #quarto-content {
+    --pw-current-left-width: 0px;
+    --pw-current-right-width: 0px;
+    --pw-current-main-max: var(--pw-body-width-no-panels);
+  }
+
+  main.content {
+    grid-column: 2 !important;
+
+    width: min(100%, var(--pw-current-main-max)) !important;
+    max-width: var(--pw-current-main-max) !important;
+    min-width: 0;
+
+    justify-self: center;
+
+    margin: 0 !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+
+    transition:
+      width var(--pw-layout-speed) ease,
+      max-width var(--pw-layout-speed) ease;
+  }
+
+  #quarto-sidebar {
+    grid-column: 1 !important;
+
+    width: var(--pw-left-panel-width) !important;
+    max-width: var(--pw-left-panel-width) !important;
+
+    margin: 0 !important;
+  }
+
+  #quarto-margin-sidebar {
+    grid-column: 3 !important;
+
+    width: var(--pw-right-panel-width) !important;
+    max-width: var(--pw-right-panel-width) !important;
+
+    margin: 0 !important;
+    padding: 0 0.55rem 1.5rem 0.75rem !important;
+
+    border-left: 1px solid
+      color-mix(in srgb, var(--pw-border) 70%, transparent);
+
+    background: transparent !important;
+  }
+
+  body.pw-left-collapsed #quarto-sidebar {
+    width: 0 !important;
+    max-width: 0 !important;
+  }
+
+  body.pw-right-collapsed #quarto-margin-sidebar {
+    width: 0 !important;
+    max-width: 0 !important;
+
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    border-left-color: transparent;
+  }
+}
+
+/* ---------------------------------------------------------
+   3. 左侧栏减少屏幕边缘留白
+   --------------------------------------------------------- */
+
+#quarto-sidebar .pw-panel-toolbar {
+  padding-left: 0.45rem;
+  padding-right: 0.45rem;
+}
+
+#quarto-sidebar .sidebar-navigation {
+  padding-left: 0.15rem;
+  padding-right: 0.15rem;
+}
+
+/* 普通导航项目 */
+.sidebar-item .sidebar-link {
+  margin-left: 0.3rem;
+  margin-right: 0.38rem;
+
+  padding-left: 0.72rem;
+  padding-right: 0.55rem;
+
+  min-width: 0;
+}
+
+/* 所有导航文字只显示一行 */
+.sidebar-item .sidebar-link,
+.sidebar-item .sidebar-link .menu-text,
+.sidebar-section .sidebar-section-item,
+.sidebar-section .sidebar-section-item .menu-text {
+  white-space: nowrap !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 当前项左侧标记同步靠近 */
+.sidebar-item .sidebar-link::before {
+  left: -0.28rem;
+}
+
+/* ---------------------------------------------------------
+   4. 一级分类标题更明确
+   --------------------------------------------------------- */
+
+.sidebar-section {
+  margin-top: 0.65rem;
+  margin-bottom: 0.45rem;
+}
+
+.sidebar-section .sidebar-section-item {
+  color: var(--pw-text) !important;
+
+  font-size: 0.86rem;
+  font-weight: 760;
+  letter-spacing: 0.025em;
+
+  padding: 0.56rem 0.58rem 0.38rem;
+
+  border-top: 1px solid
+    color-mix(in srgb, var(--pw-border) 64%, transparent);
+}
+
+/* 第一个分类不需要顶部线 */
+.sidebar-navigation
+  > .sidebar-section:first-child
+  .sidebar-section-item {
+  border-top: 0;
+}
+
+.sidebar-section .sidebar-section-item:hover {
+  color: var(--pw-primary-hover) !important;
+}
+
+/* 分类箭头更加清晰 */
+.sidebar-section .sidebar-item-toggle,
+.sidebar-section .bi-chevron-right,
+.sidebar-section .bi-chevron-down {
+  color: var(--pw-text-faint);
+  flex: 0 0 auto;
+}
+
+/* 二级页面略微缩小，形成清楚层次 */
+.sidebar-section .sidebar-item .sidebar-link {
+  font-size: 0.88rem;
+  font-weight: 480;
+}
+
+/* 当前页面仍然突出 */
+.sidebar-section .sidebar-item .sidebar-link.active {
+  font-weight: 690;
+}
+
+/* ---------------------------------------------------------
+   5. 右侧目录紧凑化，避免形成大块空白
+   --------------------------------------------------------- */
+
+#quarto-margin-sidebar .pw-panel-toolbar {
+  min-height: 2.7rem;
+
+  padding: 0.38rem 0 0.38rem 0.1rem;
+
+  border-bottom-color:
+    color-mix(in srgb, var(--pw-border) 65%, transparent);
+}
+
+#quarto-margin-sidebar .pw-panel-toolbar-title {
+  color: var(--pw-text);
+  font-size: 0.76rem;
+  font-weight: 740;
+}
+
+#quarto-margin-sidebar #TOC {
+  padding:
+    0.55rem
+    0
+    1rem
+    0 !important;
+}
+
+#quarto-margin-sidebar #TOC .nav-link {
+  margin: 0 !important;
+
+  padding:
+    0.26rem
+    0.1rem
+    0.26rem
+    0.68rem;
+
+  white-space: normal;
+  overflow-wrap: anywhere;
+
+  font-size: 0.8rem;
+  line-height: 1.38;
+}
+
+/* ---------------------------------------------------------
+   6. 收起后的按钮更贴近屏幕边缘
+   --------------------------------------------------------- */
+
+.pw-edge-toggle-left {
+  left: 0.25rem;
+}
+
+.pw-edge-toggle-right {
+  right: 0.25rem;
+}
+
+/* =========================================================
+   Password Guide Theme v1.4
+   放弃自定义三列 Grid，改为左右固定面板
+   ========================================================= */
+
+@media (min-width: 1100px) {
+  /* 不再让 #quarto-content 自己组成三列 */
+  body.pw-custom-layout-ready #quarto-content {
+    display: block !important;
+
+    width: 100% !important;
+    max-width: none !important;
+
+    margin: 0 !important;
+
+    padding-left:
+      calc(var(--pw-left-panel-width) + 1rem) !important;
+
+    padding-right:
+      calc(var(--pw-right-panel-width) + 1rem) !important;
+
+    transition:
+      padding-left var(--pw-layout-speed) ease,
+      padding-right var(--pw-layout-speed) ease;
+  }
+
+  /* 左栏收起后，立即释放左边空间 */
+  body.pw-left-collapsed #quarto-content {
+    padding-left: 1rem !important;
+  }
+
+  /* 右栏收起后，立即释放右边空间 */
+  body.pw-right-collapsed #quarto-content {
+    padding-right: 1rem !important;
+  }
+
+  /* 正文始终在剩余可用区域内居中 */
+  body.pw-custom-layout-ready main.content {
+    display: block !important;
+
+    width: min(100%, 960px) !important;
+    max-width: 960px !important;
+
+    margin-left: auto !important;
+    margin-right: auto !important;
+
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+
+    transition:
+      width var(--pw-layout-speed) ease,
+      max-width var(--pw-layout-speed) ease;
+  }
+
+  body.pw-left-collapsed main.content,
+  body.pw-right-collapsed main.content {
+    width: min(100%, 1060px) !important;
+    max-width: 1060px !important;
+  }
+
+  body.pw-left-collapsed.pw-right-collapsed main.content {
+    width: min(100%, 1180px) !important;
+    max-width: 1180px !important;
+  }
+
+  /* 左侧导航固定贴住窗口左边 */
+  body.pw-custom-layout-ready #quarto-sidebar {
+    position: fixed !important;
+
+    top: var(--pw-navbar-height) !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: auto !important;
+
+    width: var(--pw-left-panel-width) !important;
+    max-width: var(--pw-left-panel-width) !important;
+    height: auto !important;
+
+    margin: 0 !important;
+
+    z-index: 1020;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    transform: translateX(0);
+
+    transition:
+      transform var(--pw-layout-speed) ease,
+      opacity var(--pw-layout-speed) ease,
+      visibility var(--pw-layout-speed) step-start;
+  }
+
+  body.pw-left-collapsed #quarto-sidebar {
+    transform: translateX(-100%);
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  /* 右侧目录固定贴住窗口右边 */
+  body.pw-custom-layout-ready #quarto-margin-sidebar {
+    position: fixed !important;
+
+    top: var(--pw-navbar-height) !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    left: auto !important;
+
+    width: var(--pw-right-panel-width) !important;
+    max-width: var(--pw-right-panel-width) !important;
+    height: auto !important;
+
+    margin: 0 !important;
+    padding: 0 0.55rem 1.5rem 0.65rem !important;
+
+    z-index: 1015;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    border-left: 1px solid
+      color-mix(in srgb, var(--pw-border) 70%, transparent);
+
+    background: rgb(255 253 249 / 0.92) !important;
+
+    -webkit-backdrop-filter: blur(16px) saturate(115%);
+    backdrop-filter: blur(16px) saturate(115%);
+
+    transform: translateX(0);
+
+    transition:
+      transform var(--pw-layout-speed) ease,
+      opacity var(--pw-layout-speed) ease,
+      visibility var(--pw-layout-speed) step-start;
+  }
+
+  body.quarto-dark #quarto-margin-sidebar,
+  .quarto-dark body #quarto-margin-sidebar {
+    background: rgb(31 35 39 / 0.92) !important;
+  }
+
+  body.pw-right-collapsed #quarto-margin-sidebar {
+    transform: translateX(100%);
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
+
+/* 强制显示并固定顶部搜索工具区 */
+.navbar .quarto-navbar-tools {
+  display: flex !important;
+  align-items: center;
+
+  margin-left: auto !important;
+
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.navbar #quarto-search {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* =========================================================
+   左侧导航一级分类标题
+   攻略 / 收集 / 底层机制 / 版本档案 / 其他
+   ========================================================= */
+
+#quarto-sidebar
+.sidebar-item-section
+> .sidebar-item-container
+> .sidebar-item-text,
+
+#quarto-sidebar
+.sidebar-item-section
+> .sidebar-item-container
+> a.sidebar-link,
+
+#quarto-sidebar
+.sidebar-section
+> .sidebar-section-item {
+  color: var(--pw-text) !important;
+
+  font-size: 0.9rem !important;
+  font-weight: 700 !important;
+
+  letter-spacing: 0.025em;
+}
+
+/* 一级标题与下方子项目拉开距离 */
+#quarto-sidebar .sidebar-item-section {
+  margin-top: 0.75rem;
+  margin-bottom: 0.32rem;
+}
+
+/* 一级标题悬停 */
+#quarto-sidebar
+.sidebar-item-section
+> .sidebar-item-container:hover
+> .sidebar-item-text,
+
+#quarto-sidebar
+.sidebar-item-section
+> .sidebar-item-container:hover
+> a.sidebar-link {
+  color: var(--pw-primary-hover) !important;
+}
+
+/* 二级页面保持普通字重 */
+#quarto-sidebar
+.sidebar-item-section
+.sidebar-item:not(.sidebar-item-section)
+.sidebar-link {
+  font-weight: 480 !important;
+}
+
+/* 当前二级页面仍然加粗 */
+#quarto-sidebar
+.sidebar-item-section
+.sidebar-item:not(.sidebar-item-section)
+.sidebar-link.active {
+  font-weight: 690 !important;
+}
+
+/* =========================================================
+   稳定的 Quarto 搜索入口
+   ========================================================= */
+
+.navbar .quarto-navbar-tools {
+  display: flex !important;
+  align-items: center;
+  gap: 0.22rem;
+
+  margin-left: auto !important;
+
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.pw-search-launcher {
+  display: inline-grid;
+  place-items: center;
+
+  width: 2.2rem;
+  height: 2.2rem;
+  min-width: 2.2rem;
+
+  padding: 0;
+  margin: 0;
+
+  color: var(--pw-text-soft);
+  background: transparent;
+
+  border: 1px solid transparent;
+  border-radius: 9px;
+
+  cursor: pointer;
+
+  transition:
+    color 150ms ease,
+    background-color 150ms ease,
+    border-color 150ms ease;
+}
+
+.pw-search-launcher:hover {
+  color: var(--pw-text);
+  background: var(--pw-surface-soft);
+  border-color: var(--pw-border);
+}
+
+.pw-search-launcher svg {
+  width: 1.12rem;
+  height: 1.12rem;
+
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/*
+  Quarto 原生搜索节点继续留在页面中负责搜索功能，
+  但不再需要显示它自身的按钮。
+*/
+#quarto-search {
+  position: absolute !important;
+
+  width: 1px !important;
+  height: 1px !important;
+
+  overflow: hidden !important;
+
+  clip: rect(0 0 0 0) !important;
+  clip-path: inset(50%) !important;
+
+  white-space: nowrap !important;
+}
+
+/* =========================================================
+   左侧导航覆盖完整视口高度
+   ========================================================= */
+
+@media (min-width: 1100px) {
+  body.pw-custom-layout-ready #quarto-sidebar {
+    top: var(--pw-navbar-height) !important;
+    bottom: auto !important;
+
+    height:
+      calc(100dvh - var(--pw-navbar-height)) !important;
+
+    min-height:
+      calc(100dvh - var(--pw-navbar-height)) !important;
+
+    max-height:
+      calc(100dvh - var(--pw-navbar-height)) !important;
+
+    background: rgb(247 244 238 / 0.96) !important;
+
+    border-right: 1px solid var(--pw-border) !important;
+
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+  }
+
+  body.quarto-dark #quarto-sidebar,
+  .quarto-dark body #quarto-sidebar {
+    background: rgb(31 35 39 / 0.96) !important;
+  }
+
+  #quarto-sidebar .sidebar-menu-container,
+  #quarto-sidebar .sidebar-navigation {
+    min-height: 100%;
+
+    background: transparent !important;
+  }
+
+  body.pw-left-collapsed #quarto-sidebar {
+    transform: translateX(-100%);
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
+
+/* =========================================================
+   密码提示 details：统一内部留白
+   ========================================================= */
+
+main.content details {
+  padding:
+    0
+    1rem
+    0.9rem;
+
+  background: var(--pw-surface);
+
+  border: 1px solid
+    color-mix(
+      in srgb,
+      var(--pw-accent) 58%,
+      var(--pw-border)
+    );
+
+  border-radius: 10px;
+}
+
+main.content details > summary {
+  margin:
+    0
+    -1rem
+    0.75rem;
+
+  padding:
+    0.72rem
+    1rem;
+
+  background:
+    color-mix(
+      in srgb,
+      var(--pw-accent) 5%,
+      var(--pw-surface)
+    );
+
+  border-bottom: 1px solid
+    color-mix(
+      in srgb,
+      var(--pw-accent) 22%,
+      var(--pw-border)
+    );
+}
+
+/*
+  取消旧规则对子元素的额外 margin，
+  统一由 details 自身的 padding 控制。
+*/
+main.content details > :not(summary) {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+main.content details:not([open]) {
+  padding-bottom: 0;
+}
+
+main.content details:not([open]) > summary {
+  margin-bottom: 0;
+
+  border-bottom: 0;
+}
+
+main.content details[open] > :last-child {
+  margin-bottom: 0;
+}
+
+/* =========================================================
+   Callout v2：中性正文 + 低饱和语义色
+   ========================================================= */
+
+.callout {
+  --pw-callout-color: #74828d;
+  --pw-callout-tint: rgb(116 130 141 / 0.07);
+
+  background: var(--pw-surface) !important;
+
+  border:
+    1px solid
+    color-mix(
+      in srgb,
+      var(--pw-callout-color) 27%,
+      var(--pw-border)
+    ) !important;
+
+  border-left:
+    3px solid
+    var(--pw-callout-color) !important;
+
+  border-radius: 10px;
+
+  box-shadow:
+    0 1px 2px rgb(31 34 37 / 0.025);
+
+  overflow: hidden;
+}
+
+.callout .callout-header {
+  min-height: 2.7rem;
+
+  padding:
+    0.58rem
+    0.78rem !important;
+
+  color: var(--pw-text) !important;
+  background: var(--pw-callout-tint) !important;
+
+  border-bottom:
+    1px solid
+    color-mix(
+      in srgb,
+      var(--pw-callout-color) 15%,
+      var(--pw-border)
+    ) !important;
+}
+
+.callout .callout-title-container {
+  color: var(--pw-text) !important;
+
+  font-size: 0.91rem;
+  font-weight: 700;
+}
+
+.callout .callout-icon-container {
+  color: var(--pw-callout-color) !important;
+}
+
+.callout .callout-body {
+  background: var(--pw-surface) !important;
+}
+
+.callout .callout-body-container {
+  padding:
+    0.85rem
+    0.85rem
+    0.9rem !important;
+
+  color: var(--pw-text);
+
+  font-size: 0.92rem;
+  line-height: 1.7;
+}
+
+/* 蓝灰：普通说明 */
+.callout-note {
+  --pw-callout-color: #6f8797;
+  --pw-callout-tint: rgb(111 135 151 / 0.07);
+}
+
+/* 鼠尾草绿：建议 */
+.callout-tip {
+  --pw-callout-color: #708774;
+  --pw-callout-tint: rgb(112 135 116 / 0.07);
+}
+
+/* 灰金：警告 */
+.callout-warning {
+  --pw-callout-color: #9a774b;
+  --pw-callout-tint: rgb(154 119 75 / 0.075);
+}
+
+/* 灰玫瑰：重要 */
+.callout-important {
+  --pw-callout-color: #906b74;
+  --pw-callout-tint: rgb(144 107 116 / 0.07);
+}
+
+/* 灰砖红：谨慎 */
+.callout-caution {
+  --pw-callout-color: #8e625f;
+  --pw-callout-tint: rgb(142 98 95 / 0.07);
+}
+
+/* 深色模式略微提高标题底色 */
+body.quarto-dark .callout,
+.quarto-dark body .callout {
+  --pw-callout-tint:
+    color-mix(
+      in srgb,
+      var(--pw-callout-color) 10%,
+      var(--pw-surface)
+    );
+}
+
+/* =========================================================
+   左侧一级分类标题加粗
+   ========================================================= */
+
+#quarto-sidebar
+.sidebar-item-section
+> .sidebar-item-container
+.sidebar-item-text,
+
+#quarto-sidebar
+.sidebar-item-section
+> .sidebar-item-container
+.menu-text,
+
+#quarto-sidebar
+.sidebar-section
+> .sidebar-section-item {
+  color: var(--pw-text) !important;
+
+  font-weight: 700 !important;
+
+  letter-spacing: 0.015em;
+}
+
+/* 下属页面恢复普通字重 */
+#quarto-sidebar
+.sidebar-item-section
+.sidebar-item
+.sidebar-link {
+  font-weight: 470 !important;
+}
+
+/* 当前页面保持明显加粗 */
+#quarto-sidebar
+.sidebar-item-section
+.sidebar-item
+.sidebar-link.active {
+  font-weight: 680 !important;
+}
+
+/* =========================================================
+   Password Guide Theme v1.5
+   侧栏箭头、标题层级、图片说明、导图与表格优化
+   ========================================================= */
+
+body.quarto-light,
+.quarto-light body {
+  --pw-heading-3: #62574d;
+}
+
+body.quarto-dark,
+.quarto-dark body {
+  --pw-heading-3: #c6b8a8;
+}
+
+/* ---------------------------------------------------------
+   1. 左侧一级分类标题和展开箭头垂直居中
+   --------------------------------------------------------- */
+
+/*
+  一级分类的容器统一为 flex。
+  文字占据剩余空间，箭头固定在右侧中央。
+*/
+#quarto-sidebar
+.sidebar-item-section
+> .sidebar-item-container {
+  display: flex !important;
+  align-items: center !important;
+
+  min-height: 2.5rem;
+}
+
+/* 一级标题链接 */
+#quarto-sidebar
+.sidebar-item-section
+> .sidebar-item-container
+> .sidebar-link {
+  display: flex !important;
+  align-items: center !important;
+
+  flex: 1 1 auto;
+  min-width: 0;
+
+  line-height: 1.35 !important;
+}
+
+/* 展开／收起按钮 */
+#quarto-sidebar
+.sidebar-item-section
+> .sidebar-item-container
+> .sidebar-item-toggle {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  align-self: center !important;
+
+  flex: 0 0 1.8rem;
+
+  width: 1.8rem;
+  height: 1.8rem;
+
+  margin: 0 0.18rem 0 0 !important;
+  padding: 0 !important;
+
+  line-height: 1 !important;
+}
+
+/* Quarto 使用的图标本身也归零偏移 */
+#quarto-sidebar
+.sidebar-item-section
+> .sidebar-item-container
+> .sidebar-item-toggle
+svg,
+
+#quarto-sidebar
+.sidebar-item-section
+> .sidebar-item-container
+> .sidebar-item-toggle
+.bi {
+  display: block;
+
+  width: 0.85rem;
+  height: 0.85rem;
+
+  margin: 0 !important;
+
+  vertical-align: middle;
+
+  transform-origin: center;
+}
+
+/* 防止旧规则造成箭头向上偏移 */
+#quarto-sidebar .sidebar-item-toggle {
+  top: auto !important;
+  bottom: auto !important;
+
+  transform: none;
+}
+
+/* ---------------------------------------------------------
+   2. 图片说明居中
+   --------------------------------------------------------- */
+
+main.content figure {
+  text-align: center;
+}
+
+main.content figcaption,
+main.content .figure-caption,
+main.content .quarto-figure-center > figcaption {
+  display: block;
+
+  width: 100%;
+
+  margin-top: 0.65rem;
+
+  color: var(--pw-text-faint);
+
+  font-size: 0.84rem;
+  line-height: 1.5;
+
+  text-align: center !important;
+}
+
+/*
+  某些 Quarto 图片没有生成标准 figure，
+  而是图片后紧跟 .figure-caption。
+*/
+main.content img + .figure-caption {
+  text-align: center !important;
+}
+
+/* ---------------------------------------------------------
+   3. 三级标题改成暖灰棕
+   --------------------------------------------------------- */
+
+main.content h3 {
+  color: var(--pw-heading-3) !important;
+
+  font-size: 1.08rem;
+  font-weight: 690;
+
+  letter-spacing: -0.004em;
+}
+
+/* 四级标题继续接近正文色，避免层级混乱 */
+main.content h4 {
+  color: var(--pw-text) !important;
+}
+
+/* ---------------------------------------------------------
+   4. 页面大标题、副标题和正文之间增加层次
+   --------------------------------------------------------- */
+
+.quarto-title-block {
+  margin-bottom: 2.65rem !important;
+}
+
+.quarto-title {
+  margin-bottom: 0 !important;
+}
+
+.quarto-title h1,
+h1.title {
+  margin-top: 0;
+  margin-bottom: 0.72rem !important;
+
+  line-height: 1.18;
+}
+
+/* 副标题和标题保持关联 */
+.quarto-title .subtitle,
+.quarto-title-block .description {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+
+  color: var(--pw-text-soft);
+
+  line-height: 1.55;
+}
+
+/*
+  面包屑与大标题之间略增加距离，
+  避免所有内容挤在页面顶部。
+*/
+.quarto-page-breadcrumbs {
+  margin-bottom: 1.45rem !important;
+}
+
+/* 标题区后面的第一段不需要额外上边距 */
+.quarto-title-block + p,
+.quarto-title-block + section > p:first-child {
+  margin-top: 0;
+}
+
+/* ---------------------------------------------------------
+   5. 奖牌导图进一步缩小并居中
+   --------------------------------------------------------- */
+
+main.content img[src*="medal-map-b085"] {
+  display: block;
+
+  width: min(70%, 740px) !important;
+  max-width: 740px !important;
+  height: auto;
+
+  margin-left: auto !important;
+  margin-right: auto !important;
+
+  cursor: zoom-in;
+}
+
+/* 屏幕较窄时避免图片过小 */
+@media (max-width: 900px) {
+  main.content img[src*="medal-map-b085"] {
+    width: min(90%, 740px) !important;
+  }
+}
+
+/* 手机端恢复充分利用宽度 */
+@media (max-width: 600px) {
+  main.content img[src*="medal-map-b085"] {
+    width: 100% !important;
+  }
+}
+
+/* ---------------------------------------------------------
+   6. 表格按内容决定宽度，而非强制撑满正文
+   --------------------------------------------------------- */
+
+.quarto-table-container,
+.table-responsive {
+  width: 100%;
+  max-width: 100%;
+
+  overflow-x: auto;
+
+  scrollbar-width: thin;
+}
+
+/*
+  fit-content 会让短表格按内容收缩；
+  max-width: 100% 保证长表格仍在正文范围内换行。
+*/
+main.content table,
+main.content .table {
+  width: fit-content !important;
+  min-width: min(100%, 34rem);
+  max-width: 100% !important;
+
+  table-layout: auto !important;
+
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+
+/* 表头和单元格不再平均分配宽度 */
+main.content table th,
+main.content table td {
+  width: auto !important;
+}
+
+/*
+  代码变量通常不应该被拆成两三行。
+  只约束代码本身，不强制整个单元格不换行。
+*/
+main.content table td code,
+main.content table th code {
+  white-space: nowrap;
+}
+
+/*
+  很短的数字列可以自然收缩。
+  :has() 在当前 Edge / Chrome / Safari 均可用。
+*/
+main.content table th:has(> code),
+main.content table td:has(> code) {
+  white-space: nowrap;
+}
+
+/* 长文本列仍然允许正常换行 */
+main.content table td {
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+
+/*
+  表格只有少量短内容时，避免显得过分扁平。
+  仍保留最低阅读宽度。
+*/
+main.content table:has(> thead > tr > :nth-child(2):last-child) {
+  min-width: min(100%, 28rem);
+}
+
+main.content table:has(> thead > tr > :nth-child(3):last-child) {
+  min-width: min(100%, 36rem);
+}
+
+/* ---------------------------------------------------------
+   7. 可选：专门用于紧凑型表格
+   --------------------------------------------------------- */
+
+/*
+  未来某张表格仍然很别扭时，可以在 Markdown 外包一层：
+
+  ::: {.table-compact}
+  | ... |
+  :::
+
+  不需要修改其他表格。
+*/
+
+main.content .table-compact table {
+  width: fit-content !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+}
+
+main.content .table-compact th,
+main.content .table-compact td {
+  padding-left: 0.72rem;
+  padding-right: 0.72rem;
+  white-space: nowrap;
+}
+
+/*
+  最后一列通常是解释文字。
+  紧凑表中仍允许最后一列换行。
+*/
+main.content .table-compact th:last-child,
+main.content .table-compact td:last-child {
+  min-width: 16rem;
+  max-width: 30rem;
+
+  white-space: normal;
+}
+
+/* =========================================================
+   Cast Files 顺序表：定点列宽
+   ========================================================= */
+
+.table-cast-order {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.table-cast-order table {
+  width: 100% !important;
+  min-width: 56rem;
+  max-width: none !important;
+
+  table-layout: fixed !important;
+
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+/* 顺序 */
+.table-cast-order th:nth-child(1),
+.table-cast-order td:nth-child(1) {
+  width: 4.5rem !important;
+  min-width: 4.5rem;
+  max-width: 4.5rem;
+
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* 档案 */
+.table-cast-order th:nth-child(2),
+.table-cast-order td:nth-child(2) {
+  width: 8.5rem !important;
+  min-width: 8.5rem;
+
+  white-space: nowrap;
+}
+
+/* 解锁变量 */
+.table-cast-order th:nth-child(3),
+.table-cast-order td:nth-child(3) {
+  width: 19rem !important;
+  min-width: 19rem;
+
+  white-space: nowrap;
+}
+
+/* 主要解锁条件自动使用剩余宽度 */
+.table-cast-order th:nth-child(4),
+.table-cast-order td:nth-child(4) {
+  width: auto !important;
+
+  white-space: normal;
+  overflow-wrap: break-word;
+}
+
+/* =========================================================
+   Search Overlay v2
+   ========================================================= */
+
+/* 背景遮罩 */
+.aa-DetachedOverlay {
+  background: rgb(39 36 32 / 0.32) !important;
+
+  -webkit-backdrop-filter: blur(7px);
+  backdrop-filter: blur(7px);
+}
+
+/* 整个搜索窗口 */
+.aa-DetachedContainer {
+  width: min(64rem, calc(100vw - 2rem)) !important;
+  max-width: 64rem !important;
+
+  margin: 1rem auto !important;
+
+  color: var(--pw-text) !important;
+  background: rgb(255 253 249 / 0.97) !important;
+
+  border: 1px solid var(--pw-border) !important;
+  border-radius: 16px !important;
+
+  box-shadow:
+    0 24px 70px rgb(30 27 23 / 0.18),
+    inset 0 1px 0 rgb(255 255 255 / 0.8);
+
+  overflow: hidden;
+}
+
+body.quarto-dark .aa-DetachedContainer,
+.quarto-dark body .aa-DetachedContainer {
+  background: rgb(31 35 39 / 0.97) !important;
+}
+
+/* 搜索框所在的顶部 */
+.aa-DetachedFormContainer {
+  padding: 0.75rem !important;
+
+  background: var(--pw-surface-soft) !important;
+
+  border-bottom: 1px solid var(--pw-border) !important;
+}
+
+/* 输入框外框 */
+.aa-Form {
+  min-height: 3.15rem;
+
+  background: var(--pw-surface) !important;
+
+  border: 1px solid var(--pw-border-strong) !important;
+  border-radius: 12px !important;
+
+  box-shadow: none !important;
+
+  transition:
+    border-color 150ms ease,
+    box-shadow 150ms ease;
+}
+
+.aa-Form:focus-within {
+  border-color: var(--pw-accent) !important;
+
+  box-shadow:
+    0 0 0 3px
+    color-mix(
+      in srgb,
+      var(--pw-accent) 16%,
+      transparent
+    ) !important;
+}
+
+/* 输入文字 */
+.aa-Input {
+  color: var(--pw-text) !important;
+  background: transparent !important;
+
+  font-family: var(--pw-font-sans) !important;
+  font-size: 1rem !important;
+}
+
+/* 搜索图标和清除按钮 */
+.aa-SubmitIcon,
+.aa-ClearIcon {
+  color: var(--pw-text-faint) !important;
+}
+
+/* 取消按钮 */
+.aa-DetachedCancelButton {
+  color: var(--pw-text-soft) !important;
+  background: transparent !important;
+
+  border: 0 !important;
+  border-radius: 9px !important;
+
+  font-family: var(--pw-font-sans) !important;
+  font-size: 0.9rem !important;
+  font-weight: 620 !important;
+
+  padding: 0.55rem 0.7rem !important;
+}
+
+.aa-DetachedCancelButton:hover {
+  color: var(--pw-text) !important;
+  background: var(--pw-surface-hover) !important;
+}
+
+/* 结果区域 */
+.aa-Panel {
+  color: var(--pw-text) !important;
+  background: var(--pw-surface) !important;
+
+  padding:
+    0.4rem
+    0.55rem
+    1rem !important;
+}
+
+/* 匹配文档数量 */
+.aa-SourceHeader {
+  color: var(--pw-text-faint) !important;
+  background: var(--pw-surface-soft) !important;
+
+  border-bottom: 1px solid var(--pw-border) !important;
+
+  font-size: 0.82rem !important;
+  font-weight: 620 !important;
+
+  padding:
+    0.45rem
+    0.75rem !important;
+}
+
+/* 单个结果 */
+.aa-Item {
+  color: var(--pw-text) !important;
+  background: transparent !important;
+
+  border: 1px solid transparent !important;
+  border-radius: 11px !important;
+
+  margin: 0.24rem 0 !important;
+  padding: 0.76rem 0.85rem !important;
+
+  transition:
+    background-color 120ms ease,
+    border-color 120ms ease;
+}
+
+/* 当前键盘或鼠标选中项 */
+.aa-Item[aria-selected="true"] {
+  color: var(--pw-text) !important;
+  background: var(--pw-accent-soft) !important;
+
+  border-color:
+    color-mix(
+      in srgb,
+      var(--pw-accent) 24%,
+      var(--pw-border)
+    ) !important;
+}
+
+/* 结果标题 */
+.aa-ItemContentTitle,
+.search-result-title {
+  color: var(--pw-text) !important;
+
+  font-size: 0.98rem !important;
+  font-weight: 700 !important;
+}
+
+/* 面包屑 */
+.aa-ItemContentDescription,
+.search-result-context {
+  color: var(--pw-text-faint) !important;
+
+  font-size: 0.8rem !important;
+}
+
+/* 结果摘要 */
+.search-result-text,
+.aa-ItemContentBody {
+  color: var(--pw-text-soft) !important;
+
+  font-size: 0.88rem !important;
+  line-height: 1.55 !important;
+}
+
+/* 匹配词高亮 */
+.aa-Item mark,
+.search-result-text mark {
+  color: var(--pw-text) !important;
+  background:
+    color-mix(
+      in srgb,
+      var(--pw-accent) 22%,
+      transparent
+    ) !important;
+
+  border-radius: 3px;
+
+  padding: 0 0.08em;
+}
+
+/* 结果之间的分隔 */
+.aa-List {
+  padding: 0.15rem 0 !important;
+}
+
+/* 手机 */
+@media (max-width: 700px) {
+  .aa-DetachedContainer {
+    width: 100% !important;
+    max-width: none !important;
+
+    margin: 0 !important;
+
+    border-radius: 0 !important;
+  }
+}
+
+/* =========================================================
+   角色标签页
+   ========================================================= */
+
+.character-tabs {
+  margin:
+    1.4rem
+    0
+    2.3rem;
+}
+
+/* 顶部角色栏 */
+.character-tabs > .nav-tabs {
+  display: grid !important;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+
+  width: 100%;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  background: var(--pw-surface-soft);
+
+  border: 1px solid var(--pw-border) !important;
+  border-bottom: 0 !important;
+  border-radius:
+    12px
+    12px
+    0
+    0;
+
+  overflow: hidden;
+}
+
+/* 每个角色 */
+.character-tabs > .nav-tabs .nav-item {
+  min-width: 0;
+  margin: 0 !important;
+}
+
+/* 按钮 */
+.character-tabs > .nav-tabs .nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  min-height: 3rem;
+
+  margin: 0 !important;
+  padding:
+    0.68rem
+    0.35rem !important;
+
+  color: var(--pw-text-soft) !important;
+  background: transparent !important;
+
+  border: 0 !important;
+  border-right: 1px solid var(--pw-border) !important;
+  border-radius: 0 !important;
+
+  font-size: 0.9rem;
+  font-weight: 620;
+  text-align: center;
+
+  transition:
+    color 140ms ease,
+    background-color 140ms ease,
+    box-shadow 140ms ease;
+}
+
+.character-tabs > .nav-tabs .nav-item:last-child .nav-link {
+  border-right: 0 !important;
+}
+
+/* 悬停 */
+.character-tabs > .nav-tabs .nav-link:hover {
+  color: var(--pw-text) !important;
+  background:
+    color-mix(
+      in srgb,
+      var(--pw-accent) 6%,
+      var(--pw-surface)
+    ) !important;
+}
+
+/* 当前角色 */
+.character-tabs > .nav-tabs .nav-link.active {
+  color: var(--pw-text) !important;
+  background: var(--pw-surface) !important;
+
+  font-weight: 720;
+
+  box-shadow:
+    inset 0 -3px 0 var(--pw-accent),
+    inset 0 1px 0 rgb(255 255 255 / 0.65);
+}
+
+/* 内容区域 */
+.character-tabs > .tab-content {
+  min-height: 15rem;
+
+  padding:
+    1.35rem
+    1.25rem
+    1.45rem;
+
+  background: var(--pw-surface);
+
+  border: 1px solid var(--pw-border);
+  border-radius:
+    0
+    0
+    12px
+    12px;
+
+  box-shadow:
+    0 1px 2px rgb(30 27 23 / 0.025);
+}
+
+/* 标签内容中的第一个元素无需额外上距 */
+.character-tabs > .tab-content .tab-pane > :first-child {
+  margin-top: 0 !important;
+}
+
+/* 标签内容中的最后一个元素 */
+.character-tabs > .tab-content .tab-pane > :last-child {
+  margin-bottom: 0 !important;
+}
+
+/* 标签页内表格不要贴着面板边缘 */
+.character-tabs > .tab-content table {
+  margin-top: 0.55rem;
+  margin-bottom: 0.6rem;
+}
+
+/* 窄屏幕横向滑动角色标签 */
+@media (max-width: 760px) {
+  .character-tabs > .nav-tabs {
+    display: flex !important;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    scrollbar-width: thin;
+  }
+
+  .character-tabs > .nav-tabs .nav-item {
+    flex:
+      0
+      0
+      7rem;
+  }
+
+  .character-tabs > .tab-content {
+    min-height: 0;
+
+    padding:
+      1.05rem
+      0.85rem
+      1.15rem;
+  }
+}
+
+/* =========================================================
+   Search Overlay v3：紧凑尺寸
+   ========================================================= */
+
+.aa-DetachedContainer {
+  width: min(52rem, calc(100vw - 2.5rem)) !important;
+  max-width: 52rem !important;
+  max-height: calc(100dvh - 3rem) !important;
+
+  margin: 1.5rem auto !important;
+
+  border-radius: 14px !important;
+
+  font-size: 0.88rem !important;
+}
+
+/* 顶部搜索区域 */
+.aa-DetachedFormContainer {
+  padding: 0.58rem 0.65rem !important;
+}
+
+/* 搜索输入框 */
+.aa-Form {
+  min-height: 2.7rem !important;
+  border-radius: 10px !important;
+}
+
+.aa-Input {
+  height: 2.65rem !important;
+
+  font-size: 0.9rem !important;
+  line-height: 1.4 !important;
+}
+
+.aa-InputWrapperPrefix,
+.aa-InputWrapperSuffix {
+  height: 2.65rem !important;
+}
+
+/* 搜索和清除图标 */
+.aa-SubmitIcon,
+.aa-ClearIcon {
+  width: 1rem !important;
+  height: 1rem !important;
+}
+
+/* 取消保持横排 */
+.aa-DetachedCancelButton {
+  min-width: 3.2rem !important;
+
+  padding: 0.42rem 0.55rem !important;
+
+  font-size: 0.82rem !important;
+  line-height: 1.2 !important;
+
+  white-space: nowrap !important;
+  writing-mode: horizontal-tb !important;
+  word-break: keep-all !important;
+}
+
+/* 匹配数量 */
+.aa-SourceHeader {
+  padding: 0.36rem 0.62rem !important;
+
+  font-size: 0.76rem !important;
+}
+
+/* 结果列表 */
+.aa-Panel {
+  padding: 0.3rem 0.45rem 0.75rem !important;
+}
+
+.aa-Item {
+  margin: 0.16rem 0 !important;
+  padding: 0.56rem 0.68rem !important;
+
+  border-radius: 9px !important;
+}
+
+/* 文档标题 */
+.aa-ItemContentTitle,
+.search-result-title {
+  font-size: 0.88rem !important;
+  line-height: 1.35 !important;
+}
+
+/* 面包屑 */
+.aa-ItemContentDescription,
+.search-result-context {
+  margin-top: 0.12rem !important;
+
+  font-size: 0.72rem !important;
+  line-height: 1.35 !important;
+}
+
+/* 摘要 */
+.search-result-text,
+.aa-ItemContentBody {
+  margin-top: 0.28rem !important;
+
+  font-size: 0.8rem !important;
+  line-height: 1.43 !important;
+}
+
+/* 强制覆盖 Quarto 默认的鲜蓝选中项 */
+.aa-Item[aria-selected="true"],
+.aa-Item[aria-selected="true"] > *,
+.aa-Item[aria-selected="true"] .search-result-section,
+.aa-Item[aria-selected="true"] .search-result-item {
+  color: var(--pw-text) !important;
+  background: var(--pw-accent-soft) !important;
+}
+
+.aa-Item[aria-selected="true"] .aa-ItemContentTitle,
+.aa-Item[aria-selected="true"] .search-result-title,
+.aa-Item[aria-selected="true"] .aa-ItemContentDescription,
+.aa-Item[aria-selected="true"] .search-result-context,
+.aa-Item[aria-selected="true"] .search-result-text {
+  color: var(--pw-text) !important;
+}
+
+/* “更多匹配结果” */
+.search-result-more {
+  padding: 0.48rem 0.68rem !important;
+
+  font-size: 0.78rem !important;
+}
+
+/* =========================================================
+   Cast Files 表格：覆盖 Quarto colgroup
+   ========================================================= */
+
+.table-cast-order {
+  width: 100%;
+  max-width: 100%;
+
+  overflow-x: auto;
+}
+
+.table-cast-order table {
+  width: 100% !important;
+  min-width: 54rem !important;
+  max-width: none !important;
+
+  table-layout: fixed !important;
+
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+/*
+  关键：直接覆盖 Quarto 生成的 colgroup。
+*/
+.table-cast-order col:nth-child(1) {
+  width: 4.25rem !important;
+}
+
+.table-cast-order col:nth-child(2) {
+  width: 8.5rem !important;
+}
+
+.table-cast-order col:nth-child(3) {
+  width: 19rem !important;
+}
+
+.table-cast-order col:nth-child(4) {
+  width: auto !important;
+}
+
+/* 第一列 */
+.table-cast-order th:nth-child(1),
+.table-cast-order td:nth-child(1) {
+  width: 4.25rem !important;
+  min-width: 4.25rem !important;
+  max-width: 4.25rem !important;
+
+  padding-left: 0.45rem !important;
+  padding-right: 0.45rem !important;
+
+  text-align: center !important;
+  white-space: nowrap !important;
+}
+
+/* 档案 */
+.table-cast-order th:nth-child(2),
+.table-cast-order td:nth-child(2) {
+  width: 8.5rem !important;
+  white-space: nowrap !important;
+}
+
+/* 变量 */
+.table-cast-order th:nth-child(3),
+.table-cast-order td:nth-child(3) {
+  width: 19rem !important;
+  white-space: nowrap !important;
+}
+
+/* 主要条件 */
+.table-cast-order th:nth-child(4),
+.table-cast-order td:nth-child(4) {
+  width: auto !important;
+
+  white-space: normal !important;
+  overflow-wrap: break-word;
+}
+
+/* 通用数字首列 */
+.table-number-first table {
+  width: fit-content !important;
+  max-width: 100% !important;
+
+  table-layout: auto !important;
+}
+
+.table-number-first col:first-child {
+  width: 5rem !important;
+}
+
+.table-number-first th:first-child,
+.table-number-first td:first-child {
+  width: 5rem !important;
+  min-width: 5rem !important;
+  max-width: 5rem !important;
+
+  text-align: center !important;
+  white-space: nowrap !important;
+}
+
+/* =========================================================
+   面包屑和页面标题统一左边界
+   ========================================================= */
+
+main.content > .quarto-page-breadcrumbs,
+main.content > #title-block-header,
+main.content > .quarto-title-block {
+  width: 100% !important;
+
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+
+  justify-self: stretch !important;
+}
+
+.quarto-page-breadcrumbs,
+.quarto-page-breadcrumbs .breadcrumb,
+.quarto-page-breadcrumbs ol {
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+
+  transform: none !important;
+}
+
+#title-block-header,
+#title-block-header .quarto-title-block,
+#title-block-header .quarto-title {
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+}
+
+/* 站点固定使用浅色模式 */
+html {
+  color-scheme: light;
+}
+
+.quarto-color-scheme-toggle {
+  display: none !important;
+}
+
+/* =========================================================
+   Search Overlay v4：统一选中状态与文字选择颜色
+   ========================================================= */
+
+/* 键盘或鼠标当前选中的搜索结果 */
+.aa-Item[aria-selected="true"],
+.search-result-item[aria-selected="true"],
+.search-result-section[aria-selected="true"],
+.aa-Item[aria-selected="true"] .search-result-item,
+.aa-Item[aria-selected="true"] .search-result-section,
+.search-result-item.active,
+.search-result-item:hover {
+  color: var(--pw-text) !important;
+
+  background:
+    color-mix(
+      in srgb,
+      var(--pw-accent) 11%,
+      var(--pw-surface)
+    ) !important;
+
+  border-color:
+    color-mix(
+      in srgb,
+      var(--pw-accent) 30%,
+      var(--pw-border)
+    ) !important;
+
+  box-shadow: none !important;
+}
+
+/* 阻止内部块继续使用默认蓝色 */
+.aa-Item[aria-selected="true"] *,
+.search-result-item[aria-selected="true"] *,
+.search-result-section[aria-selected="true"] *,
+.search-result-item.active * {
+  color: inherit !important;
+  background-color: transparent !important;
+}
+
+/* 标题保持较深 */
+.aa-Item[aria-selected="true"] .aa-ItemContentTitle,
+.aa-Item[aria-selected="true"] .search-result-title,
+.search-result-item[aria-selected="true"] .search-result-title {
+  color: var(--pw-text) !important;
+}
+
+/* 摘要稍弱，但不能变成蓝色 */
+.aa-Item[aria-selected="true"] .search-result-text,
+.aa-Item[aria-selected="true"] .aa-ItemContentBody,
+.search-result-item[aria-selected="true"] .search-result-text {
+  color: var(--pw-text-soft) !important;
+}
+
+/* 搜索关键词高亮 */
+.aa-Item mark,
+.search-result-item mark,
+.search-result-text mark {
+  color: var(--pw-text) !important;
+
+  background:
+    color-mix(
+      in srgb,
+      var(--pw-accent) 22%,
+      transparent
+    ) !important;
+
+  border-radius: 3px;
+  padding: 0 0.08em;
+}
+
+/*
+  用户真正拖动鼠标选择文字时，
+  也使用暖金色，而不是浏览器默认蓝色。
+*/
+.aa-DetachedContainer ::selection {
+  color: var(--pw-text);
+  background:
+    color-mix(
+      in srgb,
+      var(--pw-accent) 30%,
+      transparent
+    );
+}
+
+/* =========================================================
+   十二枚奖牌详细索引：定点列宽
+   ========================================================= */
+
+.table-medal-index {
+  width: 100%;
+  max-width: 100%;
+
+  overflow-x: auto;
+
+  border-radius: var(--pw-radius-md);
+}
+
+/*
+  使用 fixed，让列宽严格服从下方比例，
+  不再由长代码自动抢走大量空间。
+*/
+.table-medal-index table {
+  width: 100% !important;
+  min-width: 58rem !important;
+  max-width: none !important;
+
+  table-layout: fixed !important;
+
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+/* 同时覆盖 Quarto 可能生成的 colgroup */
+.table-medal-index col:nth-child(1) {
+  width: 14% !important;
+}
+
+.table-medal-index col:nth-child(2) {
+  width: 15% !important;
+}
+
+.table-medal-index col:nth-child(3) {
+  width: 39% !important;
+}
+
+.table-medal-index col:nth-child(4) {
+  width: 32% !important;
+}
+
+/* 奖牌名称 */
+.table-medal-index th:nth-child(1),
+.table-medal-index td:nth-child(1) {
+  width: 14% !important;
+
+  white-space: normal !important;
+  overflow-wrap: break-word;
+}
+
+/* 必需路线 */
+.table-medal-index th:nth-child(2),
+.table-medal-index td:nth-child(2) {
+  width: 15% !important;
+
+  white-space: normal !important;
+}
+
+/* 玩家侧剧情位置：获得最多空间 */
+.table-medal-index th:nth-child(3),
+.table-medal-index td:nth-child(3) {
+  width: 39% !important;
+
+  white-space: normal !important;
+  overflow-wrap: break-word;
+}
+
+/* 实际写入节点 */
+.table-medal-index th:nth-child(4),
+.table-medal-index td:nth-child(4) {
+  width: 32% !important;
+
+  white-space: normal !important;
+  overflow-wrap: break-word;
+}
+
+/*
+  单个代码标签不从中间断开，
+  但多个代码标签之间仍可自然换行。
+*/
+.table-medal-index td:nth-child(4) code {
+  display: inline-block;
+
+  max-width: 100%;
+
+  white-space: nowrap;
+}
+
+/* 桌面端稍微缩小该表字号，提高信息密度 */
+@media (min-width: 900px) {
+  .table-medal-index table {
+    font-size: 0.91rem;
+  }
+
+  .table-medal-index th,
+  .table-medal-index td {
+    padding:
+      0.66rem
+      0.7rem !important;
+  }
+}
+
+/* =========================================================
+   Gallery CG 定位器
+   ========================================================= */
+
+#gallery-locator-root {
+  margin: 2rem 0 2.5rem;
+}
+
+.gallery-locator {
+  padding: 1.25rem;
+
+  color: var(--pw-text);
+  background: var(--pw-surface-soft);
+
+  border: 1px solid var(--pw-border);
+  border-radius: 12px;
+}
+
+.gallery-locator-header {
+  margin-bottom: 1.15rem;
+}
+
+.gallery-locator-header h2 {
+  margin: 0 0 0.45rem !important;
+  padding: 0 !important;
+
+  font-size: 1.35rem !important;
+
+  border: 0 !important;
+}
+
+.gallery-locator-header h2::before {
+  content: none !important;
+}
+
+.gallery-locator-header p {
+  margin: 0.25rem 0;
+  color: var(--pw-text-soft);
+}
+
+.gallery-locator .gallery-locator-count {
+  color: var(--pw-accent-hover);
+  font-size: 0.9rem;
+  font-weight: 680;
+}
+
+#gallery-locator-root .gallery-locator-section {
+  min-width: 0;
+  margin: 0;
+  padding: 1.1rem 1rem 1rem;
+
+  background: var(--pw-surface);
+
+  border: 1px solid var(--pw-border);
+  border-radius: 10px;
+}
+
+#gallery-locator-root .gallery-locator-section + .gallery-locator-section {
+  margin-top: 0.85rem;
+}
+
+#gallery-locator-root .gallery-locator-section legend {
+  float: none;
+  width: auto;
+  margin: 0 0 0 0.25rem;
+  padding-inline: 0.5rem;
+
+  color: var(--pw-text);
+  background: var(--pw-surface);
+
+  font-size: 0.94rem;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.gallery-locator-controls {
+  display: grid;
+  grid-template-columns: auto minmax(8rem, 1.2fr) auto minmax(4rem, 0.55fr) auto minmax(4rem, 0.55fr) auto;
+  gap: 0.55rem;
+  align-items: center;
+}
+
+.gallery-locator label {
+  margin: 0;
+  color: var(--pw-text-soft);
+  font-size: 0.88rem;
+  font-weight: 650;
+}
+
+.gallery-locator select,
+.gallery-locator input,
+.gallery-locator button {
+  min-height: 2.55rem;
+  font: inherit;
+  border-radius: 8px;
+}
+
+.gallery-locator select,
+.gallery-locator input {
+  width: 100%;
+  padding: 0.48rem 0.68rem;
+
+  color: var(--pw-text);
+  background: var(--pw-surface);
+
+  border: 1px solid var(--pw-border-strong);
+}
+
+.gallery-locator select:focus,
+.gallery-locator input:focus {
+  border-color: var(--pw-accent);
+  outline: 0;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--pw-accent) 18%, transparent);
+}
+
+.gallery-locator button {
+  padding: 0.48rem 0.9rem;
+
+  color: var(--pw-text);
+  background: var(--pw-accent-soft);
+
+  border: 1px solid color-mix(in srgb, var(--pw-accent) 55%, var(--pw-border));
+
+  font-weight: 680;
+  cursor: pointer;
+
+  transition:
+    background-color var(--pw-transition),
+    border-color var(--pw-transition),
+    box-shadow var(--pw-transition);
+}
+
+.gallery-locator button:hover {
+  background: color-mix(in srgb, var(--pw-accent) 16%, var(--pw-surface));
+  border-color: var(--pw-accent);
+}
+
+.gallery-locator button:focus-visible {
+  border-color: var(--pw-accent-hover);
+  outline: 0;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--pw-accent) 20%, transparent);
+}
+
+.gallery-locator-search > label {
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.gallery-locator-search-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.55rem;
+}
+
+#gallery-locator-root .gallery-search-results {
+  display: grid;
+  gap: 0.42rem;
+
+  max-height: 22rem;
+  margin-top: 0.75rem;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+}
+
+#gallery-locator-root .gallery-search-results:empty {
+  display: none;
+}
+
+#gallery-locator-root .gallery-locator-result {
+  display: grid;
+  grid-template-columns: minmax(8rem, 0.7fr) minmax(12rem, 1.3fr);
+  gap: 0.25rem 0.75rem;
+  align-items: start;
+
+  min-height: 0;
+  padding: 0.58rem 0.7rem;
+
+  color: var(--pw-text);
+  background: var(--pw-surface);
+
+  border-color: var(--pw-border);
+
+  text-align: left;
+}
+
+#gallery-locator-root .gallery-locator-result:hover {
+  background: color-mix(in srgb, var(--pw-accent) 9%, var(--pw-surface));
+}
+
+#gallery-locator-root .gallery-locator-result strong {
+  color: var(--pw-primary-hover);
+  overflow-wrap: anywhere;
+}
+
+#gallery-locator-root .gallery-locator-result span {
+  color: var(--pw-text-soft);
+  font-size: 0.84rem;
+  overflow-wrap: anywhere;
+}
+
+#gallery-locator-root .gallery-result-trigger,
+#gallery-locator-root .gallery-result-match,
+#gallery-locator-root .gallery-result-context {
+  grid-column: 1 / -1;
+}
+
+#gallery-locator-root .gallery-result-match {
+  color: var(--pw-text-faint);
+  font-size: 0.79rem;
+}
+
+#gallery-locator-root .gallery-result-trigger {
+  color: var(--pw-text);
+}
+
+#gallery-locator-root .gallery-result-context {
+  display: -webkit-box;
+  overflow: hidden;
+
+  line-height: 1.48;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+#gallery-locator-root .gallery-location-output:empty,
+#gallery-locator-root .gallery-location-status:empty,
+#gallery-locator-root .gallery-location-detail:empty,
+#gallery-locator-root .gallery-search-status:empty,
+#gallery-locator-root .gallery-search-detail:empty {
+  display: none;
+}
+
+#gallery-locator-root .gallery-detail-card {
+  margin-top: 0.9rem;
+  padding: 1rem;
+
+  background: var(--pw-surface);
+
+  border: 1px solid var(--pw-border);
+  border-radius: 10px;
+  box-shadow: var(--pw-shadow-soft);
+}
+
+#gallery-locator-root .gallery-detail-card h3 {
+  margin: 0 0 0.8rem;
+  padding: 0;
+
+  color: var(--pw-primary-hover);
+  font-size: 1.08rem;
+  line-height: 1.4;
+
+  border: 0;
+}
+
+#gallery-locator-root .gallery-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem 1rem;
+
+  margin: 0;
+}
+
+#gallery-locator-root .gallery-detail-grid > div:nth-child(3),
+#gallery-locator-root .gallery-detail-context {
+  grid-column: 1 / -1;
+}
+
+#gallery-locator-root .gallery-detail-grid dt {
+  margin: 0 0 0.18rem;
+
+  color: var(--pw-text-soft);
+  font-size: 0.8rem;
+  font-weight: 680;
+  letter-spacing: 0.02em;
+}
+
+#gallery-locator-root .gallery-detail-grid dd {
+  margin: 0;
+
+  color: var(--pw-text);
+  font-size: 0.92rem;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+}
+
+#gallery-locator-root .gallery-detail-context dd {
+  white-space: normal;
+}
+
+#gallery-locator-root .gallery-location-status,
+#gallery-locator-root .gallery-search-status,
+.gallery-locator-status {
+  min-height: 1.5rem;
+  margin-top: 0.9rem;
+  padding: 0.7rem 0.8rem;
+
+  color: var(--pw-text-soft);
+  background: color-mix(in srgb, var(--pw-accent) 6%, var(--pw-surface));
+
+  border-left: 3px solid var(--pw-accent);
+  border-radius: 6px;
+
+  font-size: 0.9rem;
+  white-space: pre-line;
+}
+
+.gallery-locator-error .gallery-locator-status {
+  color: var(--pw-caution-border);
+  background: var(--pw-caution-bg);
+  border-left-color: var(--pw-caution-border);
+}
+
+.gallery-grid {
+  contain: inline-size;
+  max-width: 100%;
+  overflow-x: auto;
+  scroll-margin-block: 7rem;
+}
+
+.gallery-grid td.gallery-cell-match {
+  background: color-mix(in srgb, var(--pw-accent) 12%, var(--pw-surface)) !important;
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--pw-accent) 70%, transparent);
+}
+
+.gallery-grid td.gallery-cell-target,
+.gallery-grid td.gallery-cell-target.gallery-cell-match {
+  position: relative;
+  z-index: 1;
+
+  background: color-mix(in srgb, var(--pw-accent) 20%, var(--pw-surface)) !important;
+  box-shadow:
+    inset 0 0 0 2px var(--pw-accent-hover),
+    0 0 0 3px color-mix(in srgb, var(--pw-accent) 16%, transparent);
+}
+
+.gallery-grid td.gallery-cell-target:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--pw-accent) 48%, transparent);
+  outline-offset: 2px;
+}
+
+@media (max-width: 760px) {
+  .gallery-locator {
+    padding: 0.9rem;
+  }
+
+  .gallery-locator-controls {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .gallery-locator-controls button {
+    grid-column: 1 / -1;
+    width: 100%;
+  }
+
+  .gallery-locator-search-row {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-locator-search-row button {
+    width: 100%;
+  }
+
+  #gallery-locator-root .gallery-locator-result {
+    grid-template-columns: 1fr;
+    gap: 0.18rem;
+  }
+
+  #gallery-locator-root .gallery-result-trigger,
+  #gallery-locator-root .gallery-result-match,
+  #gallery-locator-root .gallery-result-context {
+    grid-column: auto;
+  }
+
+  #gallery-locator-root .gallery-detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  #gallery-locator-root .gallery-detail-grid > div:nth-child(3),
+  #gallery-locator-root .gallery-detail-context {
+    grid-column: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gallery-locator *,
+  .gallery-cell-match,
+  .gallery-cell-target {
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+}
+
+/* =========================================================
+   Gallery 完整触发索引（仅限本页折叠索引）
+   ========================================================= */
+
+#gallery-trigger-index .gallery-trigger-group {
+  min-width: 0;
+  max-width: 100%;
+}
+
+#gallery-trigger-index .gallery-trigger-group .gallery-trigger-table-scroll {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: visible;
+  overscroll-behavior-inline: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+#gallery-trigger-index .gallery-trigger-group table {
+  display: table;
+  table-layout: fixed !important;
+
+  width: 100% !important;
+  min-width: 68rem;
+  max-width: none !important;
+}
+
+#gallery-trigger-index .gallery-trigger-group col:nth-child(2),
+#gallery-trigger-index .gallery-trigger-group th:nth-child(2),
+#gallery-trigger-index .gallery-trigger-group td:nth-child(2) {
+  display: none;
+}
+
+#gallery-trigger-index .gallery-trigger-group col:nth-child(1),
+#gallery-trigger-index .gallery-trigger-group th:nth-child(1),
+#gallery-trigger-index .gallery-trigger-group td:nth-child(1) {
+  width: 18% !important;
+}
+
+#gallery-trigger-index .gallery-trigger-group col:nth-child(3),
+#gallery-trigger-index .gallery-trigger-group th:nth-child(3),
+#gallery-trigger-index .gallery-trigger-group td:nth-child(3) {
+  width: 29% !important;
+}
+
+#gallery-trigger-index .gallery-trigger-group col:nth-child(4),
+#gallery-trigger-index .gallery-trigger-group th:nth-child(4),
+#gallery-trigger-index .gallery-trigger-group td:nth-child(4) {
+  width: 53% !important;
+}
+
+#gallery-trigger-index .gallery-trigger-group th,
+#gallery-trigger-index .gallery-trigger-group td {
+  height: auto;
+  padding: 0.62rem 0.68rem !important;
+
+  vertical-align: top;
+  white-space: normal;
+}
+
+#gallery-trigger-index .gallery-trigger-group th:nth-child(1),
+#gallery-trigger-index .gallery-trigger-group td:nth-child(1) {
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+
+#gallery-trigger-index .gallery-trigger-group th:nth-child(4),
+#gallery-trigger-index .gallery-trigger-group td:nth-child(4) {
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+#gallery-trigger-index .gallery-trigger-group code {
+  display: inline-block;
+
+  max-width: none;
+
+  white-space: nowrap;
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+/* Gallery 页底部：不在画廊内的四条索引 */
+
+#gallery-non-gallery-index.gallery-non-gallery-index {
+  min-width: 0;
+  max-width: 100%;
+}
+
+#gallery-non-gallery-index.gallery-non-gallery-index .gallery-non-gallery-table-scroll {
+  contain: inline-size;
+
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: visible;
+  overscroll-behavior-inline: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+#gallery-non-gallery-index.gallery-non-gallery-index table {
+  display: table;
+  table-layout: fixed !important;
+
+  width: 100% !important;
+  min-width: 68rem;
+  max-width: none !important;
+}
+
+#gallery-non-gallery-index.gallery-non-gallery-index col:nth-child(2),
+#gallery-non-gallery-index.gallery-non-gallery-index th:nth-child(2),
+#gallery-non-gallery-index.gallery-non-gallery-index td:nth-child(2) {
+  display: none;
+}
+
+#gallery-non-gallery-index.gallery-non-gallery-index col:nth-child(1),
+#gallery-non-gallery-index.gallery-non-gallery-index th:nth-child(1),
+#gallery-non-gallery-index.gallery-non-gallery-index td:nth-child(1) {
+  width: 18% !important;
+}
+
+#gallery-non-gallery-index.gallery-non-gallery-index col:nth-child(3),
+#gallery-non-gallery-index.gallery-non-gallery-index th:nth-child(3),
+#gallery-non-gallery-index.gallery-non-gallery-index td:nth-child(3) {
+  width: 31% !important;
+}
+
+#gallery-non-gallery-index.gallery-non-gallery-index col:nth-child(4),
+#gallery-non-gallery-index.gallery-non-gallery-index th:nth-child(4),
+#gallery-non-gallery-index.gallery-non-gallery-index td:nth-child(4) {
+  width: 51% !important;
+}
+
+#gallery-non-gallery-index.gallery-non-gallery-index th,
+#gallery-non-gallery-index.gallery-non-gallery-index td {
+  height: auto;
+  padding: 0.62rem 0.68rem !important;
+
+  vertical-align: top;
+  white-space: normal;
+}
+
+#gallery-non-gallery-index.gallery-non-gallery-index th:nth-child(1),
+#gallery-non-gallery-index.gallery-non-gallery-index td:nth-child(1) {
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+
+#gallery-non-gallery-index.gallery-non-gallery-index th:nth-child(4),
+#gallery-non-gallery-index.gallery-non-gallery-index td:nth-child(4) {
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+#gallery-non-gallery-index.gallery-non-gallery-index code {
+  display: inline-block;
+
+  max-width: none;
+
+  white-space: nowrap;
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+/* 彩蛋页中文密码图：仅缩放这一张图片 */
+
+main.content img[src*="easter-passwords-b085-zh"] {
+  display: block;
+
+  width: min(42%, 480px);
+  max-width: 480px;
+  height: auto;
+  margin: 1.25rem auto;
+}
+
+@media (max-width: 760px) {
+  main.content img[src*="easter-passwords-b085-zh"] {
+    width: min(88%, 480px);
+  }
+}

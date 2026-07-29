@@ -1,0 +1,261 @@
+<script>
+(() => {
+  "use strict";
+
+  const LEFT_KEY = "pw-guide-left-sidebar-collapsed";
+  const RIGHT_KEY = "pw-guide-right-toc-collapsed";
+  const DESKTOP_QUERY = window.matchMedia("(min-width: 1100px)");
+
+  const createButton = ({
+    className,
+    label,
+    icon,
+    onClick
+  }) => {
+    const button = document.createElement("button");
+
+    button.type = "button";
+    button.className = className;
+    button.setAttribute("aria-label", label);
+    button.setAttribute("title", label);
+
+    const iconElement = document.createElement("span");
+    iconElement.className = "pw-panel-toggle-icon";
+    iconElement.setAttribute("aria-hidden", "true");
+    iconElement.textContent = icon;
+
+    button.append(iconElement);
+    button.addEventListener("click", onClick);
+
+    return button;
+  };
+
+  const createToolbar = (title, button) => {
+    const toolbar = document.createElement("div");
+    toolbar.className = "pw-panel-toolbar";
+
+    const titleElement = document.createElement("span");
+    titleElement.className = "pw-panel-toolbar-title";
+    titleElement.textContent = title;
+
+    toolbar.append(titleElement, button);
+    return toolbar;
+  };
+
+  const initialise = () => {
+    const body = document.body;
+    const leftSidebar = document.querySelector("#quarto-sidebar");
+    const rightSidebar = document.querySelector("#quarto-margin-sidebar");
+
+    const installSearchLauncher = () => {
+    const navbarInner = document.querySelector(
+        ".navbar .container-fluid"
+    );
+
+    if (!navbarInner) return;
+
+    let navbarTools = document.querySelector(
+        ".navbar .quarto-navbar-tools"
+    );
+
+    if (!navbarTools) {
+        navbarTools = document.createElement("div");
+        navbarTools.className = "quarto-navbar-tools";
+        navbarInner.append(navbarTools);
+    }
+
+    if (navbarTools.querySelector(".pw-search-launcher")) {
+        return;
+    }
+
+    const launcher = document.createElement("button");
+
+    launcher.type = "button";
+    launcher.className = "pw-search-launcher";
+    launcher.setAttribute("aria-label", "搜索");
+    launcher.setAttribute("title", "搜索");
+    launcher.innerHTML = `
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="11" cy="11" r="6.75"></circle>
+        <path d="M16 16l4.25 4.25"></path>
+        </svg>
+    `;
+
+    launcher.addEventListener("click", () => {
+        const nativeButton = document.querySelector(
+        "#quarto-search .aa-DetachedSearchButton, " +
+        "#quarto-search button"
+        );
+
+        if (nativeButton) {
+        nativeButton.click();
+        return;
+        }
+
+        /*
+        Quarto 原生搜索支持 /、s、f 快捷键。
+        这里用 / 作为原生按钮尚未完成挂载时的后备方案。
+        */
+        const eventOptions = {
+        key: "/",
+        code: "Slash",
+        bubbles: true,
+        cancelable: true
+        };
+
+        document.dispatchEvent(
+        new KeyboardEvent("keydown", eventOptions)
+        );
+
+        window.dispatchEvent(
+        new KeyboardEvent("keydown", eventOptions)
+        );
+    });
+
+    navbarTools.append(launcher);
+    };
+
+    installSearchLauncher();
+
+    /* 防止旧 reader-mode 按钮继续显示 */
+    document.querySelectorAll(".quarto-reader-toggle").forEach((element) => {
+      element.remove();
+    });
+
+    if (!leftSidebar && !rightSidebar) {
+      return;
+    }
+
+    body.classList.add("pw-custom-layout-ready");
+
+    const leftCollapseButton = createButton({
+      className: "pw-panel-toggle pw-panel-toggle-left",
+      label: "收起左侧导航",
+      icon: "←",
+      onClick: () => setLeftCollapsed(true)
+    });
+
+    const rightCollapseButton = createButton({
+      className: "pw-panel-toggle pw-panel-toggle-right",
+      label: "收起本页目录",
+      icon: "→",
+      onClick: () => setRightCollapsed(true)
+    });
+
+    const leftOpenButton = createButton({
+      className: "pw-edge-toggle pw-edge-toggle-left",
+      label: "展开左侧导航",
+      icon: "→",
+      onClick: () => setLeftCollapsed(false)
+    });
+
+    const rightOpenButton = createButton({
+      className: "pw-edge-toggle pw-edge-toggle-right",
+      label: "展开本页目录",
+      icon: "←",
+      onClick: () => setRightCollapsed(false)
+    });
+
+    if (leftSidebar) {
+      leftSidebar.prepend(
+        createToolbar("导航", leftCollapseButton)
+      );
+
+      document.body.append(leftOpenButton);
+    }
+
+    if (rightSidebar) {
+      rightSidebar.prepend(
+        createToolbar("本页目录", rightCollapseButton)
+      );
+
+      document.body.append(rightOpenButton);
+
+      /* 隐藏 Quarto 自带的重复“该页面内容”标题 */
+      rightSidebar
+        .querySelectorAll(
+          "nav[role='doc-toc'] > h2, .toc-title"
+        )
+        .forEach((element) => {
+          element.classList.add("pw-hide-default-toc-title");
+        });
+    }
+
+    function setLeftCollapsed(collapsed, persist = true) {
+      if (!leftSidebar) return;
+
+      body.classList.toggle("pw-left-collapsed", collapsed);
+      leftSidebar.setAttribute(
+        "aria-hidden",
+        collapsed ? "true" : "false"
+      );
+
+      if ("inert" in leftSidebar) {
+        leftSidebar.inert = collapsed;
+      }
+
+      if (persist) {
+        localStorage.setItem(LEFT_KEY, collapsed ? "1" : "0");
+      }
+    }
+
+    function setRightCollapsed(collapsed, persist = true) {
+      if (!rightSidebar) return;
+
+      body.classList.toggle("pw-right-collapsed", collapsed);
+      rightSidebar.setAttribute(
+        "aria-hidden",
+        collapsed ? "true" : "false"
+      );
+
+      if ("inert" in rightSidebar) {
+        rightSidebar.inert = collapsed;
+      }
+
+      if (persist) {
+        localStorage.setItem(RIGHT_KEY, collapsed ? "1" : "0");
+      }
+    }
+
+    function applyResponsiveState() {
+      if (!DESKTOP_QUERY.matches) {
+        body.classList.remove(
+          "pw-left-collapsed",
+          "pw-right-collapsed"
+        );
+
+        if (leftSidebar) {
+          leftSidebar.removeAttribute("aria-hidden");
+          if ("inert" in leftSidebar) leftSidebar.inert = false;
+        }
+
+        if (rightSidebar) {
+          rightSidebar.removeAttribute("aria-hidden");
+          if ("inert" in rightSidebar) rightSidebar.inert = false;
+        }
+
+        return;
+      }
+
+      setLeftCollapsed(
+        localStorage.getItem(LEFT_KEY) === "1",
+        false
+      );
+
+      setRightCollapsed(
+        localStorage.getItem(RIGHT_KEY) === "1",
+        false
+      );
+    }
+
+    applyResponsiveState();
+    DESKTOP_QUERY.addEventListener("change", applyResponsiveState);
+  };
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initialise);
+  } else {
+    initialise();
+  }
+})();
+</script>

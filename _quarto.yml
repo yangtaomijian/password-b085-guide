@@ -1,0 +1,144 @@
+project:
+  type: website
+  output-dir: _site
+  render:
+    - index.md
+    - guide/*.md
+    - collectibles/*.md
+    - mechanics/*.md
+    - versions/*.md
+    - extras/*.md
+
+lang: zh-CN
+
+website:
+  title: "Password b0.85 中文攻略与机制资料库"
+  description: "《Password》b0.85 中文路线、密码提示、收集与机制攻略"
+  search:
+    location: navbar
+    type: overlay
+    show-item-context: true
+  page-navigation: true
+  back-to-top-navigation: true
+  bread-crumbs: true
+
+  navbar:
+    background: primary
+    left:
+      - href: index.md
+        text: 首页
+
+      - text: 攻略
+        menu:
+          - href: guide/route-overview.md
+            text: 剧情线路总览
+          - href: guide/path-system.md
+            text: 字母线系统
+          - href: guide/password-hints.md
+            text: 密码分级提示
+          - href: guide/faq.md
+            text: 常见问题
+
+      - text: 收集
+        menu:
+          - href: collectibles/medals.md
+            text: 十二枚奖牌
+          - href: collectibles/gallery.md
+            text: CG 画廊
+          - href: collectibles/compendium.md
+            text: Compendium
+
+      - text: 机制
+        menu:
+          - href: mechanics/affection.md
+            text: 好感度机制
+          - href: mechanics/medal-persistence.md
+            text: 奖牌持久化
+          - href: mechanics/password-checks.md
+            text: 密码检定机制
+
+      - text: 版本档案
+        menu:
+          - href: versions/b085-changes.md
+            text: b0.85 主要变化
+          - href: versions/legacy-routes.md
+            text: 旧版本线路
+          - href: versions/legacy-passwords.md
+            text: 旧版本密码
+          - href: versions/legacy-mechanics.md
+            text: 旧版本机制
+
+      - href: extras/easter-eggs.md
+        text: 彩蛋
+
+  sidebar:
+    style: docked
+    collapse-level: 1
+    search: false
+    contents:
+      - section: "开始阅读"
+        contents:
+          - href: index.md
+            text: 首页
+          - href: guide/faq.md
+            text: 常见问题
+
+      - section: "攻略"
+        contents:
+          - href: guide/route-overview.md
+            text: 剧情线路总览
+          - href: guide/path-system.md
+            text: 字母线系统
+          - href: guide/password-hints.md
+            text: 密码分级提示
+
+      - section: "收集"
+        contents:
+          - href: collectibles/medals.md
+            text: 十二枚奖牌收集指南
+          - href: collectibles/gallery.md
+            text: CG 画廊查漏索引
+          - href: collectibles/compendium.md
+            text: Compendium 解锁索引
+
+      - section: "底层机制"
+        contents:
+          - href: mechanics/affection.md
+            text: 好感度机制与加点
+          - href: mechanics/medal-persistence.md
+            text: 奖牌持久化与最终检定
+          - href: mechanics/password-checks.md
+            text: 密码检定机制
+
+      - section: "版本档案"
+        contents:
+          - href: versions/b085-changes.md
+            text: b0.85 版本主要变化
+          - href: versions/legacy-routes.md
+            text: 旧版本线路档案
+          - href: versions/legacy-passwords.md
+            text: 旧版本密码档案
+          - href: versions/legacy-mechanics.md
+            text: 旧版本机制档案
+
+      - section: "其他"
+        contents:
+          - href: extras/easter-eggs.md
+            text: 彩蛋与废弃设定
+
+  page-footer:
+    left: "Password b0.85 中文攻略与机制资料库"
+    right: "玩家整理资料，仅供攻略与考据参考"
+
+format:
+  html:
+    theme:
+      light: cosmo
+    css: assets/pw-guide-theme.css
+    include-after-body: assets/pw-layout-controls.html
+    toc: true
+    toc-depth: 3
+    smooth-scroll: true
+    code-copy: true
+    code-overflow: wrap
+    link-external-newwindow: true
