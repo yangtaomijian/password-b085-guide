@@ -103,6 +103,8 @@ b0.7 及更早版本的 D8 晚上存在一段自由问答。玩家可以自行�
 
 ### 基础交互
 
+::: {.legacy-basic-interaction-table .table-responsive .table-scroll-medium}
+
 | 主题 | 可尝试的输入 |
 |---|---|
 | 询问身份 | `who am i`、`who are you` |
@@ -116,7 +118,11 @@ b0.7 及更早版本的 D8 晚上存在一段自由问答。玩家可以自行�
 | 所在位置 | `where` |
 | 兔子连续问答 | 先输入 `rabbit`，再输入 `what rabbit` |
 
+:::
+
 ### 闲聊与彩蛋
+
+::: {.legacy-chat-easter-egg-table .table-responsive .table-scroll-large}
 
 | 主题 | 可尝试的输入 |
 |---|---|
@@ -128,6 +134,8 @@ b0.7 及更早版本的 D8 晚上存在一段自由问答。玩家可以自行�
 | 直接询问密码 | `can i know password` |
 | 询问配对偏好 | `your otp` |
 | 侮辱性输入 | `lemon whore` |
+
+:::
 
 ### 凶手与动机
 

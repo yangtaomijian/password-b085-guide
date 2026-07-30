@@ -1864,6 +1864,53 @@ main.content img[src*="medal-map-b085"] {
 }
 
 /*
+  宽表格只在自己的容器中横向滚动。
+  页面与标签页祖先保持可收缩，避免固有宽度泄漏到 document。
+*/
+main.content,
+main.content .panel-tabset,
+main.content .tab-content,
+main.content .tab-pane {
+  min-width: 0;
+}
+
+main.content .table-responsive {
+  display: block;
+
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  overflow-x: auto !important;
+  overflow-y: hidden;
+
+  overscroll-behavior-inline: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+main.content .table-responsive > table {
+  width: 100% !important;
+  min-width: var(--pw-table-min-width, 100%) !important;
+  max-width: none !important;
+}
+
+.table-scroll-compact {
+  --pw-table-min-width: 36rem;
+}
+
+.table-scroll-medium {
+  --pw-table-min-width: 46rem;
+}
+
+.table-scroll-large {
+  --pw-table-min-width: 52rem;
+}
+
+.table-scroll-wide {
+  --pw-table-min-width: 60rem;
+}
+
+/*
   fit-content 会让短表格按内容收缩；
   max-width: 100% 保证长表格仍在正文范围内换行。
 */

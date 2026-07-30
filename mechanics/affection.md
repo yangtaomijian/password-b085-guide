@@ -65,6 +65,8 @@ toc: true
 
 ### Orlando
 
+::: {.affection-threshold-table .table-responsive .table-scroll-large}
+
 | 阈值 | 主要影响 |
 |---:|---|
 | 5 | D6 开启 kissing practice 并显示 `orlandokiss`；D9 进入 Orlando 主动关心 Dave 的中档安慰文本 |
@@ -73,6 +75,8 @@ toc: true
 | 15 | D15—D16 中 Dave 更直接地质问 Orlando 对感情的逃避 |
 | 18 | D10 夜间出现更主动、更明确的情感亲吻 |
 | 20 | D18—D19 进入更完整的牵手、拥抱和告白推进 |
+
+:::
 
 ### Dean
 
@@ -106,6 +110,8 @@ toc: true
 
 ### Hoss
 
+::: {.affection-threshold-table .table-responsive .table-scroll-large}
+
 | 阈值 | 主要影响 |
 |---:|---|
 | 5 | D6 的相处更像约会，调情文本更加明显 |
@@ -113,6 +119,8 @@ toc: true
 | 15 | Dave 开始认真确认 Hoss 是否喜欢自己，并出现关系竞争暗示 |
 | 16 | D10 Hoss 调查事件中，若此前已有 `HossKiss == True`，增加一小段高好感对白；该阈值本身不会触发亲吻 |
 | 20 | D19 进入更完整的关系确认，并关系到 `hosskiss2` CG |
+
+:::
 
 ### Sal
 
@@ -127,6 +135,8 @@ toc: true
 
 ## D19 最终关系快速判定
 
+::: {.affection-d19-summary-table .table-responsive .table-scroll-medium}
+
 | 角色 | 自动成为男友 | 玩家可选择的中间档 | 低于中间档 |
 |---|---:|---:|---|
 | Dean | `bearlove >= 10` | 无 | 关系自动不成立 |
@@ -135,6 +145,8 @@ toc: true
 | Roswell | `boarlove >= 20` | `10 <= boarlove < 20` | 自动拒绝 |
 | Hoss | `lionlove >= 20` | `15 <= lionlove < 20` | 自动维持朋友关系 |
 | Sal | `croclove >= 20` | `15 <= croclove < 20` | 自动维持朋友关系 |
+
+:::
 
 这里只概括 D19 的最终关系控制流。
 
@@ -202,6 +214,8 @@ D1 的两类共通加点来自同一次奶茶杯输入，因此彼此互斥，�
 
 `dragonlove`
 
+::: {.affection-point-table .table-responsive .table-scroll-medium}
+
 | 时间 | 选择或条件 | 加点 |
 |---|---|---:|
 | D1 | 奶茶杯输入 `Orlando` | +1 |
@@ -227,9 +241,13 @@ D1 的两类共通加点来自同一次奶茶杯输入，因此彼此互斥，�
 | D15 A／B | 选择 `Kiss him.` | +2 |
 | D16 A／B | Orlando 事件选择 `Agree.` | +1 |
 
+:::
+
 ### Dean
 
 `bearlove`
+
+::: {.affection-point-table .table-responsive .table-scroll-medium}
 
 | 时间 | 选择或条件 | 加点 |
 |---|---|---:|
@@ -251,9 +269,13 @@ D1 的两类共通加点来自同一次奶茶杯输入，因此彼此互斥，�
 | D15 A／B | 选择 `Go for it.` | +1 |
 | D15 A／B | 选择 `Hold off.` | +2 |
 
+:::
+
 ### Tyson
 
 `wolflove`
+
+::: {.affection-point-table .table-responsive .table-scroll-medium}
 
 | 时间 | 选择或条件 | 加点 |
 |---|---|---:|
@@ -285,9 +307,13 @@ D1 的两类共通加点来自同一次奶茶杯输入，因此彼此互斥，�
 | D16 A／B | 选择 `As something more.` | +2 |
 | D18 | 选择 `Stay by the door.` | +1 |
 
+:::
+
 ### Roswell
 
 `boarlove`
+
+::: {.affection-point-table .table-responsive .table-scroll-medium}
 
 | 时间 | 选择或条件 | 加点 |
 |---|---|---:|
@@ -311,9 +337,13 @@ D1 的两类共通加点来自同一次奶茶杯输入，因此彼此互斥，�
 | D15 A／B | 开头选择 `Agree.` | +1 |
 | D16 A／B | 若 `boarlove >= 15`，选择 `I like you.` | +2 |
 
+:::
+
 ### Hoss
 
 `lionlove`
+
+::: {.affection-point-table .table-responsive .table-scroll-medium}
 
 | 时间 | 选择或条件 | 加点 |
 |---|---|---:|
@@ -340,11 +370,15 @@ D1 的两类共通加点来自同一次奶茶杯输入，因此彼此互斥，�
 | D9 | 夜间选择 `…want you to stay.` | +1 |
 | D9 | 夜间选择 `…hope you sleep well.` | +2 |
 
+:::
+
 若 D8 进入隐藏图书馆亲密段时 `lionlove >= 12`，会触发 Hoss 的接吻内容，但不会获得前一项自动 +2。
 
 ### Sal
 
 `croclove`
+
+::: {.affection-point-table .table-responsive .table-scroll-medium}
 
 | 时间 | 选择或条件 | 加点 |
 |---|---|---:|
@@ -372,6 +406,8 @@ D1 的两类共通加点来自同一次奶茶杯输入，因此彼此互斥，�
 | D9 | Sal 事件选择 `Talk.` | +1 |
 | D9 | 夜间选择 `…want to cuddle?` | +1 |
 | D9 | 夜间选择 `…want to talk more?` | +2 |
+
+:::
 
 :::
 

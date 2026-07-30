@@ -44,11 +44,15 @@ toc: true
 
 #### D19 关系结果
 
+::: {.affection-outcome-table .table-responsive .table-scroll-wide}
+
 | 条件 | 结果 |
 |---|---|
 | `dragonlove >= 20` | Dave 自动回应 Orlando，进入 `OrlandoBoyfriend`，并将 `DaveBoyfriend` 设为 `Orlando`。 |
 | `10 <= dragonlove < 20` | 出现 `I love you too.`／`Stay quiet.` 菜单，由玩家选择接受或拒绝。 |
 | `dragonlove < 10` | 自动进入 Orlando 拒绝分支，不提供恋爱回应选项。 |
+
+:::
 
 ::: {.callout-note}
 ## 叙事概括
@@ -76,10 +80,14 @@ Orlando 线的核心是从以 Dean 为借口的练习和撮合，逐渐转向 Da
 
 #### D19 关系结果
 
+::: {.affection-outcome-table .table-responsive .table-scroll-wide}
+
 | 条件 | 结果 |
 |---|---|
 | `bearlove >= 10` | 自动将 `DaveBoyfriend` 设为 `Dean`，进入正式恋爱及后续亲密场景。 |
 | `bearlove < 10` | Dave 判断约会没有带来足够的恋爱火花，Dean 关系不会成立。 |
+
+:::
 
 ::: {.callout-note}
 ## 叙事概括
@@ -108,11 +116,15 @@ Dean 的早期检定主要围绕身体亲密与约会意愿展开；`bearlove >=
 
 #### D19 关系结果
 
+::: {.affection-outcome-table .table-responsive .table-scroll-wide}
+
 | 条件 | 结果 |
 |---|---|
 | `wolflove >= 20` | Dave 自动说出 `I love you too.`，将 `DaveBoyfriend` 设为 `Tyson`，进入后续亲吻与身体亲密场景。 |
 | `10 <= wolflove < 20` | 出现 `I love you.`／`...` 菜单，由玩家决定接受或拒绝。 |
 | `wolflove < 10` | 自动进入拒绝分支；Dave 将 Tyson 定位为自己所爱的兄弟，而不是恋人。 |
+
+:::
 
 ::: {.callout-note}
 ## 叙事概括
@@ -141,11 +153,15 @@ Tyson 的检定最密集，也最常通过相邻数值区分不同强度的同�
 
 #### D19 关系结果
 
+::: {.affection-outcome-table .table-responsive .table-scroll-wide}
+
 | 条件 | 结果 |
 |---|---|
 | `boarlove >= 20` | Dave 自动答应 Roswell，将 `DaveBoyfriend` 设为 `Roswell`。 |
 | `10 <= boarlove < 20` | 出现 Relationship／Friendship 菜单，由玩家决定是否建立恋爱关系。 |
 | `boarlove < 10` | 自动拒绝恋爱关系，维持朋友定位。 |
+
+:::
 
 ::: {.callout-note}
 ## 叙事概括
@@ -179,18 +195,26 @@ Hoss 有两张亲吻 CG 分别与 `lionlove >= 12` 和 `lionlove >= 20` 关联�
 
 #### D19 关系结果
 
+::: {.affection-outcome-table .table-responsive .table-scroll-wide}
+
 | 条件 | 结果 |
 |---|---|
 | `lionlove >= 20` | Hoss 自动提出发展关系，剧情直接进入 `HossBoyfriend`，显示 `hosskiss2`。 |
 | `15 <= lionlove < 20` | Hoss 表示愿意尝试约会，出现 `Try dating.`／`Stay friends.` 菜单。 |
 | `lionlove < 15` | 自动维持朋友关系，不提供约会选择。 |
 
+:::
+
 #### 与亲吻 CG 的关系
+
+::: {.affection-kiss-table .table-responsive .table-scroll-medium}
 
 | CG | 实际条件 | 说明 |
 |---|---|---|
 | `hosskiss` | `lionroute == True` 且 `lionlove >= 12` | D8 隐藏 library 中的正式亲吻。 |
 | `hosskiss2` | D19 Hoss 线且 `lionlove >= 20` | 自动进入 Hoss 男友分支后显示。 |
+
+:::
 
 具体画廊位置和最早正常显示节点，见[CG 画廊查漏索引](../collectibles/gallery.md)。
 
@@ -219,11 +243,15 @@ Hoss 的 12 档很早就把调情推进到真实亲吻；15 档开始围绕“�
 
 #### D19 关系结果
 
+::: {.affection-outcome-table .table-responsive .table-scroll-wide}
+
 | 条件 | 结果 |
 |---|---|
 | `croclove >= 20` | Sal 直接承认 crush，Dave 自动接受约会，进入 `SalBoyfriend`。 |
 | `15 <= croclove < 20` | Sal 以假设方式讨论二人关系，出现 Romantic／Platonic 菜单。 |
 | `croclove < 15` | Sal 强调珍视 Dave 作为亲近朋友，自动进入朋友结局。 |
+
+:::
 
 ::: {.callout-note}
 ## 叙事概括
@@ -237,6 +265,8 @@ Sal 的检定围绕“克制、信任与对 Dean 的忠诚冲突”展开。
 
 ## 六条路线的 D19 最终关系阈值
 
+::: {.affection-d19-summary-table .table-responsive .table-scroll-medium}
+
 | 角色 | 自动成为男友 | 中间档：玩家可选择 | 低于中间档 |
 |---|---:|---:|---|
 | Dean | `bearlove >= 10` | 无中间选择档 | 自动不成立恋爱关系 |
@@ -245,6 +275,8 @@ Sal 的检定围绕“克制、信任与对 Dean 的忠诚冲突”展开。
 | Roswell | `boarlove >= 20` | `10 <= boarlove < 20` | 自动拒绝 |
 | Hoss | `lionlove >= 20` | `15 <= lionlove < 20` | 自动维持朋友关系 |
 | Sal | `croclove >= 20` | `15 <= croclove < 20` | 自动维持朋友关系 |
+
+:::
 
 这张表只概括 D19 的最终关系控制流。Dean 进入男友的条件最简单，随后是 Orlando、Tyson 和 Roswell；Hoss 和 Sal 难度最高。
 

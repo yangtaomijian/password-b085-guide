@@ -29,7 +29,7 @@ toc: true
 
 ### 游戏内顺序与解锁条件
 
-::: {.compendium-cast-table}
+::: {.compendium-cast-table .table-responsive .table-scroll-medium}
 
 | 顺序 | 档案 | 解锁变量 | 主要解锁条件 |
 |---:|---|---|---|
@@ -150,7 +150,7 @@ Additional Scenes 解锁后，点击按钮会通过 Ren'Py `Replay()` 启动对�
 
 ### 游戏内顺序
 
-::: {.additional-scenes-table}
+::: {.additional-scenes-table .table-responsive .table-scroll-large}
 
 | 顺序 | 场景 | 回放标签 | 解锁条件 |
 |---:|---|---|---|
@@ -180,6 +180,8 @@ Additional Scenes 解锁后，点击按钮会通过 Ren'Py `Replay()` 启动对�
 
 解锁下一项所需的完成变量，不是在点击回放按钮时立即写入，而是在对应回放接近结尾时设置。
 
+::: {.compendium-replay-completion-table .table-responsive .table-scroll-medium}
+
 | 回放 | 完成变量 |
 |---|---|
 | Tyson Epilogue | `persistent.Tyson_Encore_Complete` |
@@ -189,6 +191,8 @@ Additional Scenes 解锁后，点击按钮会通过 Ren'Py `Replay()` 启动对�
 | Hoss Epilogue | `persistent.Hoss_Encore_Complete` |
 | Dave Epilogue | `persistent.Dave_Encore_Complete` |
 | Roswell Epilogue | `persistent.Roswell_Encore_Complete` |
+
+:::
 
 如果玩家在回放中途退出，完成变量可能尚未写入，下一项也就不会开放。
 
@@ -207,6 +211,8 @@ Additional Scenes 解锁后，点击按钮会通过 Ren'Py `Replay()` 启动对�
 
 Lore 共十二项，按照标准黄道顺序排列：
 
+::: {.compendium-lore-table .table-responsive .table-scroll-compact}
+
 | 顺序 | Lore | 解锁变量 |
 |---:|---|---|
 | 1 | 白羊座 Aries | `persistent.aries` |
@@ -221,6 +227,8 @@ Lore 共十二项，按照标准黄道顺序排列：
 | 10 | 摩羯座 Capricorn | `persistent.capricorn` |
 | 11 | 水瓶座 Aquarius | `persistent.aquarius` |
 | 12 | 双鱼座 Pisces | `persistent.pisces` |
+
+:::
 
 这些变量与十二枚奖牌完全一一对应。
 
