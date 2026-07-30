@@ -56,13 +56,7 @@ toc: true
 
 这三个档案都在 D14 A／B 的同一段公共回忆中解锁。
 
-正常完整观看该段剧情时，玩家会连续获得：
-
-1. Hoyt；
-2. Dave；
-3. David。
-
-它们不要求特定角色线或好感度。
+正常完整观看该段剧情时，玩家会连续获得 Hoyt、 Dave 和 David 的档案。它们不要求特定角色线或好感度。
 
 ### Orlando
 
@@ -73,13 +67,13 @@ Orlando 档案在 D15 有两套入口。
 | Oswin 存活 | 要求当前为 Orlando 角色线 |
 | Oswin 已死 | 不限角色线，在 Benson 的公共说明场景中解锁 |
 
-Oswin 已死版本中，角色线判断只改变 Dave 是否已经了解 Orlando 的家族背景。真正的档案写入位于角色线判断之外。
+若 Oswin 已死（Path B），角色线判断只改变 Dave 是否已经了解 Orlando 的家族背景。真正的档案写入位于角色线判断之外。
 
 因此，在该分支中，即使玩家选择的是 Dean、Tyson、Roswell、Hoss 或 Sal，也会解锁 Orlando 档案。
 
 ### Hoss
 
-Hoss 档案的游戏内提示并不完全准确。
+Hoss 档案的游戏内 Cast Files 提示并不完全准确。
 
 最早的解锁方法是：
 
@@ -88,11 +82,11 @@ Hoss 档案的游戏内提示并不完全准确。
 
 此时 D4 的角色线尚未选择，因此**不要求进入 Hoss 路线**。
 
-D8 隐藏图书馆剧情中还会再次写入 Hoss 档案。该写入也位于 Hoss 路线和好感度亲吻判断之前，可以作为补充入口。
+D8 隐藏图书馆剧情中还会再次写入 Hoss 档案。该写入也位于 Hoss 路线和好感度亲吻判断之前，可以作为补充获取途径。
 
 ### Sal
 
-Sal 档案有两个互补入口，均要求 Sal 角色线：
+Sal 档案有两个互补获取途径，均要求 Sal 角色线：
 
 | 条件 | 解锁时间 |
 |---|---|
@@ -105,7 +99,7 @@ Sal 档案有两个互补入口，均要求 Sal 角色线：
 
 Thanatos 档案主要在 D23 A Redux 的时间循环剧情中解锁。
 
-另有一个补写入口：
+另有一个补写途径：
 
 - 到达 D24 End of Time；
 - 奖牌不足十二枚；
@@ -115,20 +109,14 @@ Thanatos 档案主要在 D23 A Redux 的时间循环剧情中解锁。
 
 ### Thanatos – Part 2
 
-该条目并不是普通结局奖励，而是直接读取：
-
-```renpy
-persistent.true_end
-```
-
-需要：
+该条目通过直接读取 `persistent.true_end`，需要：
 
 1. 收齐十二枚奖牌；
 2. 通过 Path A 的最终检定；
-3. 进入完整 Prime／Path P 流程；
+3. 进入完整 Path P 流程；
 4. 推进至最终海滩结局。
 
-只有真正完成 True End 后才会解锁。
+只有真正完成 Path P 后才会解锁。
 
 ### Dominic 与 Jack
 
@@ -143,17 +131,9 @@ persistent.jack_lore = True
 
 Jack 没有另一段独立的专属解锁剧情。
 
-### Oswin 为什么不在 Cast Files 中？
+### Cast Files 代码中遗留了 Oswin 的档案
 
-代码中存在：
-
-```renpy
-persistent.oswin_lore
-```
-
-D23 A Redux 中也确实会将其设为 `True`。
-
-但是，Compendium 中的 Oswin 条目被注释掉，没有实际显示在界面中。
+代码中存在 `persistent.oswin_lore`，D23 A Redux 中也确实会将其设为 `True`。但是，Compendium 中的 Oswin 条目被注释掉，没有实际显示在界面中。
 
 因此：
 
@@ -162,9 +142,11 @@ D23 A Redux 中也确实会将其设为 `True`。
 - 即使 `persistent.oswin_lore == True`，玩家也不会看到 Oswin 档案；
 - 查漏时不应把 Oswin 计入 Cast Files 总数。
 
+而实际上 Oswin 的档案也确实不存在任何文字内容。
+
 ## Additional Scenes
 
-Additional Scenes 不是文字档案。解锁后，点击按钮会通过 Ren'Py `Replay()` 启动对应的剧情回放。
+Additional Scenes 解锁后，点击按钮会通过 Ren'Py `Replay()` 启动对应的剧情回放。
 
 ### 游戏内顺序
 
@@ -186,17 +168,11 @@ Additional Scenes 不是文字档案。解锁后，点击按钮会通过 Ren'Py 
 
 ### Dave's Demise 与 Roswell's Attempt
 
-前两项共享同一个解锁变量：
+前两项共享同一个解锁变量：`persistent.Day23APrime`
 
-```renpy
-persistent.Day23APrime
-```
+因此，它们正常情况下会同时开放，不是两个需要分别收集的独立条件。如果一项已经开放、另一项仍然显示为 `?????`，更可能是版本或 `persistent` 数据异常。
 
-因此，它们正常情况下会同时开放，不是两个需要分别收集的独立条件。
-
-如果一项已经开放、另一项仍然显示为 `?????`，更可能是版本或持久数据异常。
-
-### Epilogue 的固定顺序
+### Epilogue 的固定线性顺序
 
 七段 Epilogue 按上表顺序线性解锁，不能跳过。前五段还要求对应角色的 Cast File；Dave 和 Roswell Epilogue 不再检查额外档案。
 
@@ -224,7 +200,7 @@ persistent.Day23APrime
 1. 上一个 Epilogue 是否真正播放到结尾；
 2. 当前角色对应的 Cast File 是否已经解锁；
 3. 是否只是点击过回放，但在完成变量写入前退出；
-4. 是否正在使用旧版本或迁移后的异常持久数据。
+4. 是否正在使用旧版本或迁移后的异常 `persistent` 数据。
 :::
 
 ## Lore

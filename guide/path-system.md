@@ -51,7 +51,7 @@ Path A 和 Path B 则会继续推进到 D17，并接受第二次关键路线检�
 | Path A | 保持 Path A | 进入 Path F |
 | Path B | 保持 Path B | 进入 Path G |
 
-D17 检定失败后，个别选择还可能直接进入 Bad Ending，而不是继续完成 Path F 或 Path G。
+D17 检定失败后，个别选择（如“独自离开”）还可能直接进入 Bad Ending，而不是继续完成 Path F 或 Path G。
 
 ### Tyson 线的特殊情况
 

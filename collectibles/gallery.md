@@ -16,7 +16,7 @@ toc: true
 ::: {.callout-important}
 ## 使用方法
 
-画廊每行有四个格子，按照**从左到右、从上到下**排列。
+游戏内画廊每行有四个格子，按照**从左到右、从上到下**排列。
 
 例如：
 
@@ -31,7 +31,7 @@ toc: true
 
 画廊按钮由 Ren'Py Gallery 的 `unlock_image()` 判断对应图片是否曾被显示。玩家在正常流程中实际看到相应的 `scene` 或 `show` 图片后，该图片会被 Ren'Py 记录为 seen，并解锁对应画廊按钮。
 
-`persistent._seen_images` 在本作脚本中主要用于额外统计 `Gallery Completion`，不构成另一套独立的画廊解锁条件。画廊记录属于持久数据，不依附于某一个普通存档。
+`persistent._seen_images` 在本作脚本中主要用于额外统计 `Gallery Completion`，不构成另一套独立的画廊解锁条件。画廊记录属于 `persistent` 数据，不依附于某一个普通存档。
 
 因此：
 
@@ -43,7 +43,12 @@ toc: true
 ::: {.callout-note}
 ## 表格中的技术标签
 
-`Day10Morning2`、`Day11ABMeeting`、`FinalPassword` 等名称是游戏脚本标签，用于准确定位触发节点，不一定等同于玩家看到的章节标题或路线名称。
+`Day10Morning2`、`Day11ABMeeting`、`FinalPassword` 等名称是游戏脚本标签，用于准确定位触发节点，玩家游戏内是看不到具体名称的。
+
+- 下表列出当前脚本正常流程中按剧情日期最早的一个显示位置。同一天若存在多个路线或分支，只列其中一个最早代表位置。
+- “上下文”提供图片首次显示前后的脚本文本，用于辅助确认剧情位置；它不一定完整列出进入该分支所需的全部前置条件。
+- 脚本中的角色简称包括：`mc`＝Dave，`bear`＝Dean，`wolf`＝Tyson，`boar`＝Roswell，`dragon`＝Orlando，`lion`＝Hoss，`croc`＝Sal，`oz`＝Oswin，`rat`＝Thanatos。
+
 :::
 
 <div id="gallery-locator-root"></div>
@@ -93,17 +98,11 @@ toc: true
 
 ## CG 解锁触发索引 {#cg-unlock-index}
 
-上方的 Memories 与 Trauma 表格用于确认画廊中的行列位置和 CG 文件名；本节进一步列出每张 CG 在正常游戏流程中的最早显示节点及附近剧情文本。
+上方的 Memories 与 Trauma 表格用于确认画廊中的行列位置和 CG 文件名；由于玩家无法在游戏流程中看到文件名，本节进一步列出每张对应文件名 CG 在正常游戏流程中的最早显示节点及附近剧情文本。
 
 :::: {#gallery-trigger-index .callout-note collapse="true"}
 
 ## 展开完整触发索引
-
-- 画廊按钮通过 Ren'Py Gallery 的 `unlock_image()` 判断对应图片是否曾被显示。玩家在正常流程中实际看到相应的 `scene/show` 图片后，该图片会被 Ren'Py 记录为 seen，并解锁对应画廊按钮。
-- `persistent._seen_images` 在本作脚本中主要用于额外统计画廊完成数量，并不是另一套独立解锁条件。
-- 下表列出当前脚本正常流程中按剧情日期最早的一个显示位置。同一天若存在多个路线或分支，只列其中一个最早代表位置。
-- “上下文”提供图片首次显示前后的脚本文本，用于辅助确认剧情位置；它不一定完整列出进入该分支所需的全部前置条件。
-- 脚本中的角色简称包括：`mc`＝Dave，`bear`＝Dean，`wolf`＝Tyson，`boar`＝Roswell，`dragon`＝Orlando，`lion`＝Hoss，`croc`＝Sal，`oz`＝Oswin，`rat`＝Thanatos。
 
 ::: {.gallery-trigger-group data-category="Dave"}
 
@@ -290,7 +289,7 @@ toc: true
 
 ## 不在画廊内的
 
-以下图片名称在脚本中有定义或调用，但没有加入当前画廊列表，因此即使在剧情中显示，也不会生成对应的画廊按钮。
+以下图片名称在脚本中有定义或调用，但没有加入当前画廊列表，因此即使在剧情中显示，也不存在对应的画廊按钮。
 
 ::: {#gallery-non-gallery-index .gallery-non-gallery-index}
 
@@ -305,7 +304,7 @@ toc: true
 
 ### 已彻底删除的 Dean CG
 
-旧版本代码和资源资料中曾存在四张 Dean 成人 CG。
+旧版本中曾存在四张 Dean 成人 CG。
 
 b0.7 版本它们仍存在游戏文件中，但游戏过程中不会展示 CG，也没有对应剧情文字展示；而早于 b0.7 的游戏版本会在过程中完整展示 CG 和对应文字剧情片段。
 

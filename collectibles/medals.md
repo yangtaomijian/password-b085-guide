@@ -11,13 +11,13 @@ b0.85 新增的 Compendium Lore 提供了游戏内收集提示，但部分条目
 ::: {.callout-warning}
 ## 剧透预警
 
-本页会透露部分角色线、Path A／B 结局和奖牌出现位置，但不会完整复述各条路线剧情。
+本页会展示部分角色线、Path A／B 结局和奖牌出现位置，但不会完整复述各条路线剧情。
 :::
 
 ## 基本规则
 
 - 进入 Path P 需要收集十二枚黄道星座奖牌；
-- 奖牌记录会跨存档和周目保留；
+- 奖牌记录会跨存档和周目保留在 `persistent` 文件中；
 - 奖牌主要出现在部分角色线的 Path A 和 Path B；
 - 为了收集奖牌，不需要进入 Path C、D、E、F 或 G；
 - 不需要专门体验 Orlando 线和 Tyson 线；
@@ -119,7 +119,7 @@ Path A 会补齐最后三枚：
 
 ::: {.table-medal-index}
 
-## 十二枚奖牌详细索引
+## 十二枚奖牌速查索引
 
 | 奖牌 | 必需路线／Path | 玩家侧剧情位置 | 实际写入节点 |
 |---|---|---|---|
@@ -135,6 +135,29 @@ Path A 会补齐最后三枚：
 | 摩羯座 Capricorn | Sal 线 | D9 pool／locker 场景；D16 还会进行路线补写 | `Day 9.rpy:3422`；`Day16AB.rpy:613`、`:947` |
 | 白羊座 Aries | Path A | Path A Day 23，Roswell 房间床头柜 | `Day23AB.rpy:355` |
 | 双鱼座 Pisces | Dean 线 | D9 河边钓鱼，Dean 从水中捞出；D16 还会进行路线补写 | `Day 9.rpy:2843`；`Day16AB.rpy:659`、`:903` |
+
+:::
+
+## 十二枚奖牌详细上下文
+
+下表按传统黄道十二宫顺序排列，补充奖牌首次发现、身份确认和持久化写入的完整剧情背景。
+
+::: {.medal-context-table .table-responsive}
+
+| 奖牌名称 | 上下文 |
+|---|---|
+| **白羊座 Aries** | **仅限 Path A。**D23，众人发现 Roswell 在自己房间内遭到镇静。Dave 随后注意到 Roswell 床头桌上的奖牌并将其拿起，Oswin 确认它是 Aries，而不是 Orlando 先前猜测的 Virgo。此处立即写入 `persistent.aries = True`（`Day23AB.rpy:355`）。 |
+| **金牛座 Taurus** | D7，巨型南瓜被移出温室后，Dave 在裸露的泥土中滑倒，挖出一枚刻有向上双角图案的奖牌，并初步猜测它是 Taurus。**剧情上此时已经取得奖牌，但 Compendium 标记尚未写入。**D16 A／B 盘点已有奖牌时，由 Benson 或 Oswin 正式确认它是 Taurus，并写入 `persistent.taurus = True`（`Day16AB.rpy:643` 或 `:888`）。 |
+| **双子座 Gemini** | **仅限 Path B，但不要求 Tyson 路线。**在 Tyson 路线的 D4，Dave 会亲眼看到 Tyson 从树篱迷宫内取出自己藏起的半枚金属奖牌，但当时无法辨认其图案。其他角色线中 Tyson 同样会找到这一半，只是 Dave 没有参与发现过程。D25 B，Tyson 从关押二人的林间小屋中顺手带走另一半，两半由此凑成完整奖牌，并写入 `persistent.gemini = True`（`Day25B.rpy:259`）。 |
+| **巨蟹座 Cancer** | **Roswell 线。**D9，Dave 与 Roswell 在博物馆书架旁随机抽出一本书，奖牌被书带出并砸到 Dave 脚上。Roswell 看到蟹形符号后明显受到触动，确认其为 Cancer；该场景同时围绕脑癌资料展开。此处首次写入 `persistent.cancer = True`（`Day 9.rpy:3982`）。D16 奖牌盘点时，Roswell 路线还会再次执行同一写入（`Day16AB.rpy:708` 或 `:936`），属于重复确认，不是第二枚奖牌。 |
+| **狮子座 Leo** | **Path A／B 共通。**D22，Thanatos 指引 Dave 在书架中寻找一个特殊版本的《三只小猪》。书页中央被挖空，Leo 奖牌藏在其中，下面还压着 Hammond 三兄妹的家庭照片。Dave 取出奖牌后立即写入 `persistent.leo = True`（`Day22AB.rpy:585`）。 |
+| **处女座 Virgo** | **完成 Path A 获得，不受最终恋爱对象限制。**D24 A 各个结尾分支中，Florencia 都会将 Virgo 奖牌交给 Dave。她表示自己原本仍持有这枚和另一枚奖牌，并暗示虽然当前一轮游戏已经结束，这枚奖牌可能会在“下一次游玩”或另一轮循环中派上用场。六个结尾分支分别在 `Day24A_Redux.rpy:2058`、`:2171`、`:2301`、`:2443`、`:2538`、`:2657` 写入 `persistent.virgo = True`。 |
+| **天秤座 Libra** | **Hoss 线。**D16，Dave 与 Hoss 再次进入隐藏图书馆寻找线索。Hoss 在昏暗书架上发现一枚积满灰尘、却几乎没有经过额外隐藏的奖牌，并根据天秤符号确认它是 Libra。此处立即写入 `persistent.libra = True`（`Day16AB.rpy:2372`）。 |
+| **天蝎座 Scorpio** | **仅限 Path A。**D24 A，Dave 读完 Roswell 留下的告别信，并发现 Roswell 已经死在树篱迷宫喷泉旁。随后他察觉信封比单纯装着信纸更重，从中取出一枚刻有类似风格化字母 `M` 图案的奖牌，即 Scorpio。此处立即写入 `persistent.scorpio = True`（`Day24A_Redux.rpy:1963`）。 |
+| **射手座 Sagittarius** | **完成 Path B 获得，不受角色线限制。**D25 B 各个结尾分支中，Florencia 都会将刻有箭形符号的 Sagittarius 奖牌交给 Dave。她承认自己在 Dave 抵达山上的当天就已经把这枚奖牌带走，因此当时的寻宝游戏从一开始就不可能在该轮流程中完整收集。六个结尾分支分别在 `Day25B.rpy:2713`、`:2916`、`:3069`、`:3213`、`:3360`、`:3502` 写入 `persistent.sagittarius = True`。 |
+| **摩羯座 Capricorn** | **Sal 线。**D9，Dave 与 Sal 在泳池更衣室发现一个异常关闭、但钥匙仍插在锁上的储物柜。打开后，柜内中央单独放着一枚奖牌；Dave 和 Sal 当时都无法认出其符号，立即写入 `persistent.capricorn = True`（`Day 9.rpy:3422`）。D16 盘点时才正式确认它是 Capricorn，Sal 此前一直把图案称作“`Swoopy N`”；此处还会再次执行同一写入（`Day16AB.rpy:613` 或 `:947`）。 |
+| **水瓶座 Aquarius** | D4，Orlando 凭借出色的方向感率先抵达树篱迷宫中央的喷泉庭院，并从雕像手中取下刻有锯齿状水波符号的奖牌。**剧情上此时已经取得奖牌，但代码没有立即写入 Compendium 标记。**D16 A／B 盘点已有奖牌时，由 Benson 或 Oswin确认它是 Aquarius，并写入 `persistent.aquarius = True`（`Day16AB.rpy:600` 或 `:880`）。因此游戏内 Lore 虽写着“D4 解锁”，实际 `persistent` 解锁发生在 D16。 |
+| **双鱼座 Pisces** | **Dean 线。**D9，Dave 与 Dean 在河边钓鱼时鱼线被水下物体卡住。Dean 直接走进河里，将鱼线和一枚圆形奖牌一同捞出；Dave 当时无法正确辨认符号。此处首次写入 `persistent.pisces = True`（`Day 9.rpy:2843`）。D16 奖牌盘点时，Benson 或 Oswin 才正式确认它是 Pisces，并再次执行同一写入（`Day16AB.rpy:659` 或 `:903`）。 |
 
 :::
 
@@ -163,12 +186,9 @@ Path A 会补齐最后三枚：
 
 Tyson 无论在哪条角色线中都会在 D4 找到第一半，但只有选择 Tyson 线时，Dave 才会亲自参与发现过程。
 
-如果不是 Tyson 线，Dave 会在 Path B 后期询问 Tyson 第一半奖牌来自哪里，但 Tyson 不愿详细解释。
+如果不是 Tyson 线，Dave 会在 Path B 后期询问 Tyson 第一半奖牌来自哪里，但 Tyson 会不愿详细解释。
 
-因此：
-
-- 了解完整发现过程需要体验 Tyson 线；
-- 但收集奖牌本身不要求玩家进入 Tyson 线。
+因此，了解完整发现过程需要体验 Tyson 线，但收集奖牌本身不要求玩家进入 Tyson 线。
 
 ## Lore 条目的日期与实际发现时间可能不同
 
@@ -176,13 +196,13 @@ Tyson 无论在哪条角色线中都会在 D4 找到第一半，但只有选择 
 
 实际上，奖牌早在 D7 的温室南瓜下方被发现；D16 是 Dave 确认其星座身份、同时程序执行相关检定的时间。
 
-因此，本攻略会尽量区分：
+因此，玩家需要尽量区分：
 
 - **剧情首次发现时间**
 - **Dave 确认奖牌身份的时间**
 - **程序写入收集状态的时间**
 
-三者不一定完全相同。
+知悉三者不一定完全相同。
 
 ## 关于第十三枚奖牌
 
