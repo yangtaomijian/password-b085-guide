@@ -1043,9 +1043,13 @@ main.content img[src*="route-map-b085"] {
    ========================================================= */
 
 @media (min-width: 1100px) {
+  header#quarto-header.headroom.headroom--unpinned {
+    transform: translateY(0);
+  }
+
   /* 不再让 #quarto-content 自己组成三列 */
   body.pw-custom-layout-ready #quarto-content {
-    display: block !important;
+    display: flow-root !important;
 
     width: 100% !important;
     max-width: none !important;
@@ -2213,6 +2217,195 @@ main.content table:has(> thead > tr > :nth-child(3):last-child) {
       0.85rem
       1.15rem;
   }
+}
+
+/* =========================================================
+   指定内容表格的桌面列宽
+   ========================================================= */
+
+@media (min-width: 760px) {
+  main.content .affection-threshold-tabs table,
+  main.content .compendium-cast-table table,
+  main.content .b085-change-overview-table table,
+  main.content .additional-scenes-table table,
+  main.content .legacy-password-overview-table table,
+  main.content .gallery-coordinate-table table {
+    width: 100% !important;
+    table-layout: fixed !important;
+  }
+
+  main.content .affection-threshold-tabs col:nth-child(1),
+  main.content .affection-threshold-tabs th:nth-child(1),
+  main.content .affection-threshold-tabs td:nth-child(1) {
+    width: 10% !important;
+    text-align: right;
+    white-space: nowrap;
+  }
+
+  main.content .affection-threshold-tabs col:nth-child(2),
+  main.content .affection-threshold-tabs th:nth-child(2),
+  main.content .affection-threshold-tabs td:nth-child(2) {
+    width: 90% !important;
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-break: normal;
+  }
+
+  main.content .compendium-cast-table col:nth-child(1),
+  main.content .compendium-cast-table th:nth-child(1),
+  main.content .compendium-cast-table td:nth-child(1) {
+    width: 8% !important;
+    text-align: right;
+    white-space: nowrap;
+  }
+
+  main.content .compendium-cast-table col:nth-child(2),
+  main.content .compendium-cast-table th:nth-child(2),
+  main.content .compendium-cast-table td:nth-child(2) {
+    width: 16% !important;
+  }
+
+  main.content .compendium-cast-table col:nth-child(3),
+  main.content .compendium-cast-table th:nth-child(3),
+  main.content .compendium-cast-table td:nth-child(3) {
+    width: 28% !important;
+    white-space: normal !important;
+    overflow-wrap: anywhere;
+    word-break: normal;
+  }
+
+  main.content .compendium-cast-table td:nth-child(3) code {
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  main.content .compendium-cast-table col:nth-child(4),
+  main.content .compendium-cast-table th:nth-child(4),
+  main.content .compendium-cast-table td:nth-child(4) {
+    width: 48% !important;
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-break: normal;
+  }
+
+  main.content .b085-change-overview-table col:nth-child(1),
+  main.content .b085-change-overview-table th:nth-child(1),
+  main.content .b085-change-overview-table td:nth-child(1) {
+    width: 18% !important;
+    text-align: left;
+    white-space: nowrap;
+  }
+
+  main.content .b085-change-overview-table col:nth-child(2),
+  main.content .b085-change-overview-table th:nth-child(2),
+  main.content .b085-change-overview-table td:nth-child(2) {
+    width: 82% !important;
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-break: normal;
+  }
+
+  main.content .additional-scenes-table col:nth-child(1),
+  main.content .additional-scenes-table th:nth-child(1),
+  main.content .additional-scenes-table td:nth-child(1) {
+    width: 8% !important;
+    text-align: right;
+    white-space: nowrap;
+  }
+
+  main.content .additional-scenes-table col:nth-child(2),
+  main.content .additional-scenes-table th:nth-child(2),
+  main.content .additional-scenes-table td:nth-child(2) {
+    width: 22% !important;
+  }
+
+  main.content .additional-scenes-table col:nth-child(3),
+  main.content .additional-scenes-table th:nth-child(3),
+  main.content .additional-scenes-table td:nth-child(3) {
+    width: 25% !important;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  main.content .additional-scenes-table td:nth-child(3) code,
+  main.content .additional-scenes-table td:nth-child(4) code {
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  main.content .additional-scenes-table col:nth-child(4),
+  main.content .additional-scenes-table th:nth-child(4),
+  main.content .additional-scenes-table td:nth-child(4) {
+    width: 45% !important;
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-break: normal;
+  }
+
+  main.content .legacy-password-overview-table col:nth-child(1),
+  main.content .legacy-password-overview-table th:nth-child(1),
+  main.content .legacy-password-overview-table td:nth-child(1) {
+    width: 12% !important;
+    text-align: left;
+    white-space: nowrap;
+  }
+
+  main.content .legacy-password-overview-table col:nth-child(2),
+  main.content .legacy-password-overview-table th:nth-child(2),
+  main.content .legacy-password-overview-table td:nth-child(2) {
+    width: 40% !important;
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-break: normal;
+  }
+
+  main.content .legacy-password-overview-table col:nth-child(3),
+  main.content .legacy-password-overview-table th:nth-child(3),
+  main.content .legacy-password-overview-table td:nth-child(3) {
+    width: 48% !important;
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-break: normal;
+  }
+
+  main.content .gallery-coordinate-table col:nth-child(1),
+  main.content .gallery-coordinate-table th:nth-child(1),
+  main.content .gallery-coordinate-table td:nth-child(1) {
+    width: 7% !important;
+    text-align: right;
+    white-space: nowrap;
+  }
+
+  main.content .gallery-coordinate-table col:nth-child(n + 2),
+  main.content .gallery-coordinate-table th:nth-child(n + 2),
+  main.content .gallery-coordinate-table td:nth-child(n + 2) {
+    width: 23.25% !important;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: normal;
+  }
+
+  main.content .gallery-coordinate-table td:nth-child(n + 2) code {
+    white-space: normal;
+    overflow-wrap: anywhere;
+    text-overflow: clip;
+  }
+}
+
+main.content img.path-diagram-simple {
+  display: block;
+  width: 100%;
+  max-width: 760px;
+  height: auto;
+  margin-inline: auto;
+}
+
+main.content img.path-diagram-detailed {
+  display: block;
+  width: 100%;
+  max-width: 1180px;
+  height: auto;
+  margin-inline: auto;
 }
 
 /* =========================================================

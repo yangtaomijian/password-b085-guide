@@ -45,13 +45,13 @@ toc: true
 
 ## 字母线极简图
 
-![Password 旧版字母线极简图](../assets/legacy-route-paths-simple.jpg){fig-alt="Password 字母线 A、B、C、D、E、F、G、P 的极简树状结构"}
+![Password 旧版字母线极简图](../assets/legacy-route-paths-simple.jpg){.path-diagram-simple fig-alt="Password 字母线 A、B、C、D、E、F、G、P 的极简树状结构"}
 
 这张图只保留 A—G 与 P 的层级关系，适合快速理解线路之间的演变，但不能单独作为通关攻略。
 
 ## 字母线详细分支图
 
-![Password 旧版字母线详细分支图](../assets/legacy-route-paths-detailed.jpg){fig-alt="Password 旧版本 Path A 至 G 和 Path P 的进入条件及结局分支图"}
+![Password 旧版字母线详细分支图](../assets/legacy-route-paths-detailed.jpg){.path-diagram-detailed fig-alt="Password 旧版本 Path A 至 G 和 Path P 的进入条件及结局分支图"}
 
 这张图记录了旧版各线的进入条件和结局分流。部分主干关系在 b0.85 中仍然存在，但具体条件应以当前[字母线系统](../guide/path-system.md)为准。
 

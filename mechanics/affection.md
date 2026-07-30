@@ -61,7 +61,7 @@ toc: true
 
 ## 各角色的阈值影响
 
-::: {.panel-tabset .character-tabs group="affection-character"}
+::: {.panel-tabset .character-tabs .affection-threshold-tabs group="affection-character"}
 
 ### Orlando
 

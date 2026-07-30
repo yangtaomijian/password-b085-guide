@@ -50,7 +50,7 @@ toc: true
 
 ## Memories
 
-::: {.gallery-grid #gallery-memories data-gallery-tab="Memories"}
+::: {.gallery-grid .gallery-coordinate-table #gallery-memories data-gallery-tab="Memories"}
 
 | 行 | 列 1 | 列 2 | 列 3 | 列 4 |
 |---:|---|---|---|---|
@@ -77,7 +77,7 @@ toc: true
 
 ## Trauma
 
-::: {.gallery-grid #gallery-trauma data-gallery-tab="Trauma"}
+::: {.gallery-grid .gallery-coordinate-table #gallery-trauma data-gallery-tab="Trauma"}
 
 | 行 | 列 1 | 列 2 | 列 3 | 列 4 |
 |---:|---|---|---|---|

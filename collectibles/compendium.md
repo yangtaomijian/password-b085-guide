@@ -29,6 +29,8 @@ toc: true
 
 ### 游戏内顺序与解锁条件
 
+::: {.compendium-cast-table}
+
 | 顺序 | 档案 | 解锁变量 | 主要解锁条件 |
 |---:|---|---|---|
 | 1 | Dave | `persistent.dave_lore` | D14 A／B 公共剧情，Dave 回忆父亲死亡当日 |
@@ -47,6 +49,8 @@ toc: true
 | 14 | Florencia | `persistent.florencia_lore` | Path D、G、A 或 B 的任一对应后期场景 |
 | 15 | David | `persistent.david_lore` | 与 Dave 档案相同的 D14 父亲死亡回忆 |
 | 16 | Hoyt | `persistent.hoyt_lore` | D14 回忆中，Hoyt 向 Dave 告知父亲死亡 |
+
+:::
 
 ### Dave、David 与 Hoyt
 
@@ -164,6 +168,8 @@ Additional Scenes 不是文字档案。解锁后，点击按钮会通过 Ren'Py 
 
 ### 游戏内顺序
 
+::: {.additional-scenes-table}
+
 | 顺序 | 场景 | 回放标签 | 解锁条件 |
 |---:|---|---|---|
 | 1 | Dave's Demise | `Day23AStart` | `persistent.Day23APrime` |
@@ -175,6 +181,8 @@ Additional Scenes 不是文字档案。解锁后，点击按钮会通过 Ren'Py 
 | 7 | Hoss Epilogue | `Hoss_Encore` | 完成 Sal Epilogue，并已解锁 Hoss 档案 |
 | 8 | Dave Epilogue | `Dave_Encore` | 完成 Hoss Epilogue |
 | 9 | Roswell Epilogue | `Roswell_Encore` | 完成 Dave Epilogue |
+
+:::
 
 ### Dave's Demise 与 Roswell's Attempt
 

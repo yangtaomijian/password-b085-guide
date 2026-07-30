@@ -12,12 +12,16 @@ toc: true
 
 ## 变化概览
 
+::: {.b085-change-overview-table}
+
 | 类型 | b0.85 的主要变化 |
 |---|---|
 | 新增内容 | Compendium、Additional Scenes、角色 Epilogue、Path P 新密码 |
 | 流程简化 | Orlando 与 Roswell 的前期选择减少 |
 | 删除内容 | D6 离开宅邸、D7 两个假密码、D8 Oswin 问答、D11 可选密码 |
 | 剧情与资源 | Path P 文本调整、Tyson 相关 CG 重绘、Dean 旧 CG 删除 |
+
+:::
 
 ## Compendium 与附加回放
 
