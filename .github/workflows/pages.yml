@@ -33,7 +33,7 @@ jobs:
           version: 1.9.38
 
       - name: Render website
-        run: quarto render
+        run: bash scripts/build-bilingual.sh
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5

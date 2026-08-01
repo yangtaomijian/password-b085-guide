@@ -1,11 +1,17 @@
 (() => {
   "use strict";
 
-  const root = document.querySelector("#gallery-locator-root");
+  const initialize = () => {
+    const root = document.querySelector("#gallery-locator-root");
 
-  if (!root) {
-    return;
-  }
+    if (
+      !root ||
+      root.dataset.galleryLocatorInitialized === "true"
+    ) {
+      return;
+    }
+
+    root.dataset.galleryLocatorInitialized = "true";
 
   const EXPECTED_COUNTS = {
     Memories: 72,
@@ -21,20 +27,6 @@
   const normalizeText = (value) =>
     value.replace(/\s+/g, " ").trim();
 
-  const normalizeGalleryFlag = (value) => {
-    const normalized = normalizeText(value).toLowerCase();
-
-    if (["yes", "是"].includes(normalized)) {
-      return true;
-    }
-
-    if (["no", "否"].includes(normalized)) {
-      return false;
-    }
-
-    return null;
-  };
-
   const positionKey = (tab, row, column) =>
     `${tab.toLowerCase()}:${row}:${column}`;
 
@@ -42,19 +34,19 @@
     const grid = document.querySelector(selector);
 
     if (!grid) {
-      throw new Error(`找不到画廊表格容器：${selector}`);
+      throw new Error(`Gallery table container not found: ${selector}`);
     }
 
     const tab = grid.dataset.galleryTab;
 
     if (!Object.hasOwn(EXPECTED_COUNTS, tab)) {
-      throw new Error(`画廊页签值无效：${tab || "未设置"}`);
+      throw new Error(`Invalid Gallery tab: ${tab || "not set"}`);
     }
 
     const table = grid.querySelector("table");
 
     if (!table) {
-      throw new Error(`${tab} 画廊表格不存在`);
+      throw new Error(`${tab} Gallery table not found`);
     }
 
     table.querySelectorAll("tbody tr").forEach((rowElement) => {
@@ -65,11 +57,11 @@
       );
 
       if (!Number.isInteger(row)) {
-        throw new Error(`${tab} 画廊存在无法读取的行号`);
+        throw new Error(`${tab} Gallery contains an unreadable row number`);
       }
 
       if (cells.length !== 5) {
-        throw new Error(`${tab} 第 ${row} 行不是四列 CG 数据`);
+        throw new Error(`${tab} row ${row} does not contain four CG cells`);
       }
 
       cells.slice(1).forEach((cellElement, index) => {
@@ -79,7 +71,7 @@
 
         if (!nameElement || !metadataElement) {
           throw new Error(
-            `${tab} 第 ${row} 行第 ${column} 列数据不完整`
+            `${tab} row ${row}, column ${column} is incomplete`
           );
         }
 
@@ -103,12 +95,12 @@
         };
 
         if (recordsByName.has(cgName)) {
-          throw new Error(`坐标表中存在重复 CG 名称：${cgName}`);
+          throw new Error(`Duplicate CG name in coordinate tables: ${cgName}`);
         }
 
         if (recordsByPosition.has(positionKey(tab, row, column))) {
           throw new Error(
-            `坐标表中存在重复位置：${tab} 第 ${row} 行第 ${column} 列`
+            `Duplicate coordinate: ${tab} row ${row}, column ${column}`
           );
         }
 
@@ -125,7 +117,7 @@
     });
   };
 
-  const showReadError = (error, message = "画廊数据读取异常") => {
+  const showReadError = (error, message = "Unable to read Gallery data") => {
     console.error("Gallery locator data error:", error);
     root.innerHTML = "";
 
@@ -133,7 +125,7 @@
     panel.className = "gallery-locator gallery-locator-error";
 
     const heading = document.createElement("h2");
-    heading.textContent = "CG 画廊定位器";
+    heading.textContent = "CG Gallery Locator";
 
     const status = document.createElement("div");
     status.className = "gallery-locator-status";
@@ -164,9 +156,9 @@
   ) {
     showReadError(
       new Error(
-        `预期 Memories 72、Trauma 28、合计 100；实际 ` +
-        `Memories ${counts.Memories}、Trauma ${counts.Trauma}、` +
-        `合计 ${records.length}`
+        `Expected Memories 72, Trauma 28, total 100; found ` +
+        `Memories ${counts.Memories}, Trauma ${counts.Trauma}, ` +
+        `total ${records.length}`
       )
     );
     return;
@@ -176,7 +168,7 @@
     const triggerIndex = document.querySelector("#gallery-trigger-index");
 
     if (!triggerIndex) {
-      throw new Error("找不到完整触发索引：#gallery-trigger-index");
+      throw new Error("Complete trigger index not found: #gallery-trigger-index");
     }
 
     const details = [];
@@ -187,33 +179,27 @@
       const table = group.querySelector("table");
 
       if (!category || !table) {
-        throw new Error("完整触发索引存在缺少分类或表格的分组");
+        throw new Error("A trigger-index group is missing its category or table");
       }
 
       table.querySelectorAll("tbody tr").forEach((detailRowElement) => {
         const cells = Array.from(detailRowElement.cells);
 
         if (cells.length !== 4) {
-          throw new Error(`${category} 触发索引存在非四列表格记录`);
+          throw new Error(`${category} trigger-index row does not have four cells`);
         }
 
         const cgName = normalizeText(
           cells[0].querySelector("code")?.textContent || ""
         );
-        const galleryFlag = normalizeGalleryFlag(
-          cells[1].textContent || ""
-        );
+        const galleryFlag = normalizeText(cells[1].textContent || "");
 
-        if (galleryFlag === false) {
+        if (galleryFlag !== "Yes") {
           return;
         }
 
-        if (galleryFlag === null) {
-          throw new Error(`${category} 触发索引存在无效的画廊标记`);
-        }
-
         if (!cgName) {
-          throw new Error(`${category} 触发索引存在缺少 CG 名称的记录`);
+          throw new Error(`${category} trigger-index row is missing its CG name`);
         }
 
         const triggerText = normalizeText(
@@ -246,7 +232,9 @@
     const table = index?.querySelector("table");
 
     if (!index || !table) {
-      throw new Error("找不到不在画廊索引：#gallery-non-gallery-index");
+      throw new Error(
+        "Non-Gallery index not found: #gallery-non-gallery-index"
+      );
     }
 
     return Array.from(table.querySelectorAll("tbody tr")).map(
@@ -254,32 +242,36 @@
         const cells = Array.from(detailRowElement.cells);
 
         if (cells.length !== 4) {
-          throw new Error("不在画廊索引存在非四列表格记录");
+          throw new Error(
+            "A non-Gallery index row does not have four cells"
+          );
         }
 
         const cgName = normalizeText(
           cells[0].querySelector("code")?.textContent || ""
         );
-        const galleryFlag = normalizeGalleryFlag(
-          cells[1].textContent || ""
-        );
+        const galleryFlag = normalizeText(cells[1].textContent || "");
         const triggerText = normalizeText(
           cells[2].innerText || cells[2].textContent || ""
         );
-        const triggerCodes = Array.from(cells[2].querySelectorAll("code"))
+        const triggerCodes = Array.from(
+          cells[2].querySelectorAll("code")
+        )
           .map((code) => normalizeText(code.textContent || ""))
           .filter(Boolean);
         const context = normalizeText(
           cells[3].innerText || cells[3].textContent || ""
         );
 
-        if (!cgName || galleryFlag !== false) {
-          throw new Error("不在画廊索引存在无效的 ID 或画廊标记");
+        if (!cgName || galleryFlag !== "No") {
+          throw new Error(
+            "A non-Gallery index row has an invalid ID or Gallery flag"
+          );
         }
 
         return {
           cgName,
-          category: "不在画廊",
+          category: "Non-Gallery",
           galleryFlag,
           triggerText,
           triggerCodes,
@@ -335,7 +327,7 @@
 
     details.forEach((detail) => {
       if (detailsByName.has(detail.cgName)) {
-        throw new Error(`完整触发索引存在重复 CG 名称：${detail.cgName}`);
+        throw new Error(`Duplicate CG name in trigger index: ${detail.cgName}`);
       }
 
       detailsByName.set(detail.cgName, detail);
@@ -346,7 +338,9 @@
         recordsByName.has(detail.cgName) ||
         nonGalleryDetailsByName.has(detail.cgName)
       ) {
-        throw new Error(`不在画廊索引存在重复 CG 名称：${detail.cgName}`);
+        throw new Error(
+          `Duplicate non-Gallery CG name: ${detail.cgName}`
+        );
       }
 
       nonGalleryDetailsByName.set(detail.cgName, detail);
@@ -366,10 +360,10 @@
       extraNames.length > 0
     ) {
       throw new Error(
-        `详细索引应与坐标表一一对应 100 条；实际详细记录 ` +
-        `${details.length}、唯一名称 ${detailsByName.size}、` +
-        `缺失 [${missingNames.join(", ") || "无"}]、` +
-        `多出 [${extraNames.join(", ") || "无"}]`
+        `The trigger index should match all 100 coordinate entries; found ` +
+        `${details.length} details and ${detailsByName.size} unique names; ` +
+        `missing [${missingNames.join(", ") || "none"}]; ` +
+        `extra [${extraNames.join(", ") || "none"}]`
       );
     }
 
@@ -378,9 +372,9 @@
       nonGalleryDetailsByName.size !== 4
     ) {
       throw new Error(
-        `预期 4 条不在画廊记录；实际记录 ` +
-        `${nonGalleryDetails.length} 条、唯一名称 ` +
-        `${nonGalleryDetailsByName.size} 个`
+        `Expected 4 non-Gallery records; found ` +
+        `${nonGalleryDetails.length} rows and ` +
+        `${nonGalleryDetailsByName.size} unique names`
       );
     }
 
@@ -400,8 +394,10 @@
         String(record.row),
         String(record.column),
         `${record.tab} ${record.row} ${record.column}`,
-        `${record.tab} 第${record.row}行第${record.column}列`,
-        `第${record.row}行第${record.column}列`
+        `${record.tab} row ${record.row} column ${record.column}`,
+        `row ${record.row} column ${record.column}`,
+        `${record.tab} r${record.row} c${record.column}`,
+        `r${record.row} c${record.column}`
       ].join(" ").toLowerCase();
     });
 
@@ -425,7 +421,7 @@
         record.context,
         record.category,
         record.galleryFlag,
-        "不在画廊"
+        "not in gallery"
       ].join(" ").toLowerCase();
       nonGalleryRecords.push(record);
     });
@@ -434,33 +430,33 @@
 
     ensureTriggerTableScrollers();
     ensureNonGalleryTableScroller();
-    console.info("Gallery locator data linked: 100 张画廊 CG + 4 条非画廊记录");
+    console.info("Gallery locator data linked: 100 Gallery + 4 non-Gallery");
   } catch (error) {
-    showReadError(error, "画廊数据连接异常");
+    showReadError(error, "Unable to link Gallery data");
     return;
   }
 
   root.innerHTML = `
     <section class="gallery-locator" aria-labelledby="gallery-locator-title">
       <header class="gallery-locator-header">
-        <h2 id="gallery-locator-title">CG 画廊定位器</h2>
-        <p>可按游戏内页签、行列位置定位，也可搜索 CG 名称、触发节点、上下文或分类。</p>
-        <p class="gallery-locator-count">已载入 100 张画廊 CG</p>
+        <h2 id="gallery-locator-title">CG Gallery Locator</h2>
+        <p>Locate a CG by its in-game tab and grid position, or search by CG ID, trigger, context, or category.</p>
+        <p class="gallery-locator-count">100 Gallery CGs loaded</p>
       </header>
 
       <fieldset class="gallery-locator-section gallery-locator-exact">
-        <legend>精确位置定位</legend>
+        <legend>Locate by position</legend>
         <div class="gallery-locator-controls">
-          <label for="gallery-locator-tab">页签</label>
+          <label for="gallery-locator-tab">Tab</label>
           <select id="gallery-locator-tab">
             <option value="Memories">Memories</option>
             <option value="Trauma">Trauma</option>
           </select>
 
-          <label for="gallery-locator-row">行</label>
+          <label for="gallery-locator-row">Row</label>
           <select id="gallery-locator-row"></select>
 
-          <label for="gallery-locator-column">列</label>
+          <label for="gallery-locator-column">Column</label>
           <select id="gallery-locator-column">
             <option value="1">1</option>
             <option value="2">2</option>
@@ -468,7 +464,7 @@
             <option value="4">4</option>
           </select>
 
-          <button type="button" id="gallery-locator-go">定位 CG</button>
+          <button type="button" id="gallery-locator-go">Locate CG</button>
         </div>
         <div class="gallery-location-output">
           <div class="gallery-location-status" aria-live="polite"></div>
@@ -477,16 +473,16 @@
       </fieldset>
 
       <fieldset class="gallery-locator-section gallery-locator-search">
-        <legend>画廊搜索</legend>
-        <label for="gallery-locator-query">搜索 CG 名称、触发位置、上下文、分类或行列</label>
+        <legend>Search the Gallery</legend>
+        <label for="gallery-locator-query">Search by CG ID, trigger location, context, category, or grid position</label>
         <div class="gallery-locator-search-row">
           <input
             id="gallery-locator-query"
             type="search"
-            placeholder="例如：HossLibraryDiscovery、Memories 第6行第4列"
+            placeholder="For example: HossLibraryDiscovery or Memories row 6 column 4"
             autocomplete="off"
           >
-          <button type="button" id="gallery-locator-clear">清除</button>
+          <button type="button" id="gallery-locator-clear">Clear</button>
         </div>
         <div class="gallery-search-status" aria-live="polite"></div>
         <div class="gallery-search-results"></div>
@@ -586,19 +582,19 @@
     fields.className = "gallery-detail-grid";
     const detailFields = [
       createDetailField(
-        record.inGallery ? "画廊位置" : "画廊状态",
+        record.inGallery ? "Gallery position" : "Gallery status",
         record.inGallery
-          ? `${record.tab} · 第 ${record.row} 行第 ${record.column} 列`
-          : "不在画廊"
+          ? `${record.tab} · row ${record.row}, column ${record.column}`
+          : "Not in Gallery"
       ),
-      createDetailField("分类", record.category),
-      createDetailField("最早正常触发位置", record.triggerText)
+      createDetailField("Category", record.category),
+      createDetailField("Earliest normal trigger", record.triggerText)
     ];
 
     if (!record.inGallery && record.triggerCodes.length > 0) {
       detailFields.push(
         createDetailField(
-          "脚本位置",
+          "Script location",
           record.triggerCodes.join(" / ")
         )
       );
@@ -606,7 +602,7 @@
 
     detailFields.push(
       createDetailField(
-        "游戏内上下文",
+        "In-game context",
         record.context,
         "gallery-detail-context"
       )
@@ -619,7 +615,7 @@
 
   const clearMatchHighlights = () => {
     records.forEach(({ cellElement }) => {
-      cellElement?.classList.remove("gallery-cell-match");
+      cellElement.classList.remove("gallery-cell-match");
     });
   };
 
@@ -697,7 +693,7 @@
     record.cellElement.focus({ preventScroll: true });
 
     const statusMessage =
-      `${record.tab} · 第 ${record.row} 行第 ${record.column} 列 · ` +
+      `${record.tab} · row ${record.row}, column ${record.column} · ` +
       record.cgName;
 
     if (mode === "search") {
@@ -716,24 +712,6 @@
     }
   };
 
-  const locateSelected = () => {
-    const record = recordsByPosition.get(
-      positionKey(
-        tabSelect.value,
-        Number.parseInt(rowSelect.value, 10),
-        Number.parseInt(columnSelect.value, 10)
-      )
-    );
-
-    if (!record) {
-      clearLocationOutput();
-      locationStatusElement.textContent = "没有找到对应位置的 CG";
-      return;
-    }
-
-    locateRecord(record, { mode: "location" });
-  };
-
   const selectSearchRecord = (record) => {
     if (record.inGallery) {
       tabSelect.value = record.tab;
@@ -748,9 +726,27 @@
     clearTargetHighlight();
     currentMode = "search";
     searchStatusElement.textContent =
-      `不在画廊 · ${record.cgName}`;
+      `Not in Gallery · ${record.cgName}`;
     renderDetail(record, searchDetailElement);
     replaceUrl({ includeLocation: false, includeQuery: true });
+  };
+
+  const locateSelected = () => {
+    const record = recordsByPosition.get(
+      positionKey(
+        tabSelect.value,
+        Number.parseInt(rowSelect.value, 10),
+        Number.parseInt(columnSelect.value, 10)
+      )
+    );
+
+    if (!record) {
+      clearLocationOutput();
+      locationStatusElement.textContent = "No CG was found at that position.";
+      return;
+    }
+
+    locateRecord(record, { mode: "location" });
   };
 
   const matchReasonFor = (record, rawQuery, positionRecord) => {
@@ -759,11 +755,11 @@
       normalizeText(value || "").toLowerCase().includes(query);
 
     if (includesQuery(record.cgName)) {
-      return "匹配字段：CG 名称";
+      return "Matched field: CG ID";
     }
 
     if (positionRecord === record) {
-      return `匹配字段：画廊行列 · ${record.tab} 第${record.row}行第${record.column}列`;
+      return `Matched field: Gallery position · ${record.tab} row ${record.row}, column ${record.column}`;
     }
 
     const scriptLabels = Array.from(new Set([
@@ -773,13 +769,13 @@
     const matchedLabel = scriptLabels.find(includesQuery);
 
     if (matchedLabel) {
-      return `匹配字段：脚本标签 · ${matchedLabel}`;
+      return `Matched field: script label · ${matchedLabel}`;
     }
 
     const scriptFile = record.triggerCodes[0] || "";
 
     if (includesQuery(scriptFile)) {
-      return `匹配字段：脚本文件 · ${scriptFile}`;
+      return `Matched field: script file · ${scriptFile}`;
     }
 
     if (
@@ -787,22 +783,22 @@
       includesQuery(record.metadata) ||
       includesQuery(record.date)
     ) {
-      return `匹配字段：触发位置 · ${record.triggerText}`;
+      return `Matched field: trigger location · ${record.triggerText}`;
     }
 
     if (includesQuery(record.category)) {
-      return `匹配字段：分类 · ${record.category}`;
+      return `Matched field: category · ${record.category}`;
     }
 
     if (includesQuery(record.context)) {
-      return "匹配字段：游戏内上下文";
+      return "Matched field: in-game context";
     }
 
     if (!record.inGallery) {
-      return "匹配字段：画廊状态 · 不在画廊";
+      return "Matched field: Gallery status · Not in Gallery";
     }
 
-    return `匹配字段：画廊行列 · ${record.tab} 第${record.row}行第${record.column}列`;
+    return `Matched field: Gallery position · ${record.tab} row ${record.row}, column ${record.column}`;
   };
 
   const renderSearchResults = (matches, rawQuery, positionRecord) => {
@@ -819,8 +815,8 @@
       const position = document.createElement("span");
       position.className = "gallery-result-position";
       position.textContent = record.inGallery
-        ? `${record.tab} · 第 ${record.row} 行第 ${record.column} 列`
-        : "不在画廊";
+        ? `${record.tab} · row ${record.row}, column ${record.column}`
+        : "Not in Gallery";
 
       const matchReason = document.createElement("span");
       matchReason.className = "gallery-result-match";
@@ -832,11 +828,11 @@
 
       const category = document.createElement("span");
       category.className = "gallery-result-category";
-      category.textContent = `分类：${record.category}`;
+      category.textContent = `Category: ${record.category}`;
 
       const trigger = document.createElement("span");
       trigger.className = "gallery-result-trigger";
-      trigger.textContent = `最早正常触发位置：${record.triggerText}`;
+      trigger.textContent = `Earliest normal trigger: ${record.triggerText}`;
 
       const context = document.createElement("span");
       context.className = "gallery-result-context";
@@ -859,7 +855,7 @@
 
   const parsePositionQuery = (value) => {
     const match = value.trim().match(
-      /^(?:(memories|trauma)\s*)?(?:第?\s*(\d+)\s*行\s*第?\s*(\d+)\s*列|(\d+)\s*(?:[-/]\s*|\s+)(\d+))$/i
+      /^(?:(memories|trauma)\s*)?(?:row\s*(\d+)\s*(?:,\s*)?(?:column|col)\s*(\d+)|(\d+)\s*(?:[-/]\s*|\s+)(\d+))$/i
     );
 
     if (!match) {
@@ -909,7 +905,9 @@
     const positionRecord = parsePositionQuery(rawQuery);
     currentResults = positionRecord
       ? [positionRecord]
-      : searchRecords.filter((record) => record.searchText.includes(query));
+      : searchRecords.filter((record) =>
+          record.searchText.includes(query)
+        );
 
     currentResults.forEach(({ cellElement }) => {
       cellElement?.classList.add("gallery-cell-match");
@@ -918,16 +916,17 @@
 
     if (currentResults.length === 0) {
       searchStatusElement.textContent =
-        `没有找到与“${rawQuery}”匹配的 CG。`;
+        `No Gallery CGs match “${rawQuery}”.`;
       searchDetailElement.replaceChildren();
     } else {
       const resultType = currentResults.every(
         (record) => record.inGallery
       )
-        ? "画廊 CG"
-        : "图片记录";
+        ? "Gallery CG"
+        : "image record";
       searchStatusElement.textContent =
-        `找到 ${currentResults.length} 条匹配的${resultType}。`;
+        `${currentResults.length} matching ${resultType}` +
+        `${currentResults.length === 1 ? "" : "s"} found.`;
 
       if (currentResults.length === 1) {
         renderDetail(currentResults[0], searchDetailElement);
@@ -1011,11 +1010,7 @@
       const matches = applySearch();
 
       if (matches.length > 0) {
-        const record = matches[0];
-        tabSelect.value = record.tab;
-        populateRows(record.tab, record.row);
-        columnSelect.value = String(record.column);
-        locateRecord(record, { mode: "search" });
+        selectSearchRecord(matches[0]);
       }
     }
   });
@@ -1090,4 +1085,13 @@
       applySearch();
     }
   }, { once: true });
+  };
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initialize, {
+      once: true
+    });
+  } else {
+    initialize();
+  }
 })();

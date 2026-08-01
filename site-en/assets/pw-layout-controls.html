@@ -2,8 +2,8 @@
 (() => {
   "use strict";
 
-  const LEFT_KEY = "pw-guide-left-sidebar-collapsed";
-  const RIGHT_KEY = "pw-guide-right-toc-collapsed";
+  const LEFT_KEY = "pw-guide-en-left-sidebar-collapsed";
+  const RIGHT_KEY = "pw-guide-en-right-toc-collapsed";
   const DESKTOP_QUERY = window.matchMedia("(min-width: 1100px)");
   const COMMON_PAGE_PATHS = [
     "mechanics/affection-differences.html",
@@ -19,12 +19,6 @@
     "extras/easter-eggs.html",
     "guide/faq.html",
     "index.html"
-  ];
-  const VERSION_PAGE_PATHS = [
-    "versions/b085-changes.html",
-    "versions/legacy-routes.html",
-    "versions/legacy-passwords.html",
-    "versions/legacy-mechanics.html"
   ];
 
   const safeStorageGet = (key) => {
@@ -43,32 +37,33 @@
     }
   };
 
-  const matchPagePath = (pathname, candidates) =>
-    candidates.find((candidate) => pathname.endsWith(`/${candidate}`));
+  const matchPagePath = (pathname) =>
+    COMMON_PAGE_PATHS.find((candidate) => pathname.endsWith(`/${candidate}`));
 
-  const resolveEnglishTarget = () => {
+  const resolveChineseTarget = () => {
     const pathname = window.location.pathname;
-    const commonPath = matchPagePath(pathname, COMMON_PAGE_PATHS);
-    const versionPath = matchPagePath(pathname, VERSION_PAGE_PATHS);
-    const matchedPath = commonPath || versionPath;
+    const pagePath = matchPagePath(pathname);
     let siteRoot;
 
-    if (matchedPath) {
-      siteRoot = pathname.slice(0, -matchedPath.length);
-    } else if (pathname.endsWith("/")) {
-      siteRoot = pathname;
+    if (pagePath) {
+      const englishRoot = pathname.slice(0, -pagePath.length);
+      siteRoot = englishRoot.endsWith("en/")
+        ? englishRoot.slice(0, -3)
+        : englishRoot;
+    } else if (pathname.endsWith("/en/")) {
+      siteRoot = pathname.slice(0, -3);
     } else {
-      siteRoot = pathname.slice(0, pathname.lastIndexOf("/") + 1);
+      const marker = pathname.lastIndexOf("/en/");
+      siteRoot = marker >= 0
+        ? pathname.slice(0, marker + 1)
+        : pathname.slice(0, pathname.lastIndexOf("/") + 1);
     }
 
-    const englishPath = commonPath && commonPath !== "index.html"
-      ? commonPath
+    const chinesePath = pagePath && pagePath !== "index.html"
+      ? pagePath
       : "";
 
-    return {
-      href: `${siteRoot}en/${englishPath}${window.location.search}${window.location.hash}`,
-      fallback: Boolean(versionPath)
-    };
+    return `${siteRoot}${chinesePath}${window.location.search}${window.location.hash}`;
   };
 
   const createButton = ({
@@ -113,16 +108,8 @@
     const pathSegments = window.location.pathname
       .split("/")
       .filter(Boolean);
-    const section = ["guide", "collectibles", "mechanics", "versions", "extras"]
+    const section = ["guide", "collectibles", "mechanics", "extras"]
       .find((candidate) => pathSegments.includes(candidate)) || "home";
-    const sectionLabels = {
-      home: "首页",
-      guide: "攻略",
-      collectibles: "收集",
-      mechanics: "机制",
-      versions: "版本档案",
-      extras: "彩蛋"
-    };
     const links = Array.from(document.querySelectorAll(
       "#quarto-header .navbar-nav > .nav-item > .nav-link"
     ));
@@ -133,7 +120,9 @@
     });
 
     const activeLink = links.find((link) =>
-      link.querySelector(".menu-text")?.textContent.trim() === sectionLabels[section]
+      link.querySelector(".menu-text")?.textContent
+        .trim()
+        .toLowerCase() === section
     );
 
     if (activeLink) {
@@ -174,15 +163,12 @@
     }
 
     if (!navbarTools.querySelector(".pw-language-switch")) {
-        const target = resolveEnglishTarget();
         const languageLink = document.createElement("a");
-        const label = target.fallback
-        ? "This page is not yet available in English. Open the English home page."
-        : "Open this page in English";
+        const label = "打开本页中文版";
 
         languageLink.className = "pw-language-switch no-external";
-        languageLink.href = target.href;
-        languageLink.textContent = "EN";
+        languageLink.href = resolveChineseTarget();
+        languageLink.textContent = "中文";
         languageLink.setAttribute("aria-label", label);
         languageLink.setAttribute("title", label);
         navbarTools.append(languageLink);
@@ -196,8 +182,8 @@
 
     launcher.type = "button";
     launcher.className = "pw-search-launcher";
-    launcher.setAttribute("aria-label", "搜索");
-    launcher.setAttribute("title", "搜索");
+    launcher.setAttribute("aria-label", "Search");
+    launcher.setAttribute("title", "Search");
     launcher.innerHTML = `
         <svg viewBox="0 0 24 24" aria-hidden="true">
         <circle cx="11" cy="11" r="6.75"></circle>
@@ -217,8 +203,8 @@
         }
 
         /*
-        Quarto 原生搜索支持 /、s、f 快捷键。
-        这里用 / 作为原生按钮尚未完成挂载时的后备方案。
+        Quarto's native search supports the /, s, and f shortcuts.
+        Use / as a fallback while the native button is not yet mounted.
         */
         const eventOptions = {
         key: "/",
@@ -237,7 +223,7 @@
 
     installSearchLauncher();
 
-    /* 防止旧 reader-mode 按钮继续显示 */
+    /* Prevent the old reader-mode button from remaining visible. */
     document.querySelectorAll(".quarto-reader-toggle").forEach((element) => {
       element.remove();
     });
@@ -250,7 +236,7 @@
 
     const leftCollapseButton = createButton({
       className: "pw-panel-toggle pw-panel-toggle-left",
-      label: "收起左侧导航",
+      label: "Collapse navigation",
       icon: "←",
       controls: "quarto-sidebar",
       onClick: () => {
@@ -261,7 +247,7 @@
 
     const rightCollapseButton = createButton({
       className: "pw-panel-toggle pw-panel-toggle-right",
-      label: "收起本页目录",
+      label: "Collapse table of contents",
       icon: "→",
       controls: "quarto-margin-sidebar",
       onClick: () => {
@@ -272,7 +258,7 @@
 
     const leftOpenButton = createButton({
       className: "pw-edge-toggle pw-edge-toggle-left",
-      label: "展开左侧导航",
+      label: "Expand navigation",
       icon: "→",
       controls: "quarto-sidebar",
       onClick: () => {
@@ -283,7 +269,7 @@
 
     const rightOpenButton = createButton({
       className: "pw-edge-toggle pw-edge-toggle-right",
-      label: "展开本页目录",
+      label: "Expand table of contents",
       icon: "←",
       controls: "quarto-margin-sidebar",
       onClick: () => {
@@ -294,7 +280,7 @@
 
     if (leftSidebar) {
       leftSidebar.prepend(
-        createToolbar("导航", leftCollapseButton)
+        createToolbar("Navigation", leftCollapseButton)
       );
 
       document.body.append(leftOpenButton);
@@ -302,12 +288,12 @@
 
     if (rightSidebar) {
       rightSidebar.prepend(
-        createToolbar("本页目录", rightCollapseButton)
+        createToolbar("On this page", rightCollapseButton)
       );
 
       document.body.append(rightOpenButton);
 
-      /* 隐藏 Quarto 自带的重复“该页面内容”标题 */
+      /* Hide Quarto's duplicate built-in table-of-contents title. */
       rightSidebar
         .querySelectorAll(
           "nav[role='doc-toc'] > h2, .toc-title"

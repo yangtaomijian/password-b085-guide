@@ -3,13 +3,52 @@ project:
   output-dir: _site
   render:
     - index.md
-    - guide/*.md
-    - collectibles/*.md
-    - mechanics/*.md
-    - versions/*.md
-    - extras/*.md
+    - guide/route-overview.md
+    - guide/path-system.md
+    - guide/password-hints.md
+    - guide/faq.md
+    - collectibles/medals.md
+    - collectibles/compendium.md
+    - collectibles/gallery.md
+    - mechanics/password-checks.md
+    - mechanics/medal-persistence.md
+    - mechanics/affection.md
+    - mechanics/affection-differences.md
+    - versions/b085-changes.md
+    - versions/legacy-routes.md
+    - versions/legacy-passwords.md
+    - versions/legacy-mechanics.md
+    - extras/easter-eggs.md
 
-lang: zh-CN
+# Pandoc 3.8 does not ship a Chinese translation table. Keep its metadata in
+# English to avoid spurious translation warnings, while preserving the actual
+# document language and Quarto's Chinese interface strings below.
+lang: en
+language:
+  toc-title-website: "该页面内容"
+  callout-tip-title: "提示"
+  callout-note-title: "注记"
+  callout-warning-title: "警告"
+  callout-important-title: "重要"
+  callout-caution-title: "注意"
+  code-summary: "代码"
+  copy-button-tooltip: "复制到剪贴板"
+  copy-button-tooltip-success: "已复制"
+  back-to-top: "回到顶部"
+  search-no-results-text: "没有结果"
+  search-matching-documents-text: "匹配的文档"
+  search-copy-link-title: "复制搜索链接"
+  search-hide-matches-text: "隐藏其它匹配结果"
+  search-more-match-text: "更多匹配结果"
+  search-more-matches-text: "更多匹配结果"
+  search-clear-button-title: "清除"
+  search-text-placeholder: ""
+  search-detached-cancel-button-title: "取消"
+  search-submit-button-title: "提交"
+  search-label: "搜索"
+  toggle-section: "展开或折叠此栏"
+  toggle-sidebar: "展开或折叠侧边栏导航"
+  toggle-navigation: "展开或折叠导航栏"
 
 website:
   title: "Password b0.85 中文攻略与机制资料库"
@@ -150,6 +189,9 @@ website:
 
 format:
   html:
+    canonical-url: true
+    variables:
+      lang: zh-CN
     theme:
       light: cosmo
     css: assets/pw-guide-theme.css
