@@ -1,0 +1,146 @@
+project:
+  type: website
+  output-dir: _site
+  render:
+    - index.md
+    - guide/route-overview.md
+    - guide/path-system.md
+    - guide/password-hints.md
+    - guide/faq.md
+    - collectibles/medals.md
+    - collectibles/compendium.md
+    - collectibles/gallery.md
+    - mechanics/password-checks.md
+    - mechanics/medal-persistence.md
+    - mechanics/affection.md
+    - mechanics/affection-differences.md
+    - extras/easter-eggs.md
+
+lang: en
+
+website:
+  title: "Password b0.85 Guide"
+  description: "An unofficial, version-specific reference guide for Password b0.85."
+  site-url: "https://yangtaomijian.github.io/password-b085-guide/en/"
+  search:
+    location: navbar
+    type: overlay
+    show-item-context: true
+  page-navigation: true
+  back-to-top-navigation: true
+  bread-crumbs: true
+
+  navbar:
+    background: primary
+    left:
+      - href: index.md
+        text: Home
+      - text: Guide
+        menu:
+          - href: guide/route-overview.md
+            text: Route and Path Overview
+          - href: guide/path-system.md
+            text: Lettered Path System
+          - href: guide/password-hints.md
+            text: Tiered Password Hints
+          - href: guide/faq.md
+            text: Frequently Asked Questions
+      - text: Collectibles
+        menu:
+          - href: collectibles/medals.md
+            text: Twelve-Medal Collection Guide
+          - href: collectibles/compendium.md
+            text: Compendium Unlock Index
+          - href: collectibles/gallery.md
+            text: CG Gallery Completion Index
+      - text: Mechanics
+        menu:
+          - href: mechanics/password-checks.md
+            text: Vault Password Check Mechanics
+          - href: mechanics/medal-persistence.md
+            text: Medal Persistence and Final Check
+          - href: mechanics/affection.md
+            text: Affection System and Point Guide
+          - href: mechanics/affection-differences.md
+            text: Affection Checks and Story Differences
+      - text: Extras
+        menu:
+          - href: extras/easter-eggs.md
+            text: Easter Eggs and Hidden Inputs
+
+  sidebar:
+    style: docked
+    collapse-level: 1
+    search: false
+    contents:
+      - section: "Home"
+        contents:
+          - href: index.md
+            text: Home
+
+      - section: "Guide"
+        contents:
+          - href: guide/route-overview.md
+            text: Route and Path Overview
+          - href: guide/path-system.md
+            text: Lettered Path System
+          - href: guide/password-hints.md
+            text: Tiered Password Hints
+          - href: guide/faq.md
+            text: Frequently Asked Questions
+
+      - section: "Collectibles"
+        contents:
+          - href: collectibles/medals.md
+            text: Twelve-Medal Collection Guide
+          - href: collectibles/compendium.md
+            text: Compendium Unlock Index
+          - href: collectibles/gallery.md
+            text: CG Gallery Completion Index
+
+      - section: "Mechanics"
+        contents:
+          - href: mechanics/password-checks.md
+            text: Vault Password Check Mechanics
+          - href: mechanics/medal-persistence.md
+            text: Medal Persistence and Final Check
+          - href: mechanics/affection.md
+            text: Affection System and Point Guide
+          - href: mechanics/affection-differences.md
+            text: Affection Checks and Story Differences
+
+      - section: "Extras"
+        contents:
+          - href: extras/easter-eggs.md
+            text: Easter Eggs and Hidden Inputs
+
+  page-footer:
+    left: "Unofficial fan-made reference guide for Password b0.85. Not affiliated with the developer. Future releases or rewrites may differ."
+
+  comments:
+    giscus:
+      repo: yangtaomijian/password-b085-guide
+      repo-id: R_kgDOTnI-GQ
+      category: 页面反馈
+      category-id: DIC_kwDOTnI-Gc4DCPAP
+      mapping: pathname
+      reactions-enabled: true
+      input-position: top
+      theme: light
+      language: en
+      loading: lazy
+
+format:
+  html:
+    canonical-url: true
+    theme:
+      light: cosmo
+    css: assets/pw-guide-theme.css
+    include-after-body:
+      - assets/pw-layout-controls.html
+    toc: true
+    toc-depth: 3
+    smooth-scroll: true
+    code-copy: true
+    code-overflow: wrap
+    link-external-newwindow: true

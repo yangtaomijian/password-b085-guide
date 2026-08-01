@@ -405,7 +405,7 @@ b0.85 已删除整个 D8 自由问答环节。
 
 ## Oswin Cast File 残留
 
-代码中仍存在 `persistent.oswin_lore` 及对应写入点，但 Compendium 中的 Oswin 条目已被注释，当前没有可见档案内容。详细说明见[Compendium 解锁索引](../collectibles/compendium.md#oswin-为什么不在-cast-files-中)。
+代码中仍存在 `persistent.oswin_lore` 及对应写入点，但 Compendium 中的 Oswin 条目已被注释，当前没有可见档案内容。详细说明见[Compendium 解锁索引](../collectibles/compendium.md#cast-files-代码中遗留了-oswin-的档案)。
 
 ## 相关页面
 
