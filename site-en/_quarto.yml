@@ -138,6 +138,7 @@ format:
     css: assets/pw-guide-theme.css
     include-after-body:
       - assets/pw-layout-controls.html
+      - assets/cloudflare-web-analytics.html
     toc: true
     toc-depth: 3
     smooth-scroll: true
