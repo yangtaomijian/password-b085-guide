@@ -24,6 +24,16 @@ project:
 # English to avoid spurious translation warnings, while preserving the actual
 # document language and Quarto's Chinese interface strings below.
 lang: en
+
+filters:
+  - scripts/seo-meta.lua
+
+seo-language: zh-CN
+seo-site-url: "https://yangtaomijian.github.io/password-b085-guide/"
+seo-site-title: "Password b0.85 中文攻略与机制资料库"
+seo-image-url: "https://yangtaomijian.github.io/password-b085-guide/assets/social/password-b085-guide-zh.png"
+seo-zh-site-url: "https://yangtaomijian.github.io/password-b085-guide/"
+seo-en-site-url: "https://yangtaomijian.github.io/password-b085-guide/en/"
 language:
   toc-title-website: "该页面内容"
   callout-tip-title: "提示"
@@ -54,6 +64,8 @@ website:
   title: "Password b0.85 中文攻略与机制资料库"
   description: "《Password》b0.85 中文路线、密码提示、收集与机制攻略"
   site-url: "https://yangtaomijian.github.io/password-b085-guide/"
+  open-graph: false
+  twitter-card: false
   search:
     location: navbar
     type: overlay
@@ -190,6 +202,8 @@ website:
 format:
   html:
     canonical-url: true
+    template-partials:
+      - templates/metadata.html
     variables:
       lang: zh-CN
     theme:

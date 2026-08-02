@@ -1,5 +1,5 @@
 ---
-title: "Password"
+title: "Password b0.85 中文攻略｜路线、密码、奖牌与机制"
 subtitle: "b0.85 中文攻略与机制资料库"
 description: "《Password》b0.85 的剧情线路、密码提示、奖牌、CG、Compendium 与底层机制整理"
 toc: false

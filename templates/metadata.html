@@ -1,0 +1,44 @@
+<meta charset="utf-8" />
+$if(quarto-version)$
+<meta name="generator" content="quarto-$quarto-version$" />
+$else$
+<meta name="generator" content="quarto" />
+$endif$
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+$for(author-meta)$
+<meta name="author" content="$author-meta$" />
+$endfor$
+$if(date-meta)$
+<meta name="dcterms.date" content="$date-meta$" />
+$endif$
+$if(description-meta)$
+<meta name="description" content="$description-meta$" />
+$endif$
+
+<title>$seo-final-title$</title>
+
+<meta property="og:type" content="website" />
+$if(seo-is-home)$
+<meta property="og:title" content="$title$" />
+$else$
+<meta property="og:title" content="$seo-final-title$" />
+$endif$
+<meta property="og:description" content="$description-meta$" />
+<meta property="og:url" content="$seo-canonical$" />
+<meta property="og:image" content="$seo-image-url$" />
+
+<meta name="twitter:card" content="summary_large_image" />
+$if(seo-is-home)$
+<meta name="twitter:title" content="$title$" />
+$else$
+<meta name="twitter:title" content="$seo-final-title$" />
+$endif$
+<meta name="twitter:description" content="$description-meta$" />
+<meta name="twitter:image" content="$seo-image-url$" />
+
+$if(seo-has-hreflang)$
+<link rel="alternate" hreflang="zh-CN" href="$seo-zh-url$" />
+<link rel="alternate" hreflang="en" href="$seo-en-url$" />
+$endif$

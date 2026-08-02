@@ -1,6 +1,6 @@
 ---
-title: "Password b0.85 Guide"
-description: "An unofficial, version-specific reference guide for Password b0.85."
+title: "Password b0.85 Guide | Routes, Passwords, Medals & Mechanics"
+description: "An unofficial, version-specific guide to character Routes, lettered Paths, passwords, medals, collectibles, and mechanics in Password b0.85."
 comments: false
 toc: false
 ---
