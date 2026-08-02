@@ -1,159 +1,138 @@
 ---
 title: "密码检定的底层机制"
-description: "Password b0.85 密码输入的标准化、日期匹配、脚本跳转与旧代码残留"
+description: "Password b0.85 如何标准化金库输入、匹配日期、动态跳转，并处理 D7 与 D11 的特殊实现"
 toc: true
 ---
 
-《Password》的密码输入统一由 `Vault.rpy` 中的 `vaultInput` 处理。
+本页解释《Password》b0.85 中按日期运行的金库密码系统，但不会公开四次主要检定的答案。
 
-玩家输入密码后，游戏会依次完成：
+D1 至 D17 的大多数金库输入共用 `vaultInput` label。Path P 最终流程中的键盘输入使用独立的 `FinalPassword` label；D1 咖啡杯姓名也使用另一套区分大小写的输入逻辑。
 
-1. 读取输入内容；
-2. 删除首尾空格；
-3. 将英文字母统一转为大写；
-4. 检查输入是否存在于密码列表；
-5. 检查当前日期是否与该密码对应；
-6. 跳转到相应的 `vaultPasswordX` 标签。
+需要逐级解谜线索时，见[密码分级提示](../guide/password-hints.md)。
 
-本页解释这一机制如何工作，不直接公开四个关键密码的答案。解谜提示见[密码分级提示](../guide/password-hints.md)。
+## 输入标准化
 
-## 核心处理流程
-
-原始代码的结构可以简化为：
+共用金库输入首先执行：
 
 ```renpy
 $ VaultPassword = renpy.input("INPUT PASSWORD")
 $ VaultPassword = VaultPassword.strip()
 $ VaultPassword = VaultPassword.upper()
-
-if VaultPassword in passwordList:
-    if currentDay == correctDayList[passwordList.index(VaultPassword)]:
-        $ renpy.jump(
-            "vaultPassword" +
-            str(passwordList.index(VaultPassword))
-        )
 ```
 
-其中：
+这意味着：
 
-- `passwordList` 保存可以被识别的密码；
-- `correctDayList` 保存每个密码对应的正确日期；
-- 两个列表中的相同位置表示一组对应关系；
-- 密码在列表中的索引决定跳转到哪个 `vaultPasswordX`。
+- 不区分英文字母大小写；
+- 会删除首尾空白；
+- 拼写、标点和密码内部的空格仍必须准确。
 
-例如，某密码位于列表索引 11，日期表中相同位置为 10，那么它只有在 D10 输入时才会跳转到：
+例如，`example`、`EXAMPLE` 和 `Example` 会被视为相同输入；但改变单词内部空格或标点后，就会形成不同字符串。
 
-```renpy
-vaultPassword11
-```
+## 列表查找与动态跳转
 
-## 大小写与空格
+调度器每次都会重新建立两组平行列表：
 
-输入会先执行：
+- `passwordList`：保存能够识别的字符串；
+- `correctDayList`：保存相同位置对应的正确日期。
 
-```renpy
-$ VaultPassword = VaultPassword.strip()
-$ VaultPassword = VaultPassword.upper()
-```
-
-因此：
-
-- 英文字母不区分大小写；
-- 输入首尾多余的空格通常不会影响结果；
-- 单词内部的空格不会被自动删除；
-- 拼写和内部空格仍然必须与密码表一致。
-
-例如，下列输入在程序中会被视为相同：
+两个列表通过索引建立对应关系。其逻辑可简化为：
 
 ```text
-example
-EXAMPLE
-Example
+读取输入
+→ 删除首尾空白
+→ 转为大写
+
+输入已登记，且日期正确
+→ 跳转至 vaultPassword<索引>
+
+输入已登记，但日期错误
+→ 跳转至 vaultBadDay<当前日期>
+
+去除空白后为空
+→ 跳转至 vaultEmpty<当前日期>
+
+输入未登记
+→ 跳转至 vaultWrong<当前日期>
 ```
 
-但如果某个密码本身包含内部空格，漏写或增加内部空格仍然会导致不匹配。
+成功跳转目标由 `passwordList.index()` 返回的第一个匹配位置构造。因此，共用调度器不需要为每个密码分别编写一套硬编码输入分支。
 
-## 密码与日期必须同时匹配
+## 成功与失败结果
 
-游戏并不只检查密码本身，还会检查当前日期。
+成功进入某个 `vaultPasswordX` label 后，通常会设置该阶段的成功标记、显示警告或幻象，再返回主线。
 
-代码逻辑是：
+但密码成功并不独立决定最终字母线。之后的角色线、角色生死和其他剧情检定仍可能改变结果，详见[字母线系统](../guide/path-system.md)。
 
-```renpy
-if VaultPassword in passwordList:
-    if currentDay == correctDayList[
-        passwordList.index(VaultPassword)
-    ]:
-        ...
-```
+即使部分日期显示的对白相似，三类失败跳转仍然不同：
 
-因此，即使输入内容确实存在于密码表中，只要当前日期不正确，也不会进入对应的密码剧情。
+::: {.password-result-table .table-responsive .table-scroll-compact}
 
-b0.85 密码表中包含的主要类型包括：
+| 输入状态 | 跳转目标 |
+|---|---|
+| 去除首尾空白后为空 | `vaultEmpty<currentDay>` |
+| 非空，但不在密码表中 | `vaultWrong<currentDay>` |
+| 已登记，但不属于当前日期 | `vaultBadDay<currentDay>` |
 
-| 日期 | 密码用途 |
-|---:|---|
-| D1 | 彩蛋输入 |
-| D3 | 彩蛋输入 |
-| D4 | Roswell 线首个关键密码 |
-| D6 | 其他五条角色线的首个关键密码 |
-| D7 | 第二个关键密码 |
-| D10 | 第三个关键密码 |
-| D11 | 旧密码残留 |
-| D17 | 第四个关键密码 |
+:::
 
-角色线密码虽然属于同一阶段，但 Roswell 线的输入时间在 D4，其他角色线则在 D6。
+部分日期会为“密码正确但日期错误”提供专门提示，其他日期则可能复用普通错误回应。较后期的检定通常还会提供重试或 **Give up** 选项。
 
-## 跳转标签如何确定
+## 主要检定阶段
 
-当输入和日期均匹配时，游戏会根据密码在列表中的位置构造标签名：
+剧情共有四次主要密码检定，但第一阶段分布在 D4 与 D6。
 
-```renpy
-"vaultPassword" + str(index)
-```
+::: {.password-check-stages-table .table-responsive .table-scroll-compact}
 
-例如：
+| 类型 | 日期 | 作用 |
+|---|---:|---|
+| 可选彩蛋输入 | D1 | 使用共用金库调度器 |
+| 没有可接受答案 | D2 | 会打开金库输入，但没有登记给 D2 的正确答案 |
+| 可选彩蛋输入 | D3 | 使用共用金库调度器 |
+| 主要检定，第 1A 阶段 | D4 | 设置之后由 Roswell 线读取的成功标记 |
+| 主要检定，第 1B 阶段 | D6 | 为其他五条角色线保留五个角色相关字符串 |
+| 主要检定，第 2 阶段 | D7 | 使用下文说明的重复索引落穿结构 |
+| 主要检定，第 3 阶段 | D10 | 主要字母线分流关口；Sal 线存在失败豁免 |
+| 未完成实现 | D11 | 保留密码脚手架，但没有可用成功路径 |
+| 主要检定，第 4 阶段 | D17 | 失败后果稍后发生；Tyson 线存在豁免 |
+| 独立最终输入 | Path P 最终流程 | 使用 `FinalPassword`，而不是 `vaultInput` |
 
-```text
-索引 4
-→ vaultPassword4
-```
+:::
 
-对应标签中会设置剧情变量、显示相关场景或继续后续流程。
+D1 和 D3 属于可选彩蛋，不是推进主线所需的密码检定。其效果见[彩蛋与隐藏输入](../extras/easter-eggs.md)。
 
-因此，密码检定并不是为每个输入单独编写一套读取代码，而是由一个统一入口完成查表和跳转。
+## D4 与 D6 的角色线边界
 
-## D7 的三个重复槽位
+第一阶段分布在两个不同日期。
 
-b0.85 的密码表中，D7 对应位置仍然连续保留了三个相同的列表项。
+### D4
 
-它们分别占用索引：
+六条角色线都会到达 D4 的金库场景。
 
-```text
-8
-9
-10
-```
+D4 的成功 label 本身不会检查当前搭档是否为 Roswell，但由它设置的成功标记，之后只会被 Roswell 线的流程要求。
 
-但 Python 的：
+### D6
 
-```python
-passwordList.index(VaultPassword)
-```
+Roswell 线不会进入普通 D6 金库检定。其他五条角色线共用同一个输入界面，并登记了五个角色相关字符串。
 
-只会返回该内容**第一次出现的位置**。
+调度器只检查输入字符串和当前日期，不检查当前角色线。因此，在某条角色线中输入另一个角色对应的有效字符串时，游戏仍会显示那个角色的警告，并设置那个角色对应的成功标记。
 
-因此，输入当前 D7 正确密码时，程序首先得到的始终是索引 8，而不是索引 9 或 10。
+但当前角色线真正需要的标记仍然没有写入，所以之后的失败条件仍会成立。
 
-表面上看，这似乎会跳转到错误的位置：
+## 角色线专属的失败豁免
 
-```text
-输入 D7 正确密码
-→ 找到索引 8
-→ jump vaultPassword8
-```
+Sal 线在 D10 选择 **Give up** 后，密码检定仍然属于失败；只是 Sal 线的专属分支会阻止普通情况下发生的 D11 灾难和 Path C/D 分流。
 
-但当前脚本中的三个标签结构是：
+Tyson 线在 D17 选择 **Give up** 后，同样不会写入成功标记；但之后的 Tyson 线剧情会阻止 D19 灾难和 Path F/G 分流。
+
+这些豁免改变的是**失败的后果**，不会把失败检定改判为成功。完整分流见[字母线系统](../guide/path-system.md)。
+
+## D7 的重复索引落穿
+
+b0.85 中，D7 密码在 `passwordList` 内连续出现三次，索引分别为 8、9 和 10。三个位置对应的日期都设为 D7。
+
+由于 `passwordList.index()` 只返回第一次匹配的位置，正确输入 D7 密码后，程序会得到索引 8，并跳转到 `vaultPassword8`。
+
+三个 label 在脚本中连续排列：
 
 ```renpy
 label vaultPassword8:
@@ -161,30 +140,40 @@ label vaultPassword8:
 label vaultPassword9:
 
 label vaultPassword10:
-    # 当前 D7 正确密码对应的实际剧情
+    # D7 成功实现
 ```
 
-`vaultPassword8` 和 `vaultPassword9` 都是空标签。
-
-Ren'Py 的 `label` 只是可跳转位置，不会像函数一样在末尾自动停止。如果一个标签下没有正文，执行会自然继续到下一个标签。
-
-因此，当前实际流程是：
+前两个 label 都没有正文，因此执行会自然继续到下一个 label。实际控制流是：
 
 ```text
-跳转到 vaultPassword8
-→ 标签内容为空
-→ 继续进入 vaultPassword9
-→ 标签内容仍为空
-→ 继续进入 vaultPassword10
-→ 执行当前 D7 正确密码的剧情
+vaultPassword8
+→ vaultPassword9
+→ vaultPassword10
 ```
 
-这是一种利用空标签自然落穿的兼容写法。
+这就是当前 D7 答案仍然能够到达完整成功场景的原因。
 
-D7 旧密码的历史变化统一整理在[旧版本密码档案](../versions/legacy-passwords.md)。
+D7 历史密码变化见[旧版本密码档案](../versions/legacy-passwords.md)。
 
-## D11 残留密码
+## D11 的未完成实现
 
-D11 的旧密码仍保留在密码列表和变量定义中，但当前脚本缺少对应的正常跳转标签与赋值入口，因此在 b0.85 中已经不可正常使用。
+D11 仍保留：
 
-其旧版用途、输入条件和代码残留见[旧版本密码档案](../versions/legacy-passwords.md#d11-可选密码)。
+- 一个登记字符串；
+- 日期映射；
+- 失败处理 label；
+- 相关对白；
+- 之后会读取 D11 标记的剧情分支。
+
+但正常剧情不会在 D11 打开 `vaultInput`，与该字符串对应的 `vaultPassword12` 成功 label 也不存在。
+
+因此，D11 在 b0.85 中没有可实际使用的密码。残留代码也不会影响四次主要密码检定。
+
+旧版用途与残留背景见[旧版本密码档案](../versions/legacy-passwords.md#d11-可选密码)。
+
+## 相关页面
+
+- [密码分级提示](../guide/password-hints.md)
+- [字母线系统](../guide/path-system.md)
+- [彩蛋与隐藏输入](../extras/easter-eggs.md)
+- [旧版本密码档案](../versions/legacy-passwords.md)

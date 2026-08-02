@@ -1,90 +1,119 @@
 ---
-title: "Password b0.85 中文攻略｜路线、密码、奖牌与机制"
-subtitle: "b0.85 中文攻略与机制资料库"
+title: "Password b0.85 中文攻略"
 description: "《Password》b0.85 的剧情线路、密码提示、奖牌、CG、Compendium 与底层机制整理"
-toc: false
 comments: false
+toc: false
 ---
 
-本站是一份面向《Password》玩家的 **b0.85 中文攻略与机制资料库**，主要整理剧情路线、密码提示、收集内容、好感度及相关代码机制。
-
-本站为非官方玩家整理，并不是完整 Wiki，也不隶属于游戏作者 Grizz 或发行平台。内容以玩家实际可触发的游戏流程为主。
+本站是一份面向《Password》玩家的非官方 b0.85 中文攻略与机制资料库，可用于梳理角色线与字母线、获得密码提示、收集奖牌与 Gallery 图片、解锁 Compendium，并查询好感度和其他机制。
 
 ::: {.callout-warning}
 ## 剧透预警
 
-本站涉及剧情路线、Bad Ending、奖牌、CG、Compendium 条目和结局条件。
+本站涉及剧情线路、Bad Ending、奖牌、CG、Compendium 条目和结局条件。
 
-希望自行体验剧情的玩家，建议完成相应章节后再阅读。只在密码或路线处卡关时，可以优先使用低剧透提示和常见问题页面。
+希望自行体验剧情的玩家，建议完成相应章节后再阅读。只在密码或路线处卡关时，可优先查看低剧透提示和常见问题页面。
 :::
 
 ::: {.callout-important}
 ## 密码提示原则
 
-本站默认采用**提示优先**的整理方式，以尽量保留游戏原有的解谜过程。
+本站默认采用**提示优先**的整理方式，尽量保留游戏原有的解谜过程。
 
-强制密码通常按照一级、二级和三级提示逐步展开，不会在普通页面直接展示完整答案。彩蛋密码、旧版本密码和不影响正常流程的代码残留会单独说明。
+四次主要密码检定按照逐级提示展开，不会在普通页面中直接集中展示全部答案。彩蛋输入、旧版本密码和不影响正常流程的代码残留会单独说明。
 :::
 
-## 快速入口
+## 快速开始
 
-- **了解剧情路线与主要分歧**  
-  [剧情线路总览](guide/route-overview.md)
+:::: {.grid}
 
-- **卡在强制密码或相关谜题**  
-  [密码分级提示](guide/password-hints.md)
+::: {.g-col-12 .g-col-md-6}
+### [剧情线路总览](guide/route-overview.md)
 
-- **理解字母线、Path A—P 和路线判定**  
-  [字母线系统](guide/path-system.md)
+了解 D4 确定的角色线如何与之后的字母线系统共同作用。
+:::
 
-- **收集十二枚奖牌并解锁 Path P**  
-  [奖牌收集与 Path P](collectibles/medals.md)
+::: {.g-col-12 .g-col-md-6}
+### [密码分级提示](guide/password-hints.md)
 
-- **查找缺失的画廊 CG**  
-  [CG 画廊索引与定位器](collectibles/gallery.md)
+逐级查看四次主要密码检定的线索，不必一次看到全部答案。
+:::
 
-- **查找缺失的 Cast Files、Additional Scenes 或 Lore**  
-  [Compendium 解锁索引](collectibles/compendium.md)
+::: {.g-col-12 .g-col-md-6}
+### [十二枚奖牌收集指南](collectibles/medals.md)
 
-- **核对角色好感度、阈值与加点选项**  
-  [好感度机制](mechanics/affection.md)
+规划收集十二枚奖牌所需的角色线与字母线，并进入 Path P。
+:::
 
-- **仍然无法判断问题原因**  
-  [常见问题与排查](guide/faq.md)
+::: {.g-col-12 .g-col-md-6}
+### [常见问题与排查](guide/faq.md)
+
+快速排查角色线、字母线、密码、收集和解锁问题。
+:::
+
+::::
+
+## 浏览资料库
+
+### 攻略
+
+梳理剧情结构，并获得密码检定帮助。
+
+- [剧情线路总览](guide/route-overview.md)
+- [字母线系统](guide/path-system.md)
+- [密码分级提示](guide/password-hints.md)
+- [常见问题与排查](guide/faq.md)
+
+### 收集
+
+追踪十二枚奖牌、Compendium 条目和 Gallery 中登记的 100 张图片。
+
+- [十二枚奖牌收集指南](collectibles/medals.md)
+- [Compendium 解锁索引](collectibles/compendium.md)
+- [CG Gallery 查漏索引](collectibles/gallery.md)
+
+### 机制
+
+了解金库输入调度、奖牌持久化和好感度检定。
+
+- [密码检定的底层机制](mechanics/password-checks.md)
+- [奖牌持久化与最终检定](mechanics/medal-persistence.md)
+- [好感度机制与加点](mechanics/affection.md)
+- [好感度检定与剧情差异](mechanics/affection-differences.md)
+
+### 彩蛋
+
+查看可选金库输入、D1 咖啡杯姓名、隐藏司机和其他彩蛋。
+
+- [彩蛋与隐藏输入](extras/easter-eggs.md)
+
+### 版本档案
+
+中文站另行保留已经删除或发生变化的旧版本内容，并与 b0.85 当前机制分开记录。此部分内容暂时缺失英文版本，且后续会更新。
+
+- [b0.85 版本主要变化](versions/b085-changes.md)
+- [旧版本剧情路线档案](versions/legacy-routes.md)
+- [旧版本密码档案](versions/legacy-passwords.md)
+- [旧版本机制档案](versions/legacy-mechanics.md)
+
+## 官方入口
+
+- **游戏与下载：** [Password on itch.io](https://passwordvn.itch.io/password)
+- **支持作者：** [Grizz on Patreon](https://www.patreon.com/PASSWORDVN)
+- **玩家社区：** [Password Discord](https://discord.gg/CSuEPWt) — 18+ / NSFW
 
 ## 资料范围
 
-**适用版本：** Password b0.85  
-**资料性质：** 非官方玩家攻略与机制整理  
-**主要内容：** 路线、密码提示、奖牌、CG、Compendium、好感度和代码机制  
-**版本档案：** 已删除或发生变化的旧机制单独归入版本页面
+本站适用于 **Password b0.85**。角色线与字母线是两个不同系统；字母线结构包括 Path A—G 和 Path P。
+
+本站为非官方玩家整理，不隶属于游戏作者 Grizz 或发行平台，也不是完整 Wiki。中文站除当前 b0.85 攻略外，还保留单独的旧版本档案，但旧版内容不应与现行机制混用。
 
 本站不提供游戏本体、完整游戏脚本、提取后的 CG 文件或未经授权的第三方素材。
 
-## 整理原则
-
-本站具体遵循以下原则：
-
-- 区分正常流程、互斥选项、坏结局分支和旧版本痕迹代码；
-- 保留游戏中的英文选项、变量名和脚本标签，便于只中英核对；
-- 将旧版本机制与 b0.85 当前机制分开记录；
-- 对存在条件限制或尚不能完全确认的内容明确注明；
-- 在发现错误或获得新证据后会继续修正。
-
-## 游戏官方入口
-
-- [在 itch.io 查看或获取《Password》](https://passwordvn.itch.io/password)
-- [在 Patreon 支持作者 Grizz](https://www.patreon.com/PASSWORDVN)
-- [《Password》官方 Discord 邀请链接](https://discord.gg/CSuEPWt)
-
 ## 本站资料来源
+
+本站内容由原 B 站攻略专栏迁移、核对并重新组织而来：
 
 - [查看本站内容最初来源的 B 站攻略专栏](https://www.bilibili.com/opus/753129391801761813)
 
-## 关于本站
-
-本站内容由原 B 站攻略专栏迁移、核对并重新组织而来。与早期专栏相比，此处更侧重可检索的路线结构、收集条件和机制说明，不再保留大篇幅剧情概览。
-
-尽管内容经过实际游玩和脚本核验，仍可能存在遗漏、版本差异或对复杂控制流的误判。发现问题时，欢迎提供所在页面、游戏版本、触发路线和具体选项，便于明确检查。
-
-<!-- 公开发布前在此补充 Giscus、GitHub Issues 或其他纠错入口。 -->
+与早期专栏相比，本站更侧重可检索的剧情结构、收集条件和机制说明，不再保留大篇幅剧情概览。

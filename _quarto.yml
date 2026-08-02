@@ -96,7 +96,7 @@ website:
           - href: collectibles/medals.md
             text: 十二枚奖牌
           - href: collectibles/gallery.md
-            text: CG 画廊
+            text: CG Gallery 查漏索引
           - href: collectibles/compendium.md
             text: Compendium
 
@@ -104,7 +104,7 @@ website:
         menu:
           - href: mechanics/affection.md
             text: 好感度机制
-          - text: "好感度剧情差异"
+          - text: "好感度检定与剧情差异"
             href: mechanics/affection-differences.md
           - href: mechanics/medal-persistence.md
             text: 奖牌持久化
@@ -151,7 +151,7 @@ website:
           - href: collectibles/medals.md
             text: 十二枚奖牌收集指南
           - href: collectibles/gallery.md
-            text: CG 画廊查漏索引
+            text: CG Gallery 查漏索引
           - href: collectibles/compendium.md
             text: Compendium 解锁索引
 
@@ -159,7 +159,7 @@ website:
         contents:
           - href: mechanics/affection.md
             text: 好感度机制与加点
-          - text: "好感度剧情差异"
+          - text: "好感度检定与剧情差异"
             href: mechanics/affection-differences.md
           - href: mechanics/medal-persistence.md
             text: 奖牌持久化与最终检定
@@ -180,7 +180,7 @@ website:
       - section: "其他"
         contents:
           - href: extras/easter-eggs.md
-            text: 彩蛋与废弃设定
+            text: 彩蛋与隐藏输入
 
   page-footer:
     left: "Password b0.85 中文攻略与机制资料库"

@@ -3412,37 +3412,6 @@ html {
   word-break: normal;
 }
 
-/* Bilingual page switch in the existing navbar utility group. */
-.pw-language-switch {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  flex: 0 0 auto;
-
-  min-width: 2.5rem;
-  height: 2.2rem;
-  padding: 0 0.42rem;
-  margin: 0;
-
-  color: var(--pw-text-soft) !important;
-  background: transparent;
-  border: 1px solid transparent;
-  border-radius: 9px;
-
-  font-size: 0.76rem;
-  font-weight: 720;
-  line-height: 1;
-  text-decoration: none !important;
-  white-space: nowrap;
-}
-
-.pw-language-switch:hover,
-.pw-language-switch:focus-visible {
-  color: var(--pw-text) !important;
-  background: var(--pw-surface-soft);
-  border-color: var(--pw-border);
-}
-
 /* 彩蛋页中文密码图：仅缩放这一张图片 */
 
 main.content img[src*="easter-passwords-b085-zh"] {
@@ -3627,6 +3596,610 @@ main.content .medal-context-table td:nth-child(2) {
   main.content .medal-context-table col:nth-child(2),
   main.content .medal-context-table th:nth-child(2),
   main.content .medal-context-table td:nth-child(2) {
+    width: 80% !important;
+  }
+}
+
+/* =========================================================
+   Current guides: semantic table sizing and dense data tables
+   ========================================================= */
+
+main.content .path-exception-comparison-table,
+main.content .medal-route-plan-table,
+main.content .additional-scenes-table,
+main.content .compendium-lore-table,
+main.content .password-result-table,
+main.content .password-check-stages-table,
+main.content .affection-d19-summary-table,
+main.content .affection-shared-gains-table,
+main.content .affection-point-table,
+main.content .easter-vault-table,
+main.content .easter-special-input-table,
+main.content .easter-wrong-day-table {
+  min-width: 0;
+}
+
+main.content .path-exception-comparison-table {
+  --pw-table-min-width: 52rem;
+}
+
+main.content .medal-route-plan-table {
+  --pw-table-min-width: 44rem;
+}
+
+main.content .additional-scenes-table {
+  --pw-table-min-width: 42rem;
+}
+
+main.content .compendium-lore-table {
+  --pw-table-min-width: 36rem;
+  width: 100% !important;
+  max-width: 56rem !important;
+  margin-right: auto;
+}
+
+main.content .password-result-table {
+  --pw-table-min-width: 34rem;
+}
+
+main.content .password-check-stages-table {
+  --pw-table-min-width: 40rem;
+}
+
+main.content .affection-d19-summary-table {
+  --pw-table-min-width: 54rem;
+}
+
+main.content .affection-shared-gains-table {
+  --pw-table-min-width: 40rem;
+}
+
+main.content .affection-point-table {
+  --pw-table-min-width: 50rem;
+}
+
+main.content .easter-vault-table {
+  --pw-table-min-width: 38rem;
+  width: min(100%, 62rem);
+  margin-right: auto;
+}
+
+main.content .easter-special-input-table {
+  --pw-table-min-width: 52rem;
+}
+
+main.content .easter-wrong-day-table {
+  --pw-table-min-width: 38rem;
+  margin-bottom: 1.25rem;
+}
+
+main.content .path-summary-table table,
+main.content .path-exception-comparison-table table,
+main.content .medal-route-plan-table table,
+main.content .additional-scenes-table table,
+main.content .compendium-lore-table table,
+main.content .password-result-table table,
+main.content .password-check-stages-table table,
+main.content .affection-d19-summary-table table,
+main.content .affection-shared-gains-table table,
+main.content .affection-point-table table,
+main.content .easter-vault-table table,
+main.content .easter-special-input-table table,
+main.content .easter-wrong-day-table table {
+  width: 100% !important;
+  max-width: none !important;
+  margin-bottom: 0 !important;
+  table-layout: fixed !important;
+}
+
+main.content .path-summary-table th,
+main.content .path-summary-table td,
+main.content .path-exception-comparison-table th,
+main.content .path-exception-comparison-table td,
+main.content .medal-route-plan-table th,
+main.content .medal-route-plan-table td,
+main.content .additional-scenes-table th,
+main.content .additional-scenes-table td,
+main.content .compendium-lore-table th,
+main.content .compendium-lore-table td,
+main.content .password-result-table th,
+main.content .password-result-table td,
+main.content .password-check-stages-table th,
+main.content .password-check-stages-table td,
+main.content .affection-d19-summary-table th,
+main.content .affection-d19-summary-table td,
+main.content .affection-shared-gains-table th,
+main.content .affection-shared-gains-table td,
+main.content .affection-point-table th,
+main.content .affection-point-table td,
+main.content .easter-vault-table th,
+main.content .easter-vault-table td,
+main.content .easter-special-input-table th,
+main.content .easter-special-input-table td,
+main.content .easter-wrong-day-table th,
+main.content .easter-wrong-day-table td {
+  vertical-align: top;
+}
+
+main.content .path-summary-table col:nth-child(1),
+main.content .path-summary-table th:nth-child(1),
+main.content .path-summary-table td:nth-child(1) {
+  width: 7.5rem !important;
+}
+
+main.content .path-summary-table col:nth-child(2),
+main.content .path-summary-table th:nth-child(2),
+main.content .path-summary-table td:nth-child(2) {
+  width: calc(100% - 7.5rem) !important;
+}
+
+main.content .path-exception-comparison-table col:nth-child(1),
+main.content .path-exception-comparison-table th:nth-child(1),
+main.content .path-exception-comparison-table td:nth-child(1) {
+  width: 20% !important;
+}
+
+main.content .path-exception-comparison-table col:nth-child(2),
+main.content .path-exception-comparison-table th:nth-child(2),
+main.content .path-exception-comparison-table td:nth-child(2),
+main.content .path-exception-comparison-table col:nth-child(3),
+main.content .path-exception-comparison-table th:nth-child(3),
+main.content .path-exception-comparison-table td:nth-child(3) {
+  width: 40% !important;
+}
+
+main.content .medal-route-plan-table col:nth-child(1),
+main.content .medal-route-plan-table th:nth-child(1),
+main.content .medal-route-plan-table td:nth-child(1) {
+  width: 12% !important;
+}
+
+main.content .medal-route-plan-table col:nth-child(2),
+main.content .medal-route-plan-table th:nth-child(2),
+main.content .medal-route-plan-table td:nth-child(2) {
+  width: 24% !important;
+}
+
+main.content .medal-route-plan-table col:nth-child(3),
+main.content .medal-route-plan-table th:nth-child(3),
+main.content .medal-route-plan-table td:nth-child(3) {
+  width: 31% !important;
+}
+
+main.content .medal-route-plan-table col:nth-child(4),
+main.content .medal-route-plan-table th:nth-child(4),
+main.content .medal-route-plan-table td:nth-child(4) {
+  width: 33% !important;
+}
+
+main.content .additional-scenes-table col:nth-child(1),
+main.content .additional-scenes-table th:nth-child(1),
+main.content .additional-scenes-table td:nth-child(1),
+main.content .compendium-lore-table col:nth-child(1),
+main.content .compendium-lore-table th:nth-child(1),
+main.content .compendium-lore-table td:nth-child(1) {
+  width: 4.75rem !important;
+}
+
+main.content .additional-scenes-table col:nth-child(2),
+main.content .additional-scenes-table th:nth-child(2),
+main.content .additional-scenes-table td:nth-child(2) {
+  width: 15.5rem !important;
+}
+
+main.content .additional-scenes-table col:nth-child(3),
+main.content .additional-scenes-table th:nth-child(3),
+main.content .additional-scenes-table td:nth-child(3) {
+  width: calc(100% - 20.25rem) !important;
+}
+
+main.content .compendium-lore-table col:nth-child(2),
+main.content .compendium-lore-table th:nth-child(2),
+main.content .compendium-lore-table td:nth-child(2) {
+  width: 10rem !important;
+}
+
+main.content .compendium-lore-table col:nth-child(3),
+main.content .compendium-lore-table th:nth-child(3),
+main.content .compendium-lore-table td:nth-child(3) {
+  width: calc(100% - 14.75rem) !important;
+}
+
+main.content .password-result-table col:nth-child(1),
+main.content .password-result-table th:nth-child(1),
+main.content .password-result-table td:nth-child(1) {
+  width: 58% !important;
+}
+
+main.content .password-result-table col:nth-child(2),
+main.content .password-result-table th:nth-child(2),
+main.content .password-result-table td:nth-child(2) {
+  width: 42% !important;
+}
+
+main.content .password-check-stages-table col:nth-child(1),
+main.content .password-check-stages-table th:nth-child(1),
+main.content .password-check-stages-table td:nth-child(1) {
+  width: 28% !important;
+}
+
+main.content .password-check-stages-table col:nth-child(2),
+main.content .password-check-stages-table th:nth-child(2),
+main.content .password-check-stages-table td:nth-child(2) {
+  width: 4.75rem !important;
+}
+
+main.content .password-check-stages-table col:nth-child(3),
+main.content .password-check-stages-table th:nth-child(3),
+main.content .password-check-stages-table td:nth-child(3) {
+  width: calc(72% - 4.75rem) !important;
+}
+
+main.content .affection-d19-summary-table col:nth-child(1),
+main.content .affection-d19-summary-table th:nth-child(1),
+main.content .affection-d19-summary-table td:nth-child(1) {
+  width: 11% !important;
+}
+
+main.content .affection-d19-summary-table col:nth-child(2),
+main.content .affection-d19-summary-table th:nth-child(2),
+main.content .affection-d19-summary-table td:nth-child(2) {
+  width: 17% !important;
+}
+
+main.content .affection-d19-summary-table col:nth-child(3),
+main.content .affection-d19-summary-table th:nth-child(3),
+main.content .affection-d19-summary-table td:nth-child(3) {
+  width: 20% !important;
+}
+
+main.content .affection-d19-summary-table col:nth-child(4),
+main.content .affection-d19-summary-table th:nth-child(4),
+main.content .affection-d19-summary-table td:nth-child(4) {
+  width: 30% !important;
+}
+
+main.content .affection-d19-summary-table col:nth-child(5),
+main.content .affection-d19-summary-table th:nth-child(5),
+main.content .affection-d19-summary-table td:nth-child(5) {
+  width: 22% !important;
+}
+
+main.content .affection-shared-gains-table col:nth-child(1),
+main.content .affection-shared-gains-table th:nth-child(1),
+main.content .affection-shared-gains-table td:nth-child(1) {
+  width: 45% !important;
+}
+
+main.content .affection-shared-gains-table col:nth-child(2),
+main.content .affection-shared-gains-table th:nth-child(2),
+main.content .affection-shared-gains-table td:nth-child(2) {
+  width: 17% !important;
+}
+
+main.content .affection-shared-gains-table col:nth-child(3),
+main.content .affection-shared-gains-table th:nth-child(3),
+main.content .affection-shared-gains-table td:nth-child(3) {
+  width: 38% !important;
+}
+
+main.content .affection-point-table col:nth-child(1),
+main.content .affection-point-table th:nth-child(1),
+main.content .affection-point-table td:nth-child(1),
+main.content .affection-point-table col:nth-child(4),
+main.content .affection-point-table th:nth-child(4),
+main.content .affection-point-table td:nth-child(4) {
+  width: 4.75rem !important;
+}
+
+main.content .affection-point-table col:nth-child(2),
+main.content .affection-point-table th:nth-child(2),
+main.content .affection-point-table td:nth-child(2) {
+  width: 52% !important;
+}
+
+main.content .affection-point-table col:nth-child(3),
+main.content .affection-point-table th:nth-child(3),
+main.content .affection-point-table td:nth-child(3) {
+  width: calc(48% - 9.5rem) !important;
+}
+
+main.content .affection-point-table th,
+main.content .affection-point-table td {
+  padding-top: 0.46rem;
+  padding-bottom: 0.46rem;
+  line-height: 1.48;
+}
+
+main.content .easter-vault-table col:nth-child(1),
+main.content .easter-vault-table th:nth-child(1),
+main.content .easter-vault-table td:nth-child(1) {
+  width: 4.75rem !important;
+}
+
+main.content .easter-vault-table col:nth-child(2),
+main.content .easter-vault-table th:nth-child(2),
+main.content .easter-vault-table td:nth-child(2) {
+  width: 14rem !important;
+}
+
+main.content .easter-vault-table col:nth-child(3),
+main.content .easter-vault-table th:nth-child(3),
+main.content .easter-vault-table td:nth-child(3) {
+  width: calc(100% - 18.75rem) !important;
+}
+
+main.content .easter-special-input-table col:nth-child(1),
+main.content .easter-special-input-table th:nth-child(1),
+main.content .easter-special-input-table td:nth-child(1) {
+  width: 16% !important;
+}
+
+main.content .easter-special-input-table col:nth-child(2),
+main.content .easter-special-input-table th:nth-child(2),
+main.content .easter-special-input-table td:nth-child(2) {
+  width: 17% !important;
+}
+
+main.content .easter-special-input-table col:nth-child(3),
+main.content .easter-special-input-table th:nth-child(3),
+main.content .easter-special-input-table td:nth-child(3) {
+  width: 30% !important;
+}
+
+main.content .easter-special-input-table col:nth-child(4),
+main.content .easter-special-input-table th:nth-child(4),
+main.content .easter-special-input-table td:nth-child(4) {
+  width: 12% !important;
+}
+
+main.content .easter-special-input-table col:nth-child(5),
+main.content .easter-special-input-table th:nth-child(5),
+main.content .easter-special-input-table td:nth-child(5) {
+  width: 25% !important;
+}
+
+main.content .easter-special-input-table th,
+main.content .easter-special-input-table td {
+  white-space: normal !important;
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+
+main.content .easter-special-input-table code {
+  white-space: nowrap;
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+main.content .easter-wrong-day-table col:nth-child(1),
+main.content .easter-wrong-day-table th:nth-child(1),
+main.content .easter-wrong-day-table td:nth-child(1) {
+  width: 7.5rem !important;
+}
+
+main.content .easter-wrong-day-table col:nth-child(2),
+main.content .easter-wrong-day-table th:nth-child(2),
+main.content .easter-wrong-day-table td:nth-child(2) {
+  width: calc(100% - 7.5rem) !important;
+}
+
+/* Keep the Cast Files order and name columns compact on narrow screens. */
+main.content .compendium-cast-table table {
+  min-width: 46rem !important;
+  table-layout: fixed !important;
+}
+
+main.content .compendium-cast-table col:nth-child(1),
+main.content .compendium-cast-table th:nth-child(1),
+main.content .compendium-cast-table td:nth-child(1) {
+  width: 4.5rem !important;
+  text-align: right;
+  white-space: nowrap;
+}
+
+main.content .compendium-cast-table col:nth-child(2),
+main.content .compendium-cast-table th:nth-child(2),
+main.content .compendium-cast-table td:nth-child(2) {
+  width: 11rem !important;
+}
+
+main.content .compendium-cast-table col:nth-child(3),
+main.content .compendium-cast-table th:nth-child(3),
+main.content .compendium-cast-table td:nth-child(3) {
+  width: 12rem !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+main.content .compendium-cast-table col:nth-child(4),
+main.content .compendium-cast-table th:nth-child(4),
+main.content .compendium-cast-table td:nth-child(4) {
+  width: calc(100% - 27.5rem) !important;
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+
+main.content .compendium-cast-table td:nth-child(3) code {
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+/* =========================================================
+   Chinese guide: warm paper shell and scoped compact tables
+   ========================================================= */
+
+body.quarto-light,
+.quarto-light body {
+  --pw-shell-surface: #f7f4ee;
+  --pw-shell-surface-raised: #fffdf9;
+  --pw-interactive-surface: #f1ede5;
+  --pw-shell-hover: #ebe5da;
+  --pw-shell-border: #ddd7cc;
+}
+
+.navbar {
+  background: color-mix(
+    in srgb,
+    var(--pw-shell-surface-raised) 94%,
+    transparent
+  ) !important;
+  border-bottom-color: var(--pw-shell-border);
+}
+
+.navbar .dropdown-menu,
+.pw-edge-toggle {
+  background: color-mix(
+    in srgb,
+    var(--pw-shell-surface-raised) 96%,
+    transparent
+  );
+}
+
+#quarto-sidebar,
+#quarto-margin-sidebar,
+#quarto-header .quarto-secondary-nav,
+body.pw-custom-layout-ready #quarto-sidebar,
+body.pw-custom-layout-ready #quarto-margin-sidebar {
+  background: color-mix(
+    in srgb,
+    var(--pw-shell-surface) 96%,
+    transparent
+  ) !important;
+}
+
+.navbar .nav-link.active,
+.sidebar-item .sidebar-link.active,
+#quarto-sidebar .sidebar-item-section .sidebar-item:not(.sidebar-item-section) .sidebar-link.active {
+  background: var(--pw-interactive-surface) !important;
+  background-image: none !important;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link:focus,
+.sidebar-item .sidebar-link:hover,
+#quarto-sidebar .sidebar-section .sidebar-section-item:hover {
+  background: var(--pw-shell-hover) !important;
+}
+
+.pw-panel-toggle,
+.pw-edge-toggle {
+  background-color: var(--pw-interactive-surface);
+  border-color: var(--pw-shell-border);
+}
+
+.gallery-locator {
+  background: var(--pw-shell-surface);
+  border-color: var(--pw-shell-border);
+}
+
+#gallery-locator-root .gallery-locator-section {
+  background: var(--pw-interactive-surface);
+  border-color: var(--pw-shell-border);
+}
+
+#gallery-locator-root .gallery-locator-section legend {
+  background: var(--pw-interactive-surface);
+}
+
+@media (min-width: 760px) {
+  main.content .medal-route-plan-table {
+    width: min(100%, 52rem);
+  }
+
+  main.content .affection-shared-gains-table {
+    width: min(100%, 52rem);
+  }
+
+  main.content .password-check-stages-table {
+    width: min(100%, 54rem);
+  }
+
+  main.content .easter-wrong-day-table {
+    width: min(100%, 42rem);
+  }
+
+  main.content .medal-route-plan-table table,
+  main.content .affection-shared-gains-table table,
+  main.content .password-check-stages-table table,
+  main.content .easter-wrong-day-table table {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+  }
+
+  main.content .medal-route-plan-table col:nth-child(1),
+  main.content .medal-route-plan-table th:nth-child(1),
+  main.content .medal-route-plan-table td:nth-child(1) {
+    width: 9% !important;
+  }
+
+  main.content .medal-route-plan-table col:nth-child(2),
+  main.content .medal-route-plan-table th:nth-child(2),
+  main.content .medal-route-plan-table td:nth-child(2) {
+    width: 25% !important;
+  }
+
+  main.content .medal-route-plan-table col:nth-child(3),
+  main.content .medal-route-plan-table th:nth-child(3),
+  main.content .medal-route-plan-table td:nth-child(3) {
+    width: 29% !important;
+  }
+
+  main.content .medal-route-plan-table col:nth-child(4),
+  main.content .medal-route-plan-table th:nth-child(4),
+  main.content .medal-route-plan-table td:nth-child(4) {
+    width: 37% !important;
+  }
+
+  main.content .affection-shared-gains-table col:nth-child(1),
+  main.content .affection-shared-gains-table th:nth-child(1),
+  main.content .affection-shared-gains-table td:nth-child(1) {
+    width: 38% !important;
+  }
+
+  main.content .affection-shared-gains-table col:nth-child(2),
+  main.content .affection-shared-gains-table th:nth-child(2),
+  main.content .affection-shared-gains-table td:nth-child(2) {
+    width: 13% !important;
+  }
+
+  main.content .affection-shared-gains-table col:nth-child(3),
+  main.content .affection-shared-gains-table th:nth-child(3),
+  main.content .affection-shared-gains-table td:nth-child(3) {
+    width: 49% !important;
+  }
+
+  main.content .password-check-stages-table col:nth-child(1),
+  main.content .password-check-stages-table th:nth-child(1),
+  main.content .password-check-stages-table td:nth-child(1) {
+    width: 27% !important;
+  }
+
+  main.content .password-check-stages-table col:nth-child(2),
+  main.content .password-check-stages-table th:nth-child(2),
+  main.content .password-check-stages-table td:nth-child(2) {
+    width: 9% !important;
+    text-align: center;
+  }
+
+  main.content .password-check-stages-table col:nth-child(3),
+  main.content .password-check-stages-table th:nth-child(3),
+  main.content .password-check-stages-table td:nth-child(3) {
+    width: 64% !important;
+  }
+
+  main.content .easter-wrong-day-table col:nth-child(1),
+  main.content .easter-wrong-day-table th:nth-child(1),
+  main.content .easter-wrong-day-table td:nth-child(1) {
+    width: 20% !important;
+  }
+
+  main.content .easter-wrong-day-table col:nth-child(2),
+  main.content .easter-wrong-day-table th:nth-child(2),
+  main.content .easter-wrong-day-table td:nth-child(2) {
     width: 80% !important;
   }
 }

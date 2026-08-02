@@ -1,54 +1,63 @@
 ---
-title: "CG 画廊查漏索引"
-description: "Password b0.85 Memories 与 Trauma 画廊的排列顺序、最早正常触发节点与剧情上下文"
+title: "CG Gallery 查漏索引"
+description: "Password b0.85 Memories 与 Trauma 的网格顺序、最早正常触发节点和附近剧情上下文"
 toc: true
 ---
 
-本页用于定位《Password》b0.85 画廊中尚未解锁的 CG。
+本页用于定位《Password》b0.85 Gallery 中尚未解锁的 CG。
 
-画廊共有两个页签：
+Gallery 包含两个页签：
 
 - **Memories：**72 张角色与其他剧情 CG；
 - **Trauma：**28 张死亡与创伤 CG。
 
-合计共 100 张，对应画廊中的 `Gallery Completion: seen / total` 统计。
+两部分共登记 100 张图片，对应界面显示的 `Gallery Completion: seen / total` 统计。
 
 ::: {.callout-important}
 ## 使用方法
 
-游戏内画廊每行有四个格子，按照**从左到右、从上到下**排列。
+Gallery 每行有四个格子，按照**从左到右，再从上到下**排列。
 
 例如：
 
-- Memories 第 6 行第 4 列对应 `hosskiss`；
-- Memories 第 12 行第 1 列对应 `davebrushtyson`；
-- Trauma 第 4 行第 3 列对应 `metempsychosis`。
+- Memories 第 6 行第 4 列是 `hosskiss`；
+- Memories 第 12 行第 1 列是 `davebrushtyson`；
+- Trauma 第 4 行第 3 列是 `metempsychosis`。
 
-排列表中每个 CG 名称下方显示最早正常触发节点的简写；页面下方的完整触发索引进一步提供脚本文件、行号和附近剧情文本。部分 CG 会在多个分支重复出现，因此所列节点不一定是唯一解锁方式。
+坐标表会在每个 CG ID 下方简写其最早正常触发节点。页面后半部分的完整触发索引还会列出脚本文件、行号和附近剧情文本。部分 CG 会在多个分支中出现，因此所列位置不一定是唯一解锁方式。
 :::
 
 ## 解锁机制
 
-画廊按钮由 Ren'Py Gallery 的 `unlock_image()` 判断对应图片是否曾被显示。玩家在正常流程中实际看到相应的 `scene` 或 `show` 图片后，该图片会被 Ren'Py 记录为 seen，并解锁对应画廊按钮。
+每个 Gallery 按钮都会检查对应的登记图片是否曾经显示。图片在剧情中实际出现后，Ren'Py 可以把它记录为 seen，并解锁对应按钮。
 
-`persistent._seen_images` 在本作脚本中主要用于额外统计 `Gallery Completion`，不构成另一套独立的画廊解锁条件。画廊记录属于 `persistent` 数据，不依附于某一个普通存档。
+`Gallery Completion` 数字与按钮状态分别计算，并不是第二项解锁要求。
+
+Gallery 进度也不属于某一个普通剧情存档。读取或删除普通存档，不会重置已经记录为 seen 的图片。
 
 因此：
 
-- 不需要在看到 CG 后继续游玩到当天结束；
-- 读取其他存档通常不会取消已经解锁的 CG；
-- 删除某个普通存档通常也不会清除画廊；
-- 仅在脚本或游戏文件中存在、但剧情从未实际显示的图片，不会自动计入已解锁数量。
+- 必须真正推进到图片显示节点；仅仅在游戏文件中存在并不算解锁；
+- 读取其他普通存档不会重置 Gallery 进度；
+- 删除某个普通存档槽不会清除已经解锁的图片；
+- 只存在于图片定义、废弃分支或不可到达测试代码中的图片，不会自动计入 seen。
+
+::: {.callout-note}
+## 按钮状态与完成数量可能不会同时刷新
+
+Gallery 按钮与界面显示的 `seenPictures` 总数会分别更新。
+
+看到新 CG 后，对应按钮可能已经解锁，但完成数量尚未变化。在把不变的总数判断为解锁失败之前，请先重启游戏。
+:::
 
 ::: {.callout-note}
 ## 表格中的技术标签
 
-`Day10Morning2`、`Day11ABMeeting`、`FinalPassword` 等名称是游戏脚本标签，用于准确定位触发节点，玩家游戏内是看不到具体名称的。
+`Day10Morning2`、`Day11ABMeeting` 和 `FinalPassword` 等名称是用于准确定位触发位置的脚本 label，玩家在游戏界面中看不到这些名称。
 
-- 下表列出当前脚本正常流程中按剧情日期最早的一个显示位置。同一天若存在多个路线或分支，只列其中一个最早代表位置。
-- “上下文”提供图片首次显示前后的脚本文本，用于辅助确认剧情位置；它不一定完整列出进入该分支所需的全部前置条件。
-- 脚本中的角色简称包括：`mc`＝Dave，`bear`＝Dean，`wolf`＝Tyson，`boar`＝Roswell，`dragon`＝Orlando，`lion`＝Hoss，`croc`＝Sal，`oz`＝Oswin，`rat`＝Thanatos。
-
+- 表格按照正常流程中的剧情日期列出最早显示位置。同一天若有多个角色线或分支显示同一图片，只列一个最早的代表位置；
+- “上下文”摘录首次显示前后的附近脚本文本，用于帮助识别场景，但不一定列出进入该分支所需的所有前置条件；
+- 脚本角色简称包括：`mc`＝Dave，`bear`＝Dean，`wolf`＝Tyson，`boar`＝Roswell，`dragon`＝Orlando，`lion`＝Hoss，`croc`＝Sal，`oz`＝Oswin，`rat`＝Thanatos。
 :::
 
 <div id="gallery-locator-root"></div>
@@ -57,7 +66,7 @@ toc: true
 
 ::: {.gallery-grid .gallery-coordinate-table #gallery-memories data-gallery-tab="Memories"}
 
-| 行 | 列 1 | 列 2 | 列 3 | 列 4 |
+| 行 | 第 1 列 | 第 2 列 | 第 3 列 | 第 4 列 |
 |---:|---|---|---|---|
 | 1 | `daveshower`<br><small>D2 · `startday2`</small> | `davepancakes`<br><small>D10 · `Day10Morning2`</small> | `daveoutside`<br><small>D10 · `DaveDay10Morning`</small> | `daveoutsidewithdean`<br><small>D10 · `DaveDay10Morning`</small> |
 | 2 | `daveoutsidewithhoss`<br><small>D10 · `DaveDay10MorningwithHoss`</small> | `daveoutsidewithorlando`<br><small>D10 · `DaveDay10Morning`</small> | `daveoutsidewithroswell`<br><small>D10 · `DaveDay10Morning`</small> | `daveoutsidewithsal`<br><small>D10 · `DaveDay10Morning`</small> |
@@ -84,7 +93,7 @@ toc: true
 
 ::: {.gallery-grid .gallery-coordinate-table #gallery-trauma data-gallery-tab="Trauma"}
 
-| 行 | 列 1 | 列 2 | 列 3 | 列 4 |
+| 行 | 第 1 列 | 第 2 列 | 第 3 列 | 第 4 列 |
 |---:|---|---|---|---|
 | 1 | `discovery`<br><small>D4 · `vaultPassword2`</small> | `tysondead`<br><small>D6 · `vaultPassword3`</small> | `deandying`<br><small>D6 · `vaultPassword4`</small> | `deandead`<br><small>D6 · `vaultPassword4`</small> |
 | 2 | `hossdead`<br><small>D6 · `vaultPassword5`</small> | `saldead`<br><small>D6 · `vaultPassword6`</small> | `orlandofailed`<br><small>D6 · `vaultPassword7`</small> | `bensondead`<br><small>D7 · `vaultPassword10`</small> |
@@ -98,7 +107,7 @@ toc: true
 
 ## CG 解锁触发索引 {#cg-unlock-index}
 
-上方的 Memories 与 Trauma 表格用于确认画廊中的行列位置和 CG 文件名；由于玩家无法在游戏流程中看到文件名，本节进一步列出每张对应文件名 CG 在正常游戏流程中的最早显示节点及附近剧情文本。
+上方 Memories 与 Trauma 表格用于确认每个 Gallery 格子的坐标和 CG 文件 ID。由于玩家在正常游戏中看不到这些文件名，本节进一步列出每张登记图片的最早正常显示位置和附近剧情文本。
 
 :::: {#gallery-trigger-index .callout-note collapse="true"}
 
@@ -108,7 +117,7 @@ toc: true
 
 ### Dave
 
-| CG 名称 | 画廊 | 最早正常触发位置 | 上下文 |
+| CG ID | 登记在 Gallery | 最早正常触发位置 | 上下文 |
 |---|---|---|---|
 | `daveshower` | 是 | `Day 2.rpy:21` / `startday2` | "My muscles felt sore, maybe just from being in an unfamiliar bed, but given I had my own shower, what better time to test it out?" / "Once I was under the water, I realized how gross I felt." |
 | `davepancakes` | 是 | `Day 10.rpy:600` / `Day10Morning2` | "A fond smile found its way on my face as I recalled the dream I had. While I couldn't do bacon and eggs, I could do the next best thing." / "Sure, I'd been through this dance once while we're here, so another time wouldn't hurt." |
@@ -133,7 +142,7 @@ toc: true
 
 ### Dean
 
-| CG 名称 | 画廊 | 最早正常触发位置 | 上下文 |
+| CG ID | 登记在 Gallery | 最早正常触发位置 | 上下文 |
 |---|---|---|---|
 | `deanhottub` | 是 | `Day 5.rpy:2302` / `Day5Dinner` | "Once they were on, I turned around and saw Dean watching me from the corner of his eye with a sly grin." / mc "Peeking?" |
 | `deankiss` | 是 | `Day 5.rpy:2356` / `Day5Dinner` | mc "A message? Like what?" / bear "A bear like me, a hyena like you... Maybe you wanted me to be a bit more physically forward?" |
@@ -148,7 +157,7 @@ toc: true
 
 ### Hoss
 
-| CG 名称 | 画廊 | 最早正常触发位置 | 上下文 |
+| CG ID | 登记在 Gallery | 最早正常触发位置 | 上下文 |
 |---|---|---|---|
 | `hosspool` | 是 | `Day 6.rpy:2962` / `day6lunch` | "It was a sunny enough day and Hoss seemed to already be here, lounging about in a chair with his clothes neatly folded off to the side." / mc "Oh, hey Hoss. Were you uh... What are you wearing?" |
 | `hosskiss` | 是 | `Day 8.rpy:3905` / `HossLibraryDiscovery` | "That same hand slid up to cup my cheek, rubbing softly with his thumb. I gulped, my heart starting to race as he eased himself closer." / mc "Hoss..." |
@@ -161,7 +170,7 @@ toc: true
 
 ### Orlando
 
-| CG 名称 | 画廊 | 最早正常触发位置 | 上下文 |
+| CG ID | 登记在 Gallery | 最早正常触发位置 | 上下文 |
 |---|---|---|---|
 | `orlandogaming` | 是 | `Day 6.rpy:5073` / `day6lunch` | "We left Orlando's room and got settled in the rec room in front of the large screen with a game." / "Much like in the past we cuddled up together." |
 | `orlandokiss` | 是 | `Day 6.rpy:5585` / `orlandoday6dinner` | mc "I-I... uh... um..." / "Orlando gently tipped me back so that I was laying back on the bed, with him coming up beside the bed so my lap was in his." |
@@ -175,7 +184,7 @@ toc: true
 
 ### Roswell
 
-| CG 名称 | 画廊 | 最早正常触发位置 | 上下文 |
+| CG ID | 登记在 Gallery | 最早正常触发位置 | 上下文 |
 |---|---|---|---|
 | `roswellvault` | 是 | `Day 4.rpy:1630` / `Night4` | mc "Think you might have something?" / boar "Maybe." |
 | `roswellkiss` | 是 | `Day 6.rpy:1713` / `day6lunch` | "The more my mind lingered on it..." / "Kiss him.": |
@@ -191,7 +200,7 @@ toc: true
 
 ### Sal
 
-| CG 名称 | 画廊 | 最早正常触发位置 | 上下文 |
+| CG ID | 登记在 Gallery | 最早正常触发位置 | 上下文 |
 |---|---|---|---|
 | `saltable` | 是 | `Day 6.rpy:4611` / `day6lunch` | "After how this morning went, I was unsure if I should leave him unsupervised in there, but he emerged soon after with a couple of glasses and a pitcher of water." / "We sat at the corner of the table, so we were sort of facing one another but Sal didn't seem all that keen on talking despite us getting here." |
 | `salvault` | 是 | `Day 10.rpy:4882` / `vaultPassword11` | "My head hurt, almost like a stabbing pain coming from deep within." / "I didn't understand, what had I just seen?" |
@@ -202,7 +211,7 @@ toc: true
 
 ### Tyson
 
-| CG 名称 | 画廊 | 最早正常触发位置 | 上下文 |
+| CG ID | 登记在 Gallery | 最早正常触发位置 | 上下文 |
 |---|---|---|---|
 | `tysondrive` | 是 | `Day 5.rpy:3261` / `RoswellFailedSave` | wolf "Hey." / mc "Oh, hey Ty." |
 | `tysonmovie` | 是 | `Day 6.rpy:3786` / `day6lunch` | mc "So what are we watching?" / wolf "Don't know. Doesn't matter anyway." |
@@ -216,9 +225,9 @@ toc: true
 
 ::: {.gallery-trigger-group data-category="Death/Trauma"}
 
-### Death/Trauma
+### Death／Trauma
 
-| CG 名称 | 画廊 | 最早正常触发位置 | 上下文 |
+| CG ID | 登记在 Gallery | 最早正常触发位置 | 上下文 |
 |---|---|---|---|
 | `discovery` | 是 | `Day 4.rpy:1596` / `vaultPassword2` | "There was a moment's pause before the LED panel flashed vividly." / "Suddenly, thoughts filled my head..." |
 | `tysondead` | 是 | `Day 6.rpy:350` / `vaultPassword3` | "But then a picture began to form in my mind." / mc "The hell? Tyson?" |
@@ -253,9 +262,9 @@ toc: true
 
 ::: {.gallery-trigger-group data-category="Misc"}
 
-### Misc
+### 其他
 
-| CG 名称 | 画廊 | 最早正常触发位置 | 上下文 |
+| CG ID | 登记在 Gallery | 最早正常触发位置 | 上下文 |
 |---|---|---|---|
 | `ozmeet` | 是 | `Day 8.rpy:4734` / `Day8Oz` | mc "Have I... been in danger?" / oz "You tell me." |
 | `labrat1` | 是 | `Day 11 A+B.rpy:3397` / `Day11ABMeeting` | "I was stunned, staring at what I was seeing. Eyes trailing down to the knife sticking out of his chest." / mc "What...? How? Why? When did...?" |
@@ -287,28 +296,27 @@ toc: true
 
 ::::
 
-## 不在画廊内的
+## 未登记在 Gallery 中的图片
 
-以下图片名称在脚本中有定义或调用，但没有加入当前画廊列表，因此即使在剧情中显示，也不存在对应的画廊按钮。
+下列图片 ID 在 b0.85 脚本中已有定义或会在剧情中显示，但没有登记到当前 Gallery。即使玩家在故事中看到这些图片，它们也没有对应的 Gallery 按钮。
 
 ::: {#gallery-non-gallery-index .gallery-non-gallery-index}
 
-| CG 名称 | 画廊 | 最早正常触发位置 | 上下文 |
+| CG ID | 登记在 Gallery | 最早正常触发位置 | 上下文 |
 |---|---|---|---|
-| `deanlove` | 否 | 无正常流程触发；仅见于 `Day24A_Redux.rpy:3825` / `CGdump` | 当前脚本只有不可达的调试调用，正常游玩不会显示。 |
+| `deanlove` | 否 | 正常剧情中无触发；仅见于 `Day24A_Redux.rpy:3825` / `CGdump` | 唯一的显示调用位于未使用的 `CGdump` 测试 label 中；正常游戏流程不会显示该图片。 |
 | `envelopephoto3` | 否 | `Day23AB.rpy:948` / `Day23AStart` | "Carefully I looked at the man's features. He looked like a magician, or maybe it was just the fancy cut of his coat. His white fur did remind me a little of the Easter Bunny though. " / "Oswin said it'd be fine if I read the note, so long as Roswell got it too. Though I wasn't sure if the rules still applied given the assumption was that I'd be the one getting back." |
 | `hammondfamilyphoto2` | 否 | `Day22AB.rpy:606` / `Day22ABThanatos1` | "I breathed out, shaking my head." / mc "But now Oswin is dead, and wondering about that probably doesn't matter." |
 | `roswellepilogue` | 否 | `encore.rpy:2013` / `Roswell_Encore` | rat3 "I understand. " / boar "No, you're an assistant for work. " |
 
 :::
 
-### 已彻底删除的 Dean CG
 
-旧版本中曾存在四张 Dean 成人 CG。
+::: {.callout-warning}
+## `davedead6` 的技术说明
 
-b0.7 版本它们仍存在游戏文件中，但游戏过程中不会展示 CG，也没有对应剧情文字展示；而早于 b0.7 的游戏版本会在过程中完整展示 CG 和对应文字剧情片段。
-
-相关图片已经从 b0.85 游戏文件中彻底删除，也不属于当前画廊的 100 张完成统计。
+在 b0.85 中，这个格子的刷新可能不符合预期。如果完成所列 D24 场景后，Trauma 第 7 行第 4 列仍然锁定，请先重启游戏，再同时对照该格子和界面显示的完成数量。
+:::
 
 ## 相关页面
 

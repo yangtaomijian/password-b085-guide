@@ -1,6 +1,6 @@
 ---
 title: "Compendium 解锁索引"
-description: "Password b0.85 Cast Files、Additional Scenes 与 Lore 的解锁条件和查漏方法"
+description: "Password b0.85 全部 Cast Files、Additional Scenes 与 Lore 的解锁条件和排错方法"
 toc: true
 ---
 
@@ -9,247 +9,231 @@ toc: true
 | 部分 | 数量 | 内容 |
 |---|---:|---|
 | Cast Files | 16 | 角色档案 |
-| Additional Scenes | 9 | 可直接启动的附加回放 |
-| Lore | 12 | 十二枚星座奖牌的说明 |
+| Additional Scenes | 9 | 可重复播放的剧情场景 |
+| Lore | 12 | 十二枚星座奖牌条目 |
 | **合计** | **37** | — |
 
-未解锁条目不会从界面中消失，而是继续占据固定位置，并显示为 `?????`。因此，玩家可以根据所属部分和顺序直接定位缺失条目。
+游戏设置首次结局标记后，Compendium 按钮才会出现在**主菜单**。正常游戏流程中的导航菜单不会提供该入口。
 
-所有 Compendium 条目都依赖 `persistent` 持久变量，能够跨普通存档和周目累计。
+未解锁条目仍会保留在固定位置，并显示为 `?????`，因此可以根据所属部分和列表顺序定位缺失项目。
 
 ::: {.callout-important}
-## 三类条目的区别
+## 解锁会持久保存，但界面可能延迟刷新
 
-- **Cast Files：**在特定剧情节点写入角色档案变量；
-- **Additional Scenes：**满足前置条件后开放回放按钮，部分回放还必须按固定顺序完成；
-- **Lore：**直接读取十二枚奖牌的持久变量，与 Path P 的奖牌检定完全共用同一套状态。
+Cast Files、Additional Scenes 和 Lore 都由持久标记控制，但游戏不会在保持开启的情况下实时刷新所有 Compendium 条目。
+
+因此，新取得的条目即使已经写入持久状态，仍可能暂时显示为 `?????`。只关闭并重新打开 Compendium 也不一定会刷新。
+
+在把缺失条目判断为收集条件问题之前，请先完整重启游戏。
 :::
 
 ## Cast Files
 
-### 游戏内顺序与解锁条件
+### 解锁索引
 
 ::: {.compendium-cast-table .table-responsive .table-scroll-medium}
 
-| 顺序 | 档案 | 解锁变量 | 主要解锁条件 |
+| 顺序 | Cast File | 持久条件 | 主要解锁途径 |
 |---:|---|---|---|
-| 1 | Dave | `persistent.dave_lore` | D14 A／B 公共剧情，Dave 回忆父亲死亡当日 |
-| 2 | Tyson | `persistent.tyson_lore` | Tyson 线 D15，谈及父亲和成长经历 |
-| 3 | Roswell | `persistent.roswell_lore` | Roswell 线 D18，Roswell 表白并透露自己的身体状况 |
-| 4 | Orlando | `persistent.orlando_lore` | D15 Memphis／Noble 家族说明场景 |
-| 5 | Hoss | `persistent.hoss_lore` | 最早可在 D3 选择与 Hoss 交谈时解锁 |
-| 6 | Sal | `persistent.sal_lore` | Sal 线 D10 或 D15，讲述 Abi 的经历 |
-| 7 | Dean | `persistent.dean_lore` | Dean 线 D11，讲述前男友和校园欺凌经历 |
-| 8 | Benson | `persistent.benson_lore` | Path A Redux 后段，Benson 替 Roswell 挡枪 |
-| 9 | Thanatos | `persistent.thanatos_lore` | D23 A Redux；奖牌不足时 D24 另有补写入口 |
-| 10 | Thanatos – Part 2 | `persistent.true_end` | 收齐十二枚奖牌并完成完整 Path P |
-| 11 | Memphis | `persistent.memphis_lore` | Path C D13，Oswin 说明 Memphis Noble 的身份 |
-| 12 | Dominic | `persistent.dominic_lore` | Path A Redux 中 Dominic 与 Jack 提出交易 |
-| 13 | Jack | `persistent.jack_lore` | 与 Dominic 在同一段剧情中同时解锁 |
-| 14 | Florencia | `persistent.florencia_lore` | Path D、G、A 或 B 的任一对应后期场景 |
-| 15 | David | `persistent.david_lore` | 与 Dave 档案相同的 D14 父亲死亡回忆 |
-| 16 | Hoyt | `persistent.hoyt_lore` | D14 回忆中，Hoyt 向 Dave 告知父亲死亡 |
+| 1 | Dave | `persistent.dave_lore` | D14 A/B，关于 Dave 父亲的回忆 |
+| 2 | Tyson | `persistent.tyson_lore` | Tyson 线，D15 A/B |
+| 3 | Roswell | `persistent.roswell_lore` | Roswell 线，D18 A/B |
+| 4 | Orlando | `persistent.orlando_lore` | D15 会议；是否要求 Orlando 线取决于 Oswin 状态 |
+| 5 | Hoss | `persistent.hoss_lore` | D3 可选对话，另有 D8 可选补充入口 |
+| 6 | Sal | `persistent.sal_lore` | D10 密码成功场景，或 Sal 线 D15 补充入口 |
+| 7 | Dean | `persistent.dean_lore` | Dean 线，D11 A/B |
+| 8 | Benson | `persistent.benson_lore` | Path A 后期流程 |
+| 9 | Thanatos | `persistent.thanatos_lore` | Path A 后期时间循环流程 |
+| 10 | Thanatos - Part 2 | `persistent.true_end` | 完整完成 Path P |
+| 11 | Memphis | `persistent.memphis_lore` | Path C，D13 与 Memphis 会面 |
+| 12 | Dominic | `persistent.dominic_lore` | Path A 后期会面 |
+| 13 | Jack | `persistent.jack_lore` | 与 Dominic 同一段会面 |
+| 14 | Florencia | `persistent.florencia_lore` | Path D、G、A 或 B 的结局场景 |
+| 15 | David | `persistent.david_lore` | 与 Dave 相同的 D14 A/B 回忆 |
+| 16 | Hoyt | `persistent.hoyt_lore` | 与 Dave、David 相同的 D14 A/B 回忆 |
 
 :::
 
 ### Dave、David 与 Hoyt
 
-这三个档案都在 D14 A／B 的同一段公共回忆中解锁。
+三个档案都在 D14 A/B 的同一段回忆中解锁。脚本会先写入 Hoyt，随后写入 Dave 和 David。
 
-正常完整观看该段剧情时，玩家会连续获得 Hoyt、 Dave 和 David 的档案。它们不要求特定角色线或好感度。
+到达该回忆后，不要求特定角色线或好感度。
 
 ### Orlando
 
-Orlando 档案在 D15 有两套入口。
+Orlando 档案在 D15 有两种条件：
 
-| D15 状态 | 解锁条件 |
+| Oswin 状态 | 解锁条件 |
 |---|---|
-| Oswin 存活 | 要求当前为 Orlando 角色线 |
-| Oswin 已死 | 不限角色线，在 Benson 的公共说明场景中解锁 |
+| Oswin 存活 | 要求当前为 Orlando 线 |
+| Oswin 已死亡 | 任意角色线都会在公共会议中解锁 |
 
-若 Oswin 已死（Path B），角色线判断只改变 Dave 是否已经了解 Orlando 的家族背景。真正的档案写入位于角色线判断之外。
-
-因此，在该分支中，即使玩家选择的是 Dean、Tyson、Roswell、Hoss 或 Sal，也会解锁 Orlando 档案。
+游戏内锁定提示只提到 Orlando 线，因此不会显示第二种方法。
 
 ### Hoss
 
-Hoss 档案的游戏内 Cast Files 提示并不完全准确。
+最早的解锁方法是 D3 的可选对话：
 
-最早的解锁方法是：
+```text
+Message...? → Hoss
+```
 
-- D3 清晨选择与 Hoss 交谈；
-- 听他讲述真人秀 `Clearwater` 和宅邸的往事。
+此时尚未进行 D4 搭档选择，因此不要求 Hoss 线。
 
-此时 D4 的角色线尚未选择，因此**不要求进入 Hoss 路线**。
-
-D8 隐藏图书馆剧情中还会再次写入 Hoss 档案。该写入也位于 Hoss 路线和好感度亲吻判断之前，可以作为补充获取途径。
+D8 的可选隐藏图书馆剧情还可以再次写入同一标记。该补充入口同样不要求 Hoss 线，但玩家必须进入对应的图书馆分支。
 
 ### Sal
 
-Sal 档案有两个互补获取途径，均要求 Sal 角色线：
+D10 正确完成密码检定时，Sal 的 Cast File 会在相关场景中写入，**不要求当前为 Sal 线**。
 
-| 条件 | 解锁时间 |
-|---|---|
-| D10 正确输入第三个关键密码 | D10，Sal 讲述 Abi 的经历 |
-| D10 没有正确输入该密码 | D15，由后续谈话补充讲述并解锁 |
+如果玩家选择 Sal 线但在 D10 没有完成密码，D15 的 Sal 对话还会补写同一标记，因此不会永久错过该档案。
 
-因此，正常完成 Sal 角色线时，档案不会因为 D10 密码检定失败而永久错过。
+### Thanatos 与 Thanatos - Part 2
 
-### Thanatos
+普通 Thanatos 档案会在 Path A 后期的时间循环剧情中解锁。十二枚奖牌不足时，最终检定附近还存在一个补写入口，但正常情况下此前的 Path A 场景已经完成写入。
 
-Thanatos 档案主要在 D23 A Redux 的时间循环剧情中解锁。
-
-另有一个补写途径：
-
-- 到达 D24 End of Time；
-- 奖牌不足十二枚；
-- Thanatos 提示玩家仍有内容尚未发现。
-
-正常情况下，玩家在此前的 D23 Redux 已经获得该档案。
-
-### Thanatos – Part 2
-
-该条目通过直接读取 `persistent.true_end`，需要：
-
-1. 收齐十二枚奖牌；
-2. 通过 Path A 的最终检定；
-3. 进入完整 Path P 流程；
-4. 推进至最终海滩结局。
-
-只有真正完成 Path P 后才会解锁。
+`Thanatos - Part 2` 不使用单独的角色档案变量，而是直接读取完整 Path P 的完成状态。
 
 ### Dominic 与 Jack
 
-Dominic 和 Jack 在 Path A Redux 的同一段剧情中同时解锁。
+Dominic 和 Jack 会在 Path A 后期的同一次会面中连续解锁。Jack 没有另一段独立的专属解锁场景。
 
-当 Dominic 前来提出交易，Dave 明确指出两人的关系后，游戏连续写入：
+### Florencia
 
-```renpy
-persistent.dominic_lore = True
-persistent.jack_lore = True
-```
+Florencia 有多个替代解锁点：
 
-Jack 没有另一段独立的专属解锁剧情。
+- Path D 结局；
+- Path G 结局；
+- Path A 结局流程；
+- Path B 结局流程。
 
-### Cast Files 代码中遗留了 Oswin 的档案
+最早可以通过 Path D 结局取得。Path C、E 和 F 没有对应写入。
 
-代码中存在 `persistent.oswin_lore`，D23 A Redux 中也确实会将其设为 `True`。但是，Compendium 中的 Oswin 条目被注释掉，没有实际显示在界面中。
+<details id="oswin-为什么不在-cast-files-中">
+<summary><strong>为什么列表中没有 Oswin？</strong></summary>
+
+b0.85 定义了 `persistent.oswin_lore`，并会在 Path A 后期把它设为 `True`，但 Oswin 唯一的 `Cast` 条目已被禁用。
 
 因此：
 
-- 当前游戏内只有 16 个可见 Cast Files；
-- Oswin 不占据其中任何一个槽位；
-- 即使 `persistent.oswin_lore == True`，玩家也不会看到 Oswin 档案；
-- 查漏时不应把 Oswin 计入 Cast Files 总数。
-
-而实际上 Oswin 的档案也确实不存在任何文字内容。
+- Oswin 不占据任何可见 Cast File 槽位；
+- 可见总数仍然是 16；
+- 即使相关持久标记已经写入，玩家也不会看到 Oswin 档案；
+- 被禁用的条目只有简短、未完成的标题内容，并不是完整角色档案。
+</details>
 
 ## Additional Scenes
 
-Additional Scenes 解锁后，点击按钮会通过 Ren'Py `Replay()` 启动对应的剧情回放。
+### 固定顺序与解锁条件
 
-### 游戏内顺序
+::: {.additional-scenes-table .table-responsive .table-scroll-compact}
 
-::: {.additional-scenes-table .table-responsive .table-scroll-large}
-
-| 顺序 | 场景 | 回放标签 | 解锁条件 |
-|---:|---|---|---|
-| 1 | Dave's Demise | `Day23AStart` | `persistent.Day23APrime` |
-| 2 | Roswell's Attempt | `Day23A_R` | `persistent.Day23APrime` |
-| 3 | Tyson Epilogue | `Tyson_Encore` | True End，并已解锁 Tyson 档案 |
-| 4 | Dean Epilogue | `Dean_Encore` | 完成 Tyson Epilogue，并已解锁 Dean 档案 |
-| 5 | Orlando Epilogue | `Orlando_Encore` | 完成 Dean Epilogue，并已解锁 Orlando 档案 |
-| 6 | Sal Epilogue | `Sal_Encore` | 完成 Orlando Epilogue，并已解锁 Sal 档案 |
-| 7 | Hoss Epilogue | `Hoss_Encore` | 完成 Sal Epilogue，并已解锁 Hoss 档案 |
-| 8 | Dave Epilogue | `Dave_Encore` | 完成 Hoss Epilogue |
-| 9 | Roswell Epilogue | `Roswell_Encore` | 完成 Dave Epilogue |
+| 顺序 | Additional Scene | 解锁条件 |
+|---:|---|---|
+| 1 | Dave's Demise | `persistent.Day23APrime` |
+| 2 | Roswell's Attempt | `persistent.Day23APrime` |
+| 3 | Tyson Epilogue | 完成 Path P，并解锁 Tyson 的 Cast File |
+| 4 | Dean Epilogue | 完成 Tyson Epilogue，并解锁 Dean 的 Cast File |
+| 5 | Orlando Epilogue | 完成 Dean Epilogue，并解锁 Orlando 的 Cast File |
+| 6 | Sal Epilogue | 完成 Orlando Epilogue，并解锁 Sal 的 Cast File |
+| 7 | Hoss Epilogue | 完成 Sal Epilogue，并解锁 Hoss 的 Cast File |
+| 8 | Dave Epilogue | 完成 Hoss Epilogue |
+| 9 | Roswell Epilogue | 完成 Dave Epilogue |
 
 :::
 
 ### Dave's Demise 与 Roswell's Attempt
 
-前两项共享同一个解锁变量：`persistent.Day23APrime`
+前两个场景共享同一个持久条件，正常情况下会一起开放。
 
-因此，它们正常情况下会同时开放，不是两个需要分别收集的独立条件。如果一项已经开放、另一项仍然显示为 `?????`，更可能是版本或 `persistent` 数据异常。
+它们不属于后面七段 Epilogue 的完成链，也不需要先完成其中一个才能解锁另一个。
 
-### Epilogue 的固定线性顺序
+### Epilogue 的固定依赖链
 
-七段 Epilogue 按上表顺序线性解锁，不能跳过。前五段还要求对应角色的 Cast File；Dave 和 Roswell Epilogue 不再检查额外档案。
+七段 Epilogue 只能按固定顺序解锁：
 
-### 必须完整播放回放
+```text
+Tyson
+→ Dean
+→ Orlando
+→ Sal
+→ Hoss
+→ Dave
+→ Roswell
+```
 
-解锁下一项所需的完成变量，不是在点击回放按钮时立即写入，而是在对应回放接近结尾时设置。
+前五段角色 Epilogue 还要求相应的 Cast File：
 
-::: {.compendium-replay-completion-table .table-responsive .table-scroll-medium}
-
-| 回放 | 完成变量 |
+| Epilogue | 需要的 Cast File |
 |---|---|
-| Tyson Epilogue | `persistent.Tyson_Encore_Complete` |
-| Dean Epilogue | `persistent.Dean_Encore_Complete` |
-| Orlando Epilogue | `persistent.Orlando_Encore_Complete` |
-| Sal Epilogue | `persistent.Sal_Encore_Complete` |
-| Hoss Epilogue | `persistent.Hoss_Encore_Complete` |
-| Dave Epilogue | `persistent.Dave_Encore_Complete` |
-| Roswell Epilogue | `persistent.Roswell_Encore_Complete` |
+| Tyson Epilogue | Tyson |
+| Dean Epilogue | Dean |
+| Orlando Epilogue | Orlando |
+| Sal Epilogue | Sal |
+| Hoss Epilogue | Hoss |
+| Dave Epilogue | 无 |
+| Roswell Epilogue | 无 |
 
-:::
+只有 Tyson Epilogue 会直接检查 Path P 是否已经完成。后面的场景通过前一段 Epilogue 的完成标记间接依赖 Path P。
 
-如果玩家在回放中途退出，完成变量可能尚未写入，下一项也就不会开放。
+### 每段 Epilogue 都必须播放到完成节点
+
+用于解锁下一段 Epilogue 的完成标记，会在当前回放接近结尾时才写入。
+
+如果在写入前使用 **End Replay** 退出，完成标记不会生效。仅仅打开回放，或只观看其中一部分，都不足以推进解锁链。
+
+即使已经完整播放，下一项也可能要到重启游戏后才显示。因此，在仅仅因为下一项仍是 `?????` 而重播上一段之前，应先重启游戏。
 
 ::: {.callout-warning}
-## True End 后仍然卡在 `?????`
+## Epilogue 解锁链卡在 `?????`
 
-优先检查：
+请依次检查：
 
-1. 上一个 Epilogue 是否真正播放到结尾；
-2. 当前角色对应的 Cast File 是否已经解锁；
-3. 是否只是点击过回放，但在完成变量写入前退出；
-4. 是否正在使用旧版本或迁移后的异常 `persistent` 数据。
+1. 上一段 Epilogue 是否真正播放到结尾，而不是通过 **End Replay** 中途退出；
+2. Dean 至 Hoss 的对应 Cast File 是否已经解锁；
+3. Tyson Epilogue 是否已经通过“完成 Path P + 解锁 Tyson 档案”获得；
+4. 最近一次取得解锁或完成标记后，是否重启过游戏；
+5. 持久数据是否来自旧版本安装，或设备迁移是否不完整。
 :::
 
 ## Lore
 
-Lore 共十二项，按照标准黄道顺序排列：
+Lore 部分包含十二个星座条目，按照传统黄道顺序排列：
 
 ::: {.compendium-lore-table .table-responsive .table-scroll-compact}
 
-| 顺序 | Lore | 解锁变量 |
+| 顺序 | Lore | 持久标记 |
 |---:|---|---|
-| 1 | 白羊座 Aries | `persistent.aries` |
-| 2 | 金牛座 Taurus | `persistent.taurus` |
-| 3 | 双子座 Gemini | `persistent.gemini` |
-| 4 | 巨蟹座 Cancer | `persistent.cancer` |
-| 5 | 狮子座 Leo | `persistent.leo` |
-| 6 | 处女座 Virgo | `persistent.virgo` |
-| 7 | 天秤座 Libra | `persistent.libra` |
-| 8 | 天蝎座 Scorpio | `persistent.scorpio` |
-| 9 | 射手座 Sagittarius | `persistent.sagittarius` |
-| 10 | 摩羯座 Capricorn | `persistent.capricorn` |
-| 11 | 水瓶座 Aquarius | `persistent.aquarius` |
-| 12 | 双鱼座 Pisces | `persistent.pisces` |
+| 1 | Aries（白羊座） | `persistent.aries` |
+| 2 | Taurus（金牛座） | `persistent.taurus` |
+| 3 | Gemini（双子座） | `persistent.gemini` |
+| 4 | Cancer（巨蟹座） | `persistent.cancer` |
+| 5 | Leo（狮子座） | `persistent.leo` |
+| 6 | Virgo（处女座） | `persistent.virgo` |
+| 7 | Libra（天秤座） | `persistent.libra` |
+| 8 | Scorpio（天蝎座） | `persistent.scorpio` |
+| 9 | Sagittarius（射手座） | `persistent.sagittarius` |
+| 10 | Capricorn（摩羯座） | `persistent.capricorn` |
+| 11 | Aquarius（水瓶座） | `persistent.aquarius` |
+| 12 | Pisces（双鱼座） | `persistent.pisces` |
 
 :::
 
-这些变量与十二枚奖牌完全一一对应。
+每个 Lore 条目直接读取对应的奖牌持久标记。Path A 结局后的十二枚奖牌检定，统计的也是同一组标记。
 
-### 与 Path P 的关系
+因此：
 
-Compendium Lore 和 Path P 读取的是**同一组持久变量**。
+- 不存在独立于奖牌之外的 Lore 收集系统；
+- Compendium 定义中不存在额外的角色线或字母线解锁要求；
+- 新取得的奖牌即使暂时仍显示为锁定，也可能已经计入 Path P 检定；
+- 重启游戏后仍锁定的 Lore，通常说明对应奖牌标记尚未写入。
 
-关系可以直接概括为：
-
-- 某个 `persistent.xxx == True`：对应 Lore 解锁；
-- 十二个奖牌变量全部为 `True`：Path P 检定通过；
-- 不存在另一套独立的 Lore 收集状态；
-- 不存在 Lore 已解锁但 Path P 不承认该奖牌的正常设计。
-
-因此，Lore 缺哪一项，就表示 Path P 检定也缺对应奖牌。
-
-详细奖牌路线见[十二枚奖牌收集指南](medals.md)。
+奖牌位置与推荐收集顺序见[十二枚奖牌收集指南](medals.md)；底层状态和刷新行为见[奖牌持久化与最终检定](../mechanics/medal-persistence.md)。
 
 ## 相关页面
 
 - [十二枚奖牌收集指南](medals.md)
 - [奖牌持久化与最终检定](../mechanics/medal-persistence.md)
-- [CG 画廊查漏索引](gallery.md)
 - [字母线系统](../guide/path-system.md)
+- [剧情线路总览](../guide/route-overview.md)

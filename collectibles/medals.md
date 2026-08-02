@@ -1,220 +1,271 @@
 ---
 title: "十二枚奖牌收集指南"
-description: "Password b0.85 十二枚奖牌的收集规则、常见问题与推荐流程"
+description: "Password b0.85 十二枚星座奖牌的收集规则、推荐流程与 Path P 解锁条件"
 toc: true
 ---
 
-十二枚星座奖牌不仅用于补充《Password》的世界观，也是进入 Path P 真结局的必要条件。
+十二枚星座奖牌是跨存档和周目保留的持久收集品。游戏会在 `PATH A: END` 之后立即检查奖牌状态；如果十二枚均已记录，剧情便会继续进入 Path P 最终流程。
 
-b0.85 新增的 Compendium Lore 提供了游戏内收集提示，但部分条目记录的是 Dave 确认奖牌身份或程序写入收集状态的时间，不一定等同于奖牌首次被发现的时间。
+Compendium 中的日期可以作为提示，但并不遵循统一规则。不同奖牌的日期可能表示首次出现、身份确认，或者持久收集标记实际写入的时间。
 
 ::: {.callout-warning}
 ## 剧透预警
 
-本页会展示部分角色线、Path A／B 结局和奖牌出现位置，但不会完整复述各条路线剧情。
+本页会说明奖牌位置、部分角色线场景，以及 Path A 和 Path B 结局中的收集内容，但不会完整复述任何路线剧情。
 :::
 
 ## 基本规则
 
-- 进入 Path P 需要收集十二枚黄道星座奖牌；
-- 奖牌记录会跨存档和周目保留在 `persistent` 文件中；
-- 奖牌主要出现在部分角色线的 Path A 和 Path B；
-- 为了收集奖牌，不需要进入 Path C、D、E、F 或 G；
-- 不需要专门体验 Orlando 线和 Tyson 线；
-- 剧情中提到的第十三枚“蛇夫座”不需要、也无法由玩家收集。
-
-![Password b0.85 奖牌收集图](../assets/medal-map-b085-zh.png){width=100% fig-alt="Password 十二枚星座奖牌的路线与时间位置图"}
-
-这张图按照实际收集逻辑分类，而不是按照星座的传统排列顺序。
+- 进入 Path P 需要全部十二枚星座奖牌；
+- 奖牌进度保存在持久数据中，读取较早存档不会回滚已经取得的奖牌；
+- 四条角色线拥有专属奖牌：
+  - Dean 线：Pisces
+  - Roswell 线：Cancer
+  - Sal 线：Capricorn
+  - Hoss 线：Libra
+- Orlando 线和 Tyson 线没有专属收集奖牌；
+- Path A 提供 Aries、Scorpio 和 Virgo；
+- Path B 提供 Gemini 和 Sagittarius；
+- Aquarius、Taurus 和 Leo 可以在 Path A 或 Path B 一侧取得；
+- Path C—G 不包含无法由其他流程替代的奖牌解锁。
 
 ::: {.callout-important}
-## “发现”“确认”和“写入”不是同一件事
+## “发现”“确认”和“写入”并不总是同一时间
 
-奖牌在剧情中首次出现的时间，不一定等于程序把它写入全局收集记录的时间。
+奖牌可能已经出现在剧情中，但游戏尚未把它记录为持久收集品。
 
 例如：
 
-- 水瓶座实际来自 D4 的树篱迷宫（hedge maze），但直到 D16 奖牌盘点时才写入；
-- 金牛座早在 D7 温室南瓜下方被发现，同样到 D16 才正式写入；
-- 部分角色专属奖牌会在 D9 首次写入，并在 D16 盘点时再次补写。
+- Aquarius 在 D4 被找到，但持久标记要到 D16 的 A/B 奖牌盘点场景才写入；
+- Taurus 在 D7 被找到，同样要到 D16 才写入；
+- Pisces、Cancer 和 Capricorn 会在 D9 写入，即使其准确星座身份要到之后才确认。
 
-因此，本页会分别记录：
-
-1. 玩家在剧情中看到或获得奖牌的位置；
-2. Dave 确认奖牌身份的位置；
-3. Ren'Py 写入 `persistent` 收集状态的位置。
+因此，当剧情发现时间与持久解锁时间不同时，本页会分别注明。
 :::
 
-## 奖牌按取得条件分类
+## 收集条件速览
 
-### Path A／B 共通奖牌
+| 类别 | 奖牌 |
+|---|---|
+| Path A/B 共通 | Aquarius、Taurus、Leo |
+| 角色线专属 | Pisces、Cancer、Capricorn、Libra |
+| Path A | Aries、Scorpio、Virgo |
+| Path B | Gemini、Sagittarius |
 
-- 水瓶座
-- 金牛座
-- 狮子座
+## 推荐四角色线流程
 
-### 角色线专属奖牌
+由于四枚角色线专属奖牌分别属于四条互斥角色线，**至少需要从 D4 开始四次角色线流程**。其中只有两次需要完整推进到主要结局。
 
-- Dean：双鱼座
-- Roswell：巨蟹座
-- Sal：摩羯座
-- Hoss：天秤座
+### 第一步：在 D4 角色线选择前保存
 
-### Path A 专属奖牌
+在选择奖牌寻找比赛搭档之前建立存档。
 
-- 白羊座
-- 天蝎座
-- 处女座
+之后读取该存档，不会撤销已经写入持久数据的奖牌。为稳妥起见，每次取得奖牌后都应让相关场景完整结束，并建立一个普通存档，再返回 D4 分歧点。
 
-### Path B 专属奖牌
+### 第二步：用一条收集角色线完成 Path B
 
-- 双子座
-- 射手座
+从 Dean、Roswell、Sal 或 Hoss 中选择一条角色线，并完整完成 Path B。
 
-## 推荐速通流程
+该流程可以取得六枚奖牌：
 
-### 第一步：在 D4 保存角色线分歧存档
-
-到达 D4 选择寻找奖牌搭档时保存一个存档。
-
-之后可以从这里切换 Dean、Roswell、Hoss 或 Sal 等角色线，不需要重新体验 D1—D3。
-
-### 第二步：任选一条主要角色线，完成 Path B
-
-选择 Dean、Roswell、Hoss 或 Sal 中的一条角色线，推进到 Path B 结局。
-
-正常情况下，此时应记录六枚奖牌：
-
-- 水瓶座
-- 金牛座
-- 狮子座
-- 双子座
-- 射手座
+- Aquarius
+- Taurus
+- Leo
+- Gemini
+- Sagittarius
 - 当前角色线对应的专属奖牌
 
-### 第三步：补齐剩余三枚角色线奖牌
+由于这四条都不是 Tyson 线，D17 密码必须正确处理，否则流程会转入 Path F/G。
 
-回到 D4 角色线分歧存档，四条角色线分别对应一枚专属奖牌。第一条 Path B 流程已经取得其中一枚，接下来只需从下表中补齐其余三枚：
+### 第三步：补收两枚角色线奖牌
 
-- Dean 线：双鱼座，D9；
-- Roswell 线：巨蟹座，D9；
-- Sal 线：摩羯座，D9；
-- Hoss 线：天秤座，D16。
+返回 D4 存档，从剩余三条收集角色线中选择两条：
 
-已经在第一条流程中取得的对应奖牌可以跳过。
+- Dean 线：Pisces 在 D9 写入；
+- Roswell 线：Cancer 在 D9 写入；
+- Sal 线：Capricorn 在 D9 写入；
+- Hoss 线：Libra 在 D16 写入，并要求处于 Path A 或 Path B 一侧。
 
-完成后，累计应为九枚。如果目标只是全收集，不需要把 Dean、Roswell 和 Sal 线继续推进到结局；Hoss 线因为奖牌位于 D16，需要比另外三条线多推进一段。
+Dean、Roswell 和 Sal 的流程可以在 D9 持久标记写入后结束；Hoss 线必须继续推进到 D16。
 
-### 第四步：回到最开始的角色线，完成 Path A
+### 第四步：用最后一条收集角色线完成 Path A
 
-最后选择任意一条方便继续的角色线，完整推进 Path A。
+选择尚未取得专属奖牌的最后一条角色线，并完整完成 Path A。
 
-Path A 会补齐最后三枚：
+该流程会提供：
 
-- 白羊座：D23 Roswell 房间；
-- 天蝎座：Roswell 的信件／遗物场景；
-- 处女座：Path A 结尾由 Florencia 交出。
+- 最后一枚角色线专属奖牌；
+- Aries；
+- Scorpio；
+- Virgo。
 
-十二枚奖牌全部写入后，Path A 结尾会继续进入 Path P。
+十二枚奖牌的最终检定只会在 Path A 结局后执行，因此把 Path A 放在最后，可以避免之后再次完整推进 Path A。
+
+### 两种高效安排
+
+::: {.medal-route-plan-table .table-responsive .table-scroll-compact}
+
+| 安排 | Path B 完整流程 | 两次短收集流程 | 最终 Path A 流程 |
+|---|---|---|---|
+| A | Hoss 线 | Dean、Roswell、Sal 中任选两条推进到 D9 | 剩余的一条 D9 角色线 |
+| B | Dean、Roswell 或 Sal 线 | 另外两条 D9 角色线 | Hoss 线推进到 D16，并继续完成 Path A |
+
+:::
+
+两种安排都只需要四次 D4 角色线开始：一次完整 Path B、一次完整 Path A，以及两次短收集流程。
+
+## 十二枚奖牌速查
 
 ::: {.table-medal-index}
 
-## 十二枚奖牌速查索引
-
-| 奖牌 | 必需路线／Path | 玩家侧剧情位置 | 实际写入节点 |
+| 奖牌 | 必需条件 | 剧情位置 | 持久解锁 |
 |---|---|---|---|
-| 水瓶座 Aquarius | Path A／B 共通 | D16 奖牌盘点；奖牌实际来自 D4 树篱迷宫，由 Orlando 找到 | `Day16AB.rpy:600`、`:880` |
-| 金牛座 Taurus | Path A／B 共通 | D16 奖牌盘点；实际在 D7 温室巨型南瓜下方发现 | `Day16AB.rpy:643`、`:888` |
-| 双子座 Gemini | Path B | Path B Day 25，Tyson 拿出两半奖牌 | `Day25B.rpy:259` |
-| 巨蟹座 Cancer | Roswell 线 | D9 museum／book 场景；D16 还会进行路线补写 | `Day 9.rpy:3982`；`Day16AB.rpy:708`、`:936` |
-| 狮子座 Leo | Path A／B 共通 | D22，Thanatos 让 Dave 打开被挖空的儿童故事书 | `Day22AB.rpy:585` |
-| 处女座 Virgo | Path A | Path A 结尾，Florencia 在不同角色结尾分支中交出奖牌 | `Day24A_Redux.rpy:2058`、`:2171`、`:2301`、`:2443`、`:2538`、`:2657` |
-| 天秤座 Libra | Hoss 线 | D16 hidden library，Hoss 从书架附近找到 | `Day16AB.rpy:2372` |
-| 天蝎座 Scorpio | Path A | Path A 后段，Dave 阅读 Roswell 的信后在信封中发现 | `Day24A_Redux.rpy:1963` |
-| 射手座 Sagittarius | Path B | Path B 结尾，Florencia 在不同角色结尾分支中交出 | `Day25B.rpy:2713`、`:2916`、`:3069`、`:3213`、`:3360`、`:3502` |
-| 摩羯座 Capricorn | Sal 线 | D9 pool／locker 场景；D16 还会进行路线补写 | `Day 9.rpy:3422`；`Day16AB.rpy:613`、`:947` |
-| 白羊座 Aries | Path A | Path A Day 23，Roswell 房间床头柜 | `Day23AB.rpy:355` |
-| 双鱼座 Pisces | Dean 线 | D9 河边钓鱼，Dean 从水中捞出；D16 还会进行路线补写 | `Day 9.rpy:2843`；`Day16AB.rpy:659`、`:903` |
+| **Aquarius（水瓶座）** | Path A 或 B 一侧 | Orlando 在 D4 树篱迷宫中找到 | D16 A/B 奖牌盘点 |
+| **Taurus（金牛座）** | Path A 或 B 一侧 | D7 巨型南瓜下方 | D16 A/B 奖牌盘点 |
+| **Gemini（双子座）** | Path B | D25 B，两半奖牌重新组合 | D25 B |
+| **Cancer（巨蟹座）** | Roswell 线 | D9 博物馆书籍场景 | D9 |
+| **Leo（狮子座）** | Path A 或 B 一侧 | D22，被挖空的儿童故事书中 | D22 |
+| **Virgo（处女座）** | 完成 Path A | Path A 结局中由 Florencia 交给 Dave | Path A 结局 |
+| **Libra（天秤座）** | Hoss 线 + Path A 或 B 一侧 | D16 隐藏图书馆 | D16 |
+| **Scorpio（天蝎座）** | Path A | D24 A，Roswell 的信件中 | D24 A |
+| **Sagittarius（射手座）** | 完成 Path B | Path B 结局中由 Florencia 交给 Dave | Path B 结局 |
+| **Capricorn（摩羯座）** | Sal 线 | D9 泳池储物柜场景 | D9 |
+| **Aries（白羊座）** | Path A | D23，Roswell 房间床头柜 | D23 |
+| **Pisces（双鱼座）** | Dean 线 | D9 河边钓鱼场景 | D9 |
 
 :::
 
-## 十二枚奖牌详细上下文
+## 十二枚奖牌详细说明
 
-下表按传统黄道十二宫顺序排列，补充奖牌首次发现、身份确认和持久化写入的完整剧情背景。
+以下条目按照传统黄道十二宫顺序排列。
 
-::: {.medal-context-table .table-responsive}
+<details>
+<summary><strong>Aries（白羊座）——Path A</strong></summary>
 
-| 奖牌名称 | 上下文 |
-|---|---|
-| **白羊座 Aries** | **仅限 Path A。**D23，众人发现 Roswell 在自己房间内遭到镇静。Dave 随后注意到 Roswell 床头桌上的奖牌并将其拿起，Oswin 确认它是 Aries，而不是 Orlando 先前猜测的 Virgo。此处立即写入 `persistent.aries = True`（`Day23AB.rpy:355`）。 |
-| **金牛座 Taurus** | D7，巨型南瓜被移出温室后，Dave 在裸露的泥土中滑倒，挖出一枚刻有向上双角图案的奖牌，并初步猜测它是 Taurus。**剧情上此时已经取得奖牌，但 Compendium 标记尚未写入。**D16 A／B 盘点已有奖牌时，由 Benson 或 Oswin 正式确认它是 Taurus，并写入 `persistent.taurus = True`（`Day16AB.rpy:643` 或 `:888`）。 |
-| **双子座 Gemini** | **仅限 Path B，但不要求 Tyson 路线。**在 Tyson 路线的 D4，Dave 会亲眼看到 Tyson 从树篱迷宫内取出自己藏起的半枚金属奖牌，但当时无法辨认其图案。其他角色线中 Tyson 同样会找到这一半，只是 Dave 没有参与发现过程。D25 B，Tyson 从关押二人的林间小屋中顺手带走另一半，两半由此凑成完整奖牌，并写入 `persistent.gemini = True`（`Day25B.rpy:259`）。 |
-| **巨蟹座 Cancer** | **Roswell 线。**D9，Dave 与 Roswell 在博物馆书架旁随机抽出一本书，奖牌被书带出并砸到 Dave 脚上。Roswell 看到蟹形符号后明显受到触动，确认其为 Cancer；该场景同时围绕脑癌资料展开。此处首次写入 `persistent.cancer = True`（`Day 9.rpy:3982`）。D16 奖牌盘点时，Roswell 路线还会再次执行同一写入（`Day16AB.rpy:708` 或 `:936`），属于重复确认，不是第二枚奖牌。 |
-| **狮子座 Leo** | **Path A／B 共通。**D22，Thanatos 指引 Dave 在书架中寻找一个特殊版本的《三只小猪》。书页中央被挖空，Leo 奖牌藏在其中，下面还压着 Hammond 三兄妹的家庭照片。Dave 取出奖牌后立即写入 `persistent.leo = True`（`Day22AB.rpy:585`）。 |
-| **处女座 Virgo** | **完成 Path A 获得，不受最终恋爱对象限制。**D24 A 各个结尾分支中，Florencia 都会将 Virgo 奖牌交给 Dave。她表示自己原本仍持有这枚和另一枚奖牌，并暗示虽然当前一轮游戏已经结束，这枚奖牌可能会在“下一次游玩”或另一轮循环中派上用场。六个结尾分支分别在 `Day24A_Redux.rpy:2058`、`:2171`、`:2301`、`:2443`、`:2538`、`:2657` 写入 `persistent.virgo = True`。 |
-| **天秤座 Libra** | **Hoss 线。**D16，Dave 与 Hoss 再次进入隐藏图书馆寻找线索。Hoss 在昏暗书架上发现一枚积满灰尘、却几乎没有经过额外隐藏的奖牌，并根据天秤符号确认它是 Libra。此处立即写入 `persistent.libra = True`（`Day16AB.rpy:2372`）。 |
-| **天蝎座 Scorpio** | **仅限 Path A。**D24 A，Dave 读完 Roswell 留下的告别信，并发现 Roswell 已经死在树篱迷宫喷泉旁。随后他察觉信封比单纯装着信纸更重，从中取出一枚刻有类似风格化字母 `M` 图案的奖牌，即 Scorpio。此处立即写入 `persistent.scorpio = True`（`Day24A_Redux.rpy:1963`）。 |
-| **射手座 Sagittarius** | **完成 Path B 获得，不受角色线限制。**D25 B 各个结尾分支中，Florencia 都会将刻有箭形符号的 Sagittarius 奖牌交给 Dave。她承认自己在 Dave 抵达山上的当天就已经把这枚奖牌带走，因此当时的寻宝游戏从一开始就不可能在该轮流程中完整收集。六个结尾分支分别在 `Day25B.rpy:2713`、`:2916`、`:3069`、`:3213`、`:3360`、`:3502` 写入 `persistent.sagittarius = True`。 |
-| **摩羯座 Capricorn** | **Sal 线。**D9，Dave 与 Sal 在泳池更衣室发现一个异常关闭、但钥匙仍插在锁上的储物柜。打开后，柜内中央单独放着一枚奖牌；Dave 和 Sal 当时都无法认出其符号，立即写入 `persistent.capricorn = True`（`Day 9.rpy:3422`）。D16 盘点时才正式确认它是 Capricorn，Sal 此前一直把图案称作“`Swoopy N`”；此处还会再次执行同一写入（`Day16AB.rpy:613` 或 `:947`）。 |
-| **水瓶座 Aquarius** | D4，Orlando 凭借出色的方向感率先抵达树篱迷宫中央的喷泉庭院，并从雕像手中取下刻有锯齿状水波符号的奖牌。**剧情上此时已经取得奖牌，但代码没有立即写入 Compendium 标记。**D16 A／B 盘点已有奖牌时，由 Benson 或 Oswin确认它是 Aquarius，并写入 `persistent.aquarius = True`（`Day16AB.rpy:600` 或 `:880`）。因此游戏内 Lore 虽写着“D4 解锁”，实际 `persistent` 解锁发生在 D16。 |
-| **双鱼座 Pisces** | **Dean 线。**D9，Dave 与 Dean 在河边钓鱼时鱼线被水下物体卡住。Dean 直接走进河里，将鱼线和一枚圆形奖牌一同捞出；Dave 当时无法正确辨认符号。此处首次写入 `persistent.pisces = True`（`Day 9.rpy:2843`）。D16 奖牌盘点时，Benson 或 Oswin 才正式确认它是 Pisces，并再次执行同一写入（`Day16AB.rpy:659` 或 `:903`）。 |
+D23，Dave 在 Roswell 房间的床头柜上发现奖牌。游戏会立即写入 Aries，Oswin 随后确认其身份。
 
-:::
+到达该场景后会自动取得，不需要额外选择。
+</details>
 
-::: {.callout-tip}
-## 不需要体验所有组合
+<details>
+<summary><strong>Taurus（金牛座）——Path A 或 B 一侧</strong></summary>
 
-奖牌会跨周目累计，因此没有必要完整体验六条角色线与所有字母线。
+奖牌在 D7 温室中的巨型南瓜被移走后首次出现。剧情当时已经讨论其身份，但持久收集标记要到 D16 的 A/B 奖牌盘点场景才写入。
 
-如果目标只是解锁 Path P，应优先使用 D4 存档切换角色线，并避开与奖牌收集无关的 Path C—G。
-:::
+因此，仅仅看过 D7 的发现剧情还不够。
+</details>
 
-## 为什么收齐十二枚后仍未进入 Path P？
+<details>
+<summary><strong>Gemini（双子座）——Path B</strong></summary>
+
+Gemini 由两半组成。
+
+Tyson 线中，Dave 会在 D4 树篱迷宫场景亲眼看到 Tyson 拿出第一半；其他角色线不会显示这一段发现过程。完整奖牌会在 D25 B 自动组合，并且无论当前选择哪条角色线，都会写入持久标记。
+
+Tyson 线有助于了解完整发现背景，但不是收集 Gemini 的必要条件。
+</details>
+
+<details>
+<summary><strong>Cancer（巨蟹座）——Roswell 线</strong></summary>
+
+D9，Dave 与 Roswell 在博物馆查看书籍时，一枚奖牌从书架中掉出。Roswell 根据图案确认它是 Cancer，持久标记会立即写入。
+
+D16 奖牌盘点时可能再次执行同一写入，但该重复写入不是必要条件。
+</details>
+
+<details>
+<summary><strong>Leo（狮子座）——Path A 或 B 一侧</strong></summary>
+
+D22，Thanatos 指引 Dave 找到一本被挖空的儿童故事书。Leo 与一张 Hammond 家庭照片一起藏在书中。
+
+奖牌会在该场景中立即确认并写入。
+</details>
+
+<details>
+<summary><strong>Virgo（处女座）——完成 Path A</strong></summary>
+
+Florencia 会在 Path A 的每一种关系结局分支中把 Virgo 交给 Dave。
+
+不要求特定男友对象或角色线。六个位置只是不同的结局分支，并不是六枚不同奖牌。
+</details>
+
+<details>
+<summary><strong>Libra（天秤座）——Hoss 线，D16 A/B</strong></summary>
+
+D16，Hoss 会在隐藏图书馆中找到 Libra。
+
+与 Dean、Roswell 和 Sal 的角色线奖牌不同，Libra 无法在 D9 取得。Hoss 线必须在 Path A 或 Path B 一侧推进到 D16。
+</details>
+
+<details>
+<summary><strong>Scorpio（天蝎座）——Path A</strong></summary>
+
+D24 A，Dave 读完 Roswell 的信后，会在信件中发现这枚奖牌。持久标记会立即写入，但该场景不会立刻说出其星座名称。
+
+其身份会在完整奖牌流程或 Compendium 中得到确认。
+</details>
+
+<details>
+<summary><strong>Sagittarius（射手座）——完成 Path B</strong></summary>
+
+Florencia 会在 Path B 的每一种关系结局分支中把 Sagittarius 交给 Dave。
+
+部分分支会直接说出名称，另一些只描述箭形符号，但六种 Path B 结局都会写入同一个持久标记。
+</details>
+
+<details>
+<summary><strong>Capricorn（摩羯座）——Sal 线</strong></summary>
+
+D9，Dave 与 Sal 会在泳池区域一个异常封闭的储物柜中发现奖牌。他们当时无法识别图案，但持久标记会立即写入。
+
+其星座名称要到 D16 的 A/B 奖牌盘点场景才确认；后续写入只是重复确认，并不是第二枚奖牌。
+</details>
+
+<details>
+<summary><strong>Aquarius（水瓶座）——Path A 或 B 一侧</strong></summary>
+
+Orlando 在 D4 树篱迷宫中央找到 Aquarius。Orlando 线中，该场景还会直接说出其身份。
+
+但持久收集标记要到 D16 的 A/B 奖牌盘点场景才写入，因此只看过 D4 的发现剧情并不足以完成解锁。
+</details>
+
+<details>
+<summary><strong>Pisces（双鱼座）——Dean 线</strong></summary>
+
+D9，Dean 与 Dave 钓鱼时会从河中取出这枚奖牌。他们当时没有正确识别图案，但持久标记会立即写入。
+
+其身份要到 D16 奖牌盘点场景才确认。
+</details>
+
+## 为什么十二枚奖牌没有触发 Path P？
 
 依次检查：
 
-1. 最后推进的是否为能够衔接 Path P 的 Path A；
-2. 是否真正到达了各枚奖牌的代码写入节点，而不只是看过发现剧情；
-3. Compendium 中是否仍有星座 Lore 显示为 `?????`；
-4. 是否曾清除游戏持久数据，或从其他设备迁移不完整的存档数据。
+1. 是否在全部十二个持久标记写入后，重新完成了 Path A；
+2. Aquarius 和 Taurus 是否真正推进到 D16 A/B，而不只是看过早期发现场景；
+3. 收集 Libra 时，Hoss 线是否在 Path A 或 Path B 一侧推进到 D16；
+4. Path B 流程是否到达 D25，使 Gemini 完整组合；
+5. 该流程是否继续完成 Path B 结局并取得 Sagittarius；
+6. 重启游戏后，Compendium 是否仍有未识别的奖牌 Lore；
+7. 持久数据是否被清除、替换，或在设备迁移时未被完整保留。
 
-奖牌的全局写入和最终统计机制见[奖牌持久化与最终检定](../mechanics/medal-persistence.md)。
+十二枚奖牌检定不会持续实时运行。如果第一次完成 Path A 时尚未收齐奖牌，之后补齐剩余奖牌并不会自动重新打开最终流程；必须再次完成 Path A。
 
-## 双子座的特殊情况
+奖牌记录和最终检定的底层机制见[奖牌持久化与最终检定](../mechanics/medal-persistence.md)。
 
-双子座奖牌分为两半。
+## Compendium 日期的边界
 
-Tyson 无论在哪条角色线中都会在 D4 找到第一半，但只有选择 Tyson 线时，Dave 才会亲自参与发现过程。
+Compendium 中的奖牌日期是人工填写的提示，而不是由统一事件规则自动生成。
 
-如果不是 Tyson 线，Dave 会在 Path B 后期询问 Tyson 第一半奖牌来自哪里，但 Tyson 会不愿详细解释。
+- Aquarius 使用 D4 的剧情发现日期，但持久标记实际在 D16 写入；
+- Taurus 使用 D16，但奖牌首次出现在 D7；
+- Pisces 和 Capricorn 使用 D9，即使其身份要到 D16 才确认。
 
-因此，了解完整发现过程需要体验 Tyson 线，但收集奖牌本身不要求玩家进入 Tyson 线。
+因此，应把 Compendium 日期视为线索，而不是“首次发现”或“永久解锁时间”的统一定义。
 
-## Lore 条目的日期与实际发现时间可能不同
+## 相关页面
 
-以金牛座为例，Lore 条目将其标记为 Day 16。
-
-实际上，奖牌早在 D7 的温室南瓜下方被发现；D16 是 Dave 确认其星座身份、同时程序执行相关检定的时间。
-
-因此，玩家需要尽量区分：
-
-- **剧情首次发现时间**
-- **Dave 确认奖牌身份的时间**
-- **程序写入收集状态的时间**
-
-知悉三者不一定完全相同。
-
-## 关于第十三枚奖牌
-
-Path A 中会提到黄道体系其实存在第十三个星座——蛇夫座。
-
-当前 b0.85 中：
-
-- 蛇夫座无法收集；
-- 不计入十二枚奖牌；
-- 不影响 Path P；
-- 主要属于早期废弃设定与剧情考据。
-
-详细内容见：
-
-[蛇夫座与第十三枚奖牌](../extras/easter-eggs.md#蛇夫座与第十三枚奖牌)
+- [剧情线路总览](../guide/route-overview.md)
+- [字母线系统](../guide/path-system.md)
+- [密码分级提示](../guide/password-hints.md)
+- [奖牌持久化与最终检定](../mechanics/medal-persistence.md)
