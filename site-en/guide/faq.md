@@ -30,6 +30,14 @@ The save slot shows the Path assigned when that save was created. Some choices c
 
 The Sal Route can also display `Path C` briefly after a failed D10 check even though its Route-specific exception keeps the story on the shared Path A/B side. See [Lettered Path System](path-system.md).
 
+### Why can the save-slot survival icons disagree with the story?
+
+In b0.85, the survival icons read a snapshot written when that slot is created or overwritten. They are not recalculated from later progress, so older slots do not update as another save continues. Only Dean, Tyson, Orlando, Sal, Roswell, and Hoss are shown on D1–D6; Benson appears on D7–D9, and Oswin appears from D10 onward.
+
+Most main-story deaths are recorded when Dave confirms what happened, so Oswin temporarily appearing alive on D10 can be a narrative delay rather than a bug. The source also contains genuine missing state writes: saves made during the character-specific Bad Endings, late Path F, or one Path E ending may still show dead characters as alive.
+
+These issues affect only the save-slot icons and do not change the story, lettered Path, or ending outcome.
+
 ## Passwords
 
 ### What format do Vault passwords use?
