@@ -19,12 +19,11 @@ ZH_ROOT = f"{BASE}/"
 EN_ROOT = f"{BASE}/en/"
 ZH_IMAGE = f"{BASE}/assets/social/password-b085-guide-zh.png"
 EN_IMAGE = f"{BASE}/en/assets/social/password-b085-guide-en.png"
-ZH_HOME_TITLE = "Password b0.85 中文攻略｜路线、密码、奖牌与机制"
-EN_HOME_TITLE = "Password b0.85 Guide | Routes, Passwords, Medals & Mechanics"
-EN_HOME_DESCRIPTION = (
-    "An unofficial, version-specific guide to character Routes, lettered Paths, "
-    "passwords, medals, collectibles, and mechanics in Password b0.85."
-)
+ZH_SITE_NAME = "Password b0.85 中文攻略与机制资料库"
+EN_SITE_NAME = "Password b0.85 Guide"
+ZH_HOME_TITLE = "Password b0.85 中文攻略"
+EN_HOME_TITLE = "Password b0.85 Guide"
+EN_HOME_DESCRIPTION = "An unofficial b0.85 reference guide with a source-checked b0.7 comparison archive."
 PAIRED = {
     "index.html",
     "guide/route-overview.html",
@@ -38,6 +37,10 @@ PAIRED = {
     "mechanics/medal-persistence.html",
     "mechanics/affection.html",
     "mechanics/affection-differences.html",
+    "versions/b085-changes.html",
+    "versions/legacy-routes.html",
+    "versions/legacy-passwords.html",
+    "versions/legacy-mechanics.html",
     "extras/easter-eggs.html",
 }
 VERSIONS = {
@@ -46,7 +49,7 @@ VERSIONS = {
     "versions/legacy-passwords.html",
     "versions/legacy-mechanics.html",
 }
-EXPECTED_ZH_PAGES = PAIRED | VERSIONS
+EXPECTED_ZH_PAGES = PAIRED
 EXPECTED_EN_PAGES = PAIRED
 NS = {"sm": "http://www.sitemaps.org/schemas/sitemap/0.9"}
 
@@ -137,7 +140,7 @@ def verify_pages() -> None:
     pages = html_pages(SITE)
     zh_pages = [path for path in pages if "en" not in path.relative_to(SITE).parts]
     en_pages = [path for path in pages if path.relative_to(SITE).parts[:1] == ("en",)]
-    if len(zh_pages) != 17 or len(en_pages) != 13 or len(pages) != 30:
+    if len(zh_pages) != 17 or len(en_pages) != 17 or len(pages) != 34:
         raise AssertionError(
             f"page counts are {len(zh_pages)}/{len(en_pages)}/{len(pages)}"
         )
@@ -178,7 +181,7 @@ def verify_pages() -> None:
             if is_en and description != EN_HOME_DESCRIPTION:
                 raise AssertionError(f"{path}: English homepage description mismatch")
 
-        for key in ("og:type", "og:title", "og:description", "og:url", "og:image"):
+        for key in ("og:type", "og:title", "og:description", "og:url", "og:site_name", "og:image"):
             value = one(values, key, path)
             if key == "og:type" and value != "website":
                 raise AssertionError(f"{path}: og:type is not website")
@@ -188,6 +191,8 @@ def verify_pages() -> None:
                 raise AssertionError(f"{path}: og:description mismatch")
             if key == "og:url" and value != canonical:
                 raise AssertionError(f"{path}: og:url mismatch")
+            if key == "og:site_name" and value != (EN_SITE_NAME if is_en else ZH_SITE_NAME):
+                raise AssertionError(f"{path}: og:site_name mismatch")
             if key == "og:image":
                 check_url(value, expected_image, "og:image", path)
 
@@ -214,8 +219,6 @@ def verify_pages() -> None:
             expected_alternates = {"zh-CN": page_url(ZH_ROOT, logical), "en": page_url(EN_ROOT, logical)}
             if {link["hreflang"]: link.get("href") for link in alternates} != expected_alternates:
                 raise AssertionError(f"{path}: hreflang URLs are not reciprocal")
-        elif logical in VERSIONS and any(link.get("hreflang") == "en" for link in alternates):
-            raise AssertionError(f"{path}: Chinese-only Versions page has English alternate")
 
 
 def sitemap_urls(path: Path) -> list[str]:
@@ -226,7 +229,7 @@ def sitemap_urls(path: Path) -> list[str]:
 def verify_sitemaps() -> None:
     for relative, expected_count, home, html_root, exclude_english in (
         ("sitemap.xml", 17, ZH_ROOT, SITE, True),
-        ("en/sitemap.xml", 13, EN_ROOT, SITE / "en", False),
+        ("en/sitemap.xml", 17, EN_ROOT, SITE / "en", False),
     ):
         urls = sitemap_urls(SITE / relative)
         if len(urls) != expected_count or home not in urls:
@@ -264,6 +267,8 @@ def verify_images() -> None:
     for path in (
         ROOT / "assets/social/password-b085-guide-zh.png",
         ROOT / "site-en/assets/social/password-b085-guide-en.png",
+        SITE / "assets/social/password-b085-guide-zh.png",
+        SITE / "en/assets/social/password-b085-guide-en.png",
     ):
         if not path.exists():
             raise AssertionError(f"missing social image: {path}")
@@ -273,20 +278,35 @@ def verify_images() -> None:
             raise AssertionError(f"{path}: unnecessarily large file")
 
 
+def verify_search_indexes() -> None:
+    import json
+
+    for path, expected in (
+        (SITE / "search.json", EXPECTED_ZH_PAGES),
+        (SITE / "en/search.json", EXPECTED_EN_PAGES),
+    ):
+        records = json.loads(path.read_text(encoding="utf-8"))
+        pages = {record["href"].split("#", 1)[0] for record in records}
+        if pages != expected:
+            raise AssertionError(f"{path}: search page set mismatch: {sorted(pages)}")
+
+
 def main() -> None:
     verify_pages()
     verify_sitemaps()
     verify_images()
-    print("HTML pages: 30/30")
-    print("Descriptions, canonicals, lang, OG, Twitter: 30/30")
-    print("Chinese hreflang pages: 13/13")
-    print("English hreflang pages: 13/13")
-    print("Reciprocal language pairs: 13/13")
-    print("Chinese-only Versions without English alternate: 4/4")
+    verify_search_indexes()
+    print("HTML pages: 34/34")
+    print("Descriptions, canonicals, lang, OG, Twitter: 34/34")
+    print("Chinese hreflang pages: 17/17")
+    print("English hreflang pages: 17/17")
+    print("Reciprocal language pairs: 17/17")
+    print("Bilingual Versions pairs: 4/4")
     print("Chinese sitemap URLs: 17")
-    print("English sitemap URLs: 13")
+    print("English sitemap URLs: 17")
     print("Normalized sitemap home URLs: 2/2")
-    print("Social images present and 1200x630: 2/2")
+    print("Search index page sets: 17/17 + 17/17")
+    print("Social images present and 1200x630: 4/4 source/output")
 
 
 if __name__ == "__main__":

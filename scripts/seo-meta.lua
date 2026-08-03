@@ -11,6 +11,10 @@ local paired_paths = {
   ["mechanics/medal-persistence.html"] = true,
   ["mechanics/affection.html"] = true,
   ["mechanics/affection-differences.html"] = true,
+  ["versions/b085-changes.html"] = true,
+  ["versions/legacy-routes.html"] = true,
+  ["versions/legacy-passwords.html"] = true,
+  ["versions/legacy-mechanics.html"] = true,
   ["extras/easter-eggs.html"] = true
 }
 

@@ -5,13 +5,17 @@
   const LEFT_KEY = "pw-guide-left-sidebar-collapsed";
   const RIGHT_KEY = "pw-guide-right-toc-collapsed";
   const DESKTOP_QUERY = window.matchMedia("(min-width: 1100px)");
-  const COMMON_PAGE_PATHS = [
+  const PAGE_PATHS = [
     "mechanics/affection-differences.html",
     "mechanics/medal-persistence.html",
     "mechanics/password-checks.html",
     "collectibles/compendium.html",
     "collectibles/gallery.html",
     "collectibles/medals.html",
+    "versions/legacy-passwords.html",
+    "versions/legacy-mechanics.html",
+    "versions/legacy-routes.html",
+    "versions/b085-changes.html",
     "guide/route-overview.html",
     "guide/password-hints.html",
     "guide/path-system.html",
@@ -19,12 +23,6 @@
     "extras/easter-eggs.html",
     "guide/faq.html",
     "index.html"
-  ];
-  const VERSION_PAGE_PATHS = [
-    "versions/b085-changes.html",
-    "versions/legacy-routes.html",
-    "versions/legacy-passwords.html",
-    "versions/legacy-mechanics.html"
   ];
 
   const safeStorageGet = (key) => {
@@ -43,32 +41,18 @@
     }
   };
 
-  const matchPagePath = (pathname, candidates) =>
-    candidates.find((candidate) => pathname.endsWith(`/${candidate}`));
-
   const resolveEnglishTarget = () => {
     const pathname = window.location.pathname;
-    const commonPath = matchPagePath(pathname, COMMON_PAGE_PATHS);
-    const versionPath = matchPagePath(pathname, VERSION_PAGE_PATHS);
-    const matchedPath = commonPath || versionPath;
-    let siteRoot;
-
-    if (matchedPath) {
-      siteRoot = pathname.slice(0, -matchedPath.length);
-    } else if (pathname.endsWith("/")) {
-      siteRoot = pathname;
-    } else {
-      siteRoot = pathname.slice(0, pathname.lastIndexOf("/") + 1);
-    }
-
-    const englishPath = commonPath && commonPath !== "index.html"
-      ? commonPath
-      : "";
-
-    return {
-      href: `${siteRoot}en/${englishPath}${window.location.search}${window.location.hash}`,
-      fallback: Boolean(versionPath)
-    };
+    const pagePath = PAGE_PATHS.find((candidate) =>
+      pathname.endsWith(`/${candidate}`)
+    );
+    const siteRoot = pagePath
+      ? pathname.slice(0, -pagePath.length)
+      : pathname.endsWith("/")
+        ? pathname
+        : pathname.slice(0, pathname.lastIndexOf("/") + 1);
+    const englishPath = pagePath && pagePath !== "index.html" ? pagePath : "";
+    return `${siteRoot}en/${englishPath}${window.location.search}${window.location.hash}`;
   };
 
   const createButton = ({
@@ -174,14 +158,11 @@
     }
 
     if (!navbarTools.querySelector(".pw-language-switch")) {
-        const target = resolveEnglishTarget();
         const languageLink = document.createElement("a");
-        const label = target.fallback
-        ? "This page is not yet available in English. Open the English home page."
-        : "Open this page in English";
+        const label = "Open this page in English";
 
         languageLink.className = "pw-language-switch no-external";
-        languageLink.href = target.href;
+        languageLink.href = resolveEnglishTarget();
         languageLink.textContent = "EN";
         languageLink.setAttribute("aria-label", label);
         languageLink.setAttribute("title", label);

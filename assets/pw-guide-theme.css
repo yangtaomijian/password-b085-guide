@@ -3412,23 +3412,6 @@ html {
   word-break: normal;
 }
 
-/* 彩蛋页中文密码图：仅缩放这一张图片 */
-
-main.content img[src*="easter-passwords-b085-zh"] {
-  display: block;
-
-  width: min(42%, 480px);
-  max-width: 480px;
-  height: auto;
-  margin: 1.25rem auto;
-}
-
-@media (max-width: 760px) {
-  main.content img[src*="easter-passwords-b085-zh"] {
-    width: min(88%, 480px);
-  }
-}
-
 /* =========================================================
    Affection differences: wide threshold tables
    ========================================================= */
@@ -4025,6 +4008,37 @@ main.content .compendium-cast-table td:nth-child(4) {
 main.content .compendium-cast-table td:nth-child(3) code {
   white-space: normal;
   overflow-wrap: anywhere;
+}
+
+/* Bilingual page switch in the existing navbar utility group. */
+.pw-language-switch {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+
+  min-width: 2.5rem;
+  height: 2.2rem;
+  padding: 0 0.42rem;
+  margin: 0;
+
+  color: var(--pw-text-soft) !important;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 9px;
+
+  font-size: 0.76rem;
+  font-weight: 720;
+  line-height: 1;
+  text-decoration: none !important;
+  white-space: nowrap;
+}
+
+.pw-language-switch:hover,
+.pw-language-switch:focus-visible {
+  color: var(--pw-text) !important;
+  background: var(--pw-surface-soft);
+  border-color: var(--pw-border);
 }
 
 /* =========================================================

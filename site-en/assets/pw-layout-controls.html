@@ -5,13 +5,17 @@
   const LEFT_KEY = "pw-guide-en-left-sidebar-collapsed";
   const RIGHT_KEY = "pw-guide-en-right-toc-collapsed";
   const DESKTOP_QUERY = window.matchMedia("(min-width: 1100px)");
-  const COMMON_PAGE_PATHS = [
+  const PAGE_PATHS = [
     "mechanics/affection-differences.html",
     "mechanics/medal-persistence.html",
     "mechanics/password-checks.html",
     "collectibles/compendium.html",
     "collectibles/gallery.html",
     "collectibles/medals.html",
+    "versions/legacy-passwords.html",
+    "versions/legacy-mechanics.html",
+    "versions/legacy-routes.html",
+    "versions/b085-changes.html",
     "guide/route-overview.html",
     "guide/password-hints.html",
     "guide/path-system.html",
@@ -37,32 +41,20 @@
     }
   };
 
-  const matchPagePath = (pathname) =>
-    COMMON_PAGE_PATHS.find((candidate) => pathname.endsWith(`/${candidate}`));
-
   const resolveChineseTarget = () => {
     const pathname = window.location.pathname;
-    const pagePath = matchPagePath(pathname);
-    let siteRoot;
-
-    if (pagePath) {
-      const englishRoot = pathname.slice(0, -pagePath.length);
-      siteRoot = englishRoot.endsWith("en/")
-        ? englishRoot.slice(0, -3)
-        : englishRoot;
-    } else if (pathname.endsWith("/en/")) {
-      siteRoot = pathname.slice(0, -3);
-    } else {
-      const marker = pathname.lastIndexOf("/en/");
-      siteRoot = marker >= 0
-        ? pathname.slice(0, marker + 1)
+    const pagePath = PAGE_PATHS.find((candidate) =>
+      pathname.endsWith(`/${candidate}`)
+    );
+    const englishRoot = pagePath
+      ? pathname.slice(0, -pagePath.length)
+      : pathname.endsWith("/en/")
+        ? pathname
         : pathname.slice(0, pathname.lastIndexOf("/") + 1);
-    }
-
-    const chinesePath = pagePath && pagePath !== "index.html"
-      ? pagePath
-      : "";
-
+    const siteRoot = englishRoot.endsWith("en/")
+      ? englishRoot.slice(0, -3)
+      : englishRoot;
+    const chinesePath = pagePath && pagePath !== "index.html" ? pagePath : "";
     return `${siteRoot}${chinesePath}${window.location.search}${window.location.hash}`;
   };
 
@@ -108,8 +100,16 @@
     const pathSegments = window.location.pathname
       .split("/")
       .filter(Boolean);
-    const section = ["guide", "collectibles", "mechanics", "extras"]
+    const section = ["guide", "collectibles", "mechanics", "versions", "extras"]
       .find((candidate) => pathSegments.includes(candidate)) || "home";
+    const sectionLabels = {
+      home: "home",
+      guide: "guide",
+      collectibles: "collectibles",
+      mechanics: "mechanics",
+      versions: "version archives",
+      extras: "extras"
+    };
     const links = Array.from(document.querySelectorAll(
       "#quarto-header .navbar-nav > .nav-item > .nav-link"
     ));
@@ -122,7 +122,7 @@
     const activeLink = links.find((link) =>
       link.querySelector(".menu-text")?.textContent
         .trim()
-        .toLowerCase() === section
+        .toLowerCase() === sectionLabels[section]
     );
 
     if (activeLink) {

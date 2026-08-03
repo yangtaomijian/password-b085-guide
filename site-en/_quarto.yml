@@ -14,6 +14,10 @@ project:
     - mechanics/medal-persistence.md
     - mechanics/affection.md
     - mechanics/affection-differences.md
+    - versions/b085-changes.md
+    - versions/legacy-routes.md
+    - versions/legacy-passwords.md
+    - versions/legacy-mechanics.md
     - extras/easter-eggs.md
 
 lang: en
@@ -24,6 +28,7 @@ filters:
 seo-language: en
 seo-site-url: "https://yangtaomijian.github.io/password-b085-guide/en/"
 seo-site-title: "Password b0.85 Guide"
+seo-site-name: "Password b0.85 Guide"
 seo-image-url: "https://yangtaomijian.github.io/password-b085-guide/en/assets/social/password-b085-guide-en.png"
 seo-zh-site-url: "https://yangtaomijian.github.io/password-b085-guide/"
 seo-en-site-url: "https://yangtaomijian.github.io/password-b085-guide/en/"
@@ -75,6 +80,16 @@ website:
             text: Affection System and Point Guide
           - href: mechanics/affection-differences.md
             text: Affection Checks and Story Differences
+      - text: Version Archives
+        menu:
+          - href: versions/b085-changes.md
+            text: Major Changes in b0.85
+          - href: versions/legacy-routes.md
+            text: Legacy Routes
+          - href: versions/legacy-passwords.md
+            text: Legacy Passwords
+          - href: versions/legacy-mechanics.md
+            text: Legacy Mechanics
       - text: Extras
         menu:
           - href: extras/easter-eggs.md
@@ -120,6 +135,17 @@ website:
             text: Affection System and Point Guide
           - href: mechanics/affection-differences.md
             text: Affection Checks and Story Differences
+
+      - section: "Version Archives"
+        contents:
+          - href: versions/b085-changes.md
+            text: Major Changes in b0.85
+          - href: versions/legacy-routes.md
+            text: Legacy Routes Archive
+          - href: versions/legacy-passwords.md
+            text: Legacy Password Archive
+          - href: versions/legacy-mechanics.md
+            text: Legacy Mechanics Archive
 
       - section: "Extras"
         contents:

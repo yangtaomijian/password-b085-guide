@@ -16,16 +16,16 @@ An unofficial Chinese and English reference guide for *Password* b0.85.
 -   Compendium 解锁条件
 -   好感度与剧情差异
 -   密码检定、奖牌持久化及彩蛋
--   中文站另含旧版本机制档案
+-   b0.7 与 b0.85 版本变化，以及旧版线路、密码与机制档案
 
-The English site covers the current b0.85 guide. Legacy version archives are currently available only on the Chinese site.
+Both language versions cover the current b0.85 guide and include a source-checked comparison archive for b0.7 and b0.85.
 
 ## 版本与剧透 / Version and Spoilers
 
-本站内容以 **Password b0.85** 为基准，包含大量剧情、Bad
-Ending、收集内容和结局条件剧透。
+本站的现行攻略以 **Password b0.85** 为准；版本档案专门比较 **b0.7** 与
+**b0.85**。全站包含大量剧情、Bad Ending、收集内容和结局条件剧透。
 
-This guide is specific to **Password b0.85** and contains extensive story, bad-ending, collectible, and ending-condition spoilers.
+The current walkthrough is specific to **Password b0.85**, while the version archives compare **b0.7** with **b0.85**. The site contains extensive story, bad-ending, collectible, and ending-condition spoilers.
 
 ## 官方入口 / Official Links
 
@@ -43,6 +43,11 @@ Requires [Quarto](https://quarto.org/).
 bash scripts/build-bilingual.sh
 python3 -m http.server 8000 --directory _site
 ```
+
+中文站是默认站点，源码位于仓库根目录；英文站作为独立 Quarto 子站维护在
+`site-en/`，发布至 `/en/`。
+
+The Chinese site is the default site and is built from the repository root. The English site is maintained as a separate Quarto project under `site-en/` and is published under `/en/`.
 
 本地访问：
 

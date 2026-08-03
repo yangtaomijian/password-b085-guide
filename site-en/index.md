@@ -1,11 +1,13 @@
 ---
-title: "Password b0.85 Guide | Routes, Passwords, Medals & Mechanics"
-description: "An unofficial, version-specific guide to character Routes, lettered Paths, passwords, medals, collectibles, and mechanics in Password b0.85."
+title: "Password b0.85 Guide"
+description: "An unofficial b0.85 reference guide with a source-checked b0.7 comparison archive."
 comments: false
 toc: false
 ---
 
 Use this site to follow character Routes and lettered Paths, work through password checks, collect medals and Gallery entries, unlock the Compendium, and understand affection mechanics.
+
+The main guide covers the current b0.85 build. A separate version archive compares b0.7 with b0.85 and documents removed branches, retired mechanics, and other verified changes.
 
 ## Start Here
 
@@ -58,7 +60,7 @@ Track medals, Compendium entries, and all 100 registered Gallery images.
 
 ### Mechanics
 
-Understand Vault dispatch, persistent medal progress, and affection checks.
+Understand Vault dispatch, persistent medal progress, affection checks, and story differences.
 
 - [Vault Password Check Mechanics](mechanics/password-checks.md)
 - [Medal Persistence and Final Check](mechanics/medal-persistence.md)
@@ -71,7 +73,39 @@ Explore optional Vault inputs, coffee-cup names, hidden drivers, and other Easte
 
 - [Easter Eggs and Hidden Inputs](extras/easter-eggs.md)
 
-## Official links
+## Version Archives
+
+These pages compare b0.7 with b0.85. They are historical references rather than walkthrough instructions for the current build.
+
+:::: {.grid}
+
+::: {.g-col-12 .g-col-md-6}
+### [Major Changes in b0.85](versions/b085-changes.md)
+
+Read a verified overview of major feature, interaction, Gallery, and asset changes between b0.7 and b0.85.
+:::
+
+::: {.g-col-12 .g-col-md-6}
+### [Legacy Route Archive](versions/legacy-routes.md)
+
+Review removed route-adjacent branches, including the former D6 mansion-departure Bad Ending, with context on the largely retained lettered Path structure.
+:::
+
+::: {.g-col-12 .g-col-md-6}
+### [Legacy Password Archive](versions/legacy-passwords.md)
+
+See the two accepted D7 alternatives and the retired optional D11 Vault sequence from b0.7.
+:::
+
+::: {.g-col-12 .g-col-md-6}
+### [Legacy Mechanics Archive](versions/legacy-mechanics.md)
+
+Explore the Path A first-run gate, b0.85 replay access, the retired Oswin question system, and the removed D11 laboratory decision.
+:::
+
+::::
+
+## Official Links
 
 - **Game and downloads:** [Password on itch.io](https://passwordvn.itch.io/password)
 - **Creator support:** [Grizz on Patreon](https://www.patreon.com/PASSWORDVN)
@@ -79,6 +113,8 @@ Explore optional Vault inputs, coffee-cup names, hidden drivers, and other Easte
 
 ## Site Scope
 
-This guide covers Password b0.85 only. Character Routes and lettered Paths are separate systems; the lettered structure includes Path A–G and Path P.
+This site is centered on *Password* b0.85. The current guide pages cover its character Routes, lettered Paths, password checks, collectibles, Gallery, Compendium, and mechanics.
 
-The site is spoiler-heavy, unofficial, and not affiliated with the developer. It focuses on the current b0.85 story, collectibles, and mechanics and does not include an old-version archive.
+The Version Archives compare the examined b0.7 and b0.85 builds. They are not an official changelog, do not treat historical mechanics as current walkthrough steps, and this site cannot ensure that every build earlier than b0.7 used the same implementation.
+
+The site is spoiler-heavy, unofficial, and not affiliated with the developer.

@@ -1910,6 +1910,22 @@ main.content .table-responsive > table {
   --pw-table-min-width: 60rem;
 }
 
+main.content .changes-at-a-glance-table {
+  --pw-table-min-width: 44rem;
+}
+
+main.content .changes-at-a-glance-table > table {
+  table-layout: fixed;
+}
+
+main.content .changes-at-a-glance-table col:first-child {
+  width: 22% !important;
+}
+
+main.content .changes-at-a-glance-table col:last-child {
+  width: 78% !important;
+}
+
 /*
   fit-content 会让短表格按内容收缩；
   max-width: 100% 保证长表格仍在正文范围内换行。
@@ -3412,23 +3428,6 @@ html {
   word-break: normal;
 }
 
-/* 彩蛋页中文密码图：仅缩放这一张图片 */
-
-main.content img[src*="easter-passwords-b085-zh"] {
-  display: block;
-
-  width: min(42%, 480px);
-  max-width: 480px;
-  height: auto;
-  margin: 1.25rem auto;
-}
-
-@media (max-width: 760px) {
-  main.content img[src*="easter-passwords-b085-zh"] {
-    width: min(88%, 480px);
-  }
-}
-
 /* =========================================================
    Affection differences: wide threshold tables
    ========================================================= */
@@ -4056,4 +4055,81 @@ main.content .compendium-cast-table td:nth-child(3) code {
   color: var(--pw-text) !important;
   background: var(--pw-surface-soft);
   border-color: var(--pw-border);
+}
+
+/* =========================================================
+   English guide: warm paper shell
+   ========================================================= */
+
+body.quarto-light,
+.quarto-light body {
+  --pw-shell-surface: #f7f4ee;
+  --pw-shell-surface-raised: #fffdf9;
+  --pw-interactive-surface: #f1ede5;
+  --pw-shell-hover: #ebe5da;
+  --pw-shell-border: #ddd7cc;
+}
+
+.navbar {
+  background: color-mix(
+    in srgb,
+    var(--pw-shell-surface-raised) 94%,
+    transparent
+  ) !important;
+  border-bottom-color: var(--pw-shell-border);
+}
+
+.navbar .dropdown-menu,
+.pw-edge-toggle {
+  background: color-mix(
+    in srgb,
+    var(--pw-shell-surface-raised) 96%,
+    transparent
+  );
+}
+
+#quarto-sidebar,
+#quarto-margin-sidebar,
+#quarto-header .quarto-secondary-nav,
+body.pw-custom-layout-ready #quarto-sidebar,
+body.pw-custom-layout-ready #quarto-margin-sidebar {
+  background: color-mix(
+    in srgb,
+    var(--pw-shell-surface) 96%,
+    transparent
+  ) !important;
+}
+
+.navbar .nav-link.active,
+.sidebar-item .sidebar-link.active,
+#quarto-sidebar .sidebar-item-section .sidebar-item:not(.sidebar-item-section) .sidebar-link.active {
+  background: var(--pw-interactive-surface) !important;
+  background-image: none !important;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link:focus,
+.sidebar-item .sidebar-link:hover,
+#quarto-sidebar .sidebar-section .sidebar-section-item:hover {
+  background: var(--pw-shell-hover) !important;
+}
+
+.pw-panel-toggle,
+.pw-edge-toggle {
+  background-color: var(--pw-interactive-surface);
+  border-color: var(--pw-shell-border);
+}
+
+.gallery-locator {
+  background: var(--pw-shell-surface);
+  border-color: var(--pw-shell-border);
+}
+
+#gallery-locator-root .gallery-locator-section {
+  background: var(--pw-interactive-surface);
+  border-color: var(--pw-shell-border);
+}
+
+#gallery-locator-root .gallery-locator-section legend {
+  background: var(--pw-interactive-surface);
 }
