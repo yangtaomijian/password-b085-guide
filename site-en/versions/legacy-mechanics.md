@@ -124,7 +124,7 @@ There is no fixed question limit. Empty input is handled separately, and three u
 
 The free-text system writes three ordinary variables:
 
-::: {.table-responsive}
+::: {.oz-variable-table .table-responsive}
 | Variable | Role |
 |---|---|
 | `OzPast1` | Records one piece of family-history information |
@@ -158,7 +158,7 @@ Every required group must match, but their order is not enforced. Extra words ar
 
 ### Important boundaries
 
-::: {.table-responsive .table-scroll-compact}
+::: {.parser-boundary-table .table-responsive .table-scroll-compact}
 | Input feature | Actual behavior |
 |---|---|
 | Letter case | Ignored because input is lowercased |
@@ -246,7 +246,7 @@ There is no evidence that the old question library was systematically migrated i
 
 The b0.7 Oswin-alive D11 laboratory sequence contained a separate three-way decision:
 
-::: {.table-responsive}
+::: {.legacy-d11-choice-table .table-responsive}
 | b0.7 choice | Immediate effect |
 |---|---|
 | `Inject me.` | No `DavePride` increase |

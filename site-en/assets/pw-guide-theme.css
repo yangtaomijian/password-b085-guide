@@ -4133,3 +4133,201 @@ body.pw-custom-layout-ready #quarto-margin-sidebar {
 #gallery-locator-root .gallery-locator-section legend {
   background: var(--pw-interactive-surface);
 }
+
+/* Desktop and iPad table-layout refinements for named guide tables only. */
+@media (min-width: 760px) {
+  main.content :is(.d17-path-table, .table-medal-index, .compendium-cast-table,
+    .compendium-lore-table, .affection-shared-gains-table, .affection-point-table,
+    .password-result-table, .password-check-stages-table, .d19-result-table,
+    .gallery-registration-change-table, .d6-result-table, .trauma-warning-table,
+    .oz-variable-table, .parser-boundary-table, .legacy-d11-choice-table,
+    .easter-vault-table, .route-system-table, .compendium-summary-table,
+    .oswin-state-table) {
+    --pw-table-min-width: 0rem;
+    overflow-x: visible !important;
+  }
+
+  main.content :is(.d17-path-table, .table-medal-index, .compendium-cast-table,
+    .compendium-lore-table, .affection-shared-gains-table, .affection-point-table,
+    .password-result-table, .password-check-stages-table, .d19-result-table,
+    .gallery-registration-change-table, .d6-result-table, .trauma-warning-table,
+    .oz-variable-table, .parser-boundary-table, .legacy-d11-choice-table,
+    .easter-vault-table, .route-system-table, .compendium-summary-table,
+    .oswin-state-table) .quarto-bootstrap-table {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: visible !important;
+  }
+
+  main.content :is(.d17-path-table, .table-medal-index, .compendium-cast-table,
+    .affection-shared-gains-table, .affection-point-table,
+    .password-check-stages-table) table {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    table-layout: fixed !important;
+  }
+
+  main.content :is(.password-result-table, .d19-result-table,
+    .gallery-registration-change-table, .parser-boundary-table,
+    .easter-vault-table, .route-system-table, .compendium-summary-table,
+    .oswin-state-table) {
+    width: min(100%, var(--pw-table-max-width)) !important;
+    max-width: var(--pw-table-max-width) !important;
+    margin-left: 0 !important;
+    margin-right: auto !important;
+  }
+
+  main.content :is(.password-result-table, .d19-result-table,
+    .gallery-registration-change-table, .parser-boundary-table,
+    .easter-vault-table, .route-system-table, .compendium-summary-table,
+    .oswin-state-table) table {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    table-layout: fixed !important;
+  }
+
+  main.content :is(.compendium-lore-table, .d6-result-table,
+    .trauma-warning-table, .oz-variable-table, .legacy-d11-choice-table) {
+    width: min(100%, var(--pw-table-max-width)) !important;
+    max-width: min(100%, var(--pw-table-max-width)) !important;
+    margin-left: 0 !important;
+    margin-right: auto !important;
+  }
+
+  main.content :is(.compendium-lore-table, .d6-result-table,
+    .trauma-warning-table, .oz-variable-table, .legacy-d11-choice-table) table {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    table-layout: auto !important;
+  }
+
+  main.content .d17-path-table :is(col, th, td):nth-child(1) { width: 16% !important; }
+  main.content .d17-path-table :is(col, th, td):nth-child(2) { width: 22% !important; }
+  main.content .d17-path-table :is(col, th, td):nth-child(3) { width: 62% !important; }
+
+  main.content .table-medal-index table { min-width: 0 !important; }
+  main.content .table-medal-index :is(col, th, td):nth-child(1) { width: 17% !important; }
+  main.content .table-medal-index :is(col, th, td):nth-child(2) { width: 17% !important; }
+  main.content .table-medal-index :is(col, th, td):nth-child(3) { width: 40% !important; }
+  main.content .table-medal-index :is(col, th, td):nth-child(4) { width: 26% !important; }
+
+  main.content .compendium-cast-table :is(col, th, td):nth-child(1) { width: 7% !important; }
+  main.content .compendium-cast-table :is(col, th, td):nth-child(2) { width: 16% !important; }
+  main.content .compendium-cast-table :is(col, th, td):nth-child(3) { width: 27% !important; }
+  main.content .compendium-cast-table :is(col, th, td):nth-child(4) { width: 50% !important; }
+  main.content .compendium-cast-table td:nth-child(3),
+  main.content .compendium-cast-table td:nth-child(3) code {
+    white-space: nowrap !important;
+    overflow-wrap: normal !important;
+  }
+
+  main.content .compendium-lore-table { --pw-table-max-width: 30rem; }
+  main.content .compendium-lore-table :is(col, th, td):nth-child(1) { width: 4.75rem !important; }
+  main.content .compendium-lore-table :is(col, th, td):nth-child(2) { width: 10rem !important; }
+  main.content .compendium-lore-table :is(col, th, td):nth-child(3) { width: 15rem !important; }
+  main.content .compendium-lore-table td:nth-child(3) code { white-space: nowrap; }
+
+  main.content .affection-shared-gains-table :is(col, th, td):nth-child(1) { width: 32% !important; }
+  main.content .affection-shared-gains-table :is(col, th, td):nth-child(2) { width: 16% !important; }
+  main.content .affection-shared-gains-table :is(col, th, td):nth-child(3) { width: 52% !important; }
+
+  main.content .affection-point-table :is(col, th, td):nth-child(1) { width: 7% !important; }
+  main.content .affection-point-table :is(col, th, td):nth-child(2) { width: 29% !important; }
+  main.content .affection-point-table :is(col, th, td):nth-child(3) { width: 56% !important; }
+  main.content .affection-point-table :is(col, th, td):nth-child(4) { width: 8% !important; }
+  main.content .affection-point-table :is(th, td):is(:nth-child(1), :nth-child(4)) { white-space: nowrap; }
+
+  main.content .password-result-table { --pw-table-max-width: 60rem; }
+  main.content .password-result-table :is(col, th, td):nth-child(1) { width: 45% !important; }
+  main.content .password-result-table :is(col, th, td):nth-child(2) { width: 55% !important; }
+  main.content .password-result-table td:nth-child(2) code { white-space: nowrap; }
+
+  main.content .password-check-stages-table :is(col, th, td):nth-child(1) { width: 20% !important; }
+  main.content .password-check-stages-table :is(col, th, td):nth-child(2) { width: 20% !important; text-align: left; }
+  main.content .password-check-stages-table :is(col, th, td):nth-child(3) { width: 60% !important; }
+  main.content .password-check-stages-table td:nth-child(2),
+  main.content .password-check-stages-table td:nth-child(3) code { white-space: nowrap; }
+
+  main.content .d19-result-table { --pw-table-max-width: 72rem; }
+  main.content .d19-result-table :is(col, th, td):nth-child(1) { width: 10% !important; }
+  main.content .d19-result-table :is(col, th, td):nth-child(2) { width: 90% !important; }
+
+  main.content .gallery-registration-change-table { --pw-table-max-width: 70rem; }
+  main.content .gallery-registration-change-table :is(col, th, td):nth-child(1) { width: calc(100% - 9rem) !important; }
+  main.content .gallery-registration-change-table :is(col, th, td):nth-child(2) { width: 9rem !important; white-space: nowrap; }
+
+  main.content .d6-result-table { --pw-table-max-width: 48rem; }
+  main.content .d6-result-table :is(col, th, td):nth-child(1) { width: 8rem !important; }
+
+  main.content .trauma-warning-table { --pw-table-max-width: 34rem; }
+  main.content .trauma-warning-table :is(col, th, td):nth-child(1) { width: 14rem !important; }
+  main.content .trauma-warning-table td:nth-child(1) code { white-space: nowrap; }
+
+  main.content .oz-variable-table { --pw-table-max-width: 36rem; }
+  main.content .oz-variable-table :is(col, th, td):nth-child(1) { width: 11rem !important; }
+  main.content .oz-variable-table td:nth-child(1) code { white-space: nowrap; }
+
+  main.content .parser-boundary-table { --pw-table-max-width: 72rem; }
+  main.content .parser-boundary-table :is(col, th, td):nth-child(1) { width: 26% !important; }
+  main.content .parser-boundary-table :is(col, th, td):nth-child(2) { width: 74% !important; }
+
+  main.content .legacy-d11-choice-table { --pw-table-max-width: 34rem; }
+  main.content .legacy-d11-choice-table :is(col, th, td):nth-child(1) { width: 45% !important; }
+  main.content .legacy-d11-choice-table :is(col, th, td):nth-child(2) { width: 55% !important; }
+  main.content .legacy-d11-choice-table td code { white-space: nowrap; }
+
+  main.content .easter-vault-table { --pw-table-max-width: 72rem; }
+  main.content .easter-vault-table :is(col, th, td):nth-child(1) { width: 8% !important; }
+  main.content .easter-vault-table :is(col, th, td):nth-child(2) { width: 20% !important; }
+  main.content .easter-vault-table :is(col, th, td):nth-child(3) { width: 72% !important; }
+
+  main.content .route-system-table { --pw-table-max-width: 72rem; }
+  main.content .route-system-table :is(col, th, td):nth-child(1) { width: 25% !important; }
+  main.content .route-system-table :is(col, th, td):nth-child(2) { width: 75% !important; }
+
+  main.content .compendium-summary-table { --pw-table-max-width: 72rem; }
+  main.content .compendium-summary-table :is(col, th, td):nth-child(1) { width: 34% !important; }
+  main.content .compendium-summary-table :is(col, th, td):nth-child(2) { width: 12% !important; }
+  main.content .compendium-summary-table :is(col, th, td):nth-child(3) { width: 54% !important; }
+
+  main.content .oswin-state-table { --pw-table-max-width: 66rem; }
+  main.content .oswin-state-table :is(col, th, td):nth-child(1) { width: 24% !important; }
+  main.content .oswin-state-table :is(col, th, td):nth-child(2) { width: 76% !important; }
+}
+
+@media (min-width: 760px) {
+  main.content :is(.compendium-lore-table, .d6-result-table,
+    .trauma-warning-table, .oz-variable-table, .legacy-d11-choice-table)
+    .quarto-bootstrap-table {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+@media (min-width: 760px) and (max-width: 1199px) {
+  main.content .table-medal-index :is(col, th, td):nth-child(1) { width: 23% !important; }
+  main.content .table-medal-index :is(col, th, td):nth-child(2) { width: 24% !important; }
+  main.content .table-medal-index :is(col, th, td):nth-child(3) { width: 31% !important; }
+  main.content .table-medal-index :is(col, th, td):nth-child(4) { width: 22% !important; }
+  main.content .table-medal-index :is(th, td):is(:nth-child(1), :nth-child(2)) {
+    overflow-wrap: normal !important;
+    word-break: normal !important;
+    hyphens: none;
+  }
+
+  main.content .compendium-cast-table :is(col, th, td):nth-child(1) { width: 9% !important; }
+  main.content .compendium-cast-table :is(col, th, td):nth-child(2) { width: 18% !important; }
+  main.content .compendium-cast-table :is(col, th, td):nth-child(3) { width: 47% !important; }
+  main.content .compendium-cast-table :is(col, th, td):nth-child(4) { width: 26% !important; }
+  main.content .compendium-cast-table :is(th, td):nth-child(1) {
+    padding-left: 0.2rem !important;
+    padding-right: 0.2rem !important;
+  }
+  main.content .compendium-cast-table :is(th, td):nth-child(3) {
+    padding-left: 0.35rem !important;
+    padding-right: 0.35rem !important;
+  }
+}

@@ -6,12 +6,16 @@ toc: true
 
 《Password》b0.85 的 Compendium 固定分为三个部分：
 
+::: {.compendium-summary-table .table-responsive}
+
 | 部分 | 数量 | 内容 |
 |---|---:|---|
 | Cast Files | 16 | 角色档案 |
 | Additional Scenes | 9 | 可重复播放的剧情场景 |
 | Lore | 12 | 十二枚星座奖牌条目 |
 | **合计** | **37** | — |
+
+:::
 
 游戏设置首次结局标记后，Compendium 按钮才会出现在**主菜单**。正常游戏流程中的导航菜单不会提供该入口。
 
@@ -64,10 +68,14 @@ Cast Files、Additional Scenes 和 Lore 都由持久标记控制，但游戏不�
 
 Orlando 档案在 D15 有两种条件：
 
+::: {.oswin-state-table .table-responsive}
+
 | Oswin 状态 | 解锁条件 |
 |---|---|
 | Oswin 存活 | 要求当前为 Orlando 线 |
 | Oswin 已死亡 | 任意角色线都会在公共会议中解锁 |
+
+:::
 
 游戏内锁定提示只提到 Orlando 线，因此不会显示第二种方法。
 

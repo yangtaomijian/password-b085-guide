@@ -154,7 +154,7 @@ These changes reduce optional exposition and player control and also alter how s
 
 The Dean relationship gate changes mechanically:
 
-::: {.table-responsive .table-scroll-compact}
+::: {.d19-result-table .table-responsive .table-scroll-compact}
 | Build | D19 result |
 |---|---|
 | b0.7 | `bearlove >= 20`: relationship automatic; `10–19`: player accepts or rejects; `< 10`: rejection |
@@ -217,7 +217,7 @@ The scripted Gallery total changes from 104 registered slots in b0.7 to 100 in b
 
 The exact cause is:
 
-::: {.table-responsive .table-scroll-compact}
+::: {.gallery-registration-change-table .table-responsive .table-scroll-compact}
 | Registration change | Slot difference |
 |---|---:|
 | `deanlove` removed from the normal Dean Gallery list | −1 |

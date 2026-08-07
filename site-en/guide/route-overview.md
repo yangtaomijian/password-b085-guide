@@ -86,10 +86,14 @@ After giving up on the D10 password during the Sal Route, the save slot may temp
 
 The lettered Paths increasingly organize the major survival and timeline outcomes, while the selected character route continues to shape dialogue, intimate scenes, and relationship outcomes within those Path branches.
 
+::: {.route-system-table .table-responsive}
+
 | System | Main function |
 |---|---|
 | Character route | Companion perspective, character scenes, affection, romance, and relationship outcomes |
 | Lettered Path | Major timeline direction, survival outcomes, later-story structure, and ending classification |
+
+:::
 
 In practical terms, two players can share the same lettered Path while seeing different character-route scenes, and two runs on the same character route can still diverge into different lettered Paths.
 

@@ -6,12 +6,16 @@ toc: true
 
 The b0.85 Compendium contains three fixed sections:
 
+::: {.compendium-summary-table .table-responsive}
+
 | Section | Entries | Contents |
 |---|---:|---|
 | Cast Files | 16 | Character profiles |
 | Additional Scenes | 9 | Replayable story scenes |
 | Lore | 12 | Zodiac-medal entries |
 | **Total** | **37** | — |
+
+:::
 
 The Compendium button appears on the **main menu** after the game has set its first-ending flag. It is not available from the normal in-game navigation menu.
 
@@ -64,10 +68,14 @@ No character route or affection condition is required once that flashback is rea
 
 Orlando's Cast File has two different D15 conditions:
 
+::: {.oswin-state-table .table-responsive}
+
 | Oswin state | Unlock condition |
 |---|---|
 | Oswin alive | Orlando Route required |
 | Oswin dead | Unlocks during the common meeting on any character route |
+
+:::
 
 The in-game locked hint only mentions Orlando Route progression, so it does not reveal the second method.
 

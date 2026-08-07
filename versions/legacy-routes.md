@@ -44,7 +44,7 @@ Leave.
 
 b0.85 已删除正常可达的 D6 离开宅邸菜单，以及对应的 Bad Ending 剧本。
 
-::: {.table-responsive .table-scroll-compact}
+::: {.d6-result-table .table-responsive .table-scroll-compact}
 | 版本 | D6 结果 |
 |---|---|
 | b0.7 | `Stay.` 继续；`Leave.` 进入 `BAD END: OZ` |

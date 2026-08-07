@@ -180,7 +180,7 @@ b0.85 删除该菜单和 Tyson 分支，固定进入 Dean 的宅邸介绍流程�
 
 Dean 的 D19 关系判定发生了明确机制变化：
 
-::: {.table-responsive .table-scroll-compact}
+::: {.d19-result-table .table-responsive .table-scroll-compact}
 | 版本 | D19 结果 |
 |---|---|
 | b0.7 | `bearlove >= 20`：自动建立关系；`10–19`：玩家自行接受或拒绝；`< 10`：拒绝 |
@@ -243,7 +243,7 @@ b0.7 的脚本注册了 104 个 Gallery 槽位，b0.85 则注册 100 个。
 
 准确原因是：
 
-::: {.table-responsive .table-scroll-compact}
+::: {.gallery-registration-change-table .table-responsive .table-scroll-compact}
 | 注册变化 | 槽位变化 |
 |---|---:|
 | `deanlove` 从正常 Dean Gallery 列表中移除 | −1 |

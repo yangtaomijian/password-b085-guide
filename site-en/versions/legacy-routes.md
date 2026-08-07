@@ -40,7 +40,7 @@ This was a terminal Bad Ending branch. It did not create another character Route
 
 b0.85 no longer contains the normal reachable D6 mansion-departure menu or the corresponding Bad Ending script.
 
-::: {.table-responsive .table-scroll-compact}
+::: {.d6-result-table .table-responsive .table-scroll-compact}
 | Build | D6 result |
 |---|---|
 | b0.7 | `Stay.` continues; `Leave.` enters `BAD END: OZ` |

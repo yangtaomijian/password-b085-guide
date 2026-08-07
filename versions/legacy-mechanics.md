@@ -124,7 +124,7 @@ Stay Silent.
 
 旧系统会写入三个普通变量：
 
-::: {.table-responsive}
+::: {.oz-variable-table .table-responsive}
 | 变量 | 作用 |
 |---|---|
 | `OzPast1` | 记录一项家族历史信息 |
@@ -160,7 +160,7 @@ Stay Silent.
 
 ### 重要边界
 
-::: {.table-responsive .table-scroll-compact}
+::: {.parser-boundary-table .table-responsive .table-scroll-compact}
 | 输入特征 | 实际行为 |
 |---|---|
 | 大小写 | 会统一转为小写，因此不敏感 |
@@ -248,7 +248,7 @@ b0.85 删除了 D8 自由输入引擎，并用固定剧情对白替代原场景�
 
 b0.7 的 Oswin 存活 D11 实验室流程还有一个独立的三选一决定：
 
-::: {.table-responsive}
+::: {.legacy-d11-choice-table .table-responsive}
 | b0.7 选择 | 立即效果 |
 |---|---|
 | `Inject me.` | 不增加 `DavePride` |

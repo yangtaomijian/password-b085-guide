@@ -74,10 +74,14 @@ Path E 是以全员死亡为结果、且具有多个入口的终止 Path，并�
 
 Path A 和 Path B 则会继续推进到 D17 的密码检定。
 
+::: {.d17-path-table .table-responsive}
+
 | 当前 Path | D17 检定成功 | D17 检定失败（非 Tyson 线） |
 |---|---|---|
 | Path A | 保持 Path A | D19 发生灾难，D20 按 Oswin 存活状态归为 Path F |
 | Path B | 保持 Path B | D19 发生灾难，D20 按 Oswin 死亡状态归为 Path G |
+
+:::
 
 密码实际输入发生在 D17；失败的主要后果在 D19 出现，游戏再于 D20 根据 Oswin 是否存活，将流程归为 Path F 或 Path G。
 

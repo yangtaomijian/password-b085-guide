@@ -62,7 +62,7 @@ either accepted alternative
 
 Each accepted D7 input immediately displays a different warning image:
 
-::: {.table-responsive}
+::: {.trauma-warning-table .table-responsive}
 | Input | Warning image shown |
 |---|---|
 | `PEACEKEEPER` | Orlando being shot |

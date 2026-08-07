@@ -64,7 +64,7 @@ b0.7 的 D7 解谜比当前版本更加迂回，但源码并没有强制玩家�
 
 三个 D7 输入会立即显示不同的预警画面：
 
-::: {.table-responsive}
+::: {.trauma-warning-table .table-responsive}
 | 输入 | 显示的预警画面 |
 |---|---|
 | `PEACEKEEPER` | Orlando 中枪 |

@@ -69,10 +69,14 @@ Path E is a terminal Path with several possible entry conditions. It is not tied
 
 Path A and Path B instead continue to the D17 password check.
 
+::: {.d17-path-table .table-responsive}
+
 | Current Path | D17 check passed | D17 check failed outside the Tyson Route |
 |---|---|---|
 | Path A | Remains on Path A | Leads to the D19 disaster and is classified as Path F on D20 |
 | Path B | Remains on Path B | Leads to the D19 disaster and is classified as Path G on D20 |
+
+:::
 
 The password is entered on D17. The consequences of failure occur on Day 19 (D19), and the game assigns Path F or Path G on Day 20 (D20) according to whether Oswin is alive.
 
