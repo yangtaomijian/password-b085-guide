@@ -4394,14 +4394,14 @@ body.pw-custom-layout-ready #quarto-margin-sidebar {
 }
 
 @media (min-width: 760px) {
-  main.content .affection-roswell-table td:nth-child(2) {
+  main.content .affection-point-table.affection-roswell-table > table > tbody > tr > td:nth-child(2) {
     min-width: 0;
     white-space: normal !important;
     overflow-wrap: anywhere;
     word-break: normal;
   }
 
-  main.content .affection-roswell-table td:nth-child(2) code {
+  main.content .affection-point-table.affection-roswell-table > table > tbody > tr > td:nth-child(2) code {
     white-space: nowrap !important;
     overflow-wrap: normal;
     word-break: normal;
