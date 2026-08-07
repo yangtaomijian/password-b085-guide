@@ -229,7 +229,7 @@ Exact menu strings are preserved for comparison with the game. Rows from the sam
 
 `boarlove`
 
-::: {.affection-point-table .table-responsive .table-scroll-large}
+::: {.affection-point-table .affection-roswell-table .table-responsive .table-scroll-large}
 
 | Day | Choice / condition | Requirement | Points |
 |---|---|---|---:|
