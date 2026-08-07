@@ -4331,3 +4331,64 @@ body.pw-custom-layout-ready #quarto-margin-sidebar {
     padding-right: 0.35rem !important;
   }
 }
+
+/* Desktop-only corrections from the final English table QA pass. */
+@media (min-width: 1200px) {
+  main.content .compendium-summary-table {
+    --pw-desktop-table-width: 46rem;
+    width: min(100%, var(--pw-desktop-table-width)) !important;
+    max-width: var(--pw-desktop-table-width) !important;
+    margin-left: 0 !important;
+    margin-right: auto !important;
+    overflow-x: visible !important;
+  }
+
+  main.content .affection-point-table:is(
+    .affection-tyson-table,
+    .affection-dean-table,
+    .affection-orlando-table,
+    .affection-sal-table
+  ) :is(col, th, td):nth-child(1) { width: 7% !important; }
+
+  main.content .affection-point-table:is(
+    .affection-tyson-table,
+    .affection-dean-table,
+    .affection-orlando-table,
+    .affection-sal-table
+  ) :is(col, th, td):nth-child(2) { width: 38% !important; }
+
+  main.content .affection-point-table:is(
+    .affection-tyson-table,
+    .affection-dean-table,
+    .affection-orlando-table,
+    .affection-sal-table
+  ) :is(col, th, td):nth-child(3) { width: 47% !important; }
+
+  main.content .affection-point-table:is(
+    .affection-tyson-table,
+    .affection-dean-table,
+    .affection-orlando-table,
+    .affection-sal-table
+  ) :is(col, th, td):nth-child(4) { width: 8% !important; }
+
+}
+
+@media (min-width: 760px) {
+  main.content .affection-point-table:is(
+    .affection-tyson-table,
+    .affection-dean-table,
+    .affection-orlando-table,
+    .affection-sal-table
+  ) td:nth-child(2),
+  main.content .affection-point-table:is(
+    .affection-tyson-table,
+    .affection-dean-table,
+    .affection-orlando-table,
+    .affection-sal-table
+  ) td:nth-child(2) code {
+    min-width: 0;
+    white-space: normal !important;
+    overflow-wrap: break-word;
+    word-break: normal;
+  }
+}

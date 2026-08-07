@@ -190,7 +190,7 @@ D1 的所有答案共用一个输入框，因此一次流程中只能触发其�
 
 `wolflove`
 
-::: {.affection-point-table .table-responsive .table-scroll-large}
+::: {.affection-point-table .affection-tyson-table .table-responsive .table-scroll-large}
 
 | 日期 | 选择／条件 | 要求 | 点数 |
 |---|---|---|---:|

@@ -4415,3 +4415,43 @@ body.pw-custom-layout-ready #quarto-margin-sidebar {
     padding-right: 0.35rem !important;
   }
 }
+
+/* Desktop-only corrections from the final Chinese table QA pass. */
+@media (min-width: 1200px) {
+  main.content .medal-route-plan-table,
+  main.content .affection-d19-summary-table {
+    margin-bottom: 1.1rem;
+  }
+
+  main.content .compendium-summary-table,
+  main.content .oswin-state-table,
+  main.content .parser-boundary-table,
+  main.content .easter-vault-table {
+    width: min(100%, var(--pw-desktop-table-width)) !important;
+    max-width: var(--pw-desktop-table-width) !important;
+    margin-left: 0 !important;
+    margin-right: auto !important;
+    overflow-x: visible !important;
+  }
+
+  main.content .compendium-summary-table { --pw-desktop-table-width: 42rem; }
+  main.content .oswin-state-table { --pw-desktop-table-width: 38rem; }
+  main.content .parser-boundary-table { --pw-desktop-table-width: 48rem; }
+  main.content .easter-vault-table { --pw-desktop-table-width: 44rem; }
+
+  main.content .affection-point-table.affection-tyson-table :is(col, th, td):nth-child(1) { width: 7% !important; }
+  main.content .affection-point-table.affection-tyson-table :is(col, th, td):nth-child(2) { width: 37% !important; }
+  main.content .affection-point-table.affection-tyson-table :is(col, th, td):nth-child(3) { width: 48% !important; }
+  main.content .affection-point-table.affection-tyson-table :is(col, th, td):nth-child(4) { width: 8% !important; }
+
+}
+
+@media (min-width: 760px) {
+  main.content .affection-point-table.affection-tyson-table td:nth-child(2),
+  main.content .affection-point-table.affection-tyson-table td:nth-child(2) code {
+    min-width: 0;
+    white-space: normal !important;
+    overflow-wrap: break-word;
+    word-break: normal;
+  }
+}

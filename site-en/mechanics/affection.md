@@ -129,7 +129,7 @@ Exact menu strings are preserved for comparison with the game. Rows from the sam
 
 `dragonlove`
 
-::: {.affection-point-table .table-responsive .table-scroll-large}
+::: {.affection-point-table .affection-orlando-table .table-responsive .table-scroll-large}
 
 | Day | Choice / condition | Requirement | Points |
 |---|---|---|---:|
@@ -163,7 +163,7 @@ Exact menu strings are preserved for comparison with the game. Rows from the sam
 
 `bearlove`
 
-::: {.affection-point-table .table-responsive .table-scroll-large}
+::: {.affection-point-table .affection-dean-table .table-responsive .table-scroll-large}
 
 | Day | Choice / condition | Requirement | Points |
 |---|---|---|---:|
@@ -191,7 +191,7 @@ Exact menu strings are preserved for comparison with the game. Rows from the sam
 
 `wolflove`
 
-::: {.affection-point-table .table-responsive .table-scroll-large}
+::: {.affection-point-table .affection-tyson-table .table-responsive .table-scroll-large}
 
 | Day | Choice / condition | Requirement | Points |
 |---|---|---|---:|
@@ -292,7 +292,7 @@ Exact menu strings are preserved for comparison with the game. Rows from the sam
 
 `croclove`
 
-::: {.affection-point-table .table-responsive .table-scroll-large}
+::: {.affection-point-table .affection-sal-table .table-responsive .table-scroll-large}
 
 | Day | Choice / condition | Requirement | Points |
 |---|---|---|---:|
