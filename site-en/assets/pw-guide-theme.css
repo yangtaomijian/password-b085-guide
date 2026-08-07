@@ -4407,3 +4407,109 @@ body.pw-custom-layout-ready #quarto-margin-sidebar {
     word-break: normal;
   }
 }
+
+/* Phone-only finishing pass for the English guide. */
+@media (max-width: 759.98px) {
+  /* The utility links remain visible; only the duplicate full-navbar trigger is removed. */
+  body.nav-sidebar:not(.fullcontent) #quarto-header .navbar-toggler {
+    display: none !important;
+  }
+
+  .character-tabs > .nav-tabs {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: 1fr;
+    overflow: hidden;
+  }
+
+  .character-tabs > .nav-tabs .nav-item {
+    display: flex;
+    min-width: 0;
+  }
+
+  .character-tabs > .nav-tabs .nav-link {
+    height: 100%;
+    border-right: 1px solid var(--pw-border) !important;
+    border-bottom: 1px solid var(--pw-border) !important;
+  }
+
+  .character-tabs > .nav-tabs .nav-item:nth-child(even) .nav-link {
+    border-right: 0 !important;
+  }
+
+  .character-tabs > .nav-tabs .nav-item:nth-last-child(-n + 2) .nav-link {
+    border-bottom: 0 !important;
+  }
+
+  main.content .additional-scenes-table {
+    --pw-table-min-width: 30rem;
+  }
+
+  main.content .additional-scenes-table :is(col, th, td):nth-child(1) {
+    width: 3.25rem !important;
+  }
+
+  main.content .additional-scenes-table :is(col, th, td):nth-child(2) {
+    width: 8.5rem !important;
+    white-space: normal !important;
+  }
+
+  main.content .additional-scenes-table :is(col, th, td):nth-child(3) {
+    width: calc(100% - 11.75rem) !important;
+  }
+
+  main.content .compendium-lore-table {
+    --pw-table-min-width: 23.5rem;
+  }
+
+  main.content .compendium-lore-table :is(th, td) {
+    padding-left: 0.38rem;
+    padding-right: 0.38rem;
+  }
+
+  main.content .compendium-lore-table :is(col, th, td):nth-child(1) {
+    width: 3.25rem !important;
+  }
+
+  main.content .compendium-lore-table :is(col, th, td):nth-child(2) {
+    width: 6.25rem !important;
+  }
+
+  main.content .compendium-lore-table :is(col, th, td):nth-child(3) {
+    width: calc(100% - 9.5rem) !important;
+  }
+
+  main.content .compendium-lore-table td:nth-child(3) code {
+    white-space: nowrap;
+    overflow-wrap: normal;
+    word-break: normal;
+  }
+
+  main.content .easter-vault-table {
+    --pw-table-min-width: 23rem;
+  }
+
+  main.content .easter-vault-table :is(th, td) {
+    padding-left: 0.4rem;
+    padding-right: 0.4rem;
+  }
+
+  main.content .easter-vault-table :is(col, th, td):nth-child(1) {
+    width: 15% !important;
+  }
+
+  main.content .easter-vault-table :is(col, th, td):nth-child(2) {
+    width: 32% !important;
+  }
+
+  main.content .easter-vault-table :is(col, th, td):nth-child(3) {
+    width: 53% !important;
+    white-space: normal;
+  }
+
+  main.content .easter-vault-table td:nth-child(2) code {
+    white-space: nowrap;
+    overflow-wrap: normal;
+    word-break: normal;
+  }
+}
