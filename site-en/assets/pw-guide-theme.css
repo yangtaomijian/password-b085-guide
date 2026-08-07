@@ -4410,9 +4410,13 @@ body.pw-custom-layout-ready #quarto-margin-sidebar {
 
 /* Phone-only finishing pass for the English guide. */
 @media (max-width: 759.98px) {
-  /* The utility links remain visible; only the duplicate full-navbar trigger is removed. */
-  body.nav-sidebar:not(.fullcontent) #quarto-header .navbar-toggler {
+  /* Remove both Quarto mobile navigation triggers from layout and hit testing. */
+  body.nav-sidebar:not(.fullcontent) #quarto-header .navbar-toggler,
+  body.nav-sidebar:not(.fullcontent) #quarto-header .quarto-secondary-nav .quarto-btn-toggle,
+  body.nav-sidebar:not(.fullcontent) #quarto-header .quarto-secondary-nav
+    .flex-grow-1[data-bs-target=".quarto-sidebar-collapse-item"] {
     display: none !important;
+    pointer-events: none !important;
   }
 
   .character-tabs > .nav-tabs {
@@ -4450,12 +4454,14 @@ body.pw-custom-layout-ready #quarto-margin-sidebar {
   }
 
   main.content .additional-scenes-table :is(col, th, td):nth-child(2) {
-    width: 8.5rem !important;
+    width: 6.75rem !important;
     white-space: normal !important;
+    overflow-wrap: normal;
+    word-break: normal;
   }
 
   main.content .additional-scenes-table :is(col, th, td):nth-child(3) {
-    width: calc(100% - 11.75rem) !important;
+    width: calc(100% - 10rem) !important;
   }
 
   main.content .compendium-lore-table {

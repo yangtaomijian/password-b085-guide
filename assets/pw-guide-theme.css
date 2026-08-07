@@ -4455,3 +4455,41 @@ body.pw-custom-layout-ready #quarto-margin-sidebar {
     word-break: normal;
   }
 }
+
+/* Phone-only finishing pass for the Chinese guide. */
+@media (max-width: 759.98px) {
+  /* Remove both Quarto mobile navigation triggers from layout and hit testing. */
+  body.nav-sidebar:not(.fullcontent) #quarto-header .navbar-toggler,
+  body.nav-sidebar:not(.fullcontent) #quarto-header .quarto-secondary-nav .quarto-btn-toggle,
+  body.nav-sidebar:not(.fullcontent) #quarto-header .quarto-secondary-nav
+    .flex-grow-1[data-bs-target=".quarto-sidebar-collapse-item"] {
+    display: none !important;
+    pointer-events: none !important;
+  }
+
+  .character-tabs > .nav-tabs {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: 1fr;
+    overflow: hidden;
+  }
+
+  .character-tabs > .nav-tabs .nav-item {
+    display: flex;
+    min-width: 0;
+  }
+
+  .character-tabs > .nav-tabs .nav-link {
+    height: 100%;
+    border-right: 1px solid var(--pw-border) !important;
+    border-bottom: 1px solid var(--pw-border) !important;
+  }
+
+  .character-tabs > .nav-tabs .nav-item:nth-child(even) .nav-link {
+    border-right: 0 !important;
+  }
+
+  .character-tabs > .nav-tabs .nav-item:nth-last-child(-n + 2) .nav-link {
+    border-bottom: 0 !important;
+  }
+}
