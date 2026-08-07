@@ -207,7 +207,7 @@ Exact menu strings are preserved for comparison with the game. Rows from the sam
 | D5 | `Comedy` | mutually exclusive D5 movie choice | +1 |
 | D5 | `Action` | mutually exclusive D5 movie choice | +1 |
 | D5 | `Romance` | Tyson Route; mutually exclusive D5 movie choice | +1 |
-| D6 | `Tyson.` → `I didn't know I was spotting for a {i}bitch{/i}.` | Hoss or Tyson Route; D6 Tyson encouragement | +1 |
+| D6 | `Tyson.` → `I didn't know I was spotting for a bitch.` | Hoss or Tyson Route; D6 Tyson encouragement | +1 |
 | D6 | `Tyson.` → `Keep going! You can do it!` | Hoss or Tyson Route; D6 Tyson encouragement | +2 |
 | D6 | `You.` | Tyson Route | +1 |
 | D6 | `Stop Tyson.` → `Save Tyson.` → `Truth.` | Tyson Route; successful D6 Vault state; nested Tyson rescue choices | +1 |

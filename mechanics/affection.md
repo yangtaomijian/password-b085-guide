@@ -206,7 +206,7 @@ D1 的所有答案共用一个输入框，因此一次流程中只能触发其�
 | D5 | `Comedy` | 与其他 D5 电影选项互斥 | +1 |
 | D5 | `Action` | 与其他 D5 电影选项互斥 | +1 |
 | D5 | `Romance` | Tyson 线；与其他 D5 电影选项互斥 | +1 |
-| D6 | `Tyson.` → `I didn't know I was spotting for a {i}bitch{/i}.` | Hoss 线或 Tyson 线；D6 Tyson 鼓励选项 | +1 |
+| D6 | `Tyson.` → `I didn't know I was spotting for a bitch.` | Hoss 线或 Tyson 线；D6 Tyson 鼓励选项 | +1 |
 | D6 | `Tyson.` → `Keep going! You can do it!` | Hoss 线或 Tyson 线；D6 Tyson 鼓励选项 | +2 |
 | D6 | `You.` | Tyson 线 | +1 |
 | D6 | `Stop Tyson.` → `Save Tyson.` → `Truth.` | Tyson 线；D6 金库状态成功；Tyson 救援嵌套选项 | +1 |
