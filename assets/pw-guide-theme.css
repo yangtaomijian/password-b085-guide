@@ -4458,11 +4458,8 @@ body.pw-custom-layout-ready #quarto-margin-sidebar {
 
 /* Phone-only finishing pass for the Chinese guide. */
 @media (max-width: 759.98px) {
-  /* Remove both Quarto mobile navigation triggers from layout and hit testing. */
-  body.nav-sidebar:not(.fullcontent) #quarto-header .navbar-toggler,
-  body.nav-sidebar:not(.fullcontent) #quarto-header .quarto-secondary-nav .quarto-btn-toggle,
-  body.nav-sidebar:not(.fullcontent) #quarto-header .quarto-secondary-nav
-    .flex-grow-1[data-bs-target=".quarto-sidebar-collapse-item"] {
+  /* Disable only the primary navbar menu; keep the secondary sidebar toggle. */
+  #quarto-header .navbar-toggler {
     display: none !important;
     pointer-events: none !important;
   }
