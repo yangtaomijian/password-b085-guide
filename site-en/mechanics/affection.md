@@ -251,7 +251,7 @@ Exact menu strings are preserved for comparison with the game. Rows from the sam
 | D7 | `Stay.` → `Orlando.` | mutually exclusive D7 family-subject choice | +1 |
 | D9 | `...Wild.` | Roswell Route, Orlando Route, or Sal Route; D9 Uno final-card menu | +1 |
 | D15 | `Agree.` | Roswell Route; Path A or B | +1 |
-| D16 | `I like {i}you{/i}.` | Roswell Route; Path A or B; Roswell affection at least 15 | +2 |
+| D16 | `I like you.` | Roswell Route; Path A or B; Roswell affection at least 15 | +2 |
 
 :::
 

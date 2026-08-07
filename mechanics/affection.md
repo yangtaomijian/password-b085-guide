@@ -250,7 +250,7 @@ D1 的所有答案共用一个输入框，因此一次流程中只能触发其�
 | D7 | `Stay.` → `Orlando.` | D7 家庭话题菜单，和其他主题互斥 | +1 |
 | D9 | `...Wild.` | Roswell、Orlando 或 Sal 线；D9 Uno 最后一张牌菜单 | +1 |
 | D15 | `Agree.` | Roswell 线；Path A 或 B | +1 |
-| D16 | `I like {i}you{/i}.` | Roswell 线；Path A 或 B；`boarlove >= 15` | +2 |
+| D16 | `I like you.` | Roswell 线；Path A 或 B；`boarlove >= 15` | +2 |
 
 :::
 
