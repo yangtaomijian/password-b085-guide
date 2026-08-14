@@ -167,6 +167,10 @@ Hoss 有两张亲吻 CG 分别受不同好感度结果控制，因此其检定�
 
 :::
 
+注意：
+
+如果 D8 隐藏图书馆没有达到 12 点、此时 `HossKiss` 仍为 `False`，但之后在 D9 夜晚前将 `lionlove` 提升到 12 或以上，D9 晚上 Hoss 场景仍会触发一次嘴唇接吻，并将 `HossKiss` 设为 `True`。这不会补解锁已经错过的 D8 `hosskiss` CG，因此“错过 D8 CG”并不等于本周目之后不会与 Hoss 接吻，但是确实无法解锁对应 CG。
+
 具体坐标和最早正常显示位置见[CG Gallery 查漏索引](../collectibles/gallery.md)。
 
 ### Sal

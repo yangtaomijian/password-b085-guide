@@ -167,6 +167,8 @@ Hoss has two kiss CGs tied to different affection outcomes, making his checks es
 
 :::
 
+Note: If the D8 hidden-library check is below 12 and `HossKiss` therefore remains `False`, raising `lionlove` to 12 or higher before the Night9 Hoss scene can still trigger a mouth kiss and set `HossKiss = True`. This does not retroactively unlock the missed D8 `hosskiss` CG, so missing that CG does not mean Dave cannot kiss Hoss later in the same playthrough.
+
 For coordinates and the earliest normal display locations, see [CG Gallery Completion Index](../collectibles/gallery.md).
 
 ### Sal
