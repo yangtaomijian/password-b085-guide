@@ -3731,6 +3731,17 @@ main.content .path-exception-comparison-table td:nth-child(3) {
   width: 40% !important;
 }
 
+main.content .path-exception-comparison-table td:nth-child(2),
+main.content .path-exception-comparison-table td:nth-child(3) {
+  white-space: normal !important;
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+
+main.content .path-exception-comparison-table td code {
+  white-space: nowrap;
+}
+
 main.content .medal-route-plan-table col:nth-child(1),
 main.content .medal-route-plan-table th:nth-child(1),
 main.content .medal-route-plan-table td:nth-child(1) {
