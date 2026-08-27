@@ -9,6 +9,14 @@ Use this site to follow character Routes and lettered Paths, work through passwo
 
 The main guide covers the current b0.85 build. A separate version archive compares b0.7 with b0.85 and documents removed branches, retired mechanics, and other changes.
 
+::: {.callout-warning}
+This site contains spoilers for Routes, Bad Endings, medals, CGs, Compendium entries, and ending requirements.
+:::
+
+::: {.callout-important}
+Password help is presented as progressive hints. Start with the first tier and open later hints only when needed; the main guide does not collect every answer on one page.
+:::
+
 ## Start Here
 
 :::: {.grid}
@@ -94,13 +102,13 @@ Review removed route-adjacent branches, including the former D6 mansion-departur
 ::: {.g-col-12 .g-col-md-6}
 ### [Legacy Password Archive](versions/legacy-passwords.md)
 
-See the two accepted D7 alternatives and the retired optional D11 Vault sequence from b0.7.
+Review the three accepted D7 inputs in b0.7—including two that do not advance the story—and the retired optional D11 Vault sequence.
 :::
 
 ::: {.g-col-12 .g-col-md-6}
 ### [Legacy Mechanics Archive](versions/legacy-mechanics.md)
 
-Explore the Path A first-run gate, b0.85 replay access, the retired Oswin question system, and the removed D11 laboratory decision.
+Review the Path A first-run sequence and replays, the retired D8 Oswin question system, and the removed D11 injection decision.
 :::
 
 ::::
@@ -113,8 +121,4 @@ Explore the Path A first-run gate, b0.85 replay access, the retired Oswin questi
 
 ## Site Scope
 
-This site is centered on *Password* b0.85. The current guide pages cover its character Routes, lettered Paths, password checks, collectibles, Gallery, Compendium, and mechanics.
-
-Use the main guide, not the Version Archives, for current b0.85 walkthrough instructions.
-
-The site is spoiler-heavy, unofficial, and not affiliated with the developer.
+This unofficial guide covers *Password* b0.85. Use the Version Archives only when comparing older builds; their Routes and mechanics should not be used as current walkthrough steps.

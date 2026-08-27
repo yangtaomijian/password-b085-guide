@@ -116,7 +116,7 @@ Florencia has several alternative unlock points:
 - Path A ending sequence;
 - Path B ending sequence.
 
-The earliest route is the Path D ending. Path C, E, and F do not contain an equivalent write.
+The earliest unlock point is the Path D ending. Path C, E, and F do not contain an equivalent write.
 
 <details>
 <summary><strong>Oswin is not listed</strong></summary>

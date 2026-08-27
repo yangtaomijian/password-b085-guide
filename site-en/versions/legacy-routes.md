@@ -34,11 +34,11 @@ Stay.
 Leave.
 ```
 
-Choosing **Stay.** continued to D7; Choosing **Leave.** ended the playthrough in: `BAD END: OZ`.
+Choosing **Stay.** continued to D7. Choosing **Leave.** entered `BAD END: OZ` and ended the playthrough.
 
 This was a terminal Bad Ending branch. It did not create another character Route or lettered Path, and it did not return to the normal story.
 
-b0.85 no longer contains the normal reachable D6 mansion-departure menu or the corresponding Bad Ending script.
+b0.85 no longer contains the D6 mansion-departure menu or its Bad Ending during normal play.
 
 ::: {.d6-result-table .table-responsive .table-scroll-compact}
 | Build | D6 result |

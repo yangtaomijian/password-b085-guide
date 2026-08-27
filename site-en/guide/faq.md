@@ -102,6 +102,13 @@ Some late Path A scenes also clear Route flags temporarily, so the menu can chan
 
 This guide covers Password b0.85 only. If Routes, password scenes, or CG locations differ substantially, check the version and download source; information written for older releases may not apply.
 
+For older material, see:
+
+- [Major Changes in b0.85](../versions/b085-changes.md)
+- [Legacy Route Archive](../versions/legacy-routes.md)
+- [Legacy Password Archive](../versions/legacy-passwords.md)
+- [Legacy Mechanics Archive](../versions/legacy-mechanics.md)
+
 ## Still Stuck?
 
 When asking for help, include:

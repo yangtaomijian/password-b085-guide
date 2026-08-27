@@ -35,7 +35,7 @@ They did not, however, have the same effect on the following day.
 | Current D7 answer | Main-gate answer | Benson's death warning | Sets the state required to continue past the D8 hard gate |
 :::
 
-The older alternatives are therefore not “invalid passwords” in the programmatic sense. The Vault deliberately accepted them and set separate flags. They were non-progressing because D8 checks only whether the current main-gate answer was entered.
+The older alternatives were therefore not invalid entries: the Vault accepted them and opened their warning scenes. They did not advance the story because D8 checks only whether the current main-gate answer was entered.
 
 Entering either older alternative still leads into the Benson Bad Ending timeline.
 
@@ -57,6 +57,8 @@ either accepted alternative
 → shared investigation branch
 → clue for the main-gate answer
 ```
+
+Older guides may arrange the three words in a recommended discovery order, but the game did not enforce that order.
 
 ## Trauma images and Gallery unlocks
 

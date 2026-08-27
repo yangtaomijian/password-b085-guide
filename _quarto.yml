@@ -96,21 +96,21 @@ website:
         menu:
           - href: collectibles/medals.md
             text: 十二枚奖牌
-          - href: collectibles/gallery.md
-            text: CG 画廊查漏索引
           - href: collectibles/compendium.md
             text: 后记
+          - href: collectibles/gallery.md
+            text: CG 画廊查漏索引
 
       - text: 机制
         menu:
+          - href: mechanics/password-checks.md
+            text: 密码检定机制
+          - href: mechanics/medal-persistence.md
+            text: 奖牌持久化
           - href: mechanics/affection.md
             text: 好感度机制
           - text: "好感度检定与剧情差异"
             href: mechanics/affection-differences.md
-          - href: mechanics/medal-persistence.md
-            text: 奖牌持久化
-          - href: mechanics/password-checks.md
-            text: 密码检定机制
 
       - text: 版本档案
         menu:
@@ -151,21 +151,21 @@ website:
         contents:
           - href: collectibles/medals.md
             text: 十二枚奖牌收集指南
-          - href: collectibles/gallery.md
-            text: CG 画廊查漏索引
           - href: collectibles/compendium.md
             text: 后记解锁索引
+          - href: collectibles/gallery.md
+            text: CG 画廊查漏索引
 
       - section: "底层机制"
         contents:
+          - href: mechanics/password-checks.md
+            text: 密码检定机制
+          - href: mechanics/medal-persistence.md
+            text: 奖牌持久化与最终检定
           - href: mechanics/affection.md
             text: 好感度机制与加点
           - text: "好感度检定与剧情差异"
             href: mechanics/affection-differences.md
-          - href: mechanics/medal-persistence.md
-            text: 奖牌持久化与最终检定
-          - href: mechanics/password-checks.md
-            text: 密码检定机制
 
       - section: "版本档案"
         contents:
@@ -185,7 +185,7 @@ website:
 
   page-footer:
     left: "Password b0.85 中文攻略与机制资料库"
-    right: "玩家整理资料，仅供攻略与考据参考"
+    right: "非官方玩家攻略，适用于 Password b0.85；后续版本可能不同。"
 
   comments:
     giscus:

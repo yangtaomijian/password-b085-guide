@@ -97,6 +97,8 @@ The lettered Paths increasingly organize the major survival and timeline outcome
 
 Two players can share the same lettered Path while seeing different character-route scenes, and two runs on the same character route can still diverge into different lettered Paths.
 
-## Related guide
+## Related guides
 
 - [Lettered Path System](path-system.md)
+- [Tiered Password Hints](password-hints.md)
+- [Legacy Route Archive](../versions/legacy-routes.md)

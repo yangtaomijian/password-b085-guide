@@ -81,13 +81,13 @@ Leave.
 
 `Leave.` entered the terminal `BAD END: OZ`.
 
-b0.85 removes the normal reachable menu and its Bad Ending script. See [Legacy Route Archive](legacy-routes.md).
+b0.85 removes the menu and its Bad Ending from normal play. See [Legacy Route Archive](legacy-routes.md).
 
 ### D7 accepted alternatives
 
 The b0.7 D7 Vault formally accepted two additional words: `PEACEKEEPER` and `ARBITER`.
 
-Each opened a separate warning scene, but neither satisfied the `BETRAYAL` state required to pass the D8 hard gate.
+Each opened a separate warning scene, but neither set the state required to pass the D8 hard gate.
 
 b0.85 no longer accepts those two alternatives through normal play. The current main-gate answer remains the only usable D7 progression input. In b0.7, they were **accepted non-progressing alternatives**.
 
@@ -105,7 +105,7 @@ See [Legacy Mechanics Archive](legacy-mechanics.md).
 
 b0.7 could unlock an optional D11 Vault visit on a later eligible A/B-side run. Successfully entering `METEMPSYCHOSIS` changed the laboratory sequence and later conditional dialogue without changing the character Route, lettered Path, or ending.
 
-b0.85 removes the normal entry and complete success implementation. The password string, handlers, variable, and some later reads remain as an incomplete code remnant.
+b0.85 removes the normal entry and complete success sequence. Only the password string, old state, and some related dialogue remain.
 
 See [Legacy Password Archive](legacy-passwords.md).
 
@@ -144,7 +144,7 @@ Examples include:
 - **D9:** the kiss/change-subject menu is removed;
 - **D10:** the repeatable four-suspect question menu is replaced by a fixed investigation scene.
 
-These changes reduce optional exposition and player control and also alter how some Dean affection points are obtained. They do not reconstruct the core lettered Path topology.
+These changes reduce optional exposition and player control and also alter how some Dean affection points are obtained. They do not change the underlying A–G Path structure.
 
 ### D19 relationship resolution
 
@@ -182,7 +182,7 @@ b0.85 retains that structure and adds several later integrations.
 
 b0.85 adds a standalone free-text input during Path P. The answer is introduced directly in the surrounding dialogue, and incorrect attempts loop back to the input.
 
-b0.7 has no equivalent player-input label in this part of the sequence.
+b0.7 has no equivalent input at this point in the sequence.
 
 For progressive current hints, see [Tiered Password Hints](../guide/password-hints.md).
 
@@ -209,14 +209,14 @@ The game does not display a formal `PATH P: END` heading or define `P` as a full
 
 ## Gallery registration: 104 to 100
 
-The scripted Gallery total changes from 104 registered slots in b0.7 to 100 in b0.85.
+The Gallery total changes from 104 slots in b0.7 to 100 in b0.85.
 
-The exact cause is:
+The reduction comes from the following four slot changes:
 
 ::: {.gallery-registration-change-table .table-responsive .table-scroll-compact}
 | Registration change | Slot difference |
 |---|---:|
-| `deanlove` removed from the normal Dean Gallery list | −1 |
+| `deanlove` removed from the Dean Gallery list | −1 |
 | `daveflashlight1` removed from the Dave list but retained under Misc | −1 duplicate |
 | `daveflashlight2` removed from the Dave list but retained under Misc | −1 duplicate |
 | `daveflashlight3` removed from the Dave list but retained under Misc | −1 duplicate |
@@ -227,7 +227,7 @@ The three flashlight images remain available through their Misc registrations. T
 
 `deanlove` is not part of the b0.85 Gallery and does not appear during normal play.
 
-The four older Dean adult CGs are **not** the reason for the 104-to-100 change. They were excluded from the Gallery registration arrays in both builds.
+The four older Dean adult CGs are **not** the reason for the 104-to-100 change. They were absent from the Gallery lists in both builds.
 
 For the current 100-slot structure, see [CG Gallery Index](../collectibles/gallery.md).
 
@@ -240,7 +240,7 @@ Two Tyson-related CGs were fully redrawn between b0.7 and b0.85:
 - `tysondrive`
 - `tysonmovie`
 
-These are not minor re-exports. The newer images change the complete composition, character placement, camera framing, background treatment, line work, and coloring.
+The newer images change the complete composition, character placement, camera framing, background treatment, line work, and coloring.
 
 The driving CG appears in several D5/D6 Bad Ending aftermath scenes. The movie CG appears during the Tyson Route on D6.
 
@@ -252,7 +252,7 @@ In b0.85:
 
 - the normal story calls are removed;
 - the corresponding image definitions are removed;
-- the underlying PNG files are absent from the game assets.
+- the corresponding image files were removed.
 
 These images were not counted in the Gallery total in either build, despite being used in normal b0.7 story flow.
 
@@ -281,7 +281,7 @@ Before calling `renpy.quit`, the b0.85 script additionally sets the following va
 - `persistent.true_end`;
 - the persistent Path A–G ending markers.
 
-The b0.7 implementation calls the quit action without those assignments.
+In b0.7, the game quits without changing those completion records first.
 
 See [Easter Eggs and Hidden Inputs](../extras/easter-eggs.md) for the full instructions. This input can affect ending-completion records.
 

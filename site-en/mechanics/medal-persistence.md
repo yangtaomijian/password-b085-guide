@@ -117,13 +117,15 @@ If Path A is completed before all twelve flags are set, collecting the missing m
 
 ## Compendium and medal progress
 
-The Lore list uses the same twelve persistent medal flags as the final Path P check, but a newly earned medal may not appear there until the game is restarted. The Compendium guide covers the full access and refresh behavior.
+The Lore list uses the same twelve persistent medal flags as the final Path P check, but a newly earned medal may not appear there until the game is restarted. See [Compendium Unlock Index](../collectibles/compendium.md) for the full access and refresh behavior.
 
 ## What the game does not reset
 
 b0.85 has no in-game option that clears all twelve medal flags.
 
 The hidden D1 `THE END` password resets several ending markers, including the true-ending flag and Path A–G ending flags, but it does **not** clear the zodiac medal collection.
+
+Deleting ordinary story saves also leaves medal progress intact. Progress can be lost only if the game's persistent data is cleared, omitted during a device transfer, or otherwise replaced.
 
 ## Troubleshooting medal progress
 
@@ -141,3 +143,4 @@ For the fastest collection order and all twelve locations, see [Twelve-Medal Col
 - [Twelve-Medal Collection Guide](../collectibles/medals.md)
 - [Lettered Path System](../guide/path-system.md)
 - [Route and Path Overview](../guide/route-overview.md)
+- [Compendium Unlock Index](../collectibles/compendium.md)

@@ -35,12 +35,12 @@ toc: true
 
 - 六个数值都是普通剧情存档变量，不属于持久数据；
 - 读取较早存档会恢复该存档中的好感度值；
-- 正常可达流程中没有好感度扣分；
+- 正常游玩中不会扣除好感度；
 - 即使当前不在某名角色线上，部分选择仍可能为该角色加点；
 - D5 电影菜单和 D7 家庭话题菜单可以同时为多名角色加点，但每个菜单仍只能选择一个选项；
 - Path C 有一个重要例外：Sal 的泳池剧情会直接把 Sal 好感度设为 0。
 
-所有阈值判断都使用 `>=`。例如 $15 \leq \texttt{lionlove} < 20$ 只是对脚本中先判断 `>= 20`、再通过 `elif >= 15` 的简写。
+所有阈值判断都使用 `>=`。例如 $15 \leq \texttt{lionlove} < 20$ 表示好感度为 15—19 点。
 
 ## 阈值总览
 
@@ -70,7 +70,7 @@ D19 不会比较六名角色的数值并选择最高者。当前角色线决定�
 
 :::
 
-只有进入自动高档分支，或玩家在中间档明确接受关系后，脚本才会设置 `DaveBoyfriend`。Dean 是唯一没有中间选择区间的角色线。
+只有达到自动建立关系的门槛，或玩家在中间点数区间明确接受关系后，游戏才会设置 `DaveBoyfriend`。Dean 是唯一没有中间选择区间的角色线。
 
 ## Hoss 阈值规划
 
@@ -83,7 +83,7 @@ Hoss 是最需要规划加点的角色，因为两张画廊图片分别受 D8 �
 如果进入图书馆时低于 12：
 
 1. D8 亲吻和 `hosskiss` 不会出现；
-2. 低好感度分支会自动增加 2 点；
+2. 低于 12 点时会自动增加 2 点；
 3. 后续选择 `Hold his hand` 还可再增加 2 点。
 
 这些后续分数能帮助 D19，但都发生在 D8 检定之后，无法补回本周目已经错过的 CG。
@@ -143,7 +143,7 @@ D1 的所有答案共用一个输入框，因此一次流程中只能触发其�
 | D6 | `Orlando` | Sal 线或 Orlando 线 | +1 |
 | D6 | `What was it like?` | Orlando 线 | +1 |
 | D6 | `Yes.` | Orlando 线；D6 金库状态成功；进入选择时 `dragonlove >= 7`；D6 Orlando 后续 Yes／No 菜单 | +1 |
-| D6 | 低于 7 分支中第一次练习接吻后自动增加 | Orlando 线；D6 金库状态成功；进入事件时 `dragonlove` 为 5—6 | +1 |
+| D6 | 第一次练习接吻后自动增加 | Orlando 线；D6 金库状态成功；进入事件时 `dragonlove` 为 5—6 | +1 |
 | D7 | `Hug.` | Orlando 线；D7 Orlando 回应 | +1 |
 | D7 | `Advice.` | Orlando 线；D7 Orlando 回应 | +2 |
 | D7 | `Stay.` → `Dean.` | D7 家庭话题菜单，和其他主题互斥 | +1 |
@@ -151,8 +151,8 @@ D1 的所有答案共用一个输入框，因此一次流程中只能触发其�
 | D7 | `Stay.` → `Orlando.` | D7 家庭话题菜单，和其他主题互斥 | +2 |
 | D9 | `...Reverse.` | Roswell、Orlando 或 Sal 线；D9 Uno 最后一张牌菜单 | +1 |
 | D9 | `Hold his hand.` | Orlando 线 | +2 |
-| D9 | `Invite him to stay.` | Orlando 线；Night9 Orlando 菜单 | +1 |
-| D9 | `Reassure him.` | Orlando 线；Night9 Orlando 菜单 | +2 |
+| D9 | `Invite him to stay.` | Orlando 线；D9 夜间 Orlando 菜单 | +1 |
+| D9 | `Reassure him.` | Orlando 线；D9 夜间 Orlando 菜单 | +2 |
 | D15 | `Kiss him.` | Orlando 线；Path A 或 B | +2 |
 | D16 | `Agree.` | Orlando 线；Path A 或 B；`dragonlove >= 15` | +1 |
 
@@ -282,8 +282,8 @@ D1 的所有答案共用一个输入框，因此一次流程中只能触发其�
 | D8 | `Hold his hand` | Hoss 线 | +2 |
 | D9 | `Hoss.` | Dean、Hoss 或 Tyson 线；D9 早晨同伴菜单 | +1 |
 | D9 | `Answer.` | Hoss 线 | +1 |
-| D9 | `...want you to stay.` | Hoss 线；Night9 Hoss 菜单 | +1 |
-| D9 | `...hope you sleep well.` | Hoss 线；Night9 Hoss 菜单 | +2 |
+| D9 | `...want you to stay.` | Hoss 线；D9 夜间 Hoss 菜单 | +1 |
+| D9 | `...hope you sleep well.` | Hoss 线；D9 夜间 Hoss 菜单 | +2 |
 
 :::
 
@@ -317,8 +317,8 @@ D1 的所有答案共用一个输入框，因此一次流程中只能触发其�
 | D9 | `...Skip.` | Roswell、Orlando 或 Sal 线；D9 Uno 最后一张牌菜单 | +1 |
 | D9 | `Approach.` | Sal 线；`croclove >= 15`；D9 Sal 安慰菜单 | +1 |
 | D9 | `Talk.` | Sal 线；D9 Sal 安慰菜单 | +1 |
-| D9 | `...want to cuddle?` | Sal 线；Night9 Sal 菜单 | +1 |
-| D9 | `...want to talk more?` | Sal 线；Night9 Sal 菜单 | +2 |
+| D9 | `...want to cuddle?` | Sal 线；D9 夜间 Sal 菜单 | +1 |
+| D9 | `...want to talk more?` | Sal 线；D9 夜间 Sal 菜单 | +2 |
 
 :::
 

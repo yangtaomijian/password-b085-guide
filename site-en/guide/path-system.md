@@ -22,12 +22,16 @@ The first major split is the D8 choice between **Reveal Oz** and **Support Benso
 
 Outside the Sal Route, the normal mapping is:
 
+::: {.path-base-split-table .table-responsive}
+
 | D8 choice | Meaning | D10 check | Base Path |
 |---|---|---|---|
 | **Support Benson** | Keep Oswin hidden | Passed | Path A |
 | **Reveal Oz** | Reveal Oswin to the group | Passed | Path B |
 | **Support Benson** | Keep Oswin hidden | Failed | Path C |
 | **Reveal Oz** | Reveal Oswin to the group | Failed | Path D |
+
+:::
 
 The split works like this:
 
@@ -138,10 +142,16 @@ The requirements and recommended collection order are covered in the medal guide
 | **Path A** | Keep Oswin from dying early; remain on the D10 safe side; avoid the F/G split through either D17 success or the Tyson Route safeguard |
 | **Path B** | Allow Oswin to die early; remain on the D10 safe side; avoid the F/G split through either D17 success or the Tyson Route safeguard |
 | **Path C** | Keep Oswin from dying early; fail the D10 check outside the Sal Route |
-| **Path D** | Reach the D10 failure side outside the Sal Route with Oswin dead |
-| **Path E** | Reach one of the terminal D14 death-state combinations from the ordinary C/D side |
+| **Path D** | Reach the D10 failure side outside the Sal Route with Oswin dead; a Path C run can also be reclassified as Path D on D14 |
+| **Path E** | Reach one of the D14 outcomes in which everyone dies from the ordinary C/D side |
 | **Path F** | Begin from the Path A direction, fail the D17 check outside the Tyson Route, and reach the D19 disaster with Oswin alive |
 | **Path G** | Begin from the Path B direction, fail the D17 check outside the Tyson Route, and reach the D19 disaster with Oswin dead |
 | **Path P** | Complete the main Path A sequence and reach the final medal check with all twelve medals |
 
 :::
+
+## Related guides
+
+- [Route and Path Overview](route-overview.md)
+- [Tiered Password Hints](password-hints.md)
+- [Twelve-Medal Collection Guide](../collectibles/medals.md)

@@ -14,7 +14,7 @@ For the choices that award points and the complete point inventory, see [Affecti
 The tables cover differences caused by **affection checks**:
 
 - every threshold uses “greater than or equal to,” so `bearlove >= 5` is already satisfied at exactly 5;
-- a difference appears only when the story reaches that `if` or `elif`, and most checks also depend on the character route, date, earlier choices, or other flags; within one `if` / `elif` chain, a higher branch replaces the lower one.
+- a difference appears only when the story reaches that check, and most checks also depend on the character route, date, earlier choices, or other flags; when several thresholds are satisfied, the highest matching result is used.
 :::
 
 ## Character-specific checks
@@ -27,9 +27,9 @@ The tables cover differences caused by **affection checks**:
 
 | Check | Main story locations | Additional conditions | Dialogue or story effect |
 |---|---|---|---|
-| `dragonlove >= 5` | D6 after Orlando's dinner; D9 morning | D6 requires the Orlando Route and the successful D6 Vault state | On D6, Orlando proposes kissing practice under the pretext of helping Dave prepare for Dean, and `orlandokiss` is displayed. Below 5, the practice scene is skipped. On D9 morning, this threshold selects the middle comfort branch: Orlando asks whether he can help, but remains hesitant. |
+| `dragonlove >= 5` | D6 after Orlando's dinner; D9 morning | D6 requires the Orlando Route and the successful D6 Vault state | On D6, Orlando proposes kissing practice under the pretext of helping Dave prepare for Dean, and `orlandokiss` is displayed. Below 5, the practice scene is skipped. On D9 morning, values from 5 through 9 use the more hesitant comfort scene: Orlando asks whether he can help, but remains unsure. |
 | `dragonlove >= 7` | D6 kissing practice | The `>= 5` practice scene must already be active | After the first kiss, Dave actively pulls Orlando closer and kisses back. A follow-up choice appears; choosing `Yes.` awards another point. Below 7, the scene ends after the first practice kiss without Dave's more active response. |
-| `dragonlove >= 10` | D9 morning; D19 Orlando kitchen scene | D9 is the highest comfort branch; D19 requires the Orlando Route and the failed Dean-date outcome that leads into the kitchen scene | On D9, Orlando recognizes that Dave is close to breaking down, touches his face, and presses him to say whether someone hurt him. On D19, values from 10 through 19 expose `I love you too.` / `Stay quiet.`, allowing the player to accept or reject Orlando. |
+| `dragonlove >= 10` | D9 morning; D19 Orlando kitchen scene | D9 uses this comfort scene at 10 or more; D19 requires the Orlando Route and the failed Dean-date outcome that leads into the kitchen scene | On D9, Orlando recognizes that Dave is close to breaking down, touches his face, and presses him to say whether someone hurt him. On D19, values from 10 through 19 show `I love you too.` / `Stay quiet.`, allowing the player to accept or reject Orlando. |
 | `dragonlove >= 15` | D15 A/B dream; D16 A/B morning; D16 Orlando event | Orlando Route or the corresponding Orlando scene | In the D15 dream, Dave challenges Orlando for continually using Dean as an excuse and starts questioning whether he loves Orlando too. On D16 morning, Orlando's emotional distance is framed as genuinely painful. In the character event, Dave directly confronts Orlando for diverting every serious conversation back toward Dean. |
 | `dragonlove >= 18` | D10 night on the Orlando Route | Orlando Route | Both branches still contain a kiss. At 18 or more, Orlando touches Dave's face and initiates more directly, and Dave interprets it as an emotionally meaningful kiss. Below 18, Orlando first asks Dave to close his eyes and the moment is more hesitant and experimental. If `OrlandoKiss` is already set, the scene also refers back to the D6 practice kiss. |
 | `dragonlove >= 20` | D18 Orlando scene; two D19 Orlando scenes | The D18 variation also requires the successful D17 Vault state; D19 requires the relevant Orlando branches | On D18, Dave takes Orlando's hand, pulls him closer, and increases the physical intimacy of the scene. One D19 follow-up contains a small reciprocal-touch variation. In the later kitchen confession, Orlando explicitly says he loves Dave and the game automatically enters `OrlandoBoyfriend`. |
@@ -79,11 +79,11 @@ The tables cover differences caused by **affection checks**:
 
 | Check | Main story locations | Additional conditions | Dialogue or story effect |
 |---|---|---|---|
-| `wolflove >= 10` | D9 morning; Night9 Tyson event; D19 relationship check | On D9 morning, this is the middle branch when 16 is not reached | Dave directly asks for a hug, and Tyson stays to comfort him. During Night9, Tyson explains more of his trust, grooming sensitivity, and relationship to his wolf identity. On D19, values from 10 through 19 expose `I love you.` / `...`. |
-| `wolflove >= 15` | D9 night; D15 A/B; D16 A/B morning; D18 Tyson scenes | Some locations are lower `elif` branches replaced by the 18-point version | On Night9, Dave says that being at home with Tyson could matter more than the mansion. In the D15 dream, he says that he loves Tyson, and in the waking conversation he nearly says it aloud. On D16 morning, Dave begins framing the attachment as possible romantic love rather than only brotherhood. D18 adds further conflict around whether their bond is familial or romantic. |
-| `wolflove >= 16` | Highest D9 morning comfort branch | Replaces the 10-point morning branch | Dave directly says that he wants his father. Tyson gives a fuller embrace and acknowledges that Dave's father was almost a father to him as well, making their shared loss explicit. |
+| `wolflove >= 10` | D9 morning; D9 night Tyson event; D19 relationship check | On D9 morning, reaching 16 uses a different comfort scene | Dave directly asks for a hug, and Tyson stays to comfort him. During D9 night, Tyson explains more of his trust, grooming sensitivity, and relationship to his wolf identity. On D19, values from 10 through 19 show `I love you.` / `...`. |
+| `wolflove >= 15` | D9 night; D15 A/B; D16 A/B morning; D18 Tyson scenes | At some locations, reaching 18 uses a different version | On D9 night, Dave says that being at home with Tyson could matter more than the mansion. In the D15 dream, he says that he loves Tyson, and in the waking conversation he nearly says it aloud. On D16 morning, Dave begins framing the attachment as possible romantic love rather than only brotherhood. D18 adds further conflict around whether their bond is familial or romantic. |
+| `wolflove >= 16` | D9 morning | Replaces the 10-point morning scene | Dave directly says that he wants his father. Tyson gives a fuller embrace and acknowledges that Dave's father was almost a father to him as well, making their shared loss explicit. |
 | `wolflove >= 17` | D9 Tyson character event | Reach the conversation about Dave's father | Adds one short acknowledgment that Tyson also wishes he could receive fatherly advice. This is a small dialogue variation, not a separate major relationship stage. |
-| `wolflove >= 18` | D9 night; D10 Tyson investigation; D16 A/B Tyson event | The D9 version replaces the 15-point branch | On Night9, Dave comes close to a confession and says that he still wants Tyson even when the relationship hurts. On D10, Tyson asks Dave to promise that he will remain happy regardless of what happens. The D16 event adds more direct physical attraction, relationship anxiety, and emotional openness. |
+| `wolflove >= 18` | D9 night; D10 Tyson investigation; D16 A/B Tyson event | The D9 version replaces the 15-point scene | On D9 night, Dave comes close to a confession and says that he still wants Tyson even when the relationship hurts. On D10, Tyson asks Dave to promise that he will remain happy regardless of what happens. The D16 event adds more direct physical attraction, relationship anxiety, and emotional openness. |
 | `wolflove >= 20` | D18 Tyson scenes; D19 Tyson Route | Corresponding Tyson scenes | D18 adds stronger gaze, touch, hugging, and romantic framing. On D19, Dave more directly calls Tyson special and automatically answers the confession, entering `TysonBoyfriend` and the later intimate scene. |
 
 :::
@@ -107,8 +107,8 @@ The tables cover differences caused by **affection checks**:
 | Check | Main story locations | Additional conditions | Dialogue or story effect |
 |---|---|---|---|
 | `boarlove >= 5` | D6 lunch; D9 morning | Roswell Route for the D6 event | On D6, Roswell admits that he may want more than friendship and opens `Kiss him.`, `Hug him.`, and `Do nothing.`. Both affectionate choices show `roswellkiss`; `Do nothing.` avoids it. Below 5, Roswell initiates automatically and the kiss CG still appears. On D9, this threshold selects the middle, more awkward comfort branch. |
-| `boarlove >= 10` | D9 morning; D19 Roswell Route | On D9, replaces the 5-point branch | Roswell more quickly recognizes Dave's distress, sits with him, and offers to listen. On D19, values from 10 through 19 expose `Relationship` / `Friendship`. |
-| `boarlove >= 15` | D15 A/B night; D16 A/B morning; D16 Roswell event | Corresponding Roswell scenes | Dave initiates closer sleep contact on D15. On D16 morning, he comforts Roswell after the nightmare and questions whether their closeness is love or deep friendship. The later event exposes `I like {i}you{/i}.`; choosing it visibly pleases Roswell and awards 2 more points. |
+| `boarlove >= 10` | D9 morning; D19 Roswell Route | On D9, replaces the 5-point scene | Roswell more quickly recognizes Dave's distress, sits with him, and offers to listen. On D19, values from 10 through 19 show `Relationship` / `Friendship`. |
+| `boarlove >= 15` | D15 A/B night; D16 A/B morning; D16 Roswell event | Corresponding Roswell scenes | Dave initiates closer sleep contact on D15. On D16 morning, he comforts Roswell after the nightmare and questions whether their closeness is love or deep friendship. The later event shows `I like {i}you{/i}.`; choosing it visibly pleases Roswell and awards 2 more points. |
 | `boarlove >= 20` | D19 Roswell Route | Reach the final Roswell relationship conversation | Dave says that he cannot accept Roswell leaving before their relationship has truly begun. The game automatically enters `RoswellBoyfriend` and sets the boyfriend variable. |
 
 :::
@@ -135,8 +135,8 @@ Hoss has two kiss CGs tied to different affection outcomes, making his checks es
 |---|---|---|---|
 | `lionlove >= 5` | D6 pool and lunch sequence | Hoss Route | Hoss treats the time together more like a date and flirts more openly, including saying that he better understands why Dean is interested in Dave. Below 5, his response is more restrained. |
 | `lionlove >= 12` | D8 morning; D8 room and hidden library; D9 morning and night | The formal library kiss requires the Hoss Route | Hoss gives Dave a cheek kiss on D8 morning and later refers back to it. In the hidden-library scene on the Hoss Route, he sets `HossKiss = True`, kisses Dave, and displays `hosskiss`. D9 adds stronger concern, flirting, and references to wanting another kiss. Below 12 in the library, the kiss is skipped and the game instead awards 2 affection points. |
-| `lionlove >= 15` | D15 A/B; D16 A/B morning and Hoss event; D18; D19 | Corresponding Hoss scenes | In the D15 dream, Dave nearly kisses Hoss. In waking conversation, Hoss gives a forehead kiss but tells Dave to resolve his feelings for Dean. On D16, Dave directly asks whether Hoss likes him romantically. D18 hints that someone else could pursue Dave if Dean does not. D19 exposes `Try dating.` / `Stay friends.` when 20 is not reached. |
-| `lionlove >= 16` | D10 Hoss investigation | Only when `HossKiss == True` already | Changes only a small set of lines about Hoss envying Tyson's willingness to care for Dave openly. It does **not** trigger the D10 kiss. If `HossKiss == False`, that kiss occurs through the separate false-flag branch regardless of whether affection has reached 16. |
+| `lionlove >= 15` | D15 A/B; D16 A/B morning and Hoss event; D18; D19 | Corresponding Hoss scenes | In the D15 dream, Dave nearly kisses Hoss. In waking conversation, Hoss gives a forehead kiss but tells Dave to resolve his feelings for Dean. On D16, Dave directly asks whether Hoss likes him romantically. D18 hints that someone else could pursue Dave if Dean does not. D19 shows `Try dating.` / `Stay friends.` when 20 is not reached. |
+| `lionlove >= 16` | D10 Hoss investigation | Only if Dave has already kissed Hoss | Changes only a small set of lines about Hoss envying Tyson's willingness to care for Dave openly. It does **not** trigger the D10 kiss. If Dave has not yet kissed Hoss, another story condition determines whether the D10 kiss occurs; the 16-point threshold does not. |
 | `lionlove >= 20` | D19 Hoss Route | Reach the final Hoss relationship conversation | Adds more direct relationship discussion and automatically enters `HossBoyfriend`, sets `DaveBoyfriend = "Hoss"`, and displays `hosskiss2`. No acceptance or rejection menu appears at this level. |
 
 :::
@@ -164,7 +164,7 @@ Hoss has two kiss CGs tied to different affection outcomes, making his checks es
 
 :::
 
-Note: If the D8 hidden-library check is below 12 and `HossKiss` therefore remains `False`, raising `lionlove` to 12 or higher before the Night9 Hoss scene can still trigger a mouth kiss and set `HossKiss = True`. This does not retroactively unlock the missed D8 `hosskiss` CG, so missing that CG does not mean Dave cannot kiss Hoss later in the same playthrough.
+If the D8 hidden-library check is below 12 and `HossKiss` therefore remains `False`, raising `lionlove` to 12 or higher before the D9 night Hoss scene can still trigger a mouth kiss and set `HossKiss = True`. This does not retroactively unlock the missed D8 `hosskiss` CG, so missing that CG does not mean Dave cannot kiss Hoss later in the same playthrough.
 
 For coordinates and the earliest normal display locations, see [CG Gallery Completion Index](../collectibles/gallery.md).
 
@@ -174,8 +174,8 @@ For coordinates and the earliest normal display locations, see [CG Gallery Compl
 
 | Check | Main story locations | Additional conditions | Dialogue or story effect |
 |---|---|---|---|
-| `croclove >= 8` | D8; D9 morning | On D9, this is the middle branch below 15 | D8 adds only a brief glance and muted response. On D9, Sal notices that Dave is troubled and explains that he came to check on him, but remains restrained. |
-| `croclove >= 15` | D9 morning and Sal event; Night9; D15 A/B; D16 A/B; D18; D19 | Most locations require the Sal Route or the corresponding Sal scene | Sal asks more directly what is upsetting Dave. The D9 character scene expands the Abi discussion, and `Approach.` succeeds as a hug instead of being rejected. Sal stays on Night9 at both high and low affection; this threshold changes the invitation and cuddle-related text rather than determining whether he remains. D15–D18 adds greater physical closeness, Sal's affection for Dave despite his imperfections, and conflict over whether loving Dave would betray Dean. D19 exposes `Romantic` / `Platonic` when 20 is not reached. |
+| `croclove >= 8` | D8; D9 morning | On D9, this result is used from 8 through 14 | D8 adds only a brief glance and muted response. On D9, Sal notices that Dave is troubled and explains that he came to check on him, but remains restrained. |
+| `croclove >= 15` | D9 morning and Sal event; D9 night; D15 A/B; D16 A/B; D18; D19 | Most locations require the Sal Route or the corresponding Sal scene | Sal asks more directly what is upsetting Dave. The D9 character scene expands the Abi discussion, and `Approach.` succeeds as a hug instead of being rejected. Sal stays on D9 night at both high and low affection; this threshold changes the invitation and cuddle-related text rather than determining whether he remains. D15–D18 adds greater physical closeness, Sal's affection for Dave despite his imperfections, and conflict over whether loving Dave would betray Dean. D19 shows `Romantic` / `Platonic` when 20 is not reached. |
 | `croclove >= 16` | D11 A/B Sal dialogue | Reach the relevant conversation | When asked whether he likes someone, Sal admits that he does and that the feeling is recent and still difficult to process. He does not identify the person here. Below 16, this short answer is omitted. |
 | `croclove >= 20` | D19 Sal sequence | Reach the final Sal relationship flow | Adds the injured-Sal arrival material and later has Sal explicitly call his feelings a crush and ask about dating after leaving the mountain. The game automatically enters `SalBoyfriend` and sets the boyfriend variable. |
 
@@ -202,9 +202,9 @@ The same affection value can serve very different purposes at different points:
 
 - one check may add only a few lines of internal narration;
 - another may replace an entire comfort or intimacy scene;
-- another may expose a player choice;
+- another may offer a player choice;
 - another may automatically establish a relationship;
-- a higher `if` or `elif` branch may replace a lower one.
+- reaching a higher threshold may switch to a different scene.
 
 The game does not treat 5, 10, 15, and 20 as universal stages such as “friend,” “crush,” or “partner.”
 :::

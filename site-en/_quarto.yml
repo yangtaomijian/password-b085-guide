@@ -104,6 +104,8 @@ website:
         contents:
           - href: index.md
             text: Home
+          - href: guide/faq.md
+            text: Frequently Asked Questions
 
       - section: "Guide"
         contents:
@@ -113,8 +115,6 @@ website:
             text: Lettered Path System
           - href: guide/password-hints.md
             text: Tiered Password Hints
-          - href: guide/faq.md
-            text: Frequently Asked Questions
 
       - section: "Collectibles"
         contents:
@@ -153,7 +153,7 @@ website:
             text: Easter Eggs and Hidden Inputs
 
   page-footer:
-    left: "Unofficial fan-made reference guide for Password b0.85. Not affiliated with the developer. Future releases or rewrites may differ."
+    left: "Unofficial fan-made guide for Password b0.85; later releases may differ."
 
   comments:
     giscus:

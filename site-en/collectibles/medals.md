@@ -83,7 +83,7 @@ Return to the D4 save and collect two of the three remaining character-route med
 - Dean Route: Pisces is written on D9.
 - Roswell Route: Cancer is written on D9.
 - Sal Route: Capricorn is written on D9.
-- Hoss Route: Libra is written on D16 and requires the Path A or B.
+- Hoss Route: Libra is written on D16 and requires the Path A or Path B side.
 
 The Dean, Roswell, and Sal runs can end after their D9 persistent write. Hoss must be continued to D16.
 
@@ -250,6 +250,8 @@ Check the following:
 
 The twelve-medal check is not continuously active. If Path A was completed before the collection was complete, obtaining the remaining medals later does not automatically reopen the final sequence; Path A must be completed again.
 
+For how the game stores these medals and runs the final check, see [Medal Persistence and Final Check](../mechanics/medal-persistence.md).
+
 ## Why can the Compendium date differ from the discovery date?
 
 Compendium medal dates are clues; they do not consistently mark first discovery, name confirmation, or permanent unlock.
@@ -265,3 +267,4 @@ Treat the Compendium date as a clue, not as a universal definition of when a med
 - [Route and Path Overview](../guide/route-overview.md)
 - [Lettered Path System](../guide/path-system.md)
 - [Tiered Password Hints](../guide/password-hints.md)
+- [Medal Persistence and Final Check](../mechanics/medal-persistence.md)

@@ -16,7 +16,7 @@ The main subjects are:
 ::: {.callout-warning}
 ## Old code does not mean a mechanic is still playable
 
-A surviving variable, label name, password string, or conditional does not make a mechanic usable in b0.85. Several systems below leave partial code behind, but the current story and interface no longer provide a complete way to play them.
+A surviving password string or state reference does not make a mechanic usable in b0.85. Several systems below leave partial traces behind, but the current story and interface no longer provide a complete way to play them.
 :::
 
 ## Path A first-run gate
@@ -27,17 +27,17 @@ This is a persistent profile-wide value rather than an ordinary save variable. I
 
 ### First normal traversal
 
-The actual first-run sequence is:
+On the first visit, the story continues as follows:
 
 ```text
 enter the late Path A sequence
 → play the first Dave segment
 → continue into the Roswell segment
-→ set persistent.Day23APrime = True
-→ immediately continue into Day23A_Prime
+→ record the first completion
+→ continue with the later Path A story
 ```
 
-The first traversal therefore does **not** end when the persistent flag is written. The later `Day23A_Prime` material follows immediately during the same long sequence.
+The first traversal does **not** end after those two special segments. It continues directly into the later Path A story. The game records that completion with `persistent.Day23APrime`.
 
 The names **Dave's Demise** and **Roswell's Attempt** were later assigned to the two first-run segments by the b0.85 Additional Scenes interface. They were not separate menu choices in b0.7.
 
@@ -47,8 +47,9 @@ On a later eligible traversal:
 
 ```text
 common opening material
-→ persistent.Day23APrime is already True
-→ jump directly to Day23A_Prime
+→ the first completion is already recorded
+→ skip the two first-visit segments
+→ continue with the later Path A story
 ```
 
 The two first-run segments are skipped.
@@ -59,8 +60,8 @@ Starting a new game does not by itself reset this persistent value. Resetting or
 
 The result depends on where the save was made:
 
-- a save loaded **before** the persistent dispatcher reads the current profile-wide value and may skip the first-run segments;
-- a save made **inside** the first-run sequence has already passed that dispatcher and can continue from its saved location.
+- a save loaded **before** the game checks the first-completion state reads the current profile-wide value and may skip the first-visit segments;
+- a save made **inside** the first-visit sequence can continue from its saved location.
 
 This is why a normal save slot does not behave as an independent copy of the first-run unlock state.
 
@@ -77,20 +78,13 @@ For their current list positions and troubleshooting, see [Compendium Unlock Ind
 
 ### Replays cover only part of the original story
 
-The two entries reuse original story labels, but they are not identical to replaying the entire normal Path A sequence.
+The two entries replay bounded parts of the original story rather than the entire Path A sequence.
 
-`Dave's Demise`:
+`Dave's Demise` begins with Dave's corresponding story segment and ends before the Roswell segment.
 
-- bypasses the normal persistent skip while replaying;
-- forces the state needed to reach its target segment;
-- ends before the normal flow enters the Roswell segment.
+`Roswell's Attempt` begins with the Roswell segment and ends before the later Path A story continues.
 
-`Roswell's Attempt`:
-
-- starts directly at the Roswell segment;
-- ends before the normal persistent write and the later `Day23A_Prime` continuation.
-
-The replays can still display registered Gallery images and execute assignments inside their ranges. Each one has a fixed starting and ending point: it is neither an isolated video file nor a complete reproduction of the normal sequence and all its surrounding story effects.
+The replays can still unlock Gallery images shown within them and retain the story effects of their respective segments. Each one has a fixed starting and ending point: it is neither an isolated video file nor a complete reproduction of the Path A sequence and its surrounding story.
 
 ## D8 Oswin free-text conversation
 
@@ -159,7 +153,6 @@ Every required group must match, but their order is not enforced. Extra words ar
 | Unicode punctuation | Not normalized |
 | Repeated internal spaces | Can break a multiword substring |
 | Word order | Generally not enforced across keyword groups |
-| `/` in an archive list | Editorial separator only; it has no parser meaning |
 :::
 
 The parser also gives priority to earlier branches. A broad earlier condition can therefore intercept an input before a more specific later condition is reached.
@@ -227,7 +220,7 @@ b0.85 removes the D8 free-input engine and replaces the scene with scripted dial
 
 - the fixed scene reuses selected old topics;
 - some old ordinary variables and later conditional checks remain in the source;
-- the normal input menu, `renpy.input` loop, keyword engine, and old response labels are no longer available to the player.
+- the normal input menu and old free-text responses are no longer available to the player.
 
 Cast Files, Lore, and Additional Scenes do not contain the complete old question library either.
 

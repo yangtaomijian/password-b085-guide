@@ -100,7 +100,7 @@ The word describes the act of turning against someone who trusted you.
 </details>
 
 ::: {.callout-note}
-The two older candidate words are not accepted passwords in b0.85, even though traces of the earlier design remain visible.
+The two older candidate words are not accepted passwords in b0.85. Their earlier use is covered in [Legacy Password Archive](../versions/legacy-passwords.md).
 :::
 
 ## Third key password
@@ -167,6 +167,8 @@ The answer names a legendary human who transforms into a wolf-like creature, usu
 
 Failing this check on the Tyson Route does not ultimately divert the run into Path F/G. This protection occurs later and does not count as solving the D17 password.
 
+On D18, Tyson identifies the source of the high-frequency sound and then sleeps in Dave's room, preventing the D19 disaster. No extra affection threshold, romance state, survival flag, or additional choice is required.
+
 For the full branch logic, see [Lettered Path System](path-system.md).
 
 ## Final Path P password
@@ -198,6 +200,8 @@ The early-game Vault contains several inputs that are not required for normal pr
 - A D11 word is shown and defined in the story, but it is not a usable password in b0.85.
 
 These items are not part of the four route-critical password checks.
+
+For the optional inputs and their effects, see [Easter Eggs and Hidden Inputs](../extras/easter-eggs.md).
 
 ## Retry behavior
 

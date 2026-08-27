@@ -165,3 +165,11 @@ Late Path A dialogue mentions **Ophiuchus**, sometimes treated as a thirteenth z
 The Compendium contains twelve Lore entries, and the final Path P check counts the twelve standard zodiac medals. No Ophiuchus medal or hidden thirteenth-medal password is required.
 
 See [Twelve-Medal Collection Guide](../collectibles/medals.md) and [Medal Persistence and Final Check](../mechanics/medal-persistence.md) for the complete collection rules.
+
+## Related guides
+
+- [Tiered Password Hints](../guide/password-hints.md)
+- [Vault Password Check Mechanics](../mechanics/password-checks.md)
+- [Affection System and Point Guide](../mechanics/affection.md)
+- [Twelve-Medal Collection Guide](../collectibles/medals.md)
+- [Medal Persistence and Final Check](../mechanics/medal-persistence.md)

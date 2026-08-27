@@ -28,12 +28,16 @@ D8 的 **Support Benson** 与 **Reveal Oz** 是字母线的第一个主要分歧
 
 除 Sal 线外，常规对应关系如下：
 
+::: {.path-base-split-table .table-responsive}
+
 | D8 选择 | 含义 | D10 检定 | 基础字母线 |
 |---|---|---|---|
 | **Support Benson** | 继续隐瞒 Oswin | 成功 | Path A |
 | **Reveal Oz** | 向众人揭露 Oswin | 成功 | Path B |
 | **Support Benson** | 继续隐瞒 Oswin | 失败 | Path C |
 | **Reveal Oz** | 向众人揭露 Oswin | 失败 | Path D |
+
+:::
 
 概括来说：
 
@@ -65,9 +69,9 @@ Sal 线在 D10 放弃密码检定后，不会进入 Path C 或 Path D，而是�
 | Path D 一侧 | **Save Sal.** | 保持 Path D |
 | Path D 一侧 | **Save Benson.** | 进入 Path E |
 
-在 Path C 一侧选择救 Sal，会导致 Benson 死亡，随后 Oswin 自尽，因此流程会从 Path C 改判为 Path D。其他若干终止性的死亡状态组合则会进入 Path E。
+在 Path C 一侧选择救 Sal，会导致 Benson 死亡，随后 Oswin 自尽，因此流程会从 Path C 改判为 Path D。其他若干会让所有人死亡的结果则会进入 Path E。
 
-Path E 是以全员死亡为结果、且具有多个入口的终止字母线，并不对应某一个无条件成立的单独选项；具体入口取决于流程进入 D14 时已经形成的角色生死状态。
+Path E 以全员死亡为结果，并且有多种进入方式。它不对应某一个单独选项；具体结果取决于流程进入 D14 时已经形成的角色生死状态。
 
 Path A 和 Path B 则会继续推进到 D17 的密码检定。
 
@@ -131,8 +135,6 @@ Path P 不是前期可以单独选择的路线，而是完成 Path A 主干后�
 
 如果奖牌不足十二枚，流程会在普通 Path A 结局后结束；集齐十二枚后，剧情会继续进入后续时间线段落，并将当前字母线设为 `P`。
 
-脚本和界面支持 `Path P` 这一名称，但游戏没有正式说明字母 P 的完整含义，因此不应把它直接扩写成某个未经确认的官方全称。
-
 具体收集方法见[十二枚奖牌收集指南](../collectibles/medals.md)。
 
 ## 各字母线简表
@@ -145,7 +147,7 @@ Path P 不是前期可以单独选择的路线，而是完成 Path A 主干后�
 | **Path B** | Oswin 早死；留在 D10 安全侧；通过 D17 检定或受到 Tyson 线保护，避免 F/G 分流 |
 | **Path C** | Oswin 没有早死；非 Sal 线在 D10 检定失败 |
 | **Path D** | 非 Sal 线进入 D10 失败侧，且 Oswin 已死亡；Path C 还可能在 D14 被改判为 Path D |
-| **Path E** | 从常规 C/D 剧情进入 D14 的若干终止性死亡状态组合，结果为全员死亡 |
+| **Path E** | 从常规 C/D 剧情进入 D14 后，几种会让所有人死亡的结果 |
 | **Path F** | 从 Path A 方向出发；非 Tyson 线在 D17 检定失败；D19 灾难发生时 Oswin 存活 |
 | **Path G** | 从 Path B 方向出发；非 Tyson 线在 D17 检定失败；D19 灾难发生时 Oswin 已死亡 |
 | **Path P** | 完成 Path A 主干，并在最终奖牌检定时已集齐十二枚奖牌 |

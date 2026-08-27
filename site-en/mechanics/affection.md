@@ -4,7 +4,7 @@ description: "Hidden affection variables, thresholds, relationship checks, and a
 toc: true
 ---
 
-Password b0.85 tracks a separate hidden affection value for each of the six main character routes.
+Password b0.85 tracks a separate hidden affection value for each of the six main characters.
 
 | Character | Internal variable |
 |---|---|
@@ -35,12 +35,12 @@ No lettered Path, Vault-password result, survival check, medal check, or Path P 
 
 - All six values are ordinary story-save variables, not persistent data.
 - Loading an older save restores the affection values stored in that save.
-- Normal reachable flow contains no affection deductions.
+- Affection does not decrease during normal play.
 - Choices outside the current character route can still award points.
 - D5 movie choices and the D7 family-subject menu can award points to several characters, but each menu still allows only one selection.
 - Path C contains one important exception: the Sal pool sequence directly sets Sal's affection to 0.
 
-All threshold checks use `>=`. Ranges such as `15 <= lionlove < 20` are shorthand for an `if >= 20` branch followed by an `elif >= 15` branch.
+All threshold checks use `>=`. For example, `15 <= lionlove < 20` means an affection value from 15 through 19.
 
 ## Threshold overview
 
@@ -71,7 +71,7 @@ D19 does not compare all six characters and choose the highest value. The curren
 
 :::
 
-`DaveBoyfriend` is assigned only after the automatic high branch or a player-accepted middle branch. Dean is the only route without a middle choice range.
+`DaveBoyfriend` is assigned only when the automatic relationship threshold is reached or the player accepts a relationship in the middle point range. Dean is the only route without a middle choice range.
 
 ## Hoss threshold planning
 
@@ -84,7 +84,7 @@ Without any D1 cup-affection result or the D3 hidden shared bonus, the highest r
 If Hoss enters the library below 12:
 
 1. the D8 kiss and `hosskiss` do not occur;
-2. the low branch awards 2 points;
+2. being below 12 awards 2 points;
 3. the later `Hold his hand` choice can award another 2 points.
 
 Those later gains help with D19, but they occur after the D8 check and cannot repair the missed CG in that run.
@@ -144,7 +144,7 @@ Exact menu strings are preserved for comparison with the game. Rows from the sam
 | D6 | `Orlando` | Sal or Orlando Route | +1 |
 | D6 | `What was it like?` | Orlando Route | +1 |
 | D6 | `Yes.` | Orlando Route; successful D6 Vault state; Orlando affection at least 7; D6 Orlando follow-up yes/no | +1 |
-| D6 | automatic after the first practice kiss in the lower `< 7` branch | Orlando Route; successful D6 Vault state; Orlando affection 5–6 | +1 |
+| D6 | automatic after the first practice kiss | Orlando Route; successful D6 Vault state; Orlando affection 5–6 | +1 |
 | D7 | `Hug.` | Orlando Route; D7 Orlando response | +1 |
 | D7 | `Advice.` | Orlando Route; D7 Orlando response | +2 |
 | D7 | `Stay.` → `Dean.` | mutually exclusive D7 family-subject choice | +1 |
@@ -152,8 +152,8 @@ Exact menu strings are preserved for comparison with the game. Rows from the sam
 | D7 | `Stay.` → `Orlando.` | mutually exclusive D7 family-subject choice | +2 |
 | D9 | `...Reverse.` | Roswell Route, Orlando Route, or Sal Route; D9 Uno final-card menu | +1 |
 | D9 | `Hold his hand.` | Orlando Route | +2 |
-| D9 | `Invite him to stay.` | Orlando Route; Night9 Orlando menu | +1 |
-| D9 | `Reassure him.` | Orlando Route; Night9 Orlando menu | +2 |
+| D9 | `Invite him to stay.` | Orlando Route; D9 night Orlando menu | +1 |
+| D9 | `Reassure him.` | Orlando Route; D9 night Orlando menu | +2 |
 | D15 | `Kiss him.` | Orlando Route; Path A or B | +2 |
 | D16 | `Agree.` | Orlando Route; Path A or B; Orlando affection at least 15 | +1 |
 
@@ -283,8 +283,8 @@ Exact menu strings are preserved for comparison with the game. Rows from the sam
 | D8 | `Hold his hand` | Hoss Route | +2 |
 | D9 | `Hoss.` | Dean Route, Hoss Route, or Tyson Route; D9 morning companion menu | +1 |
 | D9 | `Answer.` | Hoss Route | +1 |
-| D9 | `...want you to stay.` | Hoss Route; Night9 Hoss menu | +1 |
-| D9 | `...hope you sleep well.` | Hoss Route; Night9 Hoss menu | +2 |
+| D9 | `...want you to stay.` | Hoss Route; D9 night Hoss menu | +1 |
+| D9 | `...hope you sleep well.` | Hoss Route; D9 night Hoss menu | +2 |
 
 :::
 
@@ -318,8 +318,8 @@ Exact menu strings are preserved for comparison with the game. Rows from the sam
 | D9 | `...Skip.` | Roswell Route, Orlando Route, or Sal Route; D9 Uno final-card menu | +1 |
 | D9 | `Approach.` | Sal Route; Sal affection at least 15; D9 Sal comfort menu | +1 |
 | D9 | `Talk.` | Sal Route; D9 Sal comfort menu | +1 |
-| D9 | `...want to cuddle?` | Sal Route; Night9 Sal menu | +1 |
-| D9 | `...want to talk more?` | Sal Route; Night9 Sal menu | +2 |
+| D9 | `...want to cuddle?` | Sal Route; D9 night Sal menu | +1 |
+| D9 | `...want to talk more?` | Sal Route; D9 night Sal menu | +2 |
 
 :::
 
@@ -362,3 +362,4 @@ Do not count `Remain still.` as a +2 choice when planning Sal's D19 result. In b
 - [CG Gallery Completion Index](../collectibles/gallery.md)
 - [Route and Path Overview](../guide/route-overview.md)
 - [Lettered Path System](../guide/path-system.md)
+- [Affection Checks and Story Differences](affection-differences.md)

@@ -147,8 +147,19 @@ vaultPassword8
 
 This fall-through is why the current D7 answer still reaches the implemented success scene.
 
+For the older D7 inputs, see [Legacy Password Archive](../versions/legacy-passwords.md).
+
 ## D11 Incomplete Implementation
 
 D11 retains a recognized string, date mapping, failure handlers, dialogue, and later branches that read a D11 flag. However, the normal story never opens `vaultInput` on D11, and the matching `vaultPassword12` success label does not exist.
 
 D11 therefore has no usable password in b0.85. Its remaining pieces do not affect the four main password checks.
+
+For the retired b0.7 sequence, see [Legacy Password Archive](../versions/legacy-passwords.md#d11-optional-vault).
+
+## Related guides
+
+- [Tiered Password Hints](../guide/password-hints.md)
+- [Lettered Path System](../guide/path-system.md)
+- [Easter Eggs and Hidden Inputs](../extras/easter-eggs.md)
+- [Legacy Password Archive](../versions/legacy-passwords.md)
