@@ -42,7 +42,7 @@ toc: true
 
 | 条件 | 结果 |
 |---|---|
-| `dragonlove >= 20` | Dave 自动接受 Orlando，进入 `OrlandoBoyfriend`，并将 `DaveBoyfriend` 设为 `Orlando`。 |
+| `dragonlove >= 20` | Dave 自动接受 Orlando，随后进入恋爱关系剧情。 |
 | `10 <= dragonlove < 20` | 出现 `I love you too.`／`Stay quiet.`，由玩家选择接受或拒绝。 |
 | `dragonlove < 10` | 剧情自动进入 Orlando 的拒绝分支，不提供恋爱回应。 |
 
@@ -55,7 +55,7 @@ toc: true
 | 检定 | 主要剧情位置 | 附加条件 | 对话或剧情效果 |
 |---|---|---|---|
 | `bearlove >= 5` | D5 Dean 线热水浴缸 | Dean 线，并选择 D5 电影 `Romance` | Dean 会把电影选择理解为 Dave 可能在向自己暗示，显示 `deankiss`，并进入之后的亲吻确认菜单。低于 5 时仍有调情，但不会出现正式亲吻选择。CG 在确认菜单之前已经显示，因此之后选择 `No` 也不会阻止画廊解锁。 |
-| `bearlove >= 10` | D19 Dean 约会结束 | 进入 Dean 约会后的分支 | Dave 会说自己同样期待这次约会，并把感情描述为接近爱。游戏设置 `DaveBoyfriend = "Dean"`，然后进入关系与亲密场景。低于 10 时，Dave 会认为约会没有产生足够的浪漫火花。 |
+| `bearlove >= 10` | D19 Dean 约会结束 | 进入 Dean 约会后的分支 | Dave 会说自己同样期待这次约会，并把感情描述为接近爱，随后进入关系与亲密场景。低于 10 时，Dave 会认为约会没有产生足够的浪漫火花。 |
 | `bearlove >= 15` | D9 早晨；D15 A/B 梦境；D16 A/B 早晨 | 相应 Dean 场景 | D9 中，Dean 会区分随意性行为和与重要之人的亲密。D15 梦中，Dave 会承认自己非常喜欢 Dean。D16 早晨，Dean 的拥抱会被描述为安全、柔软，并让 Dave 想要经常这样醒来。 |
 | `bearlove >= 17` | D10 夜间 | Dean 线，且 D10 金库状态成功 | Dave 会意识到自己对 Dean 的感情可能已超过普通喜欢，并认为二人之后需要认真谈谈。 |
 | `bearlove >= 20` | D18 会后 Dean 场景 | Dean 线，且 D17 金库状态成功 | Dave 会把 `I appreciate it` 改成更私人的 `I appreciate you`，明确期待次日约会，并主动开始更强烈的亲吻，之后才停下来休息。 |
@@ -68,7 +68,7 @@ toc: true
 
 | 条件 | 结果 |
 |---|---|
-| `bearlove >= 10` | 自动将 `DaveBoyfriend` 设为 `Dean`，随后进入关系与亲密场景。 |
+| `bearlove >= 10` | 自动与 Dean 建立关系，随后进入亲密场景。 |
 | `bearlove < 10` | Dave 判断约会没有产生足够的浪漫火花，关系不会成立。 |
 
 :::
@@ -94,7 +94,7 @@ toc: true
 
 | 条件 | 结果 |
 |---|---|
-| `wolflove >= 20` | Dave 自动回应 Tyson，将 `DaveBoyfriend` 设为 `Tyson`，并进入关系与亲密场景。 |
+| `wolflove >= 20` | Dave 自动回应 Tyson，并进入关系与亲密场景。 |
 | `10 <= wolflove < 20` | 出现 `I love you.`／`...`，由玩家选择接受或保持沉默。 |
 | `wolflove < 10` | Dave 自动拒绝恋爱关系，并把 Tyson 描述为自己所爱的兄弟，而不是伴侣。 |
 
@@ -109,7 +109,7 @@ toc: true
 | `boarlove >= 5` | D6 午餐；D9 早晨 | D6 事件要求 Roswell 线 | D6 中，Roswell 会承认自己可能想要不止友情，并开放 `Kiss him.`、`Hug him.`、`Do nothing.`。前两个亲密选项都会显示 `roswellkiss`；`Do nothing.` 会避开该 CG。低于 5 时，Roswell 会自动主动亲吻，CG 仍会显示。D9 中，5—9 点会进入较尴尬的安慰剧情。 |
 | `boarlove >= 10` | D9 早晨；D19 Roswell 线 | D9 中替代 5 点分支 | Roswell 会更快察觉 Dave 的痛苦，坐到他身边，并表示愿意倾听。D19 中，10—19 会开放 `Relationship`／`Friendship`。 |
 | `boarlove >= 15` | D15 A/B 夜间；D16 A/B 早晨；D16 Roswell 事件 | 相应 Roswell 场景 | D15 中，Dave 会主动靠得更近睡觉。D16 早晨，他会在 Roswell 做噩梦后安慰对方，并思考这种亲密究竟是爱还是深厚友情。之后的事件会开放 `I like {i}you{/i}.`；选择后 Roswell 会明显高兴，并再增加 2 点。 |
-| `boarlove >= 20` | D19 Roswell 线 | 到达最终关系对话 | Dave 会说自己无法接受 Roswell 在关系真正开始前就离开。游戏自动进入 `RoswellBoyfriend` 并设置男友变量。 |
+| `boarlove >= 20` | D19 Roswell 线 | 到达最终关系对话 | Dave 会说自己无法接受 Roswell 在关系真正开始前就离开，并自动与 Roswell 建立关系。 |
 
 :::
 
@@ -119,7 +119,7 @@ toc: true
 
 | 条件 | 结果 |
 |---|---|
-| `boarlove >= 20` | Dave 自动接受 Roswell，并将 `DaveBoyfriend` 设为 `Roswell`。 |
+| `boarlove >= 20` | Dave 自动接受 Roswell，并与他建立关系。 |
 | `10 <= boarlove < 20` | 出现 `Relationship`／`Friendship`，由玩家决定。 |
 | `boarlove < 10` | 剧情自动维持友情。 |
 
@@ -137,7 +137,7 @@ Hoss 有两张亲吻 CG 分别受不同好感度结果控制，因此其检定�
 | `lionlove >= 12` | D8 早晨；D8 房间和隐藏图书馆；D9 早晨与夜间 | 正式图书馆亲吻还要求 Hoss 线 | D8 早晨，Hoss 会亲 Dave 的脸颊，之后还会提到这件事。在 Hoss 线隐藏图书馆中，他会设置 `HossKiss = True`、亲吻 Dave 并显示 `hosskiss`。D9 会增加更强的关心、调情和想再次亲吻的内容。图书馆中低于 12 时会跳过亲吻，并改为增加 2 点好感度。 |
 | `lionlove >= 15` | D15 A/B；D16 A/B 早晨和 Hoss 事件；D18；D19 | 相应 Hoss 场景 | D15 梦中，Dave 会几乎亲吻 Hoss；醒来后 Hoss 会亲 Dave 的额头，但让他先处理对 Dean 的感情。D16 中，Dave 会直接问 Hoss 是否在恋爱意义上喜欢自己。D18 暗示若 Dean 不追求 Dave，可能还有别人。D19 在未达到 20 时开放 `Try dating.`／`Stay friends.`。 |
 | `lionlove >= 16` | D10 Hoss 调查 | 只有此前已与 Hoss 接吻时才会使用 | 只改变少量关于 Hoss 羡慕 Tyson 能公开关心 Dave 的对白，**不会**触发 D10 亲吻。如果此前尚未与 Hoss 接吻，D10 是否出现亲吻由另一项剧情条件决定，不取决于好感度是否达到 16。 |
-| `lionlove >= 20` | D19 Hoss 线 | 到达最终关系对话 | 增加更直接的关系讨论，并自动进入 `HossBoyfriend`、设置 `DaveBoyfriend = "Hoss"`，同时显示 `hosskiss2`。这一档没有接受或拒绝菜单。 |
+| `lionlove >= 20` | D19 Hoss 线 | 到达最终关系对话 | 增加更直接的关系讨论，自动与 Hoss 建立关系并显示 `hosskiss2`。这一档没有接受或拒绝菜单。 |
 
 :::
 
@@ -177,7 +177,7 @@ Hoss 有两张亲吻 CG 分别受不同好感度结果控制，因此其检定�
 | `croclove >= 8` | D8；D9 早晨 | D9 中只在低于 15 点时使用 | D8 会增加短暂的对视和克制回应。D9 中，Sal 会注意到 Dave 有心事，并解释自己是来确认他是否安好，但仍保持克制。 |
 | `croclove >= 15` | D9 早晨和 Sal 事件；D9 夜间；D15 A/B；D16 A/B；D18；D19 | 多数位置要求 Sal 线或相应 Sal 场景 | Sal 会更直接询问 Dave 为什么难过。D9 角色事件会扩展 Abi 相关对话，`Approach.` 也会成功变成拥抱，而不是被拒绝。无论好感度高低，Sal 在 D9 夜间都会留下；该阈值改变的是邀请和拥抱相关文本，而不是决定他是否留宿。D15—D18 会增加身体靠近、Sal 对 Dave 缺点的接受，以及爱 Dave 是否等于背叛 Dean 的冲突。D19 在未达到 20 时出现 `Romantic`／`Platonic`。 |
 | `croclove >= 16` | D11 A/B Sal 对话 | 到达相应对话 | 当被问是否喜欢某人时，Sal 会承认确实如此，并说这种感情是最近才意识到、仍难以处理的。他不会在此处说明对象。低于 16 时会省略这段简短回答。 |
-| `croclove >= 20` | D19 Sal 流程 | 到达最终关系流程 | 增加受伤的 Sal 抵达相关场景，之后 Sal 会明确把自己的感情称为 crush，并询问离开山上后是否愿意约会。游戏自动进入 `SalBoyfriend` 并设置男友变量。 |
+| `croclove >= 20` | D19 Sal 流程 | 到达最终关系流程 | 增加受伤的 Sal 抵达相关场景，之后 Sal 会明确承认自己对 Dave 的爱慕，并询问离开山上后是否愿意约会。Dave 会自动接受。 |
 
 :::
 
@@ -187,7 +187,7 @@ Hoss 有两张亲吻 CG 分别受不同好感度结果控制，因此其检定�
 
 | 条件 | 结果 |
 |---|---|
-| `croclove >= 20` | Sal 明确承认 crush，Dave 自动接受，剧情进入 `SalBoyfriend`。 |
+| `croclove >= 20` | Sal 明确承认自己对 Dave 的爱慕，Dave 自动接受，剧情进入 `SalBoyfriend`。 |
 | `15 <= croclove < 20` | 出现 `Romantic`／`Platonic`。 |
 | `croclove < 15` | Sal 强调亲密友情，剧情自动维持柏拉图关系。 |
 

@@ -16,7 +16,7 @@ This is a historical archive, not a password guide for the current version.
 ::: {.callout-warning}
 ## Not usable in b0.85
 
-`PEACEKEEPER` and `ARBITER` are not accepted D7 inputs in b0.85, and the D11 optional Vault no longer has a normal story entry or complete success implementation.
+`PEACEKEEPER` and `ARBITER` are not accepted D7 inputs in b0.85, and the D11 optional Vault no longer has a normal story entry or reachable success scene.
 
 For the current password checks, see [Tiered Password Hints](../guide/password-hints.md).
 :::
@@ -28,24 +28,24 @@ The b0.7 Vault accepted three different words on D7. All three passed the input 
 They did not, however, have the same effect on the following day.
 
 ::: {.table-responsive .table-scroll-medium}
-| D7 input | Technical role in b0.7 | Immediate warning | Main-story result |
+| D7 input | Story effect in b0.7 | Immediate warning | Main-story result |
 |---|---|---|---|
-| `PEACEKEEPER` | Accepted non-progressing alternative | Orlando being shot | Does not satisfy the D8 hard gate |
-| `ARBITER` | Accepted non-progressing alternative | Dean and Tyson fighting over the gun | Does not satisfy the D8 hard gate |
-| Current D7 answer | Main-gate answer | Benson's death warning | Sets the state required to continue past the D8 hard gate |
+| `PEACEKEEPER` | Accepted non-progressing alternative | Orlando being shot | Cannot continue past D8 |
+| `ARBITER` | Accepted non-progressing alternative | Dean and Tyson fighting over the gun | Cannot continue past D8 |
+| Current D7 answer | Advances the main story | Benson's death warning | Satisfies the requirement to continue past D8 |
 :::
 
-The older alternatives were therefore not invalid entries: the Vault accepted them and opened their warning scenes. They did not advance the story because D8 checks only whether the current main-gate answer was entered.
+The older alternatives were therefore not invalid entries: the Vault accepted them and opened their warning scenes. They did not advance the story because only the current answer allows the player to continue past D8.
 
 Entering either older alternative still leads into the Benson Bad Ending timeline.
 
 ## How the old hint structure worked
 
-The b0.7 puzzle was more indirect than the current D7 check, but it was not a mechanically enforced three-step chain.
+The b0.7 puzzle was more indirect than the current D7 check, but the game did not require a fixed three-step order.
 
 A normal D7 failure leads into a Bad Ending that supplies clues for both older alternatives. The player can then enter either `PEACEKEEPER` or `ARBITER` directly; the game does not require one to be completed before the other.
 
-Both accepted alternatives later converge on the same investigation sequence. That shared sequence provides the clue for the answer that actually satisfies the D8 gate.
+Both accepted alternatives later converge on the same investigation sequence. That shared sequence provides the clue for the answer that actually continues the story past D8.
 
 The sequence works like this:
 
@@ -55,7 +55,7 @@ ordinary D7 failure
 
 either accepted alternative
 → shared investigation branch
-→ clue for the main-gate answer
+→ clue for the answer that continues the story
 ```
 
 Older guides may arrange the three words in a recommended discovery order, but the game did not enforce that order.
@@ -72,7 +72,7 @@ Each accepted D7 input immediately displays a different warning image:
 | Current D7 answer | Benson's death warning |
 :::
 
-These image IDs are registered in the Gallery through Ren'Py's seen-image unlock system. In normal play, displaying one of these images satisfies its Gallery unlock condition.
+In normal play, displaying one of these images unlocks its Gallery entry.
 
 The b0.7 alternatives therefore provided a direct shortcut to the Orlando and Dean/Tyson Trauma images. That shortcut no longer works in b0.85 because the two words are no longer accepted. The current D8 hard Bad Ending can still display the older Trauma images through its normal failure sequence.
 
@@ -108,7 +108,7 @@ Because the condition is persistent, it is shared across save slots and characte
 
 The word is shown in the earlier laboratory material, so the later input is intended as a memory or timeline-recognition check rather than a mandatory puzzle.
 
-A successful entry sets `METEMPSYCHOSIS = True`. This is an ordinary playthrough variable, not another persistent completion flag.
+A successful entry records `METEMPSYCHOSIS = True` for the current playthrough; it is not shared across saves.
 
 It changes the D11 laboratory sequence and several later conditional dialogue passages. It does not directly change:
 
@@ -116,25 +116,11 @@ It changes the D11 laboratory sequence and several later conditional dialogue pa
 - medal completion;
 - the final ending classification.
 
-## D11 remnants in b0.85
+## D11 legacy content in b0.85
 
-b0.85 retains several pieces of the old implementation:
+b0.85 still mentions this word in the story and retains a small amount of conditional dialogue related to `METEMPSYCHOSIS`. Normal D11 play does not open the matching Vault input or provide a reachable success scene.
 
-- the recognized password string and its D11 date mapping;
-- D11 wrong-input and empty-input handlers;
-- the `METEMPSYCHOSIS` variable;
-- later dialogue conditions that still read the variable.
-
-The current build no longer contains the complete playable path into that system:
-
-- the normal D11 story does not open `vaultInput`;
-- the old success label is absent;
-- normal b0.85 story code does not set `METEMPSYCHOSIS = True`;
-- the persistent setup used by the old entry is no longer completed through the normal flow.
-
-These pieces form an **incomplete legacy remnant**, not a currently hidden password.
-
-In a normal playthrough created in b0.85, the surviving conditional passages use the default `False` version.
+These are story traces from the older sequence, not a hidden password in the current build. A normal b0.85 playthrough uses the dialogue for a run that never completed the retired input.
 
 ## Path P password
 

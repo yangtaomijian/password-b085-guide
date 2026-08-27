@@ -47,9 +47,9 @@ b0.85 no longer contains the D6 mansion-departure menu or its Bad Ending during 
 | b0.85 | The normal departure choice and reachable ending are absent |
 :::
 
-## D7 alternatives and the D8 hard gate
+## D7 alternatives and the D8 outcome
 
-The two older D7 alternatives accepted by b0.7 did not set the state required to pass the D8 hard gate. Both therefore entered the `BAD END: BENSON` timeline rather than creating additional lettered Paths.
+The two older D7 alternatives accepted by b0.7 did not allow the player to continue past D8. Both therefore entered the `BAD END: BENSON` timeline rather than creating additional lettered Paths.
 
 For their warning scenes and hint structure, see [Legacy Password Archive](legacy-passwords.md).
 
@@ -58,7 +58,7 @@ For their warning scenes and hint structure, see [Legacy Password Archive](legac
 
 A legacy D7 failure sequence can contain a choice about revealing Oswin. That Bad Ending choice is separate from the normal D8 **Reveal Oz** decision used by the current lettered Path system.
 
-The Bad Ending version does not write the normal `OzKnown` route state and does not determine Path A or Path B.
+The Bad Ending version does not carry over the normal Reveal Oz result and does not determine Path A or Path B.
 :::
 
 ## Path A, later reclassification, and Path P
@@ -87,7 +87,7 @@ Path A ending
 
 b0.85 changes the later Path P sequence by adding a standalone input and explicit true-ending persistence. Those additions are documented in [Major Changes in b0.85](b085-changes.md).
 
-The source does not display a formal `PATH P: END` title, and it does not formally define the letter `P` as a full word. References to a “prime timeline” make that interpretation plausible, but it should not be presented as an official expanded name.
+The game does not display a formal `PATH P: END` title or give the letter `P` an official full name. References to a “prime timeline” make `P = Prime` plausible, but that wording is not shown as an official name.
 
 ## Route-adjacent legacy systems
 
@@ -98,7 +98,7 @@ Several removed systems occurred inside route material without changing the lett
 |---|---|---|
 | D8 Oswin free-text conversation | Changes later dialogue, but does not gate a Route, Path, medal, or ending | [Legacy Mechanics Archive](legacy-mechanics.md) |
 | D11 optional Vault | Changes laboratory and later conditional text, but does not assign a Route or Path | [Legacy Password Archive](legacy-passwords.md) |
-| Path A first-run scenes | Controlled by a profile-wide persistent flag; later made replayable in Additional Scenes | [Legacy Mechanics Archive](legacy-mechanics.md) |
+| Path A first-run scenes | Two special segments play only on the first profile-wide run; b0.85 later makes them replayable in Additional Scenes | [Legacy Mechanics Archive](legacy-mechanics.md) |
 | D11 injection decision | Changes player agency and `DavePride`, but not the lettered Path | [Legacy Mechanics Archive](legacy-mechanics.md) |
 :::
 

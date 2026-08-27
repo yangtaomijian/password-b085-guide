@@ -46,11 +46,11 @@ The D8 choice does not immediately change the displayed Path; the game applies t
 
 The Sal Route does not move into Path C or Path D when the player gives up on the D10 password check. The run remains in the shared Path A/B story according to the earlier Oswin state.
 
-This exception does **not** count as passing the password check. Completing the check correctly still matters for Gallery completion: the successful Sal Route branch unlocks the Sal vault CG and also displays an image filed in the death Gallery. Other Sal Gallery content is unlocked through normal route progression and does not depend on this check.
+This exception does **not** count as passing the password check. Completing it correctly still matters for Gallery completion: the successful Sal Route branch displays Sal's Vault CG and a related image filed under another character's Gallery category. Other Sal Gallery content is unlocked through normal Route progression and does not depend on this check.
 
 ## Later splits: Path E–G
 
-Runs on the ordinary Path C/D side continue into the Day 14 (D14) rescue sequence. These Paths are still subject to reclassification: the final result depends on whether Sal reaches the mill sequence alive and on the choice between **Save Benson.** and **Save Sal.**
+Runs on the ordinary Path C/D side continue into the D14 rescue sequence. These Paths are still subject to reclassification: the final result depends on whether Sal reaches the mill sequence alive and on the choice between **Save Benson.** and **Save Sal.**
 
 A run that begins on the Path C side can therefore finish as Path C, Path D, or Path E. A run that begins on the Path D side can finish as Path D or Path E, but it cannot return to Path C because Oswin's earlier death cannot be reversed.
 
@@ -78,11 +78,11 @@ Path A and Path B instead continue to the D17 password check.
 
 :::
 
-The password is entered on D17. The consequences of failure occur on Day 19 (D19), and the game assigns Path F or Path G on Day 20 (D20) according to whether Oswin is alive.
+The password is entered on D17. The consequences of failure occur on D19, and the game assigns Path F or Path G on D20 according to whether Oswin is alive.
 
 ### Early bad ending within Path F/G
 
-Failing the D17 check does not immediately produce the later solo-departure bad ending. After the D19 disaster and the assignment of Path F or Path G, Day 21 (D21) presents the choices **Stay.** and **Leave.**
+Failing the D17 check does not immediately produce the later solo-departure bad ending. After the D19 disaster and the assignment of Path F or Path G, D21 presents the choices **Stay.** and **Leave.**
 
 Choosing **Leave.** causes Dave to leave the group and leads to `BAD END: DOMINIC`. This is an early terminal branch within the existing F/G flow, not a separate Path created on D17. Unlike the normal Path F and Path G endings, this branch does not offer **Resonate?**
 

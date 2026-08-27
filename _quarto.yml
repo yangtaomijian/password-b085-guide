@@ -104,7 +104,7 @@ website:
       - text: 机制
         menu:
           - href: mechanics/password-checks.md
-            text: 密码检定机制
+            text: 密码输入与检定规则
           - href: mechanics/medal-persistence.md
             text: 奖牌持久化
           - href: mechanics/affection.md
@@ -156,10 +156,10 @@ website:
           - href: collectibles/gallery.md
             text: CG 画廊查漏索引
 
-      - section: "底层机制"
+      - section: "机制详解"
         contents:
           - href: mechanics/password-checks.md
-            text: 密码检定机制
+            text: 密码输入与检定规则
           - href: mechanics/medal-persistence.md
             text: 奖牌持久化与最终检定
           - href: mechanics/affection.md

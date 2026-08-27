@@ -73,7 +73,7 @@ website:
       - text: Mechanics
         menu:
           - href: mechanics/password-checks.md
-            text: Vault Password Check Mechanics
+            text: Vault Input and Password Checks
           - href: mechanics/medal-persistence.md
             text: Medal Persistence and Final Check
           - href: mechanics/affection.md
@@ -128,7 +128,7 @@ website:
       - section: "Mechanics"
         contents:
           - href: mechanics/password-checks.md
-            text: Vault Password Check Mechanics
+            text: Vault Input and Password Checks
           - href: mechanics/medal-persistence.md
             text: Medal Persistence and Final Check
           - href: mechanics/affection.md

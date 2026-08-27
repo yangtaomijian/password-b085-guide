@@ -119,7 +119,7 @@ The individual writes are listed in the character tables below.
 
 ## Complete point inventory
 
-The tables list all 126 reachable point gains in normal play, plus each character's D1 exact-name point. Replay-only and unreachable gains are excluded.
+The tables list all 126 point gains available in normal play, plus each character's D1 exact-name point. Points available only in Replay Mode or never awarded during a normal run are excluded.
 
 Exact menu strings are preserved for comparison with the game. Rows from the same mutually exclusive menu are not simultaneously obtainable.
 
@@ -341,20 +341,14 @@ The other five affection values have no comparable reset during normal play.
 
 ### D16 `Remain still.` awards no points
 
-On the Sal Route, the D16 high-affection menu contains:
-
-```renpy
-$ croclove + 2
-```
-
-This evaluates the expression and discards the result. It does not assign anything back to `croclove`, so `Remain still.` awards **0 points** in b0.85.
+On the Sal Route, D16 makes `Remain still.` look like a two-point choice, but b0.85 does not save that increase. The choice therefore awards **0 points**.
 
 There is no later replacement increment before the D19 relationship check. A run can therefore finish two points below what the line visually appears intended to award.
 
 ::: {.callout-warning}
-## b0.85 no-op expression
+## Actual b0.85 scoring
 
-Do not count `Remain still.` as a +2 choice when planning Sal's D19 result. In b0.85, the expression does not change `croclove`.
+Do not count `Remain still.` as a +2 choice when planning Sal's D19 result; `croclove` does not change.
 :::
 
 ## Related guides

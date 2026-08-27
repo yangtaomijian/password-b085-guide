@@ -1,161 +1,88 @@
 ---
-title: "Vault Password Check Mechanics"
-description: "How Password b0.85 normalizes Vault input, matches dates, dispatches results, and handles the D7 and D11 implementations"
+title: "Vault Input and Password Checks"
+description: "Vault input rules, day restrictions, failure results, and Route exceptions in Password b0.85"
 toc: true
 ---
 
-This page explains the day-based Vault password system in Password b0.85 without revealing the answers to the four main checks.
+Most Vault inputs in *Password* b0.85 follow the same rules. This page explains how entries are handled, what happens on different days, and the Route exceptions that are easy to misread, without revealing the four main answers.
 
-Most Vault inputs from D1 through D17 use the shared `vaultInput` label. The final keyboard input in the Path P sequence uses a separate `FinalPassword` label, while the D1 coffee-cup name uses its own case-sensitive input.
+The final Path P password and the D1 coffee-cup name use separate rules. For progressive clues, see [Tiered Password Hints](../guide/password-hints.md).
 
-For progressive clues rather than implementation details, see [Tiered Password Hints](../guide/password-hints.md).
+## How input is recognized
 
-## Input Normalization
+For ordinary Vault passwords, the game:
 
-The shared Vault input begins with:
+- ignores capitalization;
+- removes spaces before and after the entry;
+- preserves spaces and punctuation inside the entry, so the spelling still needs to be exact.
 
-```renpy
-$ VaultPassword = renpy.input("INPUT PASSWORD")
-$ VaultPassword = VaultPassword.strip()
-$ VaultPassword = VaultPassword.upper()
-```
+For example, `example`, `EXAMPLE`, and `Example` are equivalent. Changing an internal space or punctuation produces a different entry.
 
-This means:
+## Day checks and failure results
 
-- capitalization does not matter;
-- leading and trailing whitespace is removed;
-- spelling, punctuation, and spaces inside the password must remain exact.
-
-For example, `example`, `EXAMPLE`, and `Example` are equivalent, but changing an internal space or punctuation produces a different string.
-
-## Lookup and Dynamic Dispatch
-
-The dispatcher rebuilds two parallel lists:
-
-- `passwordList`, containing recognized strings;
-- `correctDayList`, containing the day assigned to each matching position.
-
-The list index connects each recognized string to its required day. In simplified form:
-
-```renpy
-input
-→ strip leading and trailing spaces
-→ convert to uppercase
-
-recognized input on the correct day
-→ jump to vaultPassword<index>
-
-recognized input on the wrong day
-→ jump to vaultBadDay<currentDay>
-
-empty input
-→ jump to vaultEmpty<currentDay>
-
-unknown input
-→ jump to vaultWrong<currentDay>
-```
-
-The success destination is built from the first matching position returned by `passwordList.index()`. The shared dispatcher therefore does not need a separate hard-coded input branch for every accepted password.
-
-## Success and Failure Results
-
-A successful `vaultPasswordX` label normally sets a stage-specific flag, displays a warning or vision, and returns to the story. Later Route, survival, and story checks may still determine the final lettered Path; see [Lettered Path System](../guide/path-system.md).
-
-The three failure destinations are distinct even when their visible dialogue overlaps:
+The game checks both the entered word and the current day. The player can see four kinds of result:
 
 ::: {.password-result-table .table-responsive .table-scroll-compact}
 
-| Input state | Destination |
+| Input | Result in game |
 |---|---|
-| Empty after trimming | `vaultEmpty<currentDay>` |
-| Non-empty and unrecognized | `vaultWrong<currentDay>` |
-| Recognized but assigned to another day | `vaultBadDay<currentDay>` |
+| Correct password for the current day | Shows the matching warning or vision, then returns to the story |
+| Valid password for another day | Shows either a wrong-day hint or the ordinary error response, depending on the day |
+| Empty input | Shows that day's empty-input response |
+| Unrecognized input | Shows that day's wrong-password response |
 
 :::
 
-Some days give a special wrong-day hint, while others reuse the ordinary error response. Later checks generally offer a retry or **Give up** choice.
+Passing a password check usually records only that stage's successful result. Later Route, survival, and story choices can still change the final lettered Path; see [Lettered Path System](../guide/path-system.md).
 
-## Main Check Stages
+## Main input stages
 
-The story has four main password checks, although the first stage is split between D4 and D6.
+The story has four main password checks. The first group appears on D4 or D6 depending on the character Route.
 
 ::: {.password-check-stages-table .table-responsive .table-scroll-compact}
 
-| Type | Day | Function |
+| Type | Day | What the player needs to know |
 |---|---:|---|
-| Optional Easter input | D1 | Uses the shared Vault dispatcher |
-| No accepted answer | D2 | Opens Vault input, but has no accepted D2 answer |
-| Optional Easter input | D3 | Uses the shared Vault dispatcher |
-| Main check, stage 1A | D4 | Sets the flag later used by the Roswell Route |
-| Main check, stage 1B | D6 | Contains five character-related strings for the other Routes |
-| Main check, stage 2 | D7 | Uses the duplicate-index fall-through described below |
-| Main check, stage 3 | D10 | Main Path gate, with a Sal Route failure exception |
-| Incomplete implementation | D11 | Retains password scaffolding but no usable success path |
-| Main check, stage 4 | D17 | Failure consequences occur later, with a Tyson Route exception |
-| Separate final input | Path P sequence | Uses `FinalPassword` rather than `vaultInput` |
+| Hidden Easter input | D1 | Not required for normal progression |
+| No accepted answer | D2 | Input is available, but nothing is correct on this day |
+| Optional Easter input | D3 | A successful entry raises affection for all six characters |
+| Main check, group 1 | D4 | Every Route visits; the Roswell Route needs its matching answer |
+| Main check, group 1 | D6 | The other five Routes use their matching answers here |
+| Main check, group 2 | D7 | b0.85 accepts only the current answer |
+| Main check, group 3 | D10 | Normally keeps the run on the A/B side or moves it to C/D; the Sal Route has a failure exception |
+| Unusable legacy content | D11 | The story still mentions the word, but there is no normally playable password entry |
+| Main check, group 4 | D17 | Failure takes effect later; the Tyson Route has an exception |
+| Separate final input | Final Path P sequence | The clue appears immediately beforehand, and wrong answers automatically retry |
 
 :::
 
-D1 and D3 are optional Easter eggs rather than progression checks. See [Easter Eggs and Hidden Inputs](../extras/easter-eggs.md) for their effects.
+D1 and D3 are optional Easter eggs, not progression checks. See [Easter Eggs and Hidden Inputs](../extras/easter-eggs.md) for their effects.
 
-## D4 and D6 Route Boundaries
+## D4 and D6: match the current Route
 
-The first main stage is divided between two dates.
+Every character Route reaches the D4 Vault. Only the Roswell Route needs its group-one answer at this visit; the other five Routes perform the same group check on D6.
 
-### D4
+The D6 input does not stop the player from entering another character's valid word. Doing so can display that character's warning, but it does not protect the partner on the current Route, so the current Route's failure still occurs later.
 
-Every character Route reaches the D4 Vault visit. Its success label does not check whether Roswell is the selected partner, but the resulting flag is later required by the Roswell Route.
+## Sal and Tyson: avoiding the consequence is not a pass
 
-### D6
+Giving up on D10 during the Sal Route is still a failed check. Sal's Route-specific story prevents the usual D11 disaster and Path C/D diversion, but Gallery completion still requires the correct password: the successful scene displays Sal's Vault CG and a related image filed under another character's Gallery category.
 
-The Roswell Route does not use the normal D6 Vault visit. The other five Routes share one input screen with five recognized strings.
+Failing or giving up on D17 during the Tyson Route is also not a pass. Later Tyson Route events prevent the D19 disaster and Path F/G diversion.
 
-The dispatcher checks the string and day, not the active Route. Entering a valid string associated with another character displays that character's warning and sets that character's success flag. The flag required by the current Route remains unset, so the later failure condition still applies.
+These exceptions change the consequences of failure; they do not award the successful scene or its exclusive content. See [Lettered Path System](../guide/path-system.md) for the complete branch logic.
 
-## Route-Specific Failure Exceptions
+## D7: the current answer works normally
 
-Giving up on D10 during the Sal Route remains a failed check, but Sal's Route-specific branch prevents the ordinary D11 disaster and Path C/D diversion.
+b0.85 accepts only the current D7 answer. Entering it correctly reaches the complete success scene and records the result needed to continue past D8.
 
-Giving up on D17 during the Tyson Route also leaves the success flag unset, but later Tyson Route events prevent the D19 disaster and Path F/G diversion.
+The two other words accepted in b0.7 did not advance the main story and are no longer accepted in b0.85. See [Legacy Password Archive](../versions/legacy-passwords.md) for the version change.
 
-These exceptions change the consequences of failure; they do not turn the checks into successes. See [Lettered Path System](../guide/path-system.md) for the complete branch logic.
+## D11: no usable password in b0.85
 
-## D7 Duplicate-Index Fall-Through
+The D11 story still shows and defines a word from the older sequence, and some later dialogue retains related traces. Normal b0.85 play does not open the matching Vault input or provide a success scene.
 
-The D7 password in b0.85 appears three times in `passwordList`, at indices 8, 9, and 10. All three matching positions are assigned to D7.
-
-Because `passwordList.index()` returns the first match, a correct D7 input resolves to index 8 and jumps to `vaultPassword8`.
-
-The three labels appear consecutively:
-
-```renpy
-label vaultPassword8:
-
-label vaultPassword9:
-
-label vaultPassword10:
-    # D7 success implementation
-```
-
-The first two labels are empty, so execution falls through into the body of `vaultPassword10`. The effective control flow is:
-
-```text
-vaultPassword8
-→ vaultPassword9
-→ vaultPassword10
-```
-
-This fall-through is why the current D7 answer still reaches the implemented success scene.
-
-For the older D7 inputs, see [Legacy Password Archive](../versions/legacy-passwords.md).
-
-## D11 Incomplete Implementation
-
-D11 retains a recognized string, date mapping, failure handlers, dialogue, and later branches that read a D11 flag. However, the normal story never opens `vaultInput` on D11, and the matching `vaultPassword12` success label does not exist.
-
-D11 therefore has no usable password in b0.85. Its remaining pieces do not affect the four main password checks.
-
-For the retired b0.7 sequence, see [Legacy Password Archive](../versions/legacy-passwords.md#d11-optional-vault).
+D11 therefore has no usable password and is not one of the four main checks. See [Legacy Password Archive](../versions/legacy-passwords.md#d11-optional-vault) for its former entry and effect.
 
 ## Related guides
 

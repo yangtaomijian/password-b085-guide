@@ -4,26 +4,26 @@ description: "Persistent Path A scenes, the retired D8 Oswin input system, and o
 toc: true
 ---
 
-This page documents several mechanics that were present in *Password* b0.7 and were later removed, replaced, or reorganized in b0.85.
+This archive covers interactions that players could encounter in *Password* b0.7 but that were removed or rewritten in b0.85.
 
 The main subjects are:
 
-- the profile-wide Path A first-run gate;
+- the two late Path A scenes limited to the first profile-wide run;
 - the two related Additional Scenes in b0.85;
 - the retired D8 free-text conversation with Oswin;
 - the removed D11 laboratory decision.
 
 ::: {.callout-warning}
-## Old code does not mean a mechanic is still playable
+## Leftover content does not mean an interaction is playable
 
-A surviving password string or state reference does not make a mechanic usable in b0.85. Several systems below leave partial traces behind, but the current story and interface no longer provide a complete way to play them.
+A surviving password word or related line does not make an interaction usable in b0.85. Some older content remains in fragments, but the current story and interface no longer provide a complete entry.
 :::
 
-## Path A first-run gate
+## Path A first-run sequence
 
 Both b0.7 and b0.85 use `persistent.Day23APrime` to distinguish the first normal traversal of late Path A from later traversals.
 
-This is a persistent profile-wide value rather than an ordinary save variable. It is shared across character Routes and save slots.
+The first-run record is shared across character Routes and save slots rather than belonging to one ordinary save.
 
 ### First normal traversal
 
@@ -107,7 +107,7 @@ There is no fixed question limit. Empty input is handled separately, and three u
 
 ### What the interaction affected
 
-The free-text system writes three ordinary variables:
+The conversation tracks three states for the current playthrough:
 
 ::: {.oz-variable-table .table-responsive}
 | Variable | Role |
@@ -126,7 +126,7 @@ It does not directly set:
 
 The interaction is therefore not required for completion. However, `OzPast1` and `OzPast2` are read by later dialogue, so selected answers can change text on later days.
 
-## How the old parser worked
+## How b0.7 recognized input
 
 The system did not require most listed questions to match one exact sentence.
 
@@ -155,7 +155,7 @@ Every required group must match, but their order is not enforced. Extra words ar
 | Word order | Generally not enforced across keyword groups |
 :::
 
-The parser also gives priority to earlier branches. A broad earlier condition can therefore intercept an input before a more specific later condition is reached.
+A broad response can match before a more specific one, so the wording of an entry may change which response appears first.
 
 ## Conversation prompts to try
 
@@ -219,7 +219,7 @@ Some subjects have more than one response, and a few answers depend on what Dave
 b0.85 removes the D8 free-input engine and replaces the scene with scripted dialogue:
 
 - the fixed scene reuses selected old topics;
-- some old ordinary variables and later conditional checks remain in the source;
+- some older states still affect a small amount of later dialogue;
 - the normal input menu and old free-text responses are no longer available to the player.
 
 Cast Files, Lore, and Additional Scenes do not contain the complete old question library either.

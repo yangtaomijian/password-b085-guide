@@ -36,8 +36,8 @@ toc: true
 
 例如：
 
-- 水瓶座 在 D4 被找到，但持久标记要到 D16 的 A/B 奖牌盘点场景才写入；
-- 金牛座 在 D7 被找到，同样要到 D16 才写入；
+- 水瓶座在 D4 被找到，但持久标记要到 D16 的 A/B 奖牌盘点场景才写入；
+- 金牛座在 D7 被找到，同样要到 D16 才写入；
 - 双鱼座、巨蟹座和摩羯座会在 D9 写入，即使其准确星座身份要到之后才确认。
 
 因此，当剧情发现时间与持久解锁时间不同时，本页会分别注明。
@@ -81,10 +81,10 @@ toc: true
 
 返回 D4 存档，从剩余三条收集角色线中选择两条：
 
-- Dean 线：双鱼座 在 D9 写入；
-- Roswell 线：巨蟹座 在 D9 写入；
-- Sal 线：摩羯座 在 D9 写入；
-- Hoss 线：天秤座 在 D16 写入，并要求处于 Path A 或 Path B 一侧。
+- Dean 线：双鱼座在 D9 写入；
+- Roswell 线：巨蟹座在 D9 写入；
+- Sal 线：摩羯座在 D9 写入；
+- Hoss 线：天秤座在 D16 写入，并要求处于 Path A 或 Path B 一侧。
 
 Dean、Roswell 和 Sal 的流程可以在 D9 持久标记写入后结束；Hoss 线必须继续推进到 D16。
 
@@ -158,17 +158,17 @@ D23，Dave 在 Roswell 房间的床头柜上发现奖牌。游戏会立即写入
 <details>
 <summary><strong>双子座——Path B</strong></summary>
 
-双子座 由两半组成。
+双子座由两半组成。
 
 Tyson 线中，Dave 会在 D4 树篱迷宫场景亲眼看到 Tyson 拿出第一半；其他角色线不会显示这一段发现过程。完整奖牌会在 D25 B 自动组合，并且无论当前选择哪条角色线，都会写入持久标记。
 
-Tyson 线有助于了解完整发现背景，但不是收集 双子座 的必要条件。
+Tyson 线有助于了解完整发现背景，但不是收集双子座的必要条件。
 </details>
 
 <details>
 <summary><strong>巨蟹座——Roswell 线</strong></summary>
 
-D9，Dave 与 Roswell 在博物馆查看书籍时，一枚奖牌从书架中掉出。Roswell 根据图案确认它是 巨蟹座，持久标记会立即写入。
+D9，Dave 与 Roswell 在博物馆查看书籍时，一枚奖牌从书架中掉出。Roswell 根据图案确认它是巨蟹座，持久标记会立即写入。
 
 D16 奖牌盘点时可能再次执行同一写入，但该重复写入不是必要条件。
 </details>
@@ -176,7 +176,7 @@ D16 奖牌盘点时可能再次执行同一写入，但该重复写入不是必�
 <details>
 <summary><strong>狮子座——Path A 或 B 一侧</strong></summary>
 
-D22，Thanatos 指引 Dave 找到一本被挖空的儿童故事书。狮子座 与一张 Hammond 家庭照片一起藏在书中。
+D22，Thanatos 指引 Dave 找到一本被挖空的儿童故事书。狮子座与一张 Hammond 家庭照片一起藏在书中。
 
 奖牌会在该场景中立即确认并写入。
 </details>
@@ -184,7 +184,7 @@ D22，Thanatos 指引 Dave 找到一本被挖空的儿童故事书。狮子座 �
 <details>
 <summary><strong>处女座——完成 Path A</strong></summary>
 
-Florencia 会在 Path A 的每一种关系结局分支中把 处女座 交给 Dave。
+Florencia 会在 Path A 的每一种关系结局分支中把处女座交给 Dave。
 
 不要求特定男友对象或角色线。六个位置只是不同的结局分支，并不是六枚不同奖牌。
 </details>
@@ -192,9 +192,9 @@ Florencia 会在 Path A 的每一种关系结局分支中把 处女座 交给 Da
 <details>
 <summary><strong>天秤座——Hoss 线，D16 A/B</strong></summary>
 
-D16，Hoss 会在隐藏图书馆中找到 天秤座。
+D16，Hoss 会在隐藏图书馆中找到天秤座。
 
-与 Dean、Roswell 和 Sal 的角色线奖牌不同，天秤座 无法在 D9 取得。Hoss 线必须在 Path A 或 Path B 一侧推进到 D16。
+与 Dean、Roswell 和 Sal 的角色线奖牌不同，天秤座无法在 D9 取得。Hoss 线必须在 Path A 或 Path B 一侧推进到 D16。
 </details>
 
 <details>
@@ -208,7 +208,7 @@ D24 A，Dave 读完 Roswell 的信后，会在信件中发现这枚奖牌。持�
 <details>
 <summary><strong>射手座——完成 Path B</strong></summary>
 
-Florencia 会在 Path B 的每一种关系结局分支中把 射手座 交给 Dave。
+Florencia 会在 Path B 的每一种关系结局分支中把射手座交给 Dave。
 
 部分分支会直接说出名称，另一些只描述箭形符号，但六种 Path B 结局都会写入同一个持久标记。
 </details>
@@ -224,7 +224,7 @@ D9，Dave 与 Sal 会在泳池区域一个异常封闭的储物柜中发现奖�
 <details>
 <summary><strong>水瓶座——Path A 或 B 一侧</strong></summary>
 
-Orlando 在 D4 树篱迷宫中央找到 水瓶座。Orlando 线中，该场景还会直接说出其身份。
+Orlando 在 D4 树篱迷宫中央找到水瓶座。Orlando 线中，该场景还会直接说出其身份。
 
 但持久收集标记要到 D16 的 A/B 奖牌盘点场景才写入，因此只看过 D4 的发现剧情并不足以完成解锁。
 </details>
@@ -243,22 +243,22 @@ D9，Dean 与 Dave 钓鱼时会从河中取出这枚奖牌。他们当时没有�
 
 1. 是否在全部十二个持久标记写入后，重新完成了 Path A；
 2. 水瓶座和金牛座是否真正推进到 D16 A/B，而不只是看过早期发现场景；
-3. 收集 天秤座 时，Hoss 线是否在 Path A 或 Path B 一侧推进到 D16；
-4. Path B 流程是否到达 D25，使 双子座 完整组合；
+3. 收集天秤座时，Hoss 线是否在 Path A 或 Path B 一侧推进到 D16；
+4. Path B 流程是否到达 D25，使双子座完整组合；
 5. 该流程是否继续完成 Path B 结局并取得射手座；
 6. 重启游戏后，后记是否仍有未识别的奖牌背景资料；
 7. 持久数据是否被清除、替换，或在设备迁移时未被完整保留。
 
 十二枚奖牌检定不会持续实时运行。如果第一次完成 Path A 时尚未收齐奖牌，之后补齐剩余奖牌并不会自动重新打开最终流程；必须再次完成 Path A。
 
-奖牌记录和最终检定的底层机制见[奖牌持久化与最终检定](../mechanics/medal-persistence.md)。
+奖牌如何保存及最终检定方式见[奖牌持久化与最终检定](../mechanics/medal-persistence.md)。
 
 ## 为什么后记日期和发现日期不同？
 
 后记中的奖牌日期只是线索，不统一代表首次发现、名称确认或永久解锁的时间。
 
-- 水瓶座 使用 D4 的剧情发现日期，但持久标记实际在 D16 写入；
-- 金牛座 使用 D16，但奖牌首次出现在 D7；
+- 水瓶座使用 D4 的剧情发现日期，但持久标记实际在 D16 写入；
+- 金牛座使用 D16，但奖牌首次出现在 D7；
 - 双鱼座和摩羯座使用 D9，即使其身份要到 D16 才确认。
 
 因此，应把后记日期视为线索，而不是“首次发现”或“永久解锁时间”的统一定义。

@@ -8,10 +8,10 @@ One of *Password*'s central mechanics is carrying information across timelines. 
 
 In b0.85, four password checks have a major effect on the main story:
 
-1. Day 4 (D4) or Day 6 (D6), depending on the character route
-2. Day 7 (D7)
-3. Day 10 (D10)
-4. Day 17 (D17)
+1. D4 or D6, depending on the character Route
+2. D7
+3. D10
+4. D17
 
 The final Path P sequence also contains a simpler standalone password. D1 and D3 have optional inputs, while D2 allows an attempt but has no valid password.
 
@@ -133,7 +133,7 @@ The word describes the deliberate killing of many people in a single event.
 
 Giving up on this password during the Sal Route does not move the run to the ordinary Path C/D side. The earlier intervention in Sal's sleep-related problem prevents that branch.
 
-The password is still important for completion, however. Entering it correctly displays the Sal vault CG and a related image recorded in the death Gallery. Other Sal Gallery content is obtained through normal route progression and does not depend on this password.
+This is still a failed check, and the correct password remains necessary for Gallery completion. Entering it displays Sal's Vault CG and a related image filed under another character's Gallery category. Other Sal Gallery content is obtained through normal Route progression and does not depend on this password.
 
 ## Fourth key password
 
@@ -189,14 +189,14 @@ The word means the process of **deifying someone** or **elevating a mortal to di
 You do not need information from another Path or bad ending.
 </details>
 
-## Optional inputs and residual strings
+## Optional and legacy inputs
 
 The early-game Vault contains several inputs that are not required for normal progression:
 
-- D1 has an implemented hidden or meta password.
+- D1 has a hidden Easter input.
 - D2 allows the player to enter text, but no answer is accepted on that day.
-- D3 has an implemented optional password that increases affection for all six characters.
-- Some obsolete password strings remain in b0.85 but are not accepted inputs.
+- D3 has an optional Easter input that increases affection for all six characters.
+- Some retired password words are still mentioned in b0.85, but they are no longer accepted inputs.
 - A D11 word is shown and defined in the story, but it is not a usable password in b0.85.
 
 These items are not part of the four route-critical password checks.

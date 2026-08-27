@@ -156,7 +156,7 @@ The Vault recognizes some passwords even on the wrong day, but the failure respo
 
 This changes only the feedback. A password still works only on its assigned day.
 
-For accepted-password hints, see [Tiered Password Hints](../guide/password-hints.md). For the shared dispatcher and its failure categories, see [Vault Password Check Mechanics](../mechanics/password-checks.md).
+For accepted-password hints, see [Tiered Password Hints](../guide/password-hints.md). For input rules and failure results, see [Vault Input and Password Checks](../mechanics/password-checks.md).
 
 ## Ophiuchus and the Twelve-Medal Limit
 
@@ -169,7 +169,7 @@ See [Twelve-Medal Collection Guide](../collectibles/medals.md) and [Medal Persis
 ## Related guides
 
 - [Tiered Password Hints](../guide/password-hints.md)
-- [Vault Password Check Mechanics](../mechanics/password-checks.md)
+- [Vault Input and Password Checks](../mechanics/password-checks.md)
 - [Affection System and Point Guide](../mechanics/affection.md)
 - [Twelve-Medal Collection Guide](../collectibles/medals.md)
 - [Medal Persistence and Final Check](../mechanics/medal-persistence.md)

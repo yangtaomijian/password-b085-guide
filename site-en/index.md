@@ -68,9 +68,9 @@ Track medals, Compendium entries, and all 100 registered Gallery images.
 
 ### Mechanics
 
-Understand Vault dispatch, persistent medal progress, affection checks, and story differences.
+Understand Vault input rules, persistent medal progress, affection checks, and story differences.
 
-- [Vault Password Check Mechanics](mechanics/password-checks.md)
+- [Vault Input and Password Checks](mechanics/password-checks.md)
 - [Medal Persistence and Final Check](mechanics/medal-persistence.md)
 - [Affection System and Point Guide](mechanics/affection.md)
 - [Affection Checks and Story Differences](mechanics/affection-differences.md)

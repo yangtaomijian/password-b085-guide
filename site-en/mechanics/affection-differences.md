@@ -42,7 +42,7 @@ The tables cover differences caused by **affection checks**:
 
 | Condition | Result |
 |---|---|
-| `dragonlove >= 20` | Dave automatically accepts Orlando, enters `OrlandoBoyfriend`, and sets `DaveBoyfriend` to `Orlando`. |
+| `dragonlove >= 20` | Dave automatically accepts Orlando and enters the relationship sequence. |
 | `10 <= dragonlove < 20` | `I love you too.` / `Stay quiet.` appears, allowing the player to accept or reject. |
 | `dragonlove < 10` | The story automatically follows Orlando's rejection branch without offering a romantic response. |
 
@@ -55,7 +55,7 @@ The tables cover differences caused by **affection checks**:
 | Check | Main story locations | Additional conditions | Dialogue or story effect |
 |---|---|---|---|
 | `bearlove >= 5` | D5 Dean Route hot tub | Dean Route and the D5 `Romance` movie choice | Dean treats the movie choice as a possible signal from Dave, `deankiss` is displayed, and the later kiss-confirmation menu is reached. Below 5, the scene still contains flirting but not the formal kiss choice. The CG appears before the confirmation menu, so choosing `No` afterward does not prevent its Gallery unlock. |
-| `bearlove >= 10` | End of the D19 Dean date | Reach the Dean post-date branch | Dave says that he also looked forward to the date and frames his feelings as close to love. The game sets `DaveBoyfriend = "Dean"` and continues into the relationship and intimate scene. Below 10, Dave concludes that the date did not create enough romantic chemistry. |
+| `bearlove >= 10` | End of the D19 Dean date | Reach the Dean post-date branch | Dave says that he also looked forward to the date and frames his feelings as close to love, then continues into the relationship and intimate scene. Below 10, Dave concludes that the date did not create enough romantic chemistry. |
 | `bearlove >= 15` | D9 morning; D15 A/B dream; D16 A/B morning | Corresponding Dean scenes | On D9, Dean distinguishes casual sex from intimacy with someone important. In the D15 dream, Dave admits how strongly he likes Dean. On D16 morning, Dean's embrace is associated with safety, softness, and wanting to wake up that way regularly. |
 | `bearlove >= 17` | D10 night | Dean Route and the successful D10 Vault state | Dave realizes that his feelings may have grown beyond ordinary liking and thinks that the two of them will need a serious conversation. |
 | `bearlove >= 20` | D18 post-meeting Dean scene | Dean Route and the successful D17 Vault state | Dave changes `I appreciate it` into the more personal `I appreciate you`, explicitly anticipates the next day's date, and initiates a stronger kissing sequence before they stop to rest. |
@@ -68,7 +68,7 @@ The tables cover differences caused by **affection checks**:
 
 | Condition | Result |
 |---|---|
-| `bearlove >= 10` | `DaveBoyfriend` is automatically set to `Dean`, followed by the relationship and intimate scene. |
+| `bearlove >= 10` | Dave automatically begins a relationship with Dean, followed by the intimate scene. |
 | `bearlove < 10` | Dave decides that the date did not produce enough romantic chemistry, and the relationship does not form. |
 
 :::
@@ -94,7 +94,7 @@ The tables cover differences caused by **affection checks**:
 
 | Condition | Result |
 |---|---|
-| `wolflove >= 20` | Dave automatically responds to Tyson, sets `DaveBoyfriend` to `Tyson`, and continues into the relationship and intimate scene. |
+| `wolflove >= 20` | Dave automatically responds to Tyson and continues into the relationship and intimate scene. |
 | `10 <= wolflove < 20` | `I love you.` / `...` appears, allowing the player to accept or remain silent. |
 | `wolflove < 10` | Dave automatically rejects a romantic relationship and describes Tyson as a brother he loves rather than a partner. |
 
@@ -109,7 +109,7 @@ The tables cover differences caused by **affection checks**:
 | `boarlove >= 5` | D6 lunch; D9 morning | Roswell Route for the D6 event | On D6, Roswell admits that he may want more than friendship and opens `Kiss him.`, `Hug him.`, and `Do nothing.`. Both affectionate choices show `roswellkiss`; `Do nothing.` avoids it. Below 5, Roswell initiates automatically and the kiss CG still appears. On D9, this threshold selects the middle, more awkward comfort branch. |
 | `boarlove >= 10` | D9 morning; D19 Roswell Route | On D9, replaces the 5-point scene | Roswell more quickly recognizes Dave's distress, sits with him, and offers to listen. On D19, values from 10 through 19 show `Relationship` / `Friendship`. |
 | `boarlove >= 15` | D15 A/B night; D16 A/B morning; D16 Roswell event | Corresponding Roswell scenes | Dave initiates closer sleep contact on D15. On D16 morning, he comforts Roswell after the nightmare and questions whether their closeness is love or deep friendship. The later event shows `I like {i}you{/i}.`; choosing it visibly pleases Roswell and awards 2 more points. |
-| `boarlove >= 20` | D19 Roswell Route | Reach the final Roswell relationship conversation | Dave says that he cannot accept Roswell leaving before their relationship has truly begun. The game automatically enters `RoswellBoyfriend` and sets the boyfriend variable. |
+| `boarlove >= 20` | D19 Roswell Route | Reach the final Roswell relationship conversation | Dave says that he cannot accept Roswell leaving before their relationship has truly begun, and the relationship forms automatically. |
 
 :::
 
@@ -119,7 +119,7 @@ The tables cover differences caused by **affection checks**:
 
 | Condition | Result |
 |---|---|
-| `boarlove >= 20` | Dave automatically accepts Roswell and sets `DaveBoyfriend` to `Roswell`. |
+| `boarlove >= 20` | Dave automatically accepts Roswell and begins the relationship. |
 | `10 <= boarlove < 20` | `Relationship` / `Friendship` appears, allowing the player to decide. |
 | `boarlove < 10` | The story automatically keeps the relationship as friendship. |
 
@@ -137,7 +137,7 @@ Hoss has two kiss CGs tied to different affection outcomes, making his checks es
 | `lionlove >= 12` | D8 morning; D8 room and hidden library; D9 morning and night | The formal library kiss requires the Hoss Route | Hoss gives Dave a cheek kiss on D8 morning and later refers back to it. In the hidden-library scene on the Hoss Route, he sets `HossKiss = True`, kisses Dave, and displays `hosskiss`. D9 adds stronger concern, flirting, and references to wanting another kiss. Below 12 in the library, the kiss is skipped and the game instead awards 2 affection points. |
 | `lionlove >= 15` | D15 A/B; D16 A/B morning and Hoss event; D18; D19 | Corresponding Hoss scenes | In the D15 dream, Dave nearly kisses Hoss. In waking conversation, Hoss gives a forehead kiss but tells Dave to resolve his feelings for Dean. On D16, Dave directly asks whether Hoss likes him romantically. D18 hints that someone else could pursue Dave if Dean does not. D19 shows `Try dating.` / `Stay friends.` when 20 is not reached. |
 | `lionlove >= 16` | D10 Hoss investigation | Only if Dave has already kissed Hoss | Changes only a small set of lines about Hoss envying Tyson's willingness to care for Dave openly. It does **not** trigger the D10 kiss. If Dave has not yet kissed Hoss, another story condition determines whether the D10 kiss occurs; the 16-point threshold does not. |
-| `lionlove >= 20` | D19 Hoss Route | Reach the final Hoss relationship conversation | Adds more direct relationship discussion and automatically enters `HossBoyfriend`, sets `DaveBoyfriend = "Hoss"`, and displays `hosskiss2`. No acceptance or rejection menu appears at this level. |
+| `lionlove >= 20` | D19 Hoss Route | Reach the final Hoss relationship conversation | Adds more direct relationship discussion, begins the relationship automatically, and displays `hosskiss2`. No acceptance or rejection menu appears at this level. |
 
 :::
 
@@ -177,7 +177,7 @@ For coordinates and the earliest normal display locations, see [CG Gallery Compl
 | `croclove >= 8` | D8; D9 morning | On D9, this result is used from 8 through 14 | D8 adds only a brief glance and muted response. On D9, Sal notices that Dave is troubled and explains that he came to check on him, but remains restrained. |
 | `croclove >= 15` | D9 morning and Sal event; D9 night; D15 A/B; D16 A/B; D18; D19 | Most locations require the Sal Route or the corresponding Sal scene | Sal asks more directly what is upsetting Dave. The D9 character scene expands the Abi discussion, and `Approach.` succeeds as a hug instead of being rejected. Sal stays on D9 night at both high and low affection; this threshold changes the invitation and cuddle-related text rather than determining whether he remains. D15–D18 adds greater physical closeness, Sal's affection for Dave despite his imperfections, and conflict over whether loving Dave would betray Dean. D19 shows `Romantic` / `Platonic` when 20 is not reached. |
 | `croclove >= 16` | D11 A/B Sal dialogue | Reach the relevant conversation | When asked whether he likes someone, Sal admits that he does and that the feeling is recent and still difficult to process. He does not identify the person here. Below 16, this short answer is omitted. |
-| `croclove >= 20` | D19 Sal sequence | Reach the final Sal relationship flow | Adds the injured-Sal arrival material and later has Sal explicitly call his feelings a crush and ask about dating after leaving the mountain. The game automatically enters `SalBoyfriend` and sets the boyfriend variable. |
+| `croclove >= 20` | D19 Sal sequence | Reach the final Sal relationship flow | Adds the injured-Sal arrival material and later has Sal explicitly call his feelings a crush and ask about dating after leaving the mountain. Dave accepts automatically. |
 
 :::
 

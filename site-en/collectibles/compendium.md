@@ -37,7 +37,7 @@ Restart the game before treating a missing entry as a collection problem.
 
 ::: {.compendium-cast-table .table-responsive .table-scroll-medium}
 
-| Order | Cast File | Persistent condition | Main unlock route |
+| Order | Cast File | Tracked requirement | Main unlock route |
 |---:|---|---|---|
 | 1 | Dave | `persistent.dave_lore` | D14 A/B flashback about Dave's father |
 | 2 | Tyson | `persistent.tyson_lore` | Tyson Route, D15 A/B |
@@ -60,7 +60,7 @@ Restart the game before treating a missing entry as a collection problem.
 
 ### Dave, David, and Hoyt
 
-All three files unlock during the same D14 A/B flashback sequence. Hoyt is written first, followed shortly by Dave and David.
+All three files unlock during the same D14 A/B flashback sequence.
 
 No character route or affection condition is required once that flashback is reached.
 
@@ -89,19 +89,19 @@ Message...? → Hoss
 
 Because the D4 partner choice has not yet occurred, this method does not require the Hoss Route.
 
-An optional D8 hidden-library discovery can write the same flag again. That fallback also does not require the Hoss Route, although the player must have opened the relevant library branch.
+An optional D8 hidden-library discovery can also unlock the file. This alternative does not require the Hoss Route, although the player must have opened the relevant library branch.
 
 ### Sal
 
-The successful D10 password scene writes Sal's Cast File on any character route.
+The successful D10 password scene unlocks Sal's Cast File on any character Route.
 
-On the Sal Route, failing that password does not permanently lose the file. A D15 Sal conversation writes the same flag if the D10 scene did not.
+On the Sal Route, failing that password does not permanently lose the file. A D15 Sal conversation provides another unlock opportunity.
 
 ### Thanatos and Thanatos - Part 2
 
-The normal Thanatos file unlocks during the late Path A time-loop material. An incomplete twelve-medal check can also write it as a fallback, although the earlier Path A scene normally does so first.
+The normal Thanatos file unlocks during the late Path A time-loop material. An incomplete twelve-medal check also provides another opportunity, although the earlier Path A scene normally unlocks it first.
 
-`Thanatos - Part 2` does not use a separate character-file flag. It is controlled directly by completion of the full Path P sequence.
+`Thanatos - Part 2` unlocks after the full Path P sequence is completed.
 
 ### Dominic and Jack
 
@@ -116,18 +116,12 @@ Florencia has several alternative unlock points:
 - Path A ending sequence;
 - Path B ending sequence.
 
-The earliest unlock point is the Path D ending. Path C, E, and F do not contain an equivalent write.
+The earliest unlock point is the Path D ending. Path C, E, and F do not unlock the file.
 
 <details>
 <summary><strong>Oswin is not listed</strong></summary>
 
-b0.85 defines `persistent.oswin_lore` and sets it during late Path A content, but Oswin's only `Cast` entry is disabled.
-
-As a result:
-
-- Oswin does not occupy a visible Cast File slot;
-- the visible total remains 16;
-- the disabled entry contains only a short unfinished header rather than a complete profile.
+b0.85 has no visible Cast File entry for Oswin. Late Path A can record related progress, but it never adds another slot to the Compendium, so the visible total remains 16. This is not a missing collectible.
 </details>
 
 ## Additional Scenes
@@ -182,13 +176,13 @@ The first five character Epilogues use the following additional Cast File checks
 | Dave Epilogue | None |
 | Roswell Epilogue | None |
 
-Only Tyson Epilogue directly checks completion of Path P. The later scenes depend on it indirectly through the preceding completion flags.
+Only Tyson Epilogue directly requires completion of Path P. Each later scene requires the preceding Epilogue to have been played through.
 
-### Play each Epilogue to its completion point
+### Play each Epilogue almost to the end
 
-The flag that unlocks the next Epilogue is written near the end of the current replay.
+The game counts an Epilogue as completed only near the end of its replay.
 
-Using **End Replay** before that write skips the completion flag. Merely opening an Epilogue, or watching only part of it, is not enough to advance the chain.
+Using **End Replay** too early prevents the next scene from unlocking. Merely opening an Epilogue, or watching only part of it, is not enough to advance the chain.
 
 Even a fully completed Epilogue may not make the next scene appear until the game is restarted. Restart before replaying the previous scene solely because the next entry still displays `?????`.
 

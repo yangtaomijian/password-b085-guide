@@ -31,15 +31,15 @@ The comparison below is limited to **b0.7 and b0.85** and should not be applied 
 | CG assets | Redraws two Tyson CGs and removes four older Dean adult CG files |
 :::
 
-## Modern Compendium
+## Compendium in b0.85
 
-b0.85 introduces the modern player-accessible Compendium with three sections:
+b0.85 adds a Compendium that can be opened from the main menu, with three sections:
 
 - **CAST FILES**
 - **ADDITIONAL SCENES**
 - **LORE**
 
-Normal b0.7 play has no feature equivalent to the current Compendium. An unfinished menu stub that cannot be opened normally does not provide the same collection interface.
+Normal b0.7 play has no feature equivalent to the current Compendium.
 
 ### Lore and medal tracking
 
@@ -54,11 +54,9 @@ b0.85 adds replay entries for two first-run Path A segments:
 - `Dave's Demise`
 - `Roswell's Attempt`
 
-Both use `persistent.Day23APrime` as their unlock condition. They reuse bounded parts of the original story labels rather than replaying the entire normal Path A sequence.
+Both become available after the first complete run through the relevant late Path A material. The scenes themselves already existed; b0.85 adds separate replay access.
 
-The persistent first-run behavior itself still exists in normal play; the new feature is the separate replay access.
-
-See [Legacy Mechanics Archive](legacy-mechanics.md) for the exact first-run and replay control flow.
+See [Legacy Mechanics Archive](legacy-mechanics.md) for the first-run sequence and replay boundaries.
 
 ## Seven Epilogues
 
@@ -87,9 +85,9 @@ b0.85 removes the menu and its Bad Ending from normal play. See [Legacy Route Ar
 
 The b0.7 D7 Vault formally accepted two additional words: `PEACEKEEPER` and `ARBITER`.
 
-Each opened a separate warning scene, but neither set the state required to pass the D8 hard gate.
+Each opened a separate warning scene, but neither allowed the player to continue past D8.
 
-b0.85 no longer accepts those two alternatives through normal play. The current main-gate answer remains the only usable D7 progression input. In b0.7, they were **accepted non-progressing alternatives**.
+b0.85 no longer accepts those two alternatives. The current answer is the only D7 input that advances the story. In b0.7, the older words were **accepted non-progressing alternatives**.
 
 See [Legacy Password Archive](legacy-passwords.md).
 
@@ -97,7 +95,7 @@ See [Legacy Password Archive](legacy-passwords.md).
 
 b0.7 contained a repeatable free-text conversation in which the player could type questions for Oswin and receive keyword-matched responses.
 
-b0.85 removes the input loop and keyword engine and replaces the scene with scripted dialogue. Some topics and old state remnants survive, but there is no longer a normal player input interface.
+b0.85 removes the free-text interaction and replaces the scene with fixed dialogue. A few old topics still affect related lines, but players can no longer type questions there.
 
 See [Legacy Mechanics Archive](legacy-mechanics.md).
 
@@ -105,7 +103,7 @@ See [Legacy Mechanics Archive](legacy-mechanics.md).
 
 b0.7 could unlock an optional D11 Vault visit on a later eligible A/B-side run. Successfully entering `METEMPSYCHOSIS` changed the laboratory sequence and later conditional dialogue without changing the character Route, lettered Path, or ending.
 
-b0.85 removes the normal entry and complete success sequence. Only the password string, old state, and some related dialogue remain.
+b0.85 removes the normal entry and reachable success sequence. Only the old word and some related dialogue remain.
 
 See [Legacy Password Archive](legacy-passwords.md).
 
@@ -148,7 +146,7 @@ These changes reduce optional exposition and player control and also alter how s
 
 ### D19 relationship resolution
 
-The Dean relationship gate changes mechanically:
+Dean's relationship check changes as follows:
 
 ::: {.d19-result-table .table-responsive .table-scroll-compact}
 | Build | D19 result |
@@ -194,16 +192,16 @@ In b0.85, Dave performs the newly added input and triggers the opening interacti
 
 The keypad role moves from **Florencia to Dave**.
 
-### True-ending persistence
+### True-ending record
 
-Near the final ending, b0.85 writes:
+Near the final ending, b0.85 records:
 
 ```renpy
 persistent.FirstEnding = True
 persistent.true_end = True
 ```
 
-The explicit `true_end` state supports the modern Compendium and the Epilogue unlock chain.
+The `true_end` state is used by the Compendium and the Epilogue unlock chain.
 
 The game does not display a formal `PATH P: END` heading or define `P` as a full word.
 
@@ -276,12 +274,12 @@ This is a dialogue-characterization change rather than a route mechanic.
 
 The D1 Easter input `THE END` quits the game in both builds.
 
-Before calling `renpy.quit`, the b0.85 script additionally sets the following values to `False`:
+Before quitting, b0.85 clears the following completion records:
 
 - `persistent.true_end`;
 - the persistent Path A–G ending markers.
 
-In b0.7, the game quits without changing those completion records first.
+In b0.7, the game quits without clearing those completion records first.
 
 See [Easter Eggs and Hidden Inputs](../extras/easter-eggs.md) for the full instructions. This input can affect ending-completion records.
 

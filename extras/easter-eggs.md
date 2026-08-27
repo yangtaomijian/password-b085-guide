@@ -166,7 +166,7 @@ Zylus 在鸣谢中列为**钻石级赞助者**。
 
 这只会改变反馈内容。密码仍然只能在其指定日期生效。
 
-需要查询可接受密码的提示时，见[密码分级提示](../guide/password-hints.md)；共用调度器和三类失败结果见[密码检定的底层机制](../mechanics/password-checks.md)。
+需要查询可接受密码的提示时，见[密码分级提示](../guide/password-hints.md)；输入规则和失败结果见[密码输入与检定规则](../mechanics/password-checks.md)。
 
 ## 蛇夫座与十二枚奖牌上限
 
@@ -184,7 +184,7 @@ Path A 后期对白会提到 **Ophiuchus（蛇夫座）**，它有时被视为�
 ## 相关页面
 
 - [密码分级提示](../guide/password-hints.md)
-- [密码检定的底层机制](../mechanics/password-checks.md)
+- [密码输入与检定规则](../mechanics/password-checks.md)
 - [好感度机制与加点](../mechanics/affection.md)
 - [十二枚奖牌收集指南](../collectibles/medals.md)
 - [奖牌持久化与最终检定](../mechanics/medal-persistence.md)

@@ -6,7 +6,7 @@ toc: true
 
 The story structure in *Password* combines two parallel systems:
 
-- a **character route**, chosen on Day 4 (D4);
+- a **character Route**, chosen on D4;
 - a **lettered Path**, shaped by later choices, password checks, and survival outcomes.
 
 These systems interact, but they are not interchangeable. Your character route determines the companion perspective and relationship content for the playthrough, while the lettered Path organizes the broader timeline and major later-story outcomes.
