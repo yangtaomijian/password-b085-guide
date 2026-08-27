@@ -26,7 +26,7 @@ Locked entries remain in their original positions and display `?????`, so a miss
 
 Cast Files, Additional Scenes, and Lore are all tied to persistent flags, but the Compendium does not refresh every unlock while the game remains open.
 
-A newly earned entry may therefore remain `?????` even though its flag is already active. Simply closing and reopening the Compendium is not guaranteed to refresh it.
+A newly earned entry may remain `?????` even though its flag is already active. Simply closing and reopening the Compendium is not guaranteed to refresh it.
 
 Restart the game before treating a missing entry as a collection problem.
 :::

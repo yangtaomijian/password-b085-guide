@@ -9,15 +9,12 @@ This page records the specific dialogue, story, and relationship differences pro
 For the choices that award points and the complete point inventory, see [Affection System and Point Guide](affection.md).
 
 ::: {.callout-important}
-## How to read this page
+## Reading the tables
 
-This page covers differences caused by **affection checks**:
+The tables cover differences caused by **affection checks**:
 
 - every threshold uses “greater than or equal to,” so `bearlove >= 5` is already satisfied at exactly 5;
-- reaching a number does not permanently activate one universal relationship state—the difference appears only when the story reaches that specific `if` or `elif` check;
-- most checks also depend on the current character route, story date, earlier choices, or other story flags;
-- branches in one `if` / `elif` chain are mutually exclusive, so a higher branch replaces the lower one;
-- this page focuses on differences caused by affection. Route-only or story-flag-only differences are mentioned only where they are necessary to understand the check.
+- a difference appears only when the story reaches that `if` or `elif`, and most checks also depend on the character route, date, earlier choices, or other flags; within one `if` / `elif` chain, a higher branch replaces the lower one.
 :::
 
 ## Character-specific checks

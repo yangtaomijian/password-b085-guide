@@ -47,7 +47,7 @@ A normal D7 failure leads into a Bad Ending that supplies clues for both older a
 
 Both accepted alternatives later converge on the same investigation sequence. That shared sequence provides the clue for the answer that actually satisfies the D8 gate.
 
-The safest summary is therefore:
+The sequence works like this:
 
 ```text
 ordinary D7 failure
@@ -130,7 +130,7 @@ The current build no longer contains the complete playable path into that system
 - normal b0.85 story code does not set `METEMPSYCHOSIS = True`;
 - the persistent setup used by the old entry is no longer completed through the normal flow.
 
-The most accurate classification is therefore an **incomplete legacy remnant**, not a currently hidden password.
+These pieces form an **incomplete legacy remnant**, not a currently hidden password.
 
 In a normal playthrough created in b0.85, the surviving conditional passages use the default `False` version.
 

@@ -6,7 +6,7 @@ toc: true
 
 This page records route-related differences between *Password* b0.7 and b0.85.
 
-It is intentionally limited to changes that affect normal story reachability, Bad Endings, or the interpretation of character Routes and lettered Paths. Password implementation, replay systems, and broader narrative rewrites are documented on their own pages.
+It covers route changes that affect normal story access, Bad Endings, or how older guides describe character Routes and lettered Paths. Passwords, replays, and broader story rewrites are covered in their own archives.
 
 ::: {.callout-warning}
 ## Historical reference only
@@ -19,11 +19,11 @@ For the current structure, see:
 - [Lettered Path System](../guide/path-system.md)
 :::
 
-## Scope of the archive
+## Structure shared by both builds
 
 The core distinction between a D4 **character Route** and the later **lettered Paths** already existed in b0.7. Much of the A–G and Path P structure also remains recognizable in b0.85.
 
-This archive therefore does not restate every unchanged gate. It focuses on removed branches and on legacy mechanics that can make an older guide misleading.
+The differences that need special attention are removed branches and older mechanics that can make a legacy guide misleading.
 
 ## D6 mansion departure branch
 
@@ -63,9 +63,9 @@ The Bad Ending version does not write the normal `OzKnown` route state and does 
 
 ## Path A, later reclassification, and Path P
 
-The broad lettered Path topology was not rebuilt from scratch in b0.85.
+b0.85 keeps most of b0.7's lettered Path structure.
 
-Both examined builds already contain:
+Both builds contain:
 
 - D10 assignment to the Path A/B or Path C/D side;
 - later reclassification between Path letters when survival states are revealed;
@@ -102,7 +102,7 @@ Several removed systems occurred inside route material without changing the lett
 | D11 injection decision | Changes player agency and `DavePride`, but not the lettered Path | [Legacy Mechanics Archive](legacy-mechanics.md) |
 :::
 
-Broader Dean-related interaction changes and the D19 relationship threshold are version-level narrative and relationship changes rather than route-topology changes. They are summarized in [Major Changes in b0.85](b085-changes.md).
+The broader Dean interaction changes and the D19 relationship threshold do not change the lettered Path structure. See [Major Changes in b0.85](b085-changes.md) for details.
 
 ## Current references
 

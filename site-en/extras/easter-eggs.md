@@ -4,7 +4,7 @@ description: "Optional Vault inputs, D1 coffee-cup names, hidden drivers, and th
 toc: true
 ---
 
-This page collects the optional inputs and Easter eggs in Password b0.85. None is required for a lettered Path or for reaching Path P.
+The following optional inputs and Easter eggs still work in Password b0.85. None is required for a lettered Path or for reaching Path P.
 
 ## D1–D3 Vault Easter Eggs
 

@@ -250,7 +250,7 @@ Check the following:
 
 The twelve-medal check is not continuously active. If Path A was completed before the collection was complete, obtaining the remaining medals later does not automatically reopen the final sequence; Path A must be completed again.
 
-## Compendium date caveat
+## Why can the Compendium date differ from the discovery date?
 
 Compendium medal dates are manually authored hints rather than dates generated from one consistent event.
 

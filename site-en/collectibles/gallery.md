@@ -33,11 +33,7 @@ Each Gallery button corresponds to a registered image. When the image appears du
 
 The `Gallery Completion` number is calculated separately from the button state; it is not a second unlock requirement.
 
-Gallery progress is separate from individual story-save slots. Loading or deleting an ordinary save does not clear images already recorded as seen.
-
-Therefore:
-
-- reaching the actual image display is what matters; an image that exists only in the game files, an unused branch, or unreachable debug code does not automatically count as seen.
+Gallery progress is separate from individual story-save slots. Loading or deleting an ordinary save does not clear images already recorded as seen. An image counts as seen only when it is actually displayed; merely existing in the game files, an unused branch, or unreachable debug code does not count automatically.
 
 ::: {.callout-note}
 ## The button state and completion number may refresh at different times

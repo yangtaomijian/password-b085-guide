@@ -1,21 +1,17 @@
 ---
 title: "Major Changes in b0.85"
-description: "Verified feature, story-interaction, password, Gallery, and asset changes between Password b0.7 and b0.85"
+description: "Feature, story-interaction, password, Gallery, and asset changes between Password b0.7 and b0.85"
 toc: true
 ---
 
 This page summarizes major player-facing differences between *Password* b0.7 and b0.85.
 
-It is based on a source comparison of the two builds together with targeted checks of the relevant image assets. It is not an official developer changelog, and it does not assume that every build earlier than b0.7 used the same implementation.
-
-Detailed legacy mechanics are kept on separate archive pages so that this overview can remain focused.
+Detailed legacy passwords, mechanics, and routes have their own archive pages.
 
 ::: {.callout-important}
 ## Comparison scope
 
-This page compares **b0.7 with b0.85**.
-
-It records changes that affect normal story access, player choices, passwords, persistent unlocks, Gallery structure, or substantial visible content. Minor wording edits, code refactors, debug files, and ordinary dialogue polish are omitted.
+This page compares **b0.7 with b0.85**, using the two builds and their relevant image assets. Its findings should not be extended to every earlier build. It covers changes to normal story access, player choices, passwords, persistent unlocks, Gallery structure, and substantial visible content; minor wording edits, code refactors, debug files, and ordinary dialogue polish are omitted.
 :::
 
 ## Changes at a glance
@@ -93,7 +89,7 @@ The b0.7 D7 Vault formally accepted two additional words: `PEACEKEEPER` and `ARB
 
 Each opened a separate warning scene, but neither satisfied the `BETRAYAL` state required to pass the D8 hard gate.
 
-b0.85 no longer accepts those two alternatives through normal play. The current main-gate answer remains the only usable D7 progression input. Their accurate role was **accepted non-progressing alternatives**.
+b0.85 no longer accepts those two alternatives through normal play. The current main-gate answer remains the only usable D7 progression input. In b0.7, they were **accepted non-progressing alternatives**.
 
 See [Legacy Password Archive](legacy-passwords.md).
 
@@ -121,7 +117,7 @@ See [Legacy Mechanics Archive](legacy-mechanics.md) for the original choices and
 
 ## Dean and early-story interaction rewrite
 
-A broad source comparison found that several b0.7 scenes involving Dean were substantially more menu-driven. b0.85 preserves much of the surrounding narrative but converts a number of those interactions into fixed dialogue.
+Several b0.7 scenes involving Dean were substantially more menu-driven. b0.85 preserves much of the surrounding narrative but converts a number of those interactions into fixed dialogue.
 
 ### D3 Dean or Tyson breakfast choice
 
@@ -140,7 +136,7 @@ This is a removed pre-Route scene, not a change to the D4 character Route select
 
 ### D4–D10 Dean interactions
 
-Confirmed examples include:
+Examples include:
 
 - **D4:** the Dean/Sal confrontation and Dean Route first-aid menus are removed;
 - **D5:** the first-meeting flashback is rewritten from several small choices into a linear memory;
@@ -196,7 +192,7 @@ In b0.7, Florencia operates the keypad before Oswin opens the Vault further.
 
 In b0.85, Dave performs the newly added input and triggers the opening interaction himself.
 
-The accurate comparison is therefore that the keypad role moves from **Florencia to Dave**.
+The keypad role moves from **Florencia to Dave**.
 
 ### True-ending persistence
 

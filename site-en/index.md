@@ -7,7 +7,7 @@ toc: false
 
 Use this site to follow character Routes and lettered Paths, work through password checks, collect medals and Gallery entries, unlock the Compendium, and understand affection mechanics.
 
-The main guide covers the current b0.85 build. A separate version archive compares b0.7 with b0.85 and documents removed branches, retired mechanics, and other verified changes.
+The main guide covers the current b0.85 build. A separate version archive compares b0.7 with b0.85 and documents removed branches, retired mechanics, and other changes.
 
 ## Start Here
 

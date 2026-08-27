@@ -62,7 +62,7 @@ Path changes are not limited to the final Path P transition. A run that begins o
 
 For the exact entry conditions and route-specific exceptions, see [Lettered Path System](path-system.md).
 
-## Why the displayed Path can lag behind the story state
+## Why the save-slot Path can update late
 
 The Path shown in a save slot changes only when the game updates it. It does not reveal an outcome before Dave learns what happened.
 

@@ -14,18 +14,9 @@ The main subjects are:
 - the removed D11 laboratory decision.
 
 ::: {.callout-warning}
-## Source remnants are not playable entries
+## Old code does not mean a mechanic is still playable
 
-A surviving variable, label name, password string, or conditional does not prove that a mechanic remains usable in b0.85.
-
-A current entry must still have:
-
-1. a normal story or interface entry;
-2. a reachable target label;
-3. a state that normal gameplay can write;
-4. a current screen or story branch that reads it.
-
-Several systems on this page leave partial remnants without a complete playable path.
+A surviving variable, label name, password string, or conditional does not make a mechanic usable in b0.85. Several systems below leave partial code behind, but the current story and interface no longer provide a complete way to play them.
 :::
 
 ## Path A first-run gate
@@ -84,7 +75,7 @@ Both use the same unlock condition `persistent.Day23APrime`. They therefore norm
 
 For their current list positions and troubleshooting, see [Compendium Unlock Index](../collectibles/compendium.md).
 
-### Replays are bounded scene extracts
+### Replays cover only part of the original story
 
 The two entries reuse original story labels, but they are not identical to replaying the entire normal Path A sequence.
 
@@ -99,7 +90,7 @@ The two entries reuse original story labels, but they are not identical to repla
 - starts directly at the Roswell segment;
 - ends before the normal persistent write and the later `Day23A_Prime` continuation.
 
-The replay ranges can still display registered Gallery images and execute assignments located inside those ranges. They should therefore be understood as **replay-specific extracts of the original labels**, not as isolated video files or complete reproductions of every surrounding story effect.
+The replays can still display registered Gallery images and execute assignments inside their ranges. Each one has a fixed starting and ending point: it is neither an isolated video file nor a complete reproduction of the normal sequence and all its surrounding story effects.
 
 ## D8 Oswin free-text conversation
 
@@ -232,15 +223,13 @@ Some subjects have more than one response, and a few answers depend on what Dave
 
 ## b0.85 replacement
 
-b0.85 removes the D8 free-input engine and replaces the scene with scripted dialogue.
+b0.85 removes the D8 free-input engine and replaces the scene with scripted dialogue:
 
-This should not be described as every related idea and every line being erased:
-
-- selected old topics are reused in the fixed scene;
+- the fixed scene reuses selected old topics;
 - some old ordinary variables and later conditional checks remain in the source;
 - the normal input menu, `renpy.input` loop, keyword engine, and old response labels are no longer available to the player.
 
-There is no evidence that the old question library was systematically migrated into Cast Files, Lore, or Additional Scenes.
+Cast Files, Lore, and Additional Scenes do not contain the complete old question library either.
 
 ## D11 laboratory decision
 

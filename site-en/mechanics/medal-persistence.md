@@ -47,8 +47,6 @@ $ persistent.aries = True
 
 b0.85 has no in-game option that resets the twelve medal flags, and no story branch sets them back to `False`. Loading an ordinary save restores the story state but does not roll back medal progress.
 
-In practical terms:
-
 - medals can be collected across different character routes and lettered Paths;
 - loading an older story save does not restore the medal flags saved in that slot;
 - one playthrough does not need to contain all twelve medals;

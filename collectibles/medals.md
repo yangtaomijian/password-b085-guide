@@ -253,7 +253,7 @@ D9，Dean 与 Dave 钓鱼时会从河中取出这枚奖牌。他们当时没有�
 
 奖牌记录和最终检定的底层机制见[奖牌持久化与最终检定](../mechanics/medal-persistence.md)。
 
-## Compendium 日期的边界
+## 为什么 Compendium 日期和发现日期不同？
 
 Compendium 中的奖牌日期是人工填写的提示，而不是由统一事件规则自动生成。
 
