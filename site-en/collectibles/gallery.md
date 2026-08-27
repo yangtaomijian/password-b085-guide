@@ -24,23 +24,20 @@ For example:
 - Memories row 12, column 1 is `davebrushtyson`;
 - Trauma row 4, column 3 is `metempsychosis`.
 
-The coordinate tables show a shorthand version of the earliest normal trigger below each CG ID. The complete trigger index farther down the page provides the script file, line number, and nearby story text. Some CGs appear in several branches, so the listed location is not necessarily the only way to see them.
+Use the coordinate tables to find the slot and CG ID, then check the trigger index farther down for an early normal appearance and nearby story text. Some CGs have more than one unlock route, so the listed scene may not be the only one.
 :::
 
 ## Unlock mechanics
 
-Each Gallery button checks whether its registered image has been shown. When the image appears during the story, it can be recorded as seen and unlock the button.
+Each Gallery button corresponds to a registered image. When the image appears during the story, it can be recorded as seen and unlock the button.
 
 The `Gallery Completion` number is calculated separately from the button state; it is not a second unlock requirement.
 
-Gallery progress is separate from an individual story-save slot. Loading or deleting an ordinary save does not reset the images already recorded as seen.
+Gallery progress is separate from individual story-save slots. Loading or deleting an ordinary save does not clear images already recorded as seen.
 
 Therefore:
 
-- reaching the actual image display is what matters; simply having the image in the game files is not enough;
-- loading another ordinary save does not reset Gallery progress;
-- deleting one ordinary save slot does not reset Gallery progress;
-- an image that exists only in script definitions or unreachable debug code does not automatically count as seen.
+- reaching the actual image display is what matters; an image that exists only in the game files, an unused branch, or unreachable debug code does not automatically count as seen.
 
 ::: {.callout-note}
 ## The button state and completion number may refresh at different times
@@ -53,10 +50,10 @@ After seeing a new CG, its button may unlock before the completion number update
 ::: {.callout-note}
 ## Technical labels in the tables
 
-Names such as `Day10Morning2`, `Day11ABMeeting`, and `FinalPassword` are script labels used to locate the trigger accurately. They are not visible to players in the game.
+Names such as `Day10Morning2`, `Day11ABMeeting`, and `FinalPassword` are script labels that mark where a CG appears. They are not shown in the game interface.
 
-- The tables list the earliest display location by story date in the normal flow. When several routes or branches show the image on the same day, only one earliest representative location is listed.
-- “Context” reproduces nearby script text before and after the first display to help identify the scene. It does not necessarily list every prerequisite needed to enter that branch.
+- The listed dates and locations identify the scene, not every prerequisite for entering that branch.
+- “Context” shows nearby story text to help confirm the scene.
 - Script speaker abbreviations include: `mc` = Dave, `bear` = Dean, `wolf` = Tyson, `boar` = Roswell, `dragon` = Orlando, `lion` = Hoss, `croc` = Sal, `oz` = Oswin, and `rat` = Thanatos.
 :::
 
@@ -107,7 +104,7 @@ Names such as `Day10Morning2`, `Day11ABMeeting`, and `FinalPassword` are script 
 
 ## CG unlock trigger index {#cg-unlock-index}
 
-The Memories and Trauma tables above identify each Gallery coordinate and CG file ID. Because those file IDs are not visible during normal play, this section lists the earliest normal display location and nearby story text for every registered image.
+The index below lists each registered image by character, with its CG ID, an early normal appearance, and nearby story text so you can trace a Gallery slot back to the matching scene.
 
 :::: {#gallery-trigger-index .callout-note collapse="true"}
 
@@ -313,7 +310,7 @@ The following image IDs are defined or displayed by the b0.85 scripts but are no
 
 
 ::: {.callout-warning}
-## Technical caveat for `davedead6`
+## If `davedead6` is still missing
 
 In b0.85, this slot may not refresh as expected. If Trauma row 7, column 4 remains locked after the listed D24 scene, restart the game and compare the slot with the displayed completion number.
 :::

@@ -64,22 +64,22 @@ For the exact entry conditions and route-specific exceptions, see [Lettered Path
 
 ## Why the displayed Path can lag behind the story state
 
-The Path shown in a save slot reflects the Path assigned at that point in the story. It does not reveal the outcome of hidden events before the story reaches the corresponding update.
+The Path shown in a save slot changes only when the game updates it. It does not reveal an outcome before Dave learns what happened.
 
 For example:
 
-1. Choosing **Reveal Oz** on D8 starts the state chain that causes Oswin to die.
+1. Choosing **Reveal Oz** on D8 already locks in Oswin's early death.
 2. Passing the D10 password check still sets the current Path to A at that point.
-3. During D11, saves made before Dave discovers Oswin's body can therefore still display `Path A`.
+3. During D11, saves made before Dave discovers Oswin's body can still display `Path A`.
 4. When the body is discovered on D11 night, the game changes the current Path to B immediately.
 5. Saves made after that scene already display `Path B`; the D12 day-transition screen is simply the next new-day display to show B.
 
-A temporarily unexpected Path label does not necessarily mean that the player chose the wrong option. The displayed value may be waiting for Dave to learn information that the underlying story state has already determined.
+An unexpected Path label does not necessarily mean that the player took a wrong turn. The outcome may already be locked in, while the save label waits until Dave learns what happened.
 
 ::: {.callout-note}
 ## Sal Route display quirk
 
-After giving up on the D10 password during the Sal Route, the save slot may temporarily display `Path C` even though the story follows the shared Path A/B sequence. This is a b0.85 (and earlier versions) Path-state display inconsistency, not an actual diversion into the normal Path C storyline. For the exact mechanics, see [Lettered Path System](path-system.md).
+After giving up on the D10 password during the Sal Route, the save slot may temporarily display `Path C` even though the story follows the shared Path A/B sequence. This is a display quirk in b0.85 and earlier versions: the label says `Path C` for a while, but the run never enters the normal Path C story. For the exact mechanics, see [Lettered Path System](path-system.md).
 :::
 
 ## How the two systems divide the story
@@ -95,7 +95,7 @@ The lettered Paths increasingly organize the major survival and timeline outcome
 
 :::
 
-In practical terms, two players can share the same lettered Path while seeing different character-route scenes, and two runs on the same character route can still diverge into different lettered Paths.
+Two players can share the same lettered Path while seeing different character-route scenes, and two runs on the same character route can still diverge into different lettered Paths.
 
 ## Related guide
 

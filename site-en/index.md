@@ -1,6 +1,6 @@
 ---
 title: "Password b0.85 Guide"
-description: "An unofficial b0.85 reference guide with a source-checked b0.7 comparison archive."
+description: "An unofficial Password b0.85 guide to Routes, Paths, passwords, collectibles, mechanics, and the b0.7–b0.85 comparison archive."
 comments: false
 toc: false
 ---
@@ -75,14 +75,14 @@ Explore optional Vault inputs, coffee-cup names, hidden drivers, and other Easte
 
 ## Version Archives
 
-These pages compare b0.7 with b0.85. They are historical references rather than walkthrough instructions for the current build.
+These pages compare b0.7 with b0.85.
 
 :::: {.grid}
 
 ::: {.g-col-12 .g-col-md-6}
 ### [Major Changes in b0.85](versions/b085-changes.md)
 
-Read a verified overview of major feature, interaction, Gallery, and asset changes between b0.7 and b0.85.
+Read an overview of major feature, interaction, Gallery, and asset changes between b0.7 and b0.85.
 :::
 
 ::: {.g-col-12 .g-col-md-6}
@@ -115,6 +115,6 @@ Explore the Path A first-run gate, b0.85 replay access, the retired Oswin questi
 
 This site is centered on *Password* b0.85. The current guide pages cover its character Routes, lettered Paths, password checks, collectibles, Gallery, Compendium, and mechanics.
 
-The Version Archives compare the examined b0.7 and b0.85 builds. They are not an official changelog, do not treat historical mechanics as current walkthrough steps, and this site cannot ensure that every build earlier than b0.7 used the same implementation.
+Use the main guide, not the Version Archives, for current b0.85 walkthrough instructions.
 
 The site is spoiler-heavy, unofficial, and not affiliated with the developer.

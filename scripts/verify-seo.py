@@ -23,7 +23,7 @@ ZH_SITE_NAME = "Password b0.85 中文攻略与机制资料库"
 EN_SITE_NAME = "Password b0.85 Guide"
 ZH_HOME_TITLE = "Password b0.85 中文攻略"
 EN_HOME_TITLE = "Password b0.85 Guide"
-EN_HOME_DESCRIPTION = "An unofficial b0.85 reference guide with a source-checked b0.7 comparison archive."
+EN_HOME_DESCRIPTION = "An unofficial Password b0.85 guide to Routes, Paths, passwords, collectibles, mechanics, and the b0.7–b0.85 comparison archive."
 PAIRED = {
     "index.html",
     "guide/route-overview.html",

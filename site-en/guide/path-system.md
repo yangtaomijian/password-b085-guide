@@ -4,21 +4,17 @@ description: "How Path A–G and Path P branch in Password b0.85"
 toc: true
 ---
 
-Character routes and lettered Paths are separate but interacting systems. This page focuses on the conditions that lead to Path A–G and Path P.
+Character routes and lettered Paths are separate but interacting systems. The conditions for Path A–G and Path P are covered below; earlier Route-specific bad endings are not listed.
 
 For the broader distinction between the two systems, see [Route and Path Overview](route-overview.md).
 
 ::: {.callout-warning}
 ## Path spoilers
 
-This page explains how to reach Path A–G and Path P. It does not reveal any password answers.
+The entry conditions below reveal major route outcomes, but not the password answers.
 :::
-
-::: {.callout-note}
-This page does not catalogue every bad ending. Character-route-specific bad endings that occur before the lettered Path split are outside its scope.
 
 Before the normal Path A–D split, missing an earlier vault requirement can lead to `BAD END: BENSON` on D8. This is a separate failure, not one of the lettered Paths.
-:::
 
 ## Base split: Path A–D
 
@@ -33,14 +29,14 @@ Outside the Sal Route, the normal mapping is:
 | **Support Benson** | Keep Oswin hidden | Failed | Path C |
 | **Reveal Oz** | Reveal Oswin to the group | Failed | Path D |
 
-In practical terms:
+The split works like this:
 
 - Path A and Path C come from the side where Oswin does not die early.
 - Path B and Path D come from the side where Oswin dies early.
 - Passing the D10 check keeps the run in the shared Path A/B story.
 - Failing the D10 check normally moves a non-Sal run into the Path C/D story.
 
-The D8 choice does not immediately display a new Path. The D8 choice does not immediately change the displayed Path. It sets a story condition that is evaluated later.
+The D8 choice does not immediately change the displayed Path; the game applies that choice later.
 
 ### Sal Route exception
 
@@ -116,9 +112,7 @@ Both route exceptions prevent the normal Path diversion after a failed password 
 
 :::
 
-The Sal Route may temporarily display `Path C` after a failed D10 check, but this is a Path-state display inconsistency. The run does not enter the actual Path C/D story or reach the C/D/E ending system.
-
-From a player's perspective, both are route exceptions to the normal consequences of password failure. The Sal exception takes effect immediately and may leave the displayed Path temporarily out of sync with the story, while the Tyson exception takes effect on D19 and leaves the displayed Path unchanged.
+Neither exception turns a failed password check into a success, so success-only dialogue or Gallery content can still be missed.
 </details>
 
 ## Path P

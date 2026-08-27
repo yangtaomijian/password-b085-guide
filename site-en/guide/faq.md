@@ -4,8 +4,6 @@ description: "Quick answers about Routes, Paths, passwords, medals, Gallery entr
 toc: true
 ---
 
-This page gives short answers to common Password b0.85 questions. Follow the linked guides when you need full conditions or collection routes.
-
 ::: {.callout-note}
 This site documents **Password b0.85**. Routes, passwords, CGs, and story entry points may differ in other versions.
 :::
@@ -32,11 +30,11 @@ The Sal Route can also display `Path C` briefly after a failed D10 check even th
 
 ### Why can the save-slot survival icons disagree with the story?
 
-In b0.85, the survival icons read a snapshot written when that slot is created or overwritten. They are not recalculated from later progress, so older slots do not update as another save continues. Only Dean, Tyson, Orlando, Sal, Roswell, and Hoss are shown on D1–D6; Benson appears on D7–D9, and Oswin appears from D10 onward.
+A save slot keeps the survival icons from the moment it is created or overwritten, so older slots do not update as the player continues elsewhere. Only Dean, Tyson, Orlando, Sal, Roswell, and Hoss are shown on D1–D6; Benson appears on D7–D9, and Oswin appears from D10 onward.
 
-Most main-story deaths are recorded when Dave confirms what happened, so Oswin temporarily appearing alive on D10 can be a narrative delay rather than a bug. The source also contains genuine missing state writes: saves made during the character-specific Bad Endings, late Path F, or one Path E ending may still show dead characters as alive.
+Most main-story deaths update the icons after Dave confirms what happened, so Oswin temporarily appearing alive on D10 can be a normal narrative delay. A few endings in b0.85 also fail to update the icons correctly: saves made during the character-specific Bad Endings, late Path F, or one Path E ending may still show dead characters as alive.
 
-These issues affect only the save-slot icons and do not change the story, lettered Path, or ending outcome.
+This affects the save display only, not the story, lettered Path, or ending.
 
 ## Passwords
 
