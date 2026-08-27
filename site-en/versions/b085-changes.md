@@ -4,14 +4,14 @@ description: "Feature, story-interaction, password, Gallery, and asset changes b
 toc: true
 ---
 
-This page summarizes major player-facing differences between *Password* b0.7 and b0.85.
+If you are moving from an older guide to b0.85, start here for the changes that directly affect play and collection progress.
 
 Detailed legacy passwords, mechanics, and routes have their own archive pages.
 
 ::: {.callout-important}
 ## Comparison scope
 
-This page compares **b0.7 with b0.85**, using the two builds and their relevant image assets. Its findings should not be extended to every earlier build. It covers changes to normal story access, player choices, passwords, persistent unlocks, Gallery structure, and substantial visible content; minor wording edits, code refactors, debug files, and ordinary dialogue polish are omitted.
+The comparison below is limited to **b0.7 and b0.85** and should not be applied to every earlier build. It focuses on normal story access, player choices, passwords, profile-wide unlocks, the Compendium, Gallery structure, replays, and other noticeable story interactions.
 :::
 
 ## Changes at a glance
@@ -39,7 +39,7 @@ b0.85 introduces the modern player-accessible Compendium with three sections:
 - **ADDITIONAL SCENES**
 - **LORE**
 
-The older b0.7 source contains an unfinished, normally inaccessible hub with a similar internal name, but it is not equivalent to the current Compendium.
+Normal b0.7 play has no feature equivalent to the current Compendium. An unfinished menu stub that cannot be opened normally does not provide the same collection interface.
 
 ### Lore and medal tracking
 
@@ -205,7 +205,7 @@ persistent.true_end = True
 
 The explicit `true_end` state supports the modern Compendium and the Epilogue unlock chain.
 
-The source does not display a formal `PATH P: END` heading and does not formally define `P` as a full word.
+The game does not display a formal `PATH P: END` heading or define `P` as a full word.
 
 ## Gallery registration: 104 to 100
 
@@ -225,7 +225,7 @@ The exact cause is:
 
 The three flashlight images remain available through their Misc registrations. Their removal from the Dave list eliminates duplicate buttons rather than deleting the images.
 
-`deanlove` remains defined in b0.85 source but no longer has a normal story call or Gallery registration. Its only surviving display call is in an unreachable debug-style CG dump.
+`deanlove` is not part of the b0.85 Gallery and does not appear during normal play.
 
 The four older Dean adult CGs are **not** the reason for the 104-to-100 change. They were excluded from the Gallery registration arrays in both builds.
 
@@ -264,7 +264,7 @@ A visible b0.85 change is the survivor display: generic status boxes are replace
 
 The Route portrait still represents the D4 character Route rather than the current lettered Path.
 
-## Smaller confirmed changes
+## Other changes
 
 ### Tyson's `Stripes` nickname
 
@@ -283,7 +283,7 @@ Before calling `renpy.quit`, the b0.85 script additionally sets the following va
 
 The b0.7 implementation calls the quit action without those assignments.
 
-This behavior is primarily documented with the current Easter eggs because it can affect ending-completion records.
+See [Easter Eggs and Hidden Inputs](../extras/easter-eggs.md) for the full instructions. This input can affect ending-completion records.
 
 ## Recognizing an older guide
 

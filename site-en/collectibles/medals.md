@@ -252,7 +252,7 @@ The twelve-medal check is not continuously active. If Path A was completed befor
 
 ## Why can the Compendium date differ from the discovery date?
 
-Compendium medal dates are manually authored hints rather than dates generated from one consistent event.
+Compendium medal dates are clues; they do not consistently mark first discovery, name confirmation, or permanent unlock.
 
 - Aquarius uses the D4 story-discovery date even though its persistent flag is written on D16.
 - Taurus uses D16 even though the medal first appears on D7.

@@ -444,7 +444,7 @@
     <section class="gallery-locator" aria-labelledby="gallery-locator-title">
       <header class="gallery-locator-header">
         <h2 id="gallery-locator-title">CG 画廊定位器</h2>
-        <p>可按游戏内页签、行列位置定位，也可搜索 CG 名称、触发节点、上下文或分类。</p>
+        <p>可按游戏内页签和行列定位，也可搜索 CG 名称、日期、剧情线索或角色分类。</p>
         <p class="gallery-locator-count">已载入 100 张画廊 CG</p>
       </header>
 
@@ -478,12 +478,12 @@
 
       <fieldset class="gallery-locator-section gallery-locator-search">
         <legend>画廊搜索</legend>
-        <label for="gallery-locator-query">搜索 CG 名称、触发位置、上下文、分类或行列</label>
+        <label for="gallery-locator-query">搜索 CG 名称、日期、剧情线索、角色分类或行列</label>
         <div class="gallery-locator-search-row">
           <input
             id="gallery-locator-query"
             type="search"
-            placeholder="例如：HossLibraryDiscovery、Memories 第6行第4列"
+            placeholder="例如：Hoss、D8、Memories 第6行第4列"
             autocomplete="off"
           >
           <button type="button" id="gallery-locator-clear">清除</button>
@@ -592,7 +592,7 @@
           : "不在画廊"
       ),
       createDetailField("分类", record.category),
-      createDetailField("最早正常触发位置", record.triggerText)
+      createDetailField("最早出现", record.triggerText)
     ];
 
     if (!record.inGallery && record.triggerCodes.length > 0) {
@@ -606,7 +606,7 @@
 
     detailFields.push(
       createDetailField(
-        "游戏内上下文",
+        "剧情线索",
         record.context,
         "gallery-detail-context"
       )
@@ -787,7 +787,7 @@
       includesQuery(record.metadata) ||
       includesQuery(record.date)
     ) {
-      return `匹配字段：触发位置 · ${record.triggerText}`;
+      return `匹配字段：出现日期 · ${record.triggerText}`;
     }
 
     if (includesQuery(record.category)) {
@@ -795,7 +795,7 @@
     }
 
     if (includesQuery(record.context)) {
-      return "匹配字段：游戏内上下文";
+      return "匹配字段：剧情线索";
     }
 
     if (!record.inGallery) {
@@ -836,7 +836,7 @@
 
       const trigger = document.createElement("span");
       trigger.className = "gallery-result-trigger";
-      trigger.textContent = `最早正常触发位置：${record.triggerText}`;
+      trigger.textContent = `最早出现：${record.triggerText}`;
 
       const context = document.createElement("span");
       context.className = "gallery-result-context";

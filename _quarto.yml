@@ -97,9 +97,9 @@ website:
           - href: collectibles/medals.md
             text: 十二枚奖牌
           - href: collectibles/gallery.md
-            text: CG Gallery 查漏索引
+            text: CG 画廊查漏索引
           - href: collectibles/compendium.md
-            text: Compendium
+            text: 后记
 
       - text: 机制
         menu:
@@ -152,9 +152,9 @@ website:
           - href: collectibles/medals.md
             text: 十二枚奖牌收集指南
           - href: collectibles/gallery.md
-            text: CG Gallery 查漏索引
+            text: CG 画廊查漏索引
           - href: collectibles/compendium.md
-            text: Compendium 解锁索引
+            text: 后记解锁索引
 
       - section: "底层机制"
         contents:

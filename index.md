@@ -1,16 +1,16 @@
 ---
 title: "Password b0.85 中文攻略"
-description: "《Password》b0.85 的剧情线路、密码提示、奖牌、CG、Compendium 与底层机制整理"
+description: "《Password》b0.85 的剧情线路、密码提示、奖牌、CG、后记与底层机制整理"
 comments: false
 toc: false
 ---
 
-本站是一份面向《Password》玩家的非官方 b0.85 中文攻略与机制资料库，可用于梳理角色线与字母线、获得密码提示、收集奖牌与 Gallery 图片、解锁 Compendium，并查询好感度和其他机制。
+本站是一份面向《Password》玩家的非官方 b0.85 中文攻略与机制资料库，可用于梳理角色线与字母线、获得密码提示、收集奖牌与画廊图片、解锁后记，并查询好感度和其他机制。
 
 ::: {.callout-warning}
 ## 剧透预警
 
-本站涉及剧情线路、Bad Ending、奖牌、CG、Compendium 条目和结局条件。
+本站涉及剧情线路、坏结局、奖牌、CG、后记条目和结局条件。
 
 希望自行体验剧情的玩家，建议完成相应章节后再阅读。只在密码或路线处卡关时，可优先查看低剧透提示和常见问题页面。
 :::
@@ -66,11 +66,11 @@ toc: false
 
 ### 收集
 
-追踪十二枚奖牌、Compendium 条目和 Gallery 中登记的 100 张图片。
+追踪十二枚奖牌、后记条目和画廊中登记的 100 张图片。
 
 - [十二枚奖牌收集指南](collectibles/medals.md)
-- [Compendium 解锁索引](collectibles/compendium.md)
-- [CG Gallery 查漏索引](collectibles/gallery.md)
+- [后记解锁索引](collectibles/compendium.md)
+- [CG 画廊查漏索引](collectibles/gallery.md)
 
 ### 机制
 
@@ -129,7 +129,7 @@ Password b0.7 中 Path A 的持久状态、D8 Oswin 自由问答，以及后来�
 
 本站的现行攻略适用于 **Password b0.85**。
 
-本站为非官方玩家整理，不隶属于游戏作者 Grizz 或发行平台，也不是完整 Wiki；本站不提供游戏本体、完整游戏脚本、提取后的 CG 文件或未经授权的第三方素材。
+本站为非官方玩家整理，不隶属于游戏作者 Grizz 或发行平台，也不是完整百科；本站不提供游戏本体、完整游戏脚本、提取后的 CG 文件或未经授权的第三方素材。
 
 ## 本站资料来源
 

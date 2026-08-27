@@ -4,14 +4,14 @@ description: "Password b0.7 与 b0.85 之间的功能、剧情互动、密码、
 toc: true
 ---
 
-本页汇总 *Password* b0.7 与 b0.85 之间主要的玩家可感知变化。
+想从旧攻略切换到 b0.85，可以先从这里查看会直接影响游玩和收集的主要变化。
 
 旧密码、旧机制和旧线路另有独立档案。
 
 ::: {.callout-important}
 ## 比较范围
 
-本页只比较 **b0.7 与 b0.85**，依据两版源码和相关图片资源整理，不能据此推断所有更早版本。这里收录会影响正常剧情、玩家选择、密码、persistent、图鉴、Gallery、回放或明显剧情互动的变化，不展开普通台词润色、代码重构、调试文件和无玩家影响的残留。
+以下内容只比较 **b0.7 与 b0.85**，不能直接套用到所有更早版本。重点包括正常剧情入口、玩家选择、密码、跨存档解锁、后记、画廊、回放和较明显的剧情互动变化。
 :::
 
 ## 主要变化一览
@@ -19,59 +19,59 @@ toc: true
 ::: {.table-responsive}
 | 领域 | b0.85 的主要变化 |
 |---|---|
-| 图鉴 | 新增现代 Cast Files、Additional Scenes 与 Lore 界面 |
-| 追加内容 | 新增七段按顺序解锁的 Epilogue |
-| 旧线路分支 | 删除 D6 离开宅邸的 Bad Ending |
+| 后记 | 新增角色档案、追加场景与背景资料界面 |
+| 追加内容 | 新增七段按顺序解锁的后日谈 |
+| 旧线路分支 | 删除 D6 离开宅邸的坏结局 |
 | 密码系统 | 移除两个 D7 旧替代输入和完整 D11 可选金库流程 |
 | D8 互动 | 用固定对白替代 Oswin 自由文字问答 |
 | Dean 相关剧情 | 将多段依赖菜单的互动改写为固定流程 |
 | Dean 关系判定 | 修改 D19 门槛，并删除旧中间区间的玩家确认 |
-| Path P | 新增强制输入与明确的 true-ending persistent |
+| Path P | 新增强制输入与明确的真结局跨存档标记 |
 | 画廊 | 注册槽位从 104 减少到 100 |
 | CG 资源 | 重绘两张 Tyson CG，并删除四张旧 Dean 成人 CG 文件 |
 :::
 
-## 现代图鉴
+## 现代后记
 
-b0.85 新增了正常可访问的现代图鉴，包含三个栏目：
+b0.85 新增了正常可访问的现代后记，包含三个栏目：
 
-- **CAST FILES**
-- **ADDITIONAL SCENES**
-- **LORE**
+- **CAST FILES（角色档案）**
+- **ADDITIONAL SCENES（追加场景）**
+- **LORE（背景资料）**
 
-b0.7 源码中虽然存在一个名称相近、未完成且正常流程不可访问的旧 hub，但它并不等同于当前图鉴。
+b0.7 正常游玩中没有与当前后记对等的功能。一个无法正常打开的旧菜单雏形也不能替代现在的收集界面。
 
-### Lore 与奖牌状态
+### 背景资料与奖牌状态
 
-Lore 栏目中的十二个星座条目，会分别读取十二枚奖牌对应的 persistent 状态。
+背景资料栏目的十二个星座条目，会分别读取十二枚奖牌对应的跨存档状态。
 
-这使玩家可以在尝试 Path P 前，通过图鉴直接判断还有哪些奖牌相关 Lore 没有解锁。
+这使玩家可以在尝试 Path P 前，通过后记直接判断还有哪些奖牌背景资料没有解锁。
 
 具体条件见：
 
-- [图鉴解锁索引](../collectibles/compendium.md)
+- [后记解锁索引](../collectibles/compendium.md)
 - [十二枚奖牌收集攻略](../collectibles/medals.md)
 
-### Additional Scenes
+### 追加场景
 
 b0.85 为 Path A 第一次完整流程中的两个片段增加了回放入口：
 
 - `Dave's Demise`
 - `Roswell's Attempt`
 
-两项都使用 `persistent.Day23APrime` 作为解锁条件。正常剧情中原有的首次流程 gate 仍然存在；b0.85 新增的是独立回放入口，而不是重新创造这两段剧情。
+两项都使用 `persistent.Day23APrime` 作为解锁条件。正常剧情中原有的首次流程入口条件仍然存在；b0.85 新增的是独立回放入口，而不是重新创造这两段剧情。
 
 完整时序见[旧版本机制档案](legacy-mechanics.md)。
 
-## 七段 Epilogue
+## 七段后日谈
 
-b0.85 在 Additional Scenes 中新增七段 Epilogue。
+b0.85 在追加场景中新增七段后日谈。
 
 第一段会在 true ending 被记录后解锁，之后每完成一段再解锁下一段，形成固定的回放链。
 
-它们不是 Path P 正常流程中自动连续播放的后续章节，而是独立的 Additional Scenes 条目。
+它们不是 Path P 正常流程中自动连续播放的后续章节，而是独立的追加场景条目。
 
-当前顺序与解锁状态见[图鉴解锁索引](../collectibles/compendium.md)。
+当前顺序与解锁状态见[后记解锁索引](../collectibles/compendium.md)。
 
 ## 已删除或替换的旧机制
 
@@ -84,7 +84,7 @@ Stay.
 Leave.
 ```
 
-选择 `Leave.` 会进入终止周目的：`BAD END: OZ`。而 b0.85 删除了正常可达的选择菜单和对应 Bad Ending 剧本。
+选择 `Leave.` 会进入终止周目的：`BAD END: OZ`。而 b0.85 删除了正常可达的选择菜单和对应坏结局剧本。
 
 详见[旧版本线路档案](legacy-routes.md)。
 
@@ -114,7 +114,7 @@ b0.7 在之后符合条件的 A/B 侧流程中，可以开放一个非强制 D11
 
 成功输入 `METEMPSYCHOSIS` 会改变实验室和之后若干条件对白，但不会改变角色线、字母线或结局。
 
-b0.85 删除了正常入口和完整成功实现，只留下密码字符串、处理 label、变量和部分后续读取。
+b0.85 删除了正常入口和完整成功实现，只留下密码字符串、处理脚本标签、变量和部分后续读取。
 
 详见[旧版本密码档案](legacy-passwords.md)。
 
@@ -153,7 +153,7 @@ b0.85 删除该菜单和 Tyson 分支，固定进入 Dean 的宅邸介绍流程�
 
 已经确认的例子包括：
 
-- **D4：** Dean 与 Sal 冲突中的玩家选择，以及 Dean Route 的 first-aid 分支被删除；
+- **D4：** Dean 与 Sal 冲突中的玩家选择，以及 Dean 线的急救分支被删除；
 - **D5：** 初次见面回忆从多个小选择改为线性叙述；
 - **D6：** 蘑菇问答与迷路后的等待／寻找选择被删除；
 - **D9：** kiss／change-subject 菜单被删除；
@@ -188,7 +188,7 @@ Path P 的核心入口结构在 b0.7 中已经存在：
 
 ```text
 PATH A: END
-→ 检查十二个 persistent 奖牌标记
+→ 检查十二个跨存档奖牌标记
 → currentPath = "P"
 → 进入最终流程
 ```
@@ -201,7 +201,7 @@ b0.85 在 Path P 中新增一次独立自由文字输入。
 
 答案会在此前对白中直接给出定义，错误输入会循环返回输入框。
 
-b0.7 在同一阶段没有对应的玩家输入 label。
+b0.7 在同一阶段没有对应的玩家输入脚本标签。
 
 当前提示见[密码分级提示](../guide/password-hints.md)。
 
@@ -211,7 +211,7 @@ b0.7 中，由 Florencia 操作金库键盘，之后 Oswin 再进一步打开金
 
 b0.85 中，Dave 完成新增输入，并亲自触发开启互动。因此，金库键盘操作者从 **Florencia 改为 Dave**。
 
-### True-ending persistent
+### 真结局跨存档标记
 
 b0.85 在最终结尾附近写入：
 
@@ -220,31 +220,31 @@ persistent.FirstEnding = True
 persistent.true_end = True
 ```
 
-其中明确的 `true_end` 状态会被现代图鉴和 Epilogue 解锁链使用。
+其中明确的 `true_end` 状态会被现代后记和后日谈解锁链使用。
 
-源码没有显示正式的 `PATH P: END` 标题，也没有正式把字母 `P` 展开为某个完整单词。
+游戏中没有正式显示 `PATH P: END` 标题，也没有把字母 `P` 展开为某个完整单词。
 
 ## 画廊注册：104 减少到 100
 
-b0.7 的脚本注册了 104 个 Gallery 槽位，b0.85 则注册 100 个。
+b0.7 的脚本注册了 104 个画廊槽位，b0.85 则注册 100 个。
 
 准确原因是：
 
 ::: {.gallery-registration-change-table .table-responsive .table-scroll-compact}
 | 注册变化 | 槽位变化 |
 |---|---:|
-| `deanlove` 从正常 Dean Gallery 列表中移除 | −1 |
+| `deanlove` 从正常 Dean 画廊列表中移除 | −1 |
 | `daveflashlight1` 从 Dave 列表移除，但仍保留在 Misc | −1 个重复槽位 |
 | `daveflashlight2` 从 Dave 列表移除，但仍保留在 Misc | −1 个重复槽位 |
 | `daveflashlight3` 从 Dave 列表移除，但仍保留在 Misc | −1 个重复槽位 |
 | **合计** | **−4** |
 :::
 
-三张 flashlight 图片仍可通过 Misc 注册解锁。它们从 Dave 列表中移除，只是删除重复按钮，并不是删除图片。
+三张 flashlight 图片仍可通过 Misc（其他）分类注册解锁。它们从 Dave 列表中移除，只是删除重复按钮，并不是删除图片。
 
-`deanlove` 的 image definition 在 b0.85 仍然存在，但已经没有正常剧情调用，也不再注册为 Gallery 条目。唯一保留的显示调用位于不可正常进入的 CG dump 中。
+`deanlove` 不在 b0.85 的画廊中，正常剧情也不会显示这张图片。
 
-四张旧 Dean 成人 CG **不是** 画廊从 104 减少到 100 的原因。它们在两个版本中都没有被注册进正常 Gallery 数组。
+四张旧 Dean 成人 CG **不是** 画廊从 104 减少到 100 的原因。它们在两个版本中都没有被注册进正常画廊数组。
 
 当前 100 格结构见[CG 画廊查漏索引](../collectibles/gallery.md)。
 
@@ -257,7 +257,7 @@ b0.7 的脚本注册了 104 个 Gallery 槽位，b0.85 则注册 100 个。
 - `tysondrive`
 - `tysonmovie`
 
-新版改变了整体构图、人物位置、镜头距离、背景处理和线稿与上色方式。其中 driving CG 会出现在若干 D5/D6 Bad Ending 后续场景；movie CG 位于 Tyson Route 的 D6。
+新版改变了整体构图、人物位置、镜头距离、背景处理和线稿与上色方式。其中驾车 CG 会出现在若干 D5/D6 坏结局后续场景；观影 CG 位于 Tyson 线的 D6。
 
 ### 四张旧 Dean 成人 CG
 
@@ -266,10 +266,10 @@ b0.7 的 `images/CG` 资源中存在四张旧 Dean 成人 CG，并且它们在 D
 b0.85 中：
 
 - 正常剧情调用被删除；
-- 对应 image definitions 被删除；
+- 对应图片定义被删除；
 - 实际 PNG 文件也已从游戏资源中移除。
 
-尽管这些图片在 b0.7 的正常剧情中使用，它们在两个版本中都没有计入 Gallery 总数。
+尽管这些图片在 b0.7 的正常剧情中使用，它们在两个版本中都没有计入画廊总数。
 
 ## 存档界面
 
@@ -282,7 +282,7 @@ b0.85 可以确认的可见变化，是存活状态显示：
 
 存档槽头像仍然表示 D4 选择的角色线，而不是当前字母线。
 
-## 其他已确认变化
+## 其他变化
 
 ### Tyson 的 `Stripes` 称呼
 
@@ -297,11 +297,11 @@ D1 彩蛋输入 `THE END` 在两个版本中都会退出游戏。
 b0.85 在调用 `renpy.quit` 前，还会把以下状态赋值为 `False`：
 
 - `persistent.true_end`；
-- Path A–G 对应的 persistent ending 标记。
+- Path A–G 对应的跨存档结局标记。
 
 b0.7 会直接调用退出，不包含这些赋值。
 
-该行为主要记录在当前[彩蛋与隐藏输入](../extras/easter-eggs.md)中，因为它可能影响结局完成记录。
+完整使用说明见[彩蛋与隐藏输入](../extras/easter-eggs.md)。这个输入可能影响结局完成记录。
 
 ## 如何识别旧版攻略
 
@@ -314,17 +314,17 @@ b0.7 会直接调用退出，不包含这些赋值。
 - D11 再次进入金库并输入 `METEMPSYCHOSIS`；
 - D11 选择谁接受注射；
 - 在 `bearlove` 为 10–19 时自行决定是否与 Dean 建立关系；
-- 解锁一个 104 格 Gallery；
+- 解锁一个 104 格画廊；
 
 那么它很可能描述的是 b0.7，而不是 b0.85。
 
-当前路线、密码、图鉴和收集要求请以 b0.85 页面为准。
+当前路线、密码、后记和收集要求请以 b0.85 页面为准。
 
 ## 相关页面
 
 - [角色线与字母线总览](../guide/route-overview.md)
 - [密码分级提示](../guide/password-hints.md)
-- [图鉴解锁索引](../collectibles/compendium.md)
+- [后记解锁索引](../collectibles/compendium.md)
 - [旧版本线路档案](legacy-routes.md)
 - [旧版本密码档案](legacy-passwords.md)
 - [旧版本机制档案](legacy-mechanics.md)

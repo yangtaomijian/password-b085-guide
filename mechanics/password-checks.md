@@ -6,7 +6,7 @@ toc: true
 
 本页解释《Password》b0.85 中按日期运行的金库密码系统，但不会公开四次主要检定的答案。
 
-D1 至 D17 的大多数金库输入共用 `vaultInput` label。Path P 最终流程中的键盘输入使用独立的 `FinalPassword` label；D1 咖啡杯姓名也使用另一套区分大小写的输入逻辑。
+D1 至 D17 的大多数金库输入共用 `vaultInput` 脚本标签。Path P 最终流程中的键盘输入使用独立的 `FinalPassword` 脚本标签；D1 咖啡杯姓名也使用另一套区分大小写的输入逻辑。
 
 需要逐级解谜线索时，见[密码分级提示](../guide/password-hints.md)。
 
@@ -59,7 +59,7 @@ $ VaultPassword = VaultPassword.upper()
 
 ## 成功与失败结果
 
-成功进入某个 `vaultPasswordX` label 后，通常会设置该阶段的成功标记、显示警告或幻象，再返回主线。
+成功进入某个 `vaultPasswordX` 脚本标签后，通常会设置该阶段的成功标记、显示警告或幻象，再返回主线。
 
 但密码成功并不独立决定最终字母线。之后的角色线、角色生死和其他剧情检定仍可能改变结果，详见[字母线系统](../guide/path-system.md)。
 
@@ -108,7 +108,7 @@ D1 和 D3 属于可选彩蛋，不是推进主线所需的密码检定。其效�
 
 六条角色线都会到达 D4 的金库场景。
 
-D4 的成功 label 本身不会检查当前搭档是否为 Roswell，但由它设置的成功标记，之后只会被 Roswell 线的流程要求。
+D4 的成功脚本标签本身不会检查当前搭档是否为 Roswell，但由它设置的成功标记，之后只会被 Roswell 线的流程要求。
 
 ### D6
 
@@ -132,7 +132,7 @@ b0.85 中，D7 密码在 `passwordList` 内连续出现三次，索引分别为 
 
 由于 `passwordList.index()` 只返回第一次匹配的位置，正确输入 D7 密码后，程序会得到索引 8，并跳转到 `vaultPassword8`。
 
-三个 label 在脚本中连续排列：
+三个脚本标签连续排列：
 
 ```renpy
 label vaultPassword8:
@@ -143,7 +143,7 @@ label vaultPassword10:
     # D7 成功实现
 ```
 
-前两个 label 都没有正文，因此执行会自然继续到下一个 label。实际控制流是：
+前两个脚本标签都没有正文，因此执行会自然继续到下一个脚本标签。实际控制流是：
 
 ```text
 vaultPassword8
@@ -161,11 +161,11 @@ D11 仍保留：
 
 - 一个登记字符串；
 - 日期映射；
-- 失败处理 label；
+- 失败处理脚本标签；
 - 相关对白；
 - 之后会读取 D11 标记的剧情分支。
 
-但正常剧情不会在 D11 打开 `vaultInput`，与该字符串对应的 `vaultPassword12` 成功 label 也不存在。
+但正常剧情不会在 D11 打开 `vaultInput`，与该字符串对应的 `vaultPassword12` 成功脚本标签也不存在。
 
 因此，D11 在 b0.85 中没有可实际使用的密码。残留代码也不会影响四次主要密码检定。
 

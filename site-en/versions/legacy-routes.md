@@ -4,7 +4,7 @@ description: "Removed route branches and route-related differences between Passw
 toc: true
 ---
 
-This page records route-related differences between *Password* b0.7 and b0.85.
+If an older guide does not match the routes in b0.85, use this archive to check whether it describes a removed b0.7 branch.
 
 It covers route changes that affect normal story access, Bad Endings, or how older guides describe character Routes and lettered Paths. Passwords, replays, and broader story rewrites are covered in their own archives.
 
@@ -73,7 +73,7 @@ Both builds contain:
 - the later Path F/G split;
 - the transition from the Path A ending into Path P after the twelve-medal check.
 
-Path P should therefore not be described as a new b0.85 route.
+Path P already exists in b0.7; it is not a new b0.85 route.
 
 In both builds, the core transition is:
 

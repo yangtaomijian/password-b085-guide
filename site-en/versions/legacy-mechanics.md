@@ -166,7 +166,7 @@ The parser also gives priority to earlier branches. A broad earlier condition ca
 
 ## Conversation prompts to try
 
-The following prompts were checked against the b0.7 parser. They are historical examples only and cannot be entered through normal b0.85 gameplay.
+The following prompts work in b0.7. They are historical examples only and cannot be entered during normal b0.85 play.
 
 ### State-dependent rabbit response
 
@@ -181,7 +181,7 @@ Some prompts are intentionally abbreviated or grammatically unusual because thos
 <details>
 <summary><strong>Conversation prompts to try</strong></summary>
 
-The input box did not understand unrestricted natural language. It looked for groups of keywords, so the lines below are tested, player-friendly examples rather than the only possible wording.
+The input box did not understand unrestricted natural language. It looked for groups of keywords, so the lines below are reliable examples rather than the only possible wording.
 
 Capitalization does not matter. Type one prompt at a time, and keep spaces in phrases such as `hidden camera`.
 
@@ -217,7 +217,7 @@ Capitalization does not matter. Type one prompt at a time, and keep spaces in ph
 
 </div>
 
-Some subjects have more than one response, and a few answers depend on what Dave has already asked. The table is not exhaustive, but every listed line is intended as a practical prompt rather than a description of the parser's internal rules.
+Some subjects have more than one response, and a few answers depend on what Dave has already asked. The table is not exhaustive; other wording may work for some topics.
 
 </details>
 

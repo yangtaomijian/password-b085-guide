@@ -220,4 +220,4 @@ Check the following:
 5. For the first password group, are you using the word associated with your current character route?
 6. Have you mistaken a failed-timeline clue for something that should appear before the first attempt?
 
-When reporting an apparent mismatch, include your character route, current day, displayed Path, and most recent major choice.
+If the result still seems wrong, note your character Route, current day, displayed Path, and most recent major choice before comparing the steps again.

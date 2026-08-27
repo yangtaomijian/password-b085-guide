@@ -440,7 +440,7 @@
     <section class="gallery-locator" aria-labelledby="gallery-locator-title">
       <header class="gallery-locator-header">
         <h2 id="gallery-locator-title">CG Gallery Locator</h2>
-        <p>Locate a CG by its in-game tab and grid position, or search by CG ID, trigger, context, or category.</p>
+        <p>Locate a CG by its in-game tab and grid position, or search by CG ID, date, story clue, or character category.</p>
         <p class="gallery-locator-count">100 Gallery CGs loaded</p>
       </header>
 
@@ -474,12 +474,12 @@
 
       <fieldset class="gallery-locator-section gallery-locator-search">
         <legend>Search the Gallery</legend>
-        <label for="gallery-locator-query">Search by CG ID, trigger location, context, category, or grid position</label>
+        <label for="gallery-locator-query">Search by CG ID, date, story clue, character category, or grid position</label>
         <div class="gallery-locator-search-row">
           <input
             id="gallery-locator-query"
             type="search"
-            placeholder="For example: HossLibraryDiscovery or Memories row 6 column 4"
+            placeholder="For example: Hoss, D8, or Memories row 6 column 4"
             autocomplete="off"
           >
           <button type="button" id="gallery-locator-clear">Clear</button>
@@ -588,7 +588,7 @@
           : "Not in Gallery"
       ),
       createDetailField("Category", record.category),
-      createDetailField("Earliest normal trigger", record.triggerText)
+      createDetailField("Earliest appearance", record.triggerText)
     ];
 
     if (!record.inGallery && record.triggerCodes.length > 0) {
@@ -602,7 +602,7 @@
 
     detailFields.push(
       createDetailField(
-        "In-game context",
+        "Story clue",
         record.context,
         "gallery-detail-context"
       )
@@ -783,7 +783,7 @@
       includesQuery(record.metadata) ||
       includesQuery(record.date)
     ) {
-      return `Matched field: trigger location · ${record.triggerText}`;
+      return `Matched field: appearance date · ${record.triggerText}`;
     }
 
     if (includesQuery(record.category)) {
@@ -791,7 +791,7 @@
     }
 
     if (includesQuery(record.context)) {
-      return "Matched field: in-game context";
+      return "Matched field: story clue";
     }
 
     if (!record.inGallery) {
@@ -832,7 +832,7 @@
 
       const trigger = document.createElement("span");
       trigger.className = "gallery-result-trigger";
-      trigger.textContent = `Earliest normal trigger: ${record.triggerText}`;
+      trigger.textContent = `Earliest appearance: ${record.triggerText}`;
 
       const context = document.createElement("span");
       context.className = "gallery-result-context";
