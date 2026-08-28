@@ -52,12 +52,23 @@ def replace_title(path: Path) -> None:
         path.write_text(result, encoding="utf-8")
 
 
+def content_pages(site: Path) -> list[Path]:
+    return sorted(
+        path
+        for path in site.rglob("*.html")
+        if not (
+            path.parent == site
+            and path.match("google*.html")
+        )
+    )
+
+
 def main() -> None:
     if len(sys.argv) != 2:
         raise SystemExit("usage: normalize-seo-html.py SITE_DIR")
 
     site = Path(sys.argv[1])
-    pages = sorted(site.rglob("*.html"))
+    pages = content_pages(site)
     if len(pages) != EXPECTED_PAGES:
         raise ValueError(f"expected {EXPECTED_PAGES} HTML pages, found {len(pages)}")
     for path in pages:

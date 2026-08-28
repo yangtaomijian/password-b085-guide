@@ -133,6 +133,10 @@ def html_pages(root: Path) -> list[Path]:
         path
         for path in root.rglob("*.html")
         if "site_libs" not in path.parts
+        and not (
+            path.parent == SITE
+            and path.match("google*.html")
+        )
     )
 
 

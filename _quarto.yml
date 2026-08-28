@@ -1,6 +1,8 @@
 project:
   type: website
   output-dir: _site
+  resources:
+    - googlef0776754787f4a8e.html
   render:
     - index.md
     - guide/route-overview.md
