@@ -4,7 +4,7 @@ description: "Vault input rules, day restrictions, failure results, and Route ex
 toc: true
 ---
 
-Most Vault inputs in *Password* b0.85 follow the same rules. This page explains how entries are handled, what happens on different days, and the Route exceptions that are easy to misread, without revealing the four main answers.
+Most Vault inputs in *Password* b0.85 share the same input rules, but the result still varies by day and by a few Route exceptions that are easy to misread. The four main answers are not revealed here.
 
 The final Path P password and the D1 coffee-cup name use separate rules. For progressive clues, see [Tiered Password Hints](../guide/password-hints.md).
 

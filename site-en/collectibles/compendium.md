@@ -17,18 +17,18 @@ The b0.85 Compendium contains three fixed sections:
 
 :::
 
-The Compendium button appears on the **main menu** after the game has set its first-ending flag. It is not available from the normal in-game navigation menu.
+The Compendium button appears on the **main menu** after the first ending is completed. It is not available from the normal in-game navigation menu.
 
 Locked entries remain in their original positions and display `?????`, so a missing item can be identified by its section and list order.
 
 ::: {.callout-important}
 ## Unlocks are persistent, but the display can lag behind
 
-Cast Files, Additional Scenes, and Lore are all tied to persistent flags, but the Compendium does not refresh every unlock while the game remains open.
+Cast Files, Additional Scenes, and Lore remain unlocked permanently, but the Compendium does not refresh every new entry while the game remains open.
 
-A newly earned entry may remain `?????` even though its flag is already active. Simply closing and reopening the Compendium is not guaranteed to refresh it.
+A newly earned entry may therefore remain `?????` even after it has been saved. Simply closing and reopening the Compendium is not guaranteed to refresh it.
 
-Restart the game before treating a missing entry as a collection problem.
+If an entry still displays `?????`, restart the game before checking its collection requirements.
 :::
 
 ## Cast Files
@@ -121,7 +121,7 @@ The earliest unlock point is the Path D ending. Path C, E, and F do not unlock t
 <details>
 <summary><strong>Oswin is not listed</strong></summary>
 
-b0.85 has no visible Cast File entry for Oswin. Late Path A can record related progress, but it never adds another slot to the Compendium, so the visible total remains 16. This is not a missing collectible.
+b0.85 has no Cast File entry for Oswin. Even after the relevant late Path A scenes, no additional slot appears in the Compendium, so the visible total remains 16. This is not a missing collectible.
 </details>
 
 ## Additional Scenes
@@ -184,7 +184,7 @@ The game counts an Epilogue as completed only near the end of its replay.
 
 Using **End Replay** too early prevents the next scene from unlocking. Merely opening an Epilogue, or watching only part of it, is not enough to advance the chain.
 
-Even a fully completed Epilogue may not make the next scene appear until the game is restarted. Restart before replaying the previous scene solely because the next entry still displays `?????`.
+Even a fully completed Epilogue may not make the next scene appear until the game is restarted. If the next entry still displays `?????`, restart first; replay the previous Epilogue only if it remains locked afterward.
 
 ::: {.callout-warning}
 ## Epilogue chain stuck on `?????`
@@ -194,7 +194,7 @@ Check these points in order:
 1. Did the previous Epilogue reach its actual ending rather than exit through **End Replay**?
 2. For Dean through Hoss, is the corresponding Cast File unlocked?
 3. Has Tyson Epilogue been made available by completing Path P and unlocking Tyson's file?
-4. Has the game been restarted since the latest unlock or completion flag was earned?
+4. Has the game been restarted since the latest entry was unlocked or Epilogue was completed?
 5. Is the persistent data from an older installation or incomplete device transfer?
 :::
 
@@ -221,13 +221,13 @@ The Lore section contains the twelve zodiac entries in traditional order:
 
 :::
 
-Each Lore entry uses the corresponding medal flag. The final twelve-medal check after Path A counts the same twelve persistent flags.
+Each Lore entry uses the same saved record as its corresponding medal. The final twelve-medal check after Path A counts those same records.
 
 There is no separate Lore collection system and no additional per-medal Route or Path requirement in the Compendium definition.
 
-Lore may display an older locked state even when a newly earned medal already counts toward the Path P check. After restarting the game, a still-locked Lore entry is strong evidence that the corresponding medal flag has not been written.
+Lore may remain locked on screen even when a newly earned medal already counts toward the Path P check. If it is still locked after restarting the game, the medal was probably not formally recorded.
 
-For collection locations and an optimized route order, see [Twelve-Medal Collection Guide](medals.md). For the underlying state and refresh behavior, see [Medal Persistence and Final Check](../mechanics/medal-persistence.md).
+For collection locations and an optimized route order, see [Twelve-Medal Collection Guide](medals.md). For how medal progress is saved and refreshed, see [Medal Persistence and Final Check](../mechanics/medal-persistence.md).
 
 ## Related guides
 

@@ -167,7 +167,7 @@ The answer names a legendary human who transforms into a wolf-like creature, usu
 
 Failing this check on the Tyson Route does not ultimately divert the run into Path F/G. This protection occurs later and does not count as solving the D17 password.
 
-On D18, Tyson identifies the source of the high-frequency sound and then sleeps in Dave's room, preventing the D19 disaster. No extra affection threshold, romance state, survival flag, or additional choice is required.
+On D18, Tyson identifies the source of the high-frequency sound and then sleeps in Dave's room, preventing the D19 disaster. No extra affection threshold, romance status, character-survival requirement, or additional choice is needed.
 
 For the full branch logic, see [Lettered Path System](path-system.md).
 
@@ -210,7 +210,7 @@ A normal wrong answer does not immediately display **Resonate?**
 - D3 and D6 use **Try Another Password**.
 - D4, D7, D10, and D17 use **Try Again**.
 - The corresponding exit option is **Give up**.
-- **Resonate?** appears after certain bad endings or Path endpoints and sends the player back to an earlier password node.
+- **Resonate?** appears after certain Bad Endings or Path endpoints and sends the player back to an earlier password check.
 - The final Path P password automatically repeats after an incorrect answer and has no exit menu.
 
 ## Still stuck?

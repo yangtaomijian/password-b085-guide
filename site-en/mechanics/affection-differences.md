@@ -4,9 +4,9 @@ description: "How affection thresholds change dialogue, intimacy scenes, choices
 toc: true
 ---
 
-This page records the specific dialogue, story, and relationship differences produced by the six affection variables in Password b0.85.
+The six affection values in *Password* b0.85 change parts of the dialogue, story, and relationship outcomes.
 
-For the choices that award points and the complete point inventory, see [Affection System and Point Guide](affection.md).
+For every point-awarding choice and the full list of available points, see [Affection System and Point Guide](affection.md).
 
 ::: {.callout-important}
 ## Reading the tables
@@ -27,12 +27,12 @@ The tables cover differences caused by **affection checks**:
 
 | Check | Main story locations | Additional conditions | Dialogue or story effect |
 |---|---|---|---|
-| `dragonlove >= 5` | D6 after Orlando's dinner; D9 morning | D6 requires the Orlando Route and the successful D6 Vault state | On D6, Orlando proposes kissing practice under the pretext of helping Dave prepare for Dean, and `orlandokiss` is displayed. Below 5, the practice scene is skipped. On D9 morning, values from 5 through 9 use the more hesitant comfort scene: Orlando asks whether he can help, but remains unsure. |
+| `dragonlove >= 5` | D6 after Orlando's dinner; D9 morning | D6 requires the Orlando Route and a successful D6 Vault check | On D6, Orlando proposes kissing practice under the pretext of helping Dave prepare for Dean, and `orlandokiss` is displayed. Below 5, the practice scene is skipped. On D9 morning, values from 5 through 9 use the more hesitant comfort scene: Orlando asks whether he can help, but remains unsure. |
 | `dragonlove >= 7` | D6 kissing practice | The `>= 5` practice scene must already be active | After the first kiss, Dave actively pulls Orlando closer and kisses back. A follow-up choice appears; choosing `Yes.` awards another point. Below 7, the scene ends after the first practice kiss without Dave's more active response. |
 | `dragonlove >= 10` | D9 morning; D19 Orlando kitchen scene | D9 uses this comfort scene at 10 or more; D19 requires the Orlando Route and the failed Dean-date outcome that leads into the kitchen scene | On D9, Orlando recognizes that Dave is close to breaking down, touches his face, and presses him to say whether someone hurt him. On D19, values from 10 through 19 show `I love you too.` / `Stay quiet.`, allowing the player to accept or reject Orlando. |
 | `dragonlove >= 15` | D15 A/B dream; D16 A/B morning; D16 Orlando event | Orlando Route or the corresponding Orlando scene | In the D15 dream, Dave challenges Orlando for continually using Dean as an excuse and starts questioning whether he loves Orlando too. On D16 morning, Orlando's emotional distance is framed as genuinely painful. In the character event, Dave directly confronts Orlando for diverting every serious conversation back toward Dean. |
 | `dragonlove >= 18` | D10 night on the Orlando Route | Orlando Route | Both branches still contain a kiss. At 18 or more, Orlando touches Dave's face and initiates more directly, and Dave interprets it as an emotionally meaningful kiss. Below 18, Orlando first asks Dave to close his eyes and the moment is more hesitant and experimental. If `OrlandoKiss` is already set, the scene also refers back to the D6 practice kiss. |
-| `dragonlove >= 20` | D18 Orlando scene; two D19 Orlando scenes | The D18 variation also requires the successful D17 Vault state; D19 requires the relevant Orlando branches | On D18, Dave takes Orlando's hand, pulls him closer, and increases the physical intimacy of the scene. One D19 follow-up contains a small reciprocal-touch variation. In the later kitchen confession, Orlando explicitly says he loves Dave and the game automatically enters `OrlandoBoyfriend`. |
+| `dragonlove >= 20` | D18 Orlando scene; two D19 Orlando scenes | The D18 variation also requires a successful D17 Vault check; D19 requires the relevant Orlando branches | On D18, Dave takes Orlando's hand, pulls him closer, and increases the physical intimacy of the scene. One D19 follow-up contains a small reciprocal-touch variation. In the later kitchen confession, Orlando explicitly says he loves Dave and the game automatically enters `OrlandoBoyfriend`. |
 
 :::
 
@@ -57,8 +57,8 @@ The tables cover differences caused by **affection checks**:
 | `bearlove >= 5` | D5 Dean Route hot tub | Dean Route and the D5 `Romance` movie choice | Dean treats the movie choice as a possible signal from Dave, `deankiss` is displayed, and the later kiss-confirmation menu is reached. Below 5, the scene still contains flirting but not the formal kiss choice. The CG appears before the confirmation menu, so choosing `No` afterward does not prevent its Gallery unlock. |
 | `bearlove >= 10` | End of the D19 Dean date | Reach the Dean post-date branch | Dave says that he also looked forward to the date and frames his feelings as close to love, then continues into the relationship and intimate scene. Below 10, Dave concludes that the date did not create enough romantic chemistry. |
 | `bearlove >= 15` | D9 morning; D15 A/B dream; D16 A/B morning | Corresponding Dean scenes | On D9, Dean distinguishes casual sex from intimacy with someone important. In the D15 dream, Dave admits how strongly he likes Dean. On D16 morning, Dean's embrace is associated with safety, softness, and wanting to wake up that way regularly. |
-| `bearlove >= 17` | D10 night | Dean Route and the successful D10 Vault state | Dave realizes that his feelings may have grown beyond ordinary liking and thinks that the two of them will need a serious conversation. |
-| `bearlove >= 20` | D18 post-meeting Dean scene | Dean Route and the successful D17 Vault state | Dave changes `I appreciate it` into the more personal `I appreciate you`, explicitly anticipates the next day's date, and initiates a stronger kissing sequence before they stop to rest. |
+| `bearlove >= 17` | D10 night | Dean Route and a successful D10 Vault check | Dave realizes that his feelings may have grown beyond ordinary liking and thinks that the two of them will need a serious conversation. |
+| `bearlove >= 20` | D18 post-meeting Dean scene | Dean Route and a successful D17 Vault check | Dave changes `I appreciate it` into the more personal `I appreciate you`, explicitly anticipates the next day's date, and initiates a stronger kissing sequence before they stop to rest. |
 
 :::
 

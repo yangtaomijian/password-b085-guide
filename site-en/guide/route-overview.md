@@ -17,13 +17,13 @@ The diagram below combines the main timeline, character-route selection, key pas
 
 ![Password b0.85 route and Path map](../assets/route-map-b085-en.webp){width=100% fig-alt="Password b0.85 timeline showing character routes, password checks, lettered Paths, route exceptions, and major bad-ending branches"}
 
-The sections below summarize the same framework in text.
+For the exact requirements of each lettered Path, see [Lettered Path System](path-system.md).
 
 ## Character routes
 
 On D4, Dave chooses a partner for the medal-search competition. The player first selects a character name, then confirms the choice with **Yes.**
 
-Once confirmed, the selected character route remains fixed for the normal playthrough. Later **Resonate?** jumps return the player to earlier password or failure nodes without reopening the D4 partner selection or changing the route.
+Once confirmed, the selected character route remains fixed for the normal playthrough. Later **Resonate?** jumps can return the player to an earlier password check or failure scene, but they do not reopen the D4 partner selection or change the route.
 
 Character routes continue to affect:
 
@@ -54,17 +54,19 @@ The icon and tint identify the D4 character route saved in that slot; they do no
 
 The lettered system consists of Path A–G and Path P.
 
-The first major split occurs on D8, when the player chooses whether to reveal Oswin. Password checks and later survival states continue to reshape the run on D10, D17, and subsequent days.
+The first major split occurs on D8, when the player chooses **Support Benson** or **Reveal Oz**. Password checks and later survival outcomes continue to shape the story on D10, D17, and subsequent days.
 
 Unlike the character route, the current Path can change during the same playthrough. For example, a run can begin on the Path A side and later continue into Path P after the final medal check.
 
-Path changes are not limited to the final Path P transition. A run that begins on the Path C side can also be reclassified as Path D after the D14 survival outcomes.
+Path changes are not limited to the final Path P transition. A run that begins on the Path C side can also end up on Path D after the D14 survival outcomes.
 
-For the exact entry conditions and route-specific exceptions, see [Lettered Path System](path-system.md).
+A lettered Path therefore describes the current timeline and its later outcome rather than a personal route that remains fixed after one choice.
+
+For the full Path requirements and route-specific exceptions, see [Lettered Path System](path-system.md).
 
 ## Why the save-slot Path can update late
 
-The Path shown in a save slot changes only when the game updates it. It does not reveal an outcome before Dave learns what happened.
+Save slots do not reveal an outcome before Dave learns what happened, so the displayed Path may temporarily lag behind the story's actual direction.
 
 For example:
 
@@ -79,7 +81,7 @@ An unexpected Path label does not necessarily mean that the player took a wrong 
 ::: {.callout-note}
 ## Sal Route display quirk
 
-After giving up on the D10 password during the Sal Route, the save slot may temporarily display `Path C` even though the story follows the shared Path A/B sequence. This is a display quirk in b0.85 and earlier versions: the label says `Path C` for a while, but the run never enters the normal Path C story. For the exact mechanics, see [Lettered Path System](path-system.md).
+After giving up on the D10 password during the Sal Route, the save slot may temporarily display `Path C`. This is a display quirk in b0.85 and earlier versions; the story still follows the shared Path A/B sequence. For the exact mechanics, see [Lettered Path System](path-system.md).
 :::
 
 ## How the two systems divide the story
@@ -91,7 +93,7 @@ The lettered Paths increasingly organize the major survival and timeline outcome
 | System | Main function |
 |---|---|
 | Character route | Companion perspective, character scenes, affection, romance, and relationship outcomes |
-| Lettered Path | Major timeline direction, survival outcomes, later-story structure, and ending classification |
+| Lettered Path | Major timeline direction, survival outcomes, later-story structure, and ending outcomes |
 
 :::
 

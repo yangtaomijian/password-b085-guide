@@ -11,7 +11,7 @@ The Gallery contains two tabs:
 - **Memories:** 72 character and other story CGs;
 - **Trauma:** 28 death and traumatic-event CGs.
 
-Together they contain 100 registered images, corresponding to the displayed `Gallery Completion: seen / total` count.
+Together they contain 100 images, corresponding to the displayed `Gallery Completion: seen / total` count.
 
 ::: {.callout-important}
 ## How to use this page
@@ -40,7 +40,7 @@ Gallery progress is separate from individual story-save slots. Loading or deleti
 
 The Gallery button and the displayed completion count update separately.
 
-After seeing a new CG, its button may unlock before the completion number updates. Restart the game before treating an unchanged total as evidence that the CG failed to unlock.
+After seeing a new CG, its button may unlock before the completion number updates. If the total has not changed, restart the game first.
 :::
 
 ::: {.callout-note}
@@ -48,7 +48,7 @@ After seeing a new CG, its button may unlock before the completion number update
 
 - Dates and route stages narrow down where to look; they do not list every prerequisite for reaching that scene.
 - “Story clue” quotes nearby dialogue or narration so you can recognize the moment during play.
-- Some CGs appear in more than one scene. The index favors an earlier, normally reachable appearance.
+- Some CGs appear in more than one scene. The index favors an earlier appearance during normal play.
 :::
 
 <div id="gallery-locator-root"></div>
@@ -287,7 +287,7 @@ The index below lists each CG by character, with an early appearance date and ne
 
 ::::
 
-## Images not registered in the Gallery
+## Images outside the Gallery
 
 These four image IDs are not part of the 100-slot b0.85 Gallery. Three appear during the story, but seeing them does not create a corresponding Gallery button.
 

@@ -95,9 +95,9 @@ website:
       - text: 收集
         menu:
           - href: collectibles/medals.md
-            text: 十二枚奖牌
+            text: 十二枚奖牌收集指南
           - href: collectibles/compendium.md
-            text: 后记
+            text: 后记解锁索引
           - href: collectibles/gallery.md
             text: CG 画廊查漏索引
 
@@ -106,32 +106,34 @@ website:
           - href: mechanics/password-checks.md
             text: 密码输入与检定规则
           - href: mechanics/medal-persistence.md
-            text: 奖牌持久化
+            text: 奖牌持久化与最终检定
           - href: mechanics/affection.md
-            text: 好感度机制
+            text: 好感度机制与加点
           - text: "好感度检定与剧情差异"
             href: mechanics/affection-differences.md
 
       - text: 版本档案
         menu:
           - href: versions/b085-changes.md
-            text: b0.85 主要变化
+            text: b0.85 版本主要变化
           - href: versions/legacy-routes.md
-            text: 旧版本线路
+            text: 旧版本线路档案
           - href: versions/legacy-passwords.md
-            text: 旧版本密码
+            text: 旧版本密码档案
           - href: versions/legacy-mechanics.md
-            text: 旧版本机制
+            text: 旧版本机制档案
 
-      - href: extras/easter-eggs.md
-        text: 彩蛋
+      - text: 其他
+        menu:
+          - href: extras/easter-eggs.md
+            text: 彩蛋与隐藏输入
 
   sidebar:
     style: docked
     collapse-level: 1
     search: false
     contents:
-      - section: "开始阅读"
+      - section: "首页"
         contents:
           - href: index.md
             text: 首页
@@ -156,7 +158,7 @@ website:
           - href: collectibles/gallery.md
             text: CG 画廊查漏索引
 
-      - section: "机制详解"
+      - section: "机制"
         contents:
           - href: mechanics/password-checks.md
             text: 密码输入与检定规则

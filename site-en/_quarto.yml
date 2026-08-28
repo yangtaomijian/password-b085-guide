@@ -85,11 +85,11 @@ website:
           - href: versions/b085-changes.md
             text: Major Changes in b0.85
           - href: versions/legacy-routes.md
-            text: Legacy Routes
+            text: Legacy Route Archive
           - href: versions/legacy-passwords.md
-            text: Legacy Passwords
+            text: Legacy Password Archive
           - href: versions/legacy-mechanics.md
-            text: Legacy Mechanics
+            text: Legacy Mechanics Archive
       - text: Extras
         menu:
           - href: extras/easter-eggs.md
@@ -141,7 +141,7 @@ website:
           - href: versions/b085-changes.md
             text: Major Changes in b0.85
           - href: versions/legacy-routes.md
-            text: Legacy Routes Archive
+            text: Legacy Route Archive
           - href: versions/legacy-passwords.md
             text: Legacy Password Archive
           - href: versions/legacy-mechanics.md

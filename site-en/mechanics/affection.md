@@ -1,6 +1,6 @@
 ---
 title: "Affection System and Point Guide"
-description: "Hidden affection variables, thresholds, relationship checks, and all reachable point gains in Password b0.85"
+description: "Hidden affection variables, thresholds, relationship checks, and all available point gains in Password b0.85"
 toc: true
 ---
 
@@ -15,7 +15,7 @@ Password b0.85 tracks a separate hidden affection value for each of the six main
 | Hoss | `lionlove` |
 | Sal | `croclove` |
 
-These values are not displayed as an in-game meter. They begin at 0 in a new game, increase through specific choices or automatic story nodes, and are checked later for text variations, intimate options, several CGs, and the D19 relationship outcome.
+These values are not displayed as an in-game meter. They begin at 0 in a new game, increase through specific choices or automatic story events, and are checked later for text variations, intimate options, several CGs, and the D19 relationship outcome.
 
 ::: {.callout-important}
 ## What affection does—and does not—control
@@ -24,7 +24,7 @@ Affection can affect:
 
 - internal narration and short dialogue variations;
 - hugs, kisses, and other intimate options;
-- kiss or relationship flags;
+- whether a kiss or relationship has occurred;
 - several Gallery CGs;
 - whether a D19 relationship is automatic, optional, or unavailable.
 
@@ -79,7 +79,7 @@ Hoss is the character for whom point planning matters most because two Gallery i
 
 ### D8 `hosskiss`
 
-Without any D1 cup-affection result or the D3 hidden shared bonus, the highest reachable value before the D8 hidden-library check is **13**. The threshold of 12 is therefore achievable through ordinary visible choices alone.
+Without any D1 cup-affection result or the D3 hidden shared bonus, the highest possible value before the D8 hidden-library check is **13**. The threshold of 12 is therefore achievable through ordinary visible choices alone.
 
 If Hoss enters the library below 12:
 
@@ -115,9 +115,9 @@ Visible ordinary menus can also affect several characters:
 - one D5 movie choice can award points to multiple characters;
 - one D7 family-subject choice can award points to multiple characters.
 
-The individual writes are listed in the character tables below.
+Every available point gain is listed in the character tables below.
 
-## Complete point inventory
+## Complete point list
 
 The tables list all 126 point gains available in normal play, plus each character's D1 exact-name point. Points available only in Replay Mode or never awarded during a normal run are excluded.
 
@@ -143,8 +143,8 @@ Exact menu strings are preserved for comparison with the game. Rows from the sam
 | D5 | `Comedy` | mutually exclusive D5 movie choice | +1 |
 | D6 | `Orlando` | Sal or Orlando Route | +1 |
 | D6 | `What was it like?` | Orlando Route | +1 |
-| D6 | `Yes.` | Orlando Route; successful D6 Vault state; Orlando affection at least 7; D6 Orlando follow-up yes/no | +1 |
-| D6 | automatic after the first practice kiss | Orlando Route; successful D6 Vault state; Orlando affection 5–6 | +1 |
+| D6 | `Yes.` | Orlando Route; successful D6 Vault check; Orlando affection at least 7; D6 Orlando follow-up yes/no | +1 |
+| D6 | automatic after the first practice kiss | Orlando Route; successful D6 Vault check; Orlando affection 5–6 | +1 |
 | D7 | `Hug.` | Orlando Route; D7 Orlando response | +1 |
 | D7 | `Advice.` | Orlando Route; D7 Orlando response | +2 |
 | D7 | `Stay.` → `Dean.` | mutually exclusive D7 family-subject choice | +1 |
@@ -210,9 +210,9 @@ Exact menu strings are preserved for comparison with the game. Rows from the sam
 | D6 | `Tyson.` → `I didn't know I was spotting for a bitch.` | Hoss or Tyson Route; D6 Tyson encouragement | +1 |
 | D6 | `Tyson.` → `Keep going! You can do it!` | Hoss or Tyson Route; D6 Tyson encouragement | +2 |
 | D6 | `You.` | Tyson Route | +1 |
-| D6 | `Stop Tyson.` → `Save Tyson.` → `Truth.` | Tyson Route; successful D6 Vault state; nested Tyson rescue choices | +1 |
-| D6 | `Stop Tyson.` → `Save Tyson.` → `I've got your back too.` | Tyson Route; successful D6 Vault state; nested Tyson rescue choices | +1 |
-| D6 | `Stop Tyson.` → `Save Tyson.` → `Stay.` | Tyson Route; successful D6 Vault state; nested Tyson rescue choices | +1 |
+| D6 | `Stop Tyson.` → `Save Tyson.` → `Truth.` | Tyson Route; successful D6 Vault check; nested Tyson rescue choices | +1 |
+| D6 | `Stop Tyson.` → `Save Tyson.` → `I've got your back too.` | Tyson Route; successful D6 Vault check; nested Tyson rescue choices | +1 |
+| D6 | `Stop Tyson.` → `Save Tyson.` → `Stay.` | Tyson Route; successful D6 Vault check; nested Tyson rescue choices | +1 |
 | D7 | `Assist.` | Tyson Route | +1 |
 | D7 | `Follow Tyson.` → `Hug him.` | Tyson Route | +1 |
 | D7 | `Follow Tyson.` → `Hug Tyson.` | Tyson Route | +1 |
@@ -341,9 +341,9 @@ The other five affection values have no comparable reset during normal play.
 
 ### D16 `Remain still.` awards no points
 
-On the Sal Route, D16 makes `Remain still.` look like a two-point choice, but b0.85 does not save that increase. The choice therefore awards **0 points**.
+On the Sal Route, D16 makes `Remain still.` look like a two-point choice, but b0.85 does not add those points. The choice therefore awards **0 points**.
 
-There is no later replacement increment before the D19 relationship check. A run can therefore finish two points below what the line visually appears intended to award.
+No later event adds the missing two points before the D19 relationship check. A run can therefore finish with two fewer points than the interface suggests.
 
 ::: {.callout-warning}
 ## Actual b0.85 scoring

@@ -39,7 +39,7 @@ default persistent.aquarius = False
 default persistent.pisces = False
 ```
 
-When the corresponding story node is reached, the game changes one flag to `True`, for example:
+When the corresponding scene is reached, the game changes one flag to `True`, for example:
 
 ```renpy
 $ persistent.aries = True
@@ -56,26 +56,28 @@ After obtaining a medal, it is sensible to let the scene finish and make a norma
 
 ## Finding a medal is not always enough
 
-Some medals appear in the story before their persistent flags are written.
+Some medals appear in the story before the game formally records them.
 
 The clearest examples are:
 
-- **Aquarius:** found in the D4 hedge maze, but written during the D16 A/B inventory scene;
-- **Taurus:** found under the giant pumpkin on D7, but also written during the D16 A/B inventory scene.
+- **Aquarius:** found in the D4 hedge maze, but not formally recorded until the D16 A/B inventory scene;
+- **Taurus:** found under the giant pumpkin on D7, but likewise not formally recorded until the D16 A/B inventory scene.
 
 A player can therefore remember seeing one of these medals while the persistent flag is still `False`.
 
-By contrast, Pisces, Cancer, and Capricorn are written during their D9 character-route scenes even though some of their zodiac identities are confirmed later.
+By contrast, Pisces, Cancer, and Capricorn are recorded during their D9 character-route scenes even though some of their zodiac identities are confirmed later.
 
-For exact discovery and write locations, see [Twelve-Medal Collection Guide](../collectibles/medals.md).
+For exact discovery and recording points, see [Twelve-Medal Collection Guide](../collectibles/medals.md).
 
-## Why some medals have multiple write locations
+## Why some medals are recorded more than once
 
-Repeated assignments do not represent duplicate medals. They usually support alternative story branches or later confirmation scenes.
+Repeated records do not represent duplicate medals. Alternative story branches or later confirmation scenes may record the same medal again.
 
-Pisces, Cancer, and Capricorn are first written during their D9 character-route scenes and may be written again during the D16 Path A/B inventory scene. The later assignment is a redundant confirmation, not a second collectible or an additional requirement.
+Pisces, Cancer, and Capricorn are first recorded during their D9 character-route scenes and may be recorded again during the D16 Path A/B inventory scene. The later record is a confirmation, not a second collectible or an additional requirement.
 
-Virgo and Sagittarius also have repeated writes across mutually exclusive relationship-ending branches. Any one valid Path A ending awards Virgo, and any one valid Path B ending awards Sagittarius.
+Virgo and Sagittarius are also recorded in several mutually exclusive relationship endings. Any one valid Path A ending awards Virgo, and any one valid Path B ending awards Sagittarius.
+
+You do not need to complete all six relationship endings for the same medal.
 
 ## How the final twelve-medal check works
 
@@ -131,9 +133,9 @@ Deleting ordinary story saves also leaves medal progress intact. Progress can be
 
 When the final check reports an incomplete set:
 
-1. Confirm that every medal reached its persistent write, not only its first story appearance.
-2. Restart the game and use the Lore list to identify any flag that is still missing.
-3. Complete Path A again after all twelve flags are present; the check does not run when the last medal is earned elsewhere.
+1. Confirm that every medal was formally recorded, rather than merely appearing in the story.
+2. Restart the game and use the Lore list to identify any medal that is still missing.
+3. Complete Path A again after all twelve medals have been recorded; the check does not run when the last medal is earned elsewhere.
 4. If progress moved between devices, confirm that the persistent data was transferred with the ordinary saves.
 
 For the fastest collection order and all twelve locations, see [Twelve-Medal Collection Guide](../collectibles/medals.md).

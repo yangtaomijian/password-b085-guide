@@ -11,6 +11,8 @@ The main guide covers the current b0.85 build. A separate version archive compar
 
 ::: {.callout-warning}
 This site contains spoilers for Routes, Bad Endings, medals, CGs, Compendium entries, and ending requirements.
+
+If you want to experience the story first, read each section after reaching that part of the game. If you are only stuck on a password or route, start with the tiered hints or FAQ.
 :::
 
 ::: {.callout-important}
@@ -60,7 +62,7 @@ Follow the story structure and get help with password checks.
 
 ### Collectibles
 
-Track medals, Compendium entries, and all 100 registered Gallery images.
+Track medals, Compendium entries, and all 100 Gallery images.
 
 - [Twelve-Medal Collection Guide](collectibles/medals.md)
 - [Compendium Unlock Index](collectibles/compendium.md)
@@ -90,7 +92,7 @@ These pages compare b0.7 with b0.85.
 ::: {.g-col-12 .g-col-md-6}
 ### [Major Changes in b0.85](versions/b085-changes.md)
 
-Read an overview of major feature, interaction, Gallery, and asset changes between b0.7 and b0.85.
+Read an overview of major feature, interaction, Gallery, and CG changes between b0.7 and b0.85.
 :::
 
 ::: {.g-col-12 .g-col-md-6}
@@ -119,6 +121,6 @@ Review the Path A first-run sequence and replays, the retired D8 Oswin question 
 - **Creator support:** [Grizz on Patreon](https://www.patreon.com/PASSWORDVN)
 - **Community:** [Password Discord](https://discord.gg/CSuEPWt) — 18+ / NSFW
 
-## Site Scope
+## About This Guide
 
-This unofficial guide covers *Password* b0.85. Use the Version Archives only when comparing older builds; their Routes and mechanics should not be used as current walkthrough steps.
+This is an unofficial fan-made guide and is not affiliated with Grizz or itch.io. It does not provide the game, full script, extracted CGs, or unauthorized third-party material.

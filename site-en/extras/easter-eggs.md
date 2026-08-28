@@ -14,7 +14,7 @@ The first three Vault visits include two optional inputs and one day with no acc
 
 | Day | Input | Effect |
 |---:|---|---|
-| D1 | `THE END` | Clears the recorded ending flags, then quits the game |
+| D1 | `THE END` | Clears the recorded endings, then quits the game |
 | D2 | — | No input is accepted as the correct D2 password in b0.85 |
 | D3 | `THE LOVERS` | Adds 5 affection points to each of the six main characters |
 
@@ -28,7 +28,7 @@ For example, `the lovers` works on D3, but `THELOVERS` does not.
 
 ### `THE END`
 
-Entering `THE END` during the D1 Vault visit clears the stored true-ending flag and Path A–G ending flags, then closes the game. It does not clear the twelve zodiac medals, so use it only if you intend to reset those ending records.
+Entering `THE END` during the D1 Vault visit clears the stored true ending and Path A–G ending records, then closes the game. It does not clear the twelve zodiac medals, so use it only if you intend to reset those endings.
 
 ### D2 has no correct password
 
@@ -110,7 +110,7 @@ Timber is credited as a **Diamond Patron**.
 
 ### `Zylus`
 
-`Zylus` uses the generic cup response, but the later driver check still recognizes the name.
+`Zylus` uses the generic cup response, but he still replaces the driver later on D1.
 
 Zylus is a deer-like driver with large antlers and prominent fangs. The group discusses his teeth and the difficulty of fitting his antlers around the driver's seat. He uses the normal arrival farewell.
 

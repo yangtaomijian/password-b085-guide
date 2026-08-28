@@ -11,7 +11,7 @@ toc: true
 - **Memories（回忆）：**72 张角色与其他剧情 CG；
 - **Trauma（创伤）：**28 张死亡与创伤 CG。
 
-两部分共登记 100 张图片，对应界面显示的 `Gallery Completion: seen / total`（画廊完成度：已看／总数）统计。
+两部分共包含 100 张图片，对应界面显示的 `Gallery Completion: seen / total`（画廊完成度：已看／总数）统计。
 
 ::: {.callout-important}
 ## 使用方法
@@ -40,7 +40,7 @@ toc: true
 
 画廊按钮与界面显示的完成数量会分别更新。
 
-看到新 CG 后，对应按钮可能已经解锁，但完成数量尚未变化。在把不变的总数判断为解锁失败之前，请先重启游戏。
+看到新 CG 后，对应按钮可能已经解锁，但完成数量尚未变化。总数没有更新时，请先重启游戏。
 :::
 
 ::: {.callout-note}
@@ -48,7 +48,7 @@ toc: true
 
 - 日期和路线阶段用于缩小查找范围，不代表进入该段剧情所需的全部前置条件；
 - “剧情线索”摘录 CG 出现前后的对白或叙述，方便在游玩时确认场景；
-- 部分 CG 会在不止一处出现，这里优先列出较早且正常可达的一处。
+- 部分 CG 会在不止一处出现，这里优先列出正常游玩时较早出现的一处。
 :::
 
 <div id="gallery-locator-root"></div>
@@ -216,7 +216,7 @@ toc: true
 
 ::: {.gallery-trigger-group data-category="Death/Trauma"}
 
-### Death／Trauma
+### 死亡／创伤
 
 | CG ID | 画廊条目 | 最早出现 | 剧情线索 |
 |---|---|---|---|
@@ -287,7 +287,7 @@ toc: true
 
 ::::
 
-## 未登记在画廊中的图片
+## 不在画廊中的图片
 
 以下四个图片 ID 不属于 b0.85 的 100 格画廊。其中三张会在剧情中出现，但即使玩家已经看过，也不会多出对应的画廊按钮。
 
@@ -315,6 +315,6 @@ toc: true
 - [密码分级提示](../guide/password-hints.md)
 - [十二枚奖牌收集指南](medals.md)
 - [好感度机制与加点](../mechanics/affection.md)
-- [好感度检定与剧情文本差异](../mechanics/affection-differences.md)
+- [好感度检定与剧情差异](../mechanics/affection-differences.md)
 
 <script src="../assets/gallery-locator.js" defer></script>

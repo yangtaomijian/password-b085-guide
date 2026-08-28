@@ -36,7 +36,7 @@ Leave.
 
 Choosing **Stay.** continued to D7. Choosing **Leave.** entered `BAD END: OZ` and ended the playthrough.
 
-This was a terminal Bad Ending branch. It did not create another character Route or lettered Path, and it did not return to the normal story.
+This Bad Ending did not create another character Route or lettered Path, and it did not return to the normal story.
 
 b0.85 no longer contains the D6 mansion-departure menu or its Bad Ending during normal play.
 
@@ -44,7 +44,7 @@ b0.85 no longer contains the D6 mansion-departure menu or its Bad Ending during 
 | Build | D6 result |
 |---|---|
 | b0.7 | `Stay.` continues; `Leave.` enters `BAD END: OZ` |
-| b0.85 | The normal departure choice and reachable ending are absent |
+| b0.85 | The departure choice and its Bad Ending are no longer available during normal play |
 :::
 
 ## D7 alternatives and the D8 outcome
@@ -61,15 +61,15 @@ A legacy D7 failure sequence can contain a choice about revealing Oswin. That Ba
 The Bad Ending version does not carry over the normal Reveal Oz result and does not determine Path A or Path B.
 :::
 
-## Path A, later reclassification, and Path P
+## Lettered Paths after D10 and Path P
 
 b0.85 keeps most of b0.7's lettered Path structure.
 
 Both builds contain:
 
-- D10 assignment to the Path A/B or Path C/D side;
-- later reclassification between Path letters when survival states are revealed;
-- Path E as a terminal classification with more than one possible entry state;
+- the story moving to the Path A/B or Path C/D side after D10;
+- later survival outcomes still changing the lettered Path;
+- Path E covering more than one outcome in which everyone dies;
 - the later Path F/G split;
 - the transition from the Path A ending into Path P after the twelve-medal check.
 
@@ -81,25 +81,24 @@ In both builds, the core transition is:
 Path A ending
 → check twelve persistent medal flags
 → all twelve obtained
-→ currentPath = "P"
-→ final Path P sequence
+→ story continues into the final Path P sequence
 ```
 
 b0.85 changes the later Path P sequence by adding a standalone input and explicit true-ending persistence. Those additions are documented in [Major Changes in b0.85](b085-changes.md).
 
 The game does not display a formal `PATH P: END` title or give the letter `P` an official full name. References to a “prime timeline” make `P = Prime` plausible, but that wording is not shown as an official name.
 
-## Route-adjacent legacy systems
+## Older systems that do not change the Path
 
 Several removed systems occurred inside route material without changing the lettered Path itself.
 
 ::: {.table-responsive .table-scroll-medium}
-| Legacy system | Route effect | Primary archive |
+| Legacy system | Story effect | Primary archive |
 |---|---|---|
-| D8 Oswin free-text conversation | Changes later dialogue, but does not gate a Route, Path, medal, or ending | [Legacy Mechanics Archive](legacy-mechanics.md) |
-| D11 optional Vault | Changes laboratory and later conditional text, but does not assign a Route or Path | [Legacy Password Archive](legacy-passwords.md) |
+| D8 Oswin free-text conversation | Changes later dialogue only; Route, Path, medals, and ending are unchanged | [Legacy Mechanics Archive](legacy-mechanics.md) |
+| D11 optional Vault | Changes some laboratory and later text; Route and Path are unchanged | [Legacy Password Archive](legacy-passwords.md) |
 | Path A first-run scenes | Two special segments play only on the first profile-wide run; b0.85 later makes them replayable in Additional Scenes | [Legacy Mechanics Archive](legacy-mechanics.md) |
-| D11 injection decision | Changes player agency and `DavePride`, but not the lettered Path | [Legacy Mechanics Archive](legacy-mechanics.md) |
+| D11 injection decision | Changes who receives the injection and `DavePride`, but not the Path | [Legacy Mechanics Archive](legacy-mechanics.md) |
 :::
 
 The broader Dean interaction changes and the D19 relationship threshold do not change the lettered Path structure. See [Major Changes in b0.85](b085-changes.md) for details.

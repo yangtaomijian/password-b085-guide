@@ -66,7 +66,7 @@ toc: false
 
 ### 收集
 
-追踪十二枚奖牌、后记条目和画廊中登记的 100 张图片。
+追踪十二枚奖牌、后记条目和画廊中的 100 张图片。
 
 - [十二枚奖牌收集指南](collectibles/medals.md)
 - [后记解锁索引](collectibles/compendium.md)
@@ -89,14 +89,14 @@ toc: false
 
 ## 版本档案
 
-单独比较 b0.7 与 b0.85 中已经删除或发生变化的线路、密码、机制与资源内容。旧版本档案仅供历史参考，不应与 b0.85 当前攻略混用。
+单独比较 b0.7 与 b0.85 中已经删除或发生变化的线路、密码、机制与 CG。旧版本档案仅供历史参考，不应与 b0.85 当前攻略混用。
 
 :::: {.grid}
 
 ::: {.g-col-12 .g-col-md-6}
 ### [b0.85 版本主要变化](versions/b085-changes.md)
 
-Password b0.7 与 b0.85 之间的主要功能、剧情互动、密码、画廊与图片资源变化。
+Password b0.7 与 b0.85 之间的主要功能、剧情互动、密码、画廊与 CG 变化。
 :::
 
 ::: {.g-col-12 .g-col-md-6}
@@ -125,9 +125,7 @@ Password b0.7 与 b0.85 之间的主要功能、剧情互动、密码、画廊�
 - **支持作者：** [Grizz on Patreon](https://www.patreon.com/PASSWORDVN)
 - **玩家社区：** [Password Discord](https://discord.gg/CSuEPWt) — 18+ / NSFW
 
-## 资料范围
-
-本站的现行攻略适用于 **Password b0.85**。
+## 关于本站
 
 本站是玩家整理的非官方攻略，不隶属于游戏作者 Grizz 或发行平台，也不提供游戏本体、完整脚本、提取后的 CG 或未经授权的第三方素材。
 

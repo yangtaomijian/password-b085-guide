@@ -4,10 +4,6 @@ description: "Quick answers about Routes, Paths, passwords, medals, Gallery entr
 toc: true
 ---
 
-::: {.callout-note}
-This site documents **Password b0.85**. Routes, passwords, CGs, and story entry points may differ in other versions.
-:::
-
 ## Routes and Paths
 
 ### Are character Routes and lettered Paths the same thing?
@@ -24,7 +20,7 @@ If you finished Path A too early, collect the missing medals and complete it aga
 
 ### Why does my save display a different Path from the choice I made?
 
-The save slot shows the Path assigned when that save was created. Some choices change hidden story conditions before the displayed Path is updated.
+The save slot shows the Path confirmed by the story when that save was created. Some choices do not update the display until their outcome is revealed later.
 
 The Sal Route can also display `Path C` briefly after a failed D10 check even though its Route-specific exception keeps the story on the shared Path A/B side. See [Lettered Path System](path-system.md).
 
@@ -46,7 +42,7 @@ The first password group also depends on the current character Route. For progre
 
 ### Why can the Sal D10 or Tyson D17 check fail without ending the run?
 
-Both Routes have safety exceptions that prevent the usual later disaster, but the failed check is not treated as a success and its successful warning content is still missed.
+Both Routes have later story events that prevent the usual disaster, but the failed check is not treated as a success and its successful warning content is still missed.
 
 See [Lettered Path System](path-system.md) for the full consequences.
 
@@ -54,19 +50,19 @@ See [Lettered Path System](path-system.md) for the full consequences.
 
 ### Do I need to collect all twelve medals in one playthrough?
 
-No. Medals use persistent flags and accumulate across saves and playthroughs. Multiple character Routes are required because four medals are Route-exclusive.
+No. Medals accumulate across saves and playthroughs. Multiple character Routes are required because four medals are Route-exclusive.
 
 See [Twelve-Medal Collection Guide](../collectibles/medals.md).
 
 ### Why did I find a medal in the story, but it still appears missing?
 
-Some medals appear before their persistent unlock is written. Aquarius and Taurus, for example, are not recorded until the D16 inventory scene.
+Some medals appear before the game records them. Aquarius and Taurus, for example, are not added to the collection until the D16 inventory scene.
 
 Restart the game before using a locked Lore entry as confirmation that a medal is missing. See [Medal Persistence and Final Check](../mechanics/medal-persistence.md).
 
 ### Will deleting normal save slots remove my medals?
 
-No. Medals are stored separately from ordinary save slots. Loading or deleting a normal story save does not roll back the twelve medal flags.
+No. Medal progress is stored separately from ordinary save slots. Loading or deleting a normal story save does not undo medals that have already been recorded.
 
 Deleting all game data or moving to another device may still remove them. See [Medal Persistence and Final Check](../mechanics/medal-persistence.md).
 
@@ -76,7 +72,7 @@ Deleting all game data or moving to another device may still remove them. See [M
 
 Use the [CG Gallery Completion Index](../collectibles/gallery.md) to search the 72 Memories and 28 Trauma entries by CG ID, trigger, category, or grid position.
 
-Not every story image is registered in the Gallery, and the displayed completion number may require a restart to refresh.
+Not every story image appears in the Gallery, and the displayed completion number may require a restart to refresh.
 
 ### Does affection determine whether I can complete the game?
 
@@ -94,9 +90,9 @@ If it remains locked, check the entry's requirement in [Compendium Unlock Index]
 
 ### Why does the character on the main menu change or disappear?
 
-The main menu uses the character Route and Path stored in the newest save. If that save has no active character Route, the menu falls back to Dave; Path E uses an empty background.
+The main menu reflects the character Route and Path in the newest save. If that save was made before a character Route was confirmed, the menu shows Dave; Path E uses an empty background.
 
-Some late Path A scenes also clear Route flags temporarily, so the menu can change until a later save restores or replaces them.
+Some late Path A scenes can also change the menu character temporarily. Continue the story and make a new save to restore the appropriate display.
 
 ### Why does my game not match this guide?
 

@@ -1,6 +1,6 @@
 ---
 title: "好感度机制与加点"
-description: "Password b0.85 六名角色的隐藏好感度变量、阈值、关系判定与全部可达加点"
+description: "Password b0.85 六名角色的隐藏好感度变量、阈值、关系判定与全部可获得加点"
 toc: true
 ---
 
@@ -15,7 +15,7 @@ toc: true
 | Hoss | `lionlove` |
 | Sal | `croclove` |
 
-这些数值不会以游戏内量表显示。新游戏中六项均从 0 开始，随后通过特定选择或自动剧情节点增加，并在后续用于判断文本差异、亲密选项、部分 CG，以及 D19 的关系结果。
+这些数值不会以游戏内量表显示。新游戏中六项均从 0 开始，随后通过特定选择或自动剧情增加，并在后续用于判断文本差异、亲密选项、部分 CG，以及 D19 的关系结果。
 
 ::: {.callout-important}
 ## 好感度会控制什么，又不会控制什么？
@@ -24,7 +24,7 @@ toc: true
 
 - 内心描写和短篇对话差异；
 - 拥抱、亲吻及其他亲密选项；
-- 亲吻或关系状态标记；
+- 是否发生亲吻或建立关系；
 - 若干画廊 CG；
 - D19 关系是自动成立、由玩家选择，还是无法成立。
 
@@ -55,7 +55,7 @@ toc: true
 
 ## D19 关系结果
 
-D19 不会比较六名角色的数值并选择最高者。当前角色线决定脚本检查哪一个好感度变量。
+D19 不会比较六名角色的数值并选择最高者。游戏只会查看当前角色线对应的好感度。
 
 ::: {.affection-d19-summary-table .table-responsive .table-scroll-large}
 
@@ -78,7 +78,7 @@ Hoss 是最需要规划加点的角色，因为两张画廊图片分别受 D8 �
 
 ### D8 `hosskiss`
 
-在不使用 D1 咖啡杯好感度结果、也不使用 D3 隐藏全员加点的前提下，D8 隐藏图书馆检定前的最高可达值是 **13**。因此，`lionlove >= 12` 可以只靠普通可见选项达到。
+在不使用 D1 咖啡杯好感度结果、也不使用 D3 隐藏全员加点的前提下，D8 隐藏图书馆检定前最多可以获得 **13** 点。因此，`lionlove >= 12` 可以只靠普通可见选项达到。
 
 如果进入图书馆时低于 12：
 
@@ -114,7 +114,7 @@ D1 的所有答案共用一个输入框，因此一次流程中只能触发其�
 - D5 的一个电影选项可能为多名角色加点；
 - D7 的一个家庭话题选项也可能为多名角色加点。
 
-每次实际变量写入都列在下方各角色表格中。
+每次可以获得的加点都列在下方各角色表格中。
 
 ## 完整加点清单
 
@@ -142,8 +142,8 @@ D1 的所有答案共用一个输入框，因此一次流程中只能触发其�
 | D5 | `Comedy` | 与其他 D5 电影选项互斥 | +1 |
 | D6 | `Orlando` | Sal 线或 Orlando 线 | +1 |
 | D6 | `What was it like?` | Orlando 线 | +1 |
-| D6 | `Yes.` | Orlando 线；D6 金库状态成功；进入选择时 `dragonlove >= 7`；D6 Orlando 后续 Yes／No 菜单 | +1 |
-| D6 | 第一次练习接吻后自动增加 | Orlando 线；D6 金库状态成功；进入事件时 `dragonlove` 为 5—6 | +1 |
+| D6 | `Yes.` | Orlando 线；D6 金库检定成功；进入选择时 `dragonlove >= 7`；D6 Orlando 后续 Yes／No 菜单 | +1 |
+| D6 | 第一次练习接吻后自动增加 | Orlando 线；D6 金库检定成功；进入事件时 `dragonlove` 为 5—6 | +1 |
 | D7 | `Hug.` | Orlando 线；D7 Orlando 回应 | +1 |
 | D7 | `Advice.` | Orlando 线；D7 Orlando 回应 | +2 |
 | D7 | `Stay.` → `Dean.` | D7 家庭话题菜单，和其他主题互斥 | +1 |
@@ -209,9 +209,9 @@ D1 的所有答案共用一个输入框，因此一次流程中只能触发其�
 | D6 | `Tyson.` → `I didn't know I was spotting for a bitch.` | Hoss 线或 Tyson 线；D6 Tyson 鼓励选项 | +1 |
 | D6 | `Tyson.` → `Keep going! You can do it!` | Hoss 线或 Tyson 线；D6 Tyson 鼓励选项 | +2 |
 | D6 | `You.` | Tyson 线 | +1 |
-| D6 | `Stop Tyson.` → `Save Tyson.` → `Truth.` | Tyson 线；D6 金库状态成功；Tyson 救援嵌套选项 | +1 |
-| D6 | `Stop Tyson.` → `Save Tyson.` → `I've got your back too.` | Tyson 线；D6 金库状态成功；Tyson 救援嵌套选项 | +1 |
-| D6 | `Stop Tyson.` → `Save Tyson.` → `Stay.` | Tyson 线；D6 金库状态成功；Tyson 救援嵌套选项 | +1 |
+| D6 | `Stop Tyson.` → `Save Tyson.` → `Truth.` | Tyson 线；D6 金库检定成功；Tyson 救援嵌套选项 | +1 |
+| D6 | `Stop Tyson.` → `Save Tyson.` → `I've got your back too.` | Tyson 线；D6 金库检定成功；Tyson 救援嵌套选项 | +1 |
+| D6 | `Stop Tyson.` → `Save Tyson.` → `Stay.` | Tyson 线；D6 金库检定成功；Tyson 救援嵌套选项 | +1 |
 | D7 | `Assist.` | Tyson 线 | +1 |
 | D7 | `Follow Tyson.` → `Hug him.` | Tyson 线 | +1 |
 | D7 | `Follow Tyson.` → `Hug Tyson.` | Tyson 线 | +1 |
@@ -342,7 +342,7 @@ $ croclove = 0
 
 Sal 线 D16 的高好感度菜单中，`Remain still.` 看起来像会增加 2 点，但 b0.85 实际没有保存这次加点，因此结果是 **0 点**。
 
-D19 关系检定之前也没有其他替代写入。该流程最终可能比画面表现出的设计意图少 2 点。
+D19 关系检定之前也没有其他事件补上这 2 点。该流程最终会比界面看起来少得到 2 点。
 
 ::: {.callout-warning}
 ## b0.85 的实际计分
@@ -355,4 +355,4 @@ D19 关系检定之前也没有其他替代写入。该流程最终可能比画�
 - [CG 画廊查漏索引](../collectibles/gallery.md)
 - [剧情线路总览](../guide/route-overview.md)
 - [字母线系统](../guide/path-system.md)
-- [好感度检定与剧情文本差异](affection-differences.md)
+- [好感度检定与剧情差异](affection-differences.md)

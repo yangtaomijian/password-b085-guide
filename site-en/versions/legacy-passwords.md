@@ -4,19 +4,15 @@ description: "Accepted D7 alternatives and the retired D11 Vault sequence in Pas
 toc: true
 ---
 
-This page documents password mechanics that were present in *Password* b0.7 but are no longer usable through the normal b0.85 story flow.
-
-It focuses on two legacy systems:
+Two password systems from *Password* b0.7 are no longer available during normal b0.85 play:
 
 - the three accepted D7 Vault inputs in b0.7;
 - the optional D11 `METEMPSYCHOSIS` sequence.
 
-This is a historical archive, not a password guide for the current version.
-
 ::: {.callout-warning}
 ## Not usable in b0.85
 
-`PEACEKEEPER` and `ARBITER` are not accepted D7 inputs in b0.85, and the D11 optional Vault no longer has a normal story entry or reachable success scene.
+`PEACEKEEPER` and `ARBITER` are not accepted D7 inputs in b0.85, and the optional D11 Vault can no longer be entered or completed during normal play.
 
 For the current password checks, see [Tiered Password Hints](../guide/password-hints.md).
 :::
@@ -74,9 +70,9 @@ Each accepted D7 input immediately displays a different warning image:
 
 In normal play, displaying one of these images unlocks its Gallery entry.
 
-The b0.7 alternatives therefore provided a direct shortcut to the Orlando and Dean/Tyson Trauma images. That shortcut no longer works in b0.85 because the two words are no longer accepted. The current D8 hard Bad Ending can still display the older Trauma images through its normal failure sequence.
+The b0.7 alternatives therefore provided a direct shortcut to the Orlando and Dean/Tyson Trauma images. That shortcut no longer works in b0.85 because the two words are no longer accepted. The unavoidable D8 Bad Ending can still display the older Trauma images during its normal failure sequence.
 
-For the current Gallery structure, see [CG Gallery Index](../collectibles/gallery.md).
+For the current Gallery structure, see [CG Gallery Completion Index](../collectibles/gallery.md).
 
 ## D11 optional Vault
 
@@ -93,7 +89,7 @@ persistent.metempsychosis_check == True
 BensonAround == True
 ```
 
-The persistent flag becomes available after the relevant Oswin-alive D11 laboratory sequence has already been completed once. On a later eligible run through the A/B-side D11 material, the player can receive an additional choice:
+The option becomes available after the relevant Oswin-alive D11 laboratory sequence has already been completed once. On a later eligible run through the A/B-side D11 material, the player can receive an additional choice:
 
 ```text
 Visit the Vault.
@@ -114,11 +110,11 @@ It changes the D11 laboratory sequence and several later conditional dialogue pa
 
 - the selected character Route or the current lettered Path;
 - medal completion;
-- the final ending classification.
+- the final ending outcome.
 
 ## D11 legacy content in b0.85
 
-b0.85 still mentions this word in the story and retains a small amount of conditional dialogue related to `METEMPSYCHOSIS`. Normal D11 play does not open the matching Vault input or provide a reachable success scene.
+b0.85 still mentions this word in the story and retains a small amount of conditional dialogue related to `METEMPSYCHOSIS`. During normal D11 play, the matching Vault input and its successful scene are no longer available.
 
 These are story traces from the older sequence, not a hidden password in the current build. A normal b0.85 playthrough uses the dialogue for a run that never completed the retired input.
 

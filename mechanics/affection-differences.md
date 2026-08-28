@@ -4,9 +4,9 @@ description: "Password b0.85 中好感度阈值如何改变对话、亲密场景
 toc: true
 ---
 
-本页记录《Password》b0.85 中六项好感度变量造成的具体对话、剧情和关系差异。
+《Password》b0.85 的六项好感度会改变部分对话、剧情和关系结果。
 
-需要查询加点选项及完整加点清单时，见[好感度机制与加点](affection.md)。
+所有加点选项和完整清单见[好感度机制与加点](affection.md)。
 
 ::: {.callout-important}
 ## 读表要点
@@ -27,12 +27,12 @@ toc: true
 
 | 检定 | 主要剧情位置 | 附加条件 | 对话或剧情效果 |
 |---|---|---|---|
-| `dragonlove >= 5` | D6 Orlando 晚餐后；D9 早晨 | D6 要求 Orlando 线和 D6 金库状态成功 | D6 中，Orlando 会以帮助 Dave 为 Dean 做准备为由提出接吻练习，并显示 `orlandokiss`。低于 5 时会跳过练习吻。D9 早晨，5—9 点会进入较犹豫的安慰剧情：Orlando 会询问自己能否帮忙，但仍显得犹豫。 |
+| `dragonlove >= 5` | D6 Orlando 晚餐后；D9 早晨 | D6 要求 Orlando 线和 D6 金库检定成功 | D6 中，Orlando 会以帮助 Dave 为 Dean 做准备为由提出接吻练习，并显示 `orlandokiss`。低于 5 时会跳过练习吻。D9 早晨，5—9 点会进入较犹豫的安慰剧情：Orlando 会询问自己能否帮忙，但仍显得犹豫。 |
 | `dragonlove >= 7` | D6 接吻练习 | 必须已经进入 `>= 5` 的练习场景 | 第一次亲吻后，Dave 会主动把 Orlando 拉近并回吻，随后出现追加选项；选择 `Yes.` 会再增加 1 点。低于 7 时，场景会在第一次练习吻后结束，不会出现 Dave 更主动的回应。 |
 | `dragonlove >= 10` | D9 早晨；D19 Orlando 厨房场景 | D9 达到 10 点时使用这一安慰剧情；D19 要求 Orlando 线，并进入 Dean 约会失败后通往厨房的分支 | D9 中，Orlando 会察觉 Dave 已接近崩溃，触碰他的脸，并追问是否有人伤害了他。D19 中，10—19 点会出现 `I love you too.`／`Stay quiet.`，让玩家接受或拒绝 Orlando。 |
 | `dragonlove >= 15` | D15 A/B 梦境；D16 A/B 早晨；D16 Orlando 事件 | Orlando 线或相应 Orlando 场景 | D15 梦境中，Dave 会质问 Orlando 为什么总拿 Dean 当借口，并开始怀疑自己是否也爱 Orlando。D16 早晨，Orlando 的情感疏离会被描述为真正令 Dave 痛苦。在角色事件中，Dave 会直接指责 Orlando 把每次严肃谈话都重新引向 Dean。 |
 | `dragonlove >= 18` | D10 Orlando 线夜间 | Orlando 线 | 两档都会接吻。达到 18 后，Orlando 会触碰 Dave 的脸并更主动地发起亲吻，Dave 也会把它理解为具有情感意义的吻。低于 18 时，Orlando 会先让 Dave 闭眼，整体更犹豫、更像试探。若已设置 `OrlandoKiss`，场景还会提到 D6 的练习吻。 |
-| `dragonlove >= 20` | D18 Orlando 场景；两段 D19 Orlando 场景 | D18 变化还要求 D17 金库状态成功；D19 要求进入相应 Orlando 分支 | D18 中，Dave 会握住 Orlando 的手、把他拉近，并增强场景中的身体亲密。D19 的一段后续中会出现一个较小的相互触碰差异；在之后的厨房告白中，Orlando 会明确说爱 Dave，游戏自动进入 `OrlandoBoyfriend`。 |
+| `dragonlove >= 20` | D18 Orlando 场景；两段 D19 Orlando 场景 | D18 变化还要求 D17 金库检定成功；D19 要求进入相应 Orlando 分支 | D18 中，Dave 会握住 Orlando 的手、把他拉近，并增强场景中的身体亲密。D19 的一段后续中会出现一个较小的相互触碰差异；在之后的厨房告白中，Orlando 会明确说爱 Dave，游戏自动进入 `OrlandoBoyfriend`。 |
 
 :::
 
@@ -57,8 +57,8 @@ toc: true
 | `bearlove >= 5` | D5 Dean 线热水浴缸 | Dean 线，并选择 D5 电影 `Romance` | Dean 会把电影选择理解为 Dave 可能在向自己暗示，显示 `deankiss`，并进入之后的亲吻确认菜单。低于 5 时仍有调情，但不会出现正式亲吻选择。CG 在确认菜单之前已经显示，因此之后选择 `No` 也不会阻止画廊解锁。 |
 | `bearlove >= 10` | D19 Dean 约会结束 | 进入 Dean 约会后的分支 | Dave 会说自己同样期待这次约会，并把感情描述为接近爱，随后进入关系与亲密场景。低于 10 时，Dave 会认为约会没有产生足够的浪漫火花。 |
 | `bearlove >= 15` | D9 早晨；D15 A/B 梦境；D16 A/B 早晨 | 相应 Dean 场景 | D9 中，Dean 会区分随意性行为和与重要之人的亲密。D15 梦中，Dave 会承认自己非常喜欢 Dean。D16 早晨，Dean 的拥抱会被描述为安全、柔软，并让 Dave 想要经常这样醒来。 |
-| `bearlove >= 17` | D10 夜间 | Dean 线，且 D10 金库状态成功 | Dave 会意识到自己对 Dean 的感情可能已超过普通喜欢，并认为二人之后需要认真谈谈。 |
-| `bearlove >= 20` | D18 会后 Dean 场景 | Dean 线，且 D17 金库状态成功 | Dave 会把 `I appreciate it` 改成更私人的 `I appreciate you`，明确期待次日约会，并主动开始更强烈的亲吻，之后才停下来休息。 |
+| `bearlove >= 17` | D10 夜间 | Dean 线，且 D10 金库检定成功 | Dave 会意识到自己对 Dean 的感情可能已超过普通喜欢，并认为二人之后需要认真谈谈。 |
+| `bearlove >= 20` | D18 会后 Dean 场景 | Dean 线，且 D17 金库检定成功 | Dave 会把 `I appreciate it` 改成更私人的 `I appreciate you`，明确期待次日约会，并主动开始更强烈的亲吻，之后才停下来休息。 |
 
 :::
 
@@ -164,7 +164,7 @@ Hoss 有两张亲吻 CG 分别受不同好感度结果控制，因此其检定�
 
 :::
 
-如果 D8 隐藏图书馆没有达到 12 点、此时 `HossKiss` 仍为 `False`，但之后在 D9 夜晚前将 `lionlove` 提升到 12 或以上，D9 晚上 Hoss 场景仍会触发一次嘴唇接吻，并将 `HossKiss` 设为 `True`。这不会补解锁已经错过的 D8 `hosskiss` CG，因此“错过 D8 CG”并不等于本周目之后不会与 Hoss 接吻，但是确实无法解锁对应 CG。
+如果 D8 隐藏图书馆没有达到 12 点，`HossKiss` 会保持 `False`。之后若在 D9 夜晚前将 `lionlove` 提升到 12 或以上，Hoss 仍会在 D9 夜间场景中亲吻 Dave，并将 `HossKiss` 设为 `True`，但这不会补解锁已经错过的 D8 `hosskiss` CG。
 
 具体坐标和最早正常显示位置见[CG 画廊查漏索引](../collectibles/gallery.md)。
 

@@ -1,6 +1,6 @@
 ---
 title: "Major Changes in b0.85"
-description: "Feature, story-interaction, password, Gallery, and asset changes between Password b0.7 and b0.85"
+description: "Feature, story-interaction, password, Gallery, and CG changes between Password b0.7 and b0.85"
 toc: true
 ---
 
@@ -27,8 +27,8 @@ The comparison below is limited to **b0.7 and b0.85** and should not be applied 
 | Dean-related scenes | Converts several choice-driven scenes into fixed sequences |
 | Dean relationship | Changes the D19 threshold and removes the middle-range confirmation choice |
 | Path P | Adds a mandatory final input and explicit true-ending persistence |
-| Gallery | Reduces registered slots from 104 to 100 |
-| CG assets | Redraws two Tyson CGs and removes four older Dean adult CG files |
+| Gallery | Reduces the number of slots from 104 to 100 |
+| CGs | Redraws two Tyson CGs and removes four older Dean adult CGs |
 :::
 
 ## Compendium in b0.85
@@ -77,7 +77,7 @@ Stay.
 Leave.
 ```
 
-`Leave.` entered the terminal `BAD END: OZ`.
+Choosing `Leave.` entered `BAD END: OZ` and ended the playthrough.
 
 b0.85 removes the menu and its Bad Ending from normal play. See [Legacy Route Archive](legacy-routes.md).
 
@@ -103,7 +103,7 @@ See [Legacy Mechanics Archive](legacy-mechanics.md).
 
 b0.7 could unlock an optional D11 Vault visit on a later eligible A/B-side run. Successfully entering `METEMPSYCHOSIS` changed the laboratory sequence and later conditional dialogue without changing the character Route, lettered Path, or ending.
 
-b0.85 removes the normal entry and reachable success sequence. Only the old word and some related dialogue remain.
+b0.85 removes the normal entrance and the scene that followed a successful input. Only the old word and some related dialogue remain.
 
 See [Legacy Password Archive](legacy-passwords.md).
 
@@ -111,7 +111,7 @@ See [Legacy Password Archive](legacy-passwords.md).
 
 b0.7 offered a three-way laboratory decision that could add different amounts of `DavePride`. b0.85 replaces it with the fixed sequence in which Oswin injects Dave and later reveals that the substance was saline.
 
-See [Legacy Mechanics Archive](legacy-mechanics.md) for the original choices and state effects.
+See [Legacy Mechanics Archive](legacy-mechanics.md) for the original choices and their effects on later dialogue.
 
 ## Dean and early-story interaction rewrite
 
@@ -159,9 +159,9 @@ b0.85 therefore:
 
 - lowers the automatic relationship threshold from 20 to 10;
 - removes the player's confirmation choice in the old 10–19 range;
-- automatically assigns Dean as Dave's boyfriend whenever the current value is at least 10.
+- makes Dean Dave's boyfriend automatically at 10 or more affection.
 
-This is a relationship-control change, not a lettered Path change.
+This changes Dean's relationship outcome, not the lettered Path.
 
 ## Path P additions
 
@@ -174,7 +174,7 @@ PATH A: END
 → final sequence
 ```
 
-b0.85 retains that structure and adds several later integrations.
+b0.85 retains that structure and adds new content later in Path P.
 
 ### Mandatory final input
 
@@ -188,7 +188,7 @@ For progressive current hints, see [Tiered Password Hints](../guide/password-hin
 
 In b0.7, Florencia operates the keypad before Oswin opens the Vault further.
 
-In b0.85, Dave performs the newly added input and triggers the opening interaction himself.
+In b0.85, Dave enters the new password and operates the keypad himself to open the Vault.
 
 The keypad role moves from **Florencia to Dave**.
 
@@ -205,14 +205,14 @@ The `true_end` state is used by the Compendium and the Epilogue unlock chain.
 
 The game does not display a formal `PATH P: END` heading or define `P` as a full word.
 
-## Gallery registration: 104 to 100
+## Gallery slots: 104 to 100
 
 The Gallery total changes from 104 slots in b0.7 to 100 in b0.85.
 
 The reduction comes from the following four slot changes:
 
 ::: {.gallery-registration-change-table .table-responsive .table-scroll-compact}
-| Registration change | Slot difference |
+| Gallery change | Slot difference |
 |---|---:|
 | `deanlove` removed from the Dean Gallery list | −1 |
 | `daveflashlight1` removed from the Dave list but retained under Misc | −1 duplicate |
@@ -221,15 +221,15 @@ The reduction comes from the following four slot changes:
 | **Total** | **−4** |
 :::
 
-The three flashlight images remain available through their Misc registrations. Their removal from the Dave list eliminates duplicate buttons rather than deleting the images.
+The three flashlight images remain available under Misc. Their removal from the Dave list eliminates duplicate buttons rather than deleting the images.
 
 `deanlove` is not part of the b0.85 Gallery and does not appear during normal play.
 
 The four older Dean adult CGs are **not** the reason for the 104-to-100 change. They were absent from the Gallery lists in both builds.
 
-For the current 100-slot structure, see [CG Gallery Index](../collectibles/gallery.md).
+For the current 100-slot structure, see [CG Gallery Completion Index](../collectibles/gallery.md).
 
-## CG and asset changes
+## CG changes
 
 ### Tyson CG redraws
 
@@ -244,13 +244,7 @@ The driving CG appears in several D5/D6 Bad Ending aftermath scenes. The movie C
 
 ### Four older Dean adult CGs
 
-Four older Dean adult CGs were present in the b0.7 `images/CG` assets and were used by normal D7 and D9 story scenes.
-
-In b0.85:
-
-- the normal story calls are removed;
-- the corresponding image definitions are removed;
-- the corresponding image files were removed.
+Normal D7 and D9 story scenes in b0.7 displayed four older Dean adult CGs. b0.85 no longer displays them, and the corresponding images have been removed from the game.
 
 These images were not counted in the Gallery total in either build, despite being used in normal b0.7 story flow.
 
@@ -258,7 +252,7 @@ These images were not counted in the Gallery total in either build, despite bein
 
 The route-specific save-slot tint and character portrait already existed in b0.7. They are not b0.85 additions.
 
-A visible b0.85 change is the survivor display: generic status boxes are replaced by character-specific alive/dead pixel icons.
+A visible b0.85 change is the survivor display: generic status boxes are replaced by individual pixel icons showing whether each character is alive or dead.
 
 The Route portrait still represents the D4 character Route rather than the current lettered Path.
 

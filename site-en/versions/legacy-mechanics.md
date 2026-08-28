@@ -67,7 +67,7 @@ This is why a normal save slot does not behave as an independent copy of the fir
 
 ## Additional Scenes in b0.85
 
-b0.85 registers the two segments as the first entries under **Additional Scenes** in **Compendium**:
+b0.85 adds the two segments as the first entries under **Additional Scenes** in **Compendium**:
 
 1. `Dave's Demise`
 2. `Roswell's Attempt`
@@ -78,13 +78,13 @@ For their current list positions and troubleshooting, see [Compendium Unlock Ind
 
 ### Replays cover only part of the original story
 
-The two entries replay bounded parts of the original story rather than the entire Path A sequence.
+Each entry replays one part of the original Path A story.
 
 `Dave's Demise` begins with Dave's corresponding story segment and ends before the Roswell segment.
 
 `Roswell's Attempt` begins with the Roswell segment and ends before the later Path A story continues.
 
-The replays can still unlock Gallery images shown within them and retain the story effects of their respective segments. Each one has a fixed starting and ending point: it is neither an isolated video file nor a complete reproduction of the Path A sequence and its surrounding story.
+Both are in-game replays rather than standalone video files. They can still unlock Gallery images shown within their segments and retain any story effects triggered there.
 
 ## D8 Oswin free-text conversation
 
@@ -141,7 +141,7 @@ Its parser:
 
 Every required group must match, but their order is not enforced. Extra words are usually allowed.
 
-### Important boundaries
+### Input limits
 
 ::: {.parser-boundary-table .table-responsive .table-scroll-compact}
 | Input feature | Actual behavior |
@@ -157,22 +157,22 @@ Every required group must match, but their order is not enforced. Extra words ar
 
 A broad response can match before a more specific one, so the wording of an entry may change which response appears first.
 
-## Conversation prompts to try
-
-The following prompts work in b0.7. They are historical examples only and cannot be entered during normal b0.85 play.
-
-### State-dependent rabbit response
+## State-dependent rabbit response
 
 The rabbit interaction is state-dependent, but the second input does not have to be the exact phrase `what rabbit`.
 
 An initial rabbit-, hare-, or story-related response can set `OzPast2`. A later rabbit-related input then receives the follow-up version because the state has changed.
 
-The important condition is the saved ordinary state, not a mandatory two-line command sequence.
+The important condition is whether Dave has already received the first response, not a mandatory two-line command sequence.
+
+## Conversation prompts to try
+
+The following prompts work in b0.7. They are historical examples only and cannot be entered during normal b0.85 play.
 
 Some prompts are intentionally abbreviated or grammatically unusual because those forms match the old keyword parser reliably.
 
 <details>
-<summary><strong>Conversation prompts to try</strong></summary>
+<summary><strong>Expand the prompt table</strong></summary>
 
 The input box did not understand unrestricted natural language. It looked for groups of keywords, so the lines below are reliable examples rather than the only possible wording.
 
@@ -216,7 +216,7 @@ Some subjects have more than one response, and a few answers depend on what Dave
 
 ## b0.85 replacement
 
-b0.85 removes the D8 free-input engine and replaces the scene with scripted dialogue:
+b0.85 removes the D8 free-text input and replaces the scene with scripted dialogue:
 
 - the fixed scene reuses selected old topics;
 - some older states still affect a small amount of later dialogue;
@@ -244,7 +244,7 @@ The change:
 
 - removes a normal player decision;
 - removes the two possible `DavePride` gains;
-- fixes the order and outcome of the laboratory scene.
+- uses one fixed order and outcome for the laboratory scene.
 
 It does not directly assign a character Route, lettered Path, or ending.
 
