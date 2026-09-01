@@ -23,7 +23,7 @@ ZH_SITE_NAME = "Password b0.85 中文攻略与机制资料库"
 EN_SITE_NAME = "Password b0.85 Guide"
 ZH_HOME_TITLE = "Password b0.85 中文攻略"
 EN_HOME_TITLE = "Password b0.85 Guide"
-EN_HOME_DESCRIPTION = "An unofficial Password b0.85 guide to Routes, Paths, passwords, collectibles, mechanics, and the b0.7–b0.85 comparison archive."
+EN_HOME_DESCRIPTION = "An unofficial guide and walkthrough reference for Password, Grizz’s furry visual novel (FVN), covering b0.85 routes, endings, password hints, medals, Gallery completion, mechanics, and version differences."
 PAIRED = {
     "index.html",
     "guide/route-overview.html",

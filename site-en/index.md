@@ -1,13 +1,13 @@
 ---
 title: "Password b0.85 Guide"
-description: "An unofficial Password b0.85 guide to Routes, Paths, passwords, collectibles, mechanics, and the b0.7–b0.85 comparison archive."
+description: "An unofficial guide and walkthrough reference for Password, Grizz's furry visual novel (FVN), covering b0.85 routes, endings, password hints, medals, Gallery completion, mechanics, and version differences."
 comments: false
 toc: false
 ---
 
-Use this site to follow character Routes and lettered Paths, work through password checks, collect medals and Gallery entries, unlock the Compendium, and understand affection mechanics.
+*Password* is a furry visual novel (FVN) by Grizz. This unofficial guide covers the current b0.85 build, including character Routes and lettered Paths, endings and Path P, password hints, all twelve medals, CG/Gallery completion, the Compendium, affection mechanics, and unlock requirements.
 
-The main guide covers the current b0.85 build. A separate version archive compares b0.7 with b0.85 and documents removed branches, retired mechanics, and other changes.
+If you're looking for a walkthrough or route guide, start with the Route and Path pages for progression and ending structure. If you're only stuck on a password, medal, Gallery entry, or unlock condition, you can jump directly to the relevant guide or FAQ. A separate version archive compares b0.7 with b0.85 and documents removed branches, retired mechanics, and other changes.
 
 ::: {.callout-warning}
 This site contains spoilers for Routes, Bad Endings, medals, CGs, Compendium entries, and ending requirements.
