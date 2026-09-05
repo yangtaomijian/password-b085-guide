@@ -1,0 +1,252 @@
+<script>
+(() => {
+  "use strict";
+
+  // Keep Quarto's dialog, result navigation and keyboard handling. Only replace
+  // its local index/search adapters; do not modify generated vendor scripts.
+  const normalize = (s) => String(s || "").normalize("NFKC").toLowerCase()
+    .replace(/(?:第\s*(\d+)\s*[天日]|day\s*(\d+))/g, (_, a, b) => ` d${a || b} `)
+    .replace(/\bd\s+(\d+)\b/g, "d$1")
+    .replace(/\bpath\s+([a-gp])\s*[/／]\s*([a-gp])\b/g, "path$1 path$2")
+    .replace(/\b([a-gp])\s*[/／]\s*([a-gp])\b/g, "path$1 path$2")
+    .replace(/\bpath\s+([a-gp])\b/g, "path$1")
+    .replace(/([a-gp])\s*线/g, "path$1");
+  const groups = [
+    ["好感度", "好感", "affection"],
+    ["画廊", "cg", "gallery"],
+    ["奖牌", "勋章", "medal", "medals"],
+    ["密码", "password", "passwords", "vault"],
+    ["亲吻", "接吻", "kiss", "kissing"],
+    ["后记", "compendium"],
+    ["解锁", "unlock", "unlocks"],
+    ["旧版", "旧版本", "历史", "legacy", "archive", "archives", "old"]
+  ];
+  const ignored = new Set(["怎么", "如何", "哪里", "什么", "为什么", "我", "的", "了", "在", "想", "要", "和", "与", "可以", "能", "吗", "查", "查看", "找到", "第", "how", "do", "i", "to", "the", "a", "an", "and", "is", "can", "where", "when", "get", "find"]);
+  const tokenize = (query) => {
+    const normalized = normalize(query);
+    if (groups.some(g => g.includes(normalized.trim()))) return [normalized.trim()];
+    const parts = normalized.match(/b?\d+\.\d+|[a-z][a-z0-9_]*(?:\.[a-z0-9_]+)+|[a-z0-9_]+|[\p{Script=Han}]+/gu) || [];
+    const words = parts.flatMap(word => /[\p{Script=Han}]/u.test(word) && typeof Intl.Segmenter === "function"
+      ? [...new Intl.Segmenter("zh", { granularity: "word" }).segment(word)].map(x => x.segment)
+      : [word]);
+    return [...new Set(words.filter(w => !ignored.has(w)))].slice(0, 12);
+  };
+  const alternatives = (word) => groups.find(g => g.includes(word)) || [word];
+  const escape = (s) => String(s).replace(/[&<>"']/g, ch => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));
+
+  const decodeEntities = (text) => String(text).replace(/&(#x[0-9a-f]+|#\d+|amp|lt|gt|quot|apos);/gi, (whole, code) => {
+    if (code[0] !== '#') return ({amp:'&',lt:'<',gt:'>',quot:'"',apos:"'"})[code.toLowerCase()];
+    const number = code[1].toLowerCase() === 'x' ? parseInt(code.slice(2),16) : parseInt(code.slice(1),10);
+    return number >= 0 && number <= 0x10ffff ? String.fromCodePoint(number) : whole;
+  });
+  const prepare = (records, english) => records.filter(r => !/^(相关页面|related guides|related pages)$/i.test(r.section || "")).map(r => {
+    const protectedHint = r.href.split('#')[0] === "guide/password-hints.html";
+    // A folded hint must not become a searchable answer in the result preview.
+    const protectedArchive = r.href.split('#')[0] === "versions/legacy-passwords.html";
+    const archiveText = protectedArchive ? decodeEntities(r.text || "") : "";
+    let text = protectedArchive
+      ? (english ? "Historical password rules for b0.7. Open the archive for details; do not use it as the current walkthrough." : "b0.7 旧版密码规则。进入档案查看详情，请勿当作当前版本的通关流程。")
+      : protectedHint
+      ? (english ? "Open this page and reveal one hint at a time." : "进入页面后逐级展开提示，搜索摘要不展示后续线索。")
+      : decodeEntities(r.text || "").replace(/\s+/g, " ").trim();
+    const date = protectedHint ? ({"一号关键密码":"D4 D6 Dean Tyson Roswell Orlando Hoss Sal", "二号关键密码":"D7", "三号关键密码":"D10", "四号关键密码":"D17", "First key password group":"D4 D6 Dean Tyson Roswell Orlando Hoss Sal", "Second key password":"D7", "Third key password":"D10", "Fourth key password":"D17"}[r.section] || "") : "";
+    const title = String(r.title || ""), section = String(r.section || "");
+    const version = r.href.startsWith("versions/") ? "" : "b0.85 0.85 当前 现行 current";
+    if (section && text.startsWith(section)) text = text.slice(section.length).trim();
+    return {...r, text, date, protectedHint, protectedArchive, heading:normalize(`${title} ${section}`), haystack:normalize(`${title} ${section} ${date} ${text} ${archiveText} ${version}`), historical:r.href.startsWith("versions/")};
+  });
+
+  // Only these explicitly reviewed short queries have a preferred landing section.
+  // Specific queries and explicit old-version searches keep the ordinary ranking.
+  const preferredLanding = query => {
+    const q = normalize(query).trim();
+    const compact = q.replace(/\s+/g, '');
+    const day = compact.match(/^d(1|2|3|11)(?:密码|passwords?|vault)$/);
+    if (day) {
+      if (day[1] === '11') return ['mechanics/password-checks.html', /^D11/];
+      if (day[1] === '2') return ['extras/easter-eggs.html', /^D2/];
+      return ['extras/easter-eggs.html', /^D1[—–-]D3/];
+    }
+    if (/^pathp(?:密码|passwords?|vault)$/.test(compact)) return ['guide/password-hints.html', /Path P/i];
+    if (/^(?:path[a-gp]|(?:route[a-gp]))$/.test(compact) || /^(?:结局|ending|endings)$/.test(q)) return ['guide/path-system.html', /^$/];
+    if (/^(?:问答|q\s*&\s*a|questions?\s*(?:and|&)\s*answers?|free[ -]text(?: questions?| conversation)?|oswin questions?)$/.test(q)) return ['versions/legacy-mechanics.html', /^D8 Oswin/];
+    return null;
+  };
+
+  const search = (query, docs, english) => {
+    const terms = tokenize(query);
+    if (!terms.length) return [];
+    const oldIntent = /b?0\.7|旧|历史|\blegacy\b|\barchiv|\bold\b/i.test(query);
+    const match = (hay, variants) => variants.map(v => /^d\d+$/.test(v)
+      ? hay.search(new RegExp("\\b" + v + "(?!\\d)")) : hay.indexOf(v)).filter(i => i >= 0);
+    const landing = preferredLanding(query);
+    const ranked = docs.flatMap(r => {
+      const preferred = !oldIntent && landing && r.href.split('#')[0] === landing[0] && landing[1].test(r.section || "");
+      const positions = terms.map(t => match(r.haystack, alternatives(t)));
+      if (!preferred && positions.some(p => !p.length)) return [];
+      let score = terms.reduce((s,t) => s + (match(r.heading, alternatives(t)).length ? 12 : 2), 0);
+      if (r.heading.includes(normalize(query).trim())) score += 15;
+      if (terms.every(t => match(normalize(r.title), alternatives(t)).length)) score += 12;
+      if (!r.section) score += 3;
+      const destinations = {"好感度":"mechanics/affection.html", "画廊":"collectibles/gallery.html", "奖牌":"collectibles/medals.html", "密码":"guide/password-hints.html", "后记":"collectibles/compendium.html"};
+      if (terms.length === 1 && destinations[alternatives(terms[0])[0]] === r.href.split('#')[0]) score += 30;
+      if (r.protectedHint && terms.some(t => /^d\d+$/.test(t) && match(normalize(r.date), [t]).length)) score += 24;
+      const starts = positions.map(p => p.length ? Math.min(...p) : 0);
+      score += 8 / (1 + (Math.max(...starts) - Math.min(...starts)) / 100);
+      if (r.href.split('#')[0] === "index.html") score -= 20;
+      return [{r, score, priority:preferred ? -1 : oldIntent ? !r.historical : r.historical}];
+    }).sort((a,b) => Number(a.priority)-Number(b.priority) || b.score-a.score || a.r.href.localeCompare(b.r.href));
+    const perPage = new Map();
+    return ranked.filter(({r}) => {
+      const page = r.href.split('#')[0], count = perPage.get(page) || 0;
+      perPage.set(page, count + 1);
+      return count < 2;
+    }).slice(0, 24).map(({r}) => {
+      let excerpt = r.text;
+      if (!r.protectedHint && !r.protectedArchive) {
+        const length = english ? 220 : 125;
+        const normalized = normalize(excerpt);
+        const candidates = [0];
+        terms.flatMap(alternatives).forEach(term => {
+          let position = normalized.indexOf(term);
+          while (position >= 0) {
+            candidates.push(Math.max(0, position - 30));
+            position = normalized.indexOf(term, position + term.length);
+          }
+        });
+        // Prefer a short window containing all conditions, not an early tab label.
+        const start = candidates.map(start => ({start, score:terms.filter(t => match(normalized.slice(start, start + length), alternatives(t)).length).length}))
+          .sort((a,b) => b.score-a.score || a.start-b.start)[0].start;
+        excerpt = (start ? "…" : "") + excerpt.slice(start, start + length) + (excerpt.length > start + length ? "…" : "");
+      }
+      const badge = r.historical ? (english ? "Version archive · " : "版本档案 · ") : (english ? "Current b0.85 · " : "当前 b0.85 · ");
+      const [path, hash] = r.href.split('#');
+      return {title:r.title, section:r.section, crumbs:r.crumbs,
+        href:`${path}?q=${encodeURIComponent(query)}${hash ? '#' + hash : ''}`,
+        text:escape(badge) + excerpt.split(new RegExp("(" + terms.flatMap(alternatives).map(t => t.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("|") + ")", "gi")).map((part,i) => i % 2 ? "<mark>" + escape(part) + "</mark>" : escape(part)).join("")};
+    });
+  };
+
+  // The same pure retrieval functions are exercised by the local regression check.
+  if (typeof module !== "undefined" && module.exports) {
+    module.exports = {prepare, search, tokenize};
+    return;
+  }
+  if (typeof window.readSearchData !== "function" || typeof window.fuseSearch !== "function") return;
+  const english = document.documentElement.lang.startsWith("en");
+  const offset = document.querySelector('meta[name="quarto:offset"]')?.content || "./";
+  const rootURL = new URL(offset, location.href);
+  const enrichSections = async records => {
+    const enriched = await Promise.all(["mechanics/affection.html", "mechanics/affection-differences.html", "collectibles/medals.html", "collectibles/compendium.html", "extras/easter-eggs.html"].map(async path => {
+      const pageRecords = records.filter(r => r.href.split('#')[0] === path);
+      if (!pageRecords.length) return {remove:[], add:[]};
+      try {
+        const response = await fetch(new URL(path, rootURL));
+        if (!response.ok) return {remove:[], add:[]};
+        const page = new DOMParser().parseFromString(await response.text(), "text/html");
+        const remove = new Set(), add = [];
+        page.querySelectorAll('.panel-tabset .tab-content > .tab-pane').forEach(pane => {
+          const tabset = pane.closest('.panel-tabset');
+          const section = tabset.closest('section');
+          const original = pageRecords.find(r => r.href === path + '#' + section?.id);
+          const label = [...tabset.querySelectorAll('[role="tab"]')].find(el => (el.getAttribute('data-bs-target') || el.getAttribute('href')) === '#' + pane.id);
+          if (!original || !label || !pane.id) return;
+          remove.add(original.href);
+          add.push({...original, href:path + '#' + pane.id, section:original.section + ' · ' + label.textContent.trim(), text:pane.textContent});
+        });
+        // Quarto indexes these pages at level 2; retain their existing level-3
+        // anchors and give individual collection instructions their own results.
+        if (/^(collectibles|extras)\//.test(path)) {
+          pageRecords.forEach(original => {
+            const id = original.href.split('#')[1];
+            const section = id && page.getElementById(id);
+            if (!section) return;
+            const children = [...section.querySelectorAll('section.level3, details[id^="medal-"]')];
+            if (!children.length) return;
+            remove.add(original.href);
+            const overview = section.cloneNode(true);
+            overview.querySelectorAll('section.level3, details[id^="medal-"]').forEach(el => el.remove());
+            add.push({...original, text:overview.textContent});
+            children.forEach(child => {
+              const heading = child.querySelector('h3, summary');
+              if (!heading || !child.id) return;
+              add.push({...original, href:path + '#' + child.id, section:heading.textContent.trim(), text:child.textContent});
+            });
+          });
+        }
+        return {remove:[...remove], add};
+      } catch {
+        // Keep the ordinary index usable if supplemental page loading fails.
+        return {remove:[], add:[]};
+      }
+    }));
+    const removed = new Set(enriched.flatMap(x => x.remove));
+    return records.filter(r => !removed.has(r.href)).concat(enriched.flatMap(x => x.add));
+  };
+  let indexPromise;
+  window.readSearchData = () => {
+    if (!indexPromise) {
+      indexPromise = fetch(new URL("search.json", rootURL)).then(response => {
+        if (!response.ok) throw new Error(`Search index: ${response.status}`);
+        return response.json();
+      }).then(enrichSections).then(records => prepare(records, english)).catch(error => {
+        indexPromise = undefined; // A temporary network failure must be retryable.
+        throw error;
+      });
+    }
+    return indexPromise;
+  };
+  window.fuseSearch = async (query, index) => search(query, index, english);
+
+  // Tab fragments are safe deep links; keep password details folded.
+  const activateLinkedTab = () => {
+    if (!location.hash) return;
+    let pane;
+    try { pane = document.getElementById(decodeURIComponent(location.hash.slice(1))); } catch { return; }
+    if (pane?.matches('details[id^="medal-"]') && /\/collectibles\/medals\.html$/.test(location.pathname)) {
+      pane.open = true;
+      pane.scrollIntoView({block:'start', behavior:'instant'});
+      return;
+    }
+    if (!pane?.matches('.tab-pane')) return;
+    const control = [...document.querySelectorAll('[role="tab"]')].find(el => (el.getAttribute('data-bs-target') || el.getAttribute('href')) === '#' + pane.id);
+    if (!control) return;
+    control.click();
+    pane.closest('.panel-tabset')?.scrollIntoView({block:'start', behavior:'instant'});
+  };
+
+  const initialise = () => {
+    // Register after Quarto's DOMContentLoaded handler so search wins over saved tabs.
+    window.addEventListener("pageshow", activateLinkedTab);
+    window.addEventListener("hashchange", activateLinkedTab);
+    let wasOpen = false;
+    const update = () => {
+      const open = document.body.classList.contains("aa-Detached");
+      const input = document.querySelector('.aa-DetachedContainer .aa-Input');
+      if (input) {
+        const label = english ? "Search the guide" : "搜索攻略";
+        const placeholder = english ? "Try Hoss D8, medals, D7…" : "试试 Hoss D8、奖牌、D7…";
+        if (input.getAttribute("aria-label") !== label) input.setAttribute("aria-label", label);
+        if (input.hasAttribute("aria-labelledby")) input.removeAttribute("aria-labelledby");
+        if (input.placeholder !== placeholder) input.placeholder = placeholder;
+      }
+      const empty = document.querySelector('.quarto-search-no-results');
+      if (empty && input?.value.trim()) {
+        const message = english
+          ? "No matches. Try a character, day (D8), or topic such as medals. Check spelling or remove a condition."
+          : "没有找到匹配内容。试试角色名、日期（D8）或“奖牌”等主题；也可检查拼写，或减少一个条件。";
+        if (empty.textContent !== message) empty.textContent = message;
+      }
+      if (wasOpen && !open) document.querySelector('.pw-search-launcher')?.focus({preventScroll:true});
+      wasOpen = open;
+      // Quarto's visually clipped proxy remains available for programmatic clicks.
+      const native = document.querySelector('#quarto-search .aa-DetachedSearchButton');
+      if (native) native.tabIndex = -1;
+    };
+    new MutationObserver(update).observe(document.body, {childList:true, subtree:true, attributes:true, attributeFilter:['class','placeholder','aria-labelledby']});
+    update();
+  };
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", initialise);
+  else initialise();
+})();
+</script>

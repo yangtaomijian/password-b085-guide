@@ -11,12 +11,7 @@ It covers route changes that affect normal story access, Bad Endings, or how old
 ::: {.callout-warning}
 ## Historical reference only
 
-Do not use this page as a b0.85 walkthrough.
-
-For the current structure, see:
-
-- [Route and Path Overview](../guide/route-overview.md)
-- [Lettered Path System](../guide/path-system.md)
+Do not use this page as a b0.85 walkthrough. For the current structure, see [Route and Path Overview](../guide/route-overview.md) and [Lettered Path System](../guide/path-system.md).
 :::
 
 ## Structure shared by both builds
@@ -27,12 +22,7 @@ The differences that need special attention are removed branches and older mecha
 
 ## D6 mansion departure branch
 
-b0.7 contained a normal D6 choice near the end of the mansion sequence:
-
-```text
-Stay.
-Leave.
-```
+b0.7 contained a normal D6 choice near the end of the mansion sequence: **Stay.** / **Leave.**
 
 Choosing **Stay.** continued to D7. Choosing **Leave.** entered `BAD END: OZ` and ended the playthrough.
 
@@ -102,15 +92,3 @@ Several removed systems occurred inside route material without changing the lett
 :::
 
 The broader Dean interaction changes and the D19 relationship threshold do not change the lettered Path structure. See [Major Changes in b0.85](b085-changes.md) for details.
-
-## Current references
-
-::: {.table-responsive}
-| Topic | Current page |
-|---|---|
-| Character Routes and overall timeline | [Route and Path Overview](../guide/route-overview.md) |
-| Path A–G and Path P conditions | [Lettered Path System](../guide/path-system.md) |
-| Legacy D7 and D11 inputs | [Legacy Password Archive](legacy-passwords.md) |
-| Retired interaction and replay mechanics | [Legacy Mechanics Archive](legacy-mechanics.md) |
-| Consolidated b0.85 changes | [Major Changes in b0.85](b085-changes.md) |
-:::

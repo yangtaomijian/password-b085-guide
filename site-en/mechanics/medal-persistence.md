@@ -13,9 +13,13 @@ The final medal check does not inspect the current save slot for twelve inventor
 
 Medal collection has three distinct layers:
 
+::: {.pw-process-list}
+
 1. **Story discovery:** a medal appears or is found in the narrative.
 2. **Persistent unlock:** the game sets the corresponding `persistent.<medal>` flag to `True`.
 3. **Final check:** the Path A ending recounts all twelve persistent flags.
+
+:::
 
 Only the second stage permanently adds that medal to the collection state used by the final check.
 :::
@@ -45,7 +49,9 @@ When the corresponding scene is reached, the game changes one flag to `True`, fo
 $ persistent.aries = True
 ```
 
-b0.85 has no in-game option that resets the twelve medal flags, and no story branch sets them back to `False`. Loading an ordinary save restores the story state but does not roll back medal progress.
+b0.85 has no in-game option that resets the twelve medal flags, and no story branch sets them back to `False`.
+
+Loading an ordinary save restores the story state but does not roll back medal progress.
 
 - medals can be collected across different character routes and lettered Paths;
 - loading an older story save does not restore the medal flags saved in that slot;
@@ -77,7 +83,11 @@ Pisces, Cancer, and Capricorn are first recorded during their D9 character-route
 
 Virgo and Sagittarius are also recorded in several mutually exclusive relationship endings. Any one valid Path A ending awards Virgo, and any one valid Path B ending awards Sagittarius.
 
+::: {.pw-key-rule}
+
 You do not need to complete all six relationship endings for the same medal.
+
+:::
 
 ## How the final twelve-medal check works
 
@@ -142,7 +152,4 @@ For the fastest collection order and all twelve locations, see [Twelve-Medal Col
 
 ## Related guides
 
-- [Twelve-Medal Collection Guide](../collectibles/medals.md)
-- [Lettered Path System](../guide/path-system.md)
-- [Route and Path Overview](../guide/route-overview.md)
-- [Compendium Unlock Index](../collectibles/compendium.md)
+- [Checking Compendium entries? Open the unlock index](../collectibles/compendium.md)

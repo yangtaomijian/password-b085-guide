@@ -6,14 +6,14 @@ toc: true
 
 Password b0.85 tracks a separate hidden affection value for each of the six main characters.
 
-| Character | Internal variable |
-|---|---|
-| Dean | `bearlove` |
-| Tyson | `wolflove` |
-| Roswell | `boarlove` |
-| Orlando | `dragonlove` |
-| Hoss | `lionlove` |
-| Sal | `croclove` |
+<dl class="pw-variable-grid">
+<div><dt>Dean</dt><dd><code>bearlove</code></dd></div>
+<div><dt>Tyson</dt><dd><code>wolflove</code></dd></div>
+<div><dt>Roswell</dt><dd><code>boarlove</code></dd></div>
+<div><dt>Orlando</dt><dd><code>dragonlove</code></dd></div>
+<div><dt>Hoss</dt><dd><code>lionlove</code></dd></div>
+<div><dt>Sal</dt><dd><code>croclove</code></dd></div>
+</dl>
 
 These values are not displayed as an in-game meter. They begin at 0 in a new game, increase through specific choices or automatic story events, and are checked later for text variations, intimate options, several CGs, and the D19 relationship outcome.
 
@@ -33,12 +33,24 @@ No lettered Path, Vault-password result, survival check, medal check, or Path P 
 
 ## Core behavior
 
+::: {.pw-rule-groups}
+
+**Saves and loading**
+
 - All six values are ordinary story-save variables, not persistent data.
 - Loading an older save restores the affection values stored in that save.
+
+**Points and choices**
+
 - Affection does not decrease during normal play.
 - Choices outside the current character route can still award points.
 - D5 movie choices and the D7 family-subject menu can award points to several characters, but each menu still allows only one selection.
+
+**Reset exception**
+
 - Path C contains one important exception: the Sal pool sequence directly sets Sal's affection to 0.
+
+:::
 
 All threshold checks use `>=`. For example, `15 <= lionlove < 20` means an affection value from 15 through 19.
 
@@ -55,7 +67,11 @@ All threshold checks use `>=`. For example, `15 <= lionlove < 20` means an affec
 
 ## D19 relationship outcomes
 
+::: {.pw-key-rule}
+
 D19 does not compare all six characters and choose the highest value. The current character route determines which affection value is checked.
+
+:::
 
 
 ::: {.affection-d19-summary-table .table-responsive .table-scroll-large}
@@ -79,7 +95,9 @@ Hoss is the character for whom point planning matters most because two Gallery i
 
 ### D8 `hosskiss`
 
-Without any D1 cup-affection result or the D3 hidden shared bonus, the highest possible value before the D8 hidden-library check is **13**. The threshold of 12 is therefore achievable through ordinary visible choices alone.
+Without any D1 cup-affection result or the D3 hidden shared bonus, the highest possible value before the D8 hidden-library check is **13**.
+
+The threshold of 12 is therefore achievable through ordinary visible choices alone.
 
 If Hoss enters the library below 12:
 
@@ -87,7 +105,11 @@ If Hoss enters the library below 12:
 2. being below 12 awards 2 points;
 3. the later `Hold his hand` choice can award another 2 points.
 
+::: {.pw-key-rule}
+
 Those later gains help with D19, but they occur after the D8 check and cannot repair the missed CG in that run.
+
+:::
 
 ### D19 `hosskiss2`
 
@@ -353,7 +375,5 @@ Do not count `Remain still.` as a +2 choice when planning Sal's D19 result; `cro
 
 ## Related guides
 
-- [CG Gallery Completion Index](../collectibles/gallery.md)
-- [Route and Path Overview](../guide/route-overview.md)
-- [Lettered Path System](../guide/path-system.md)
-- [Affection Checks and Story Differences](affection-differences.md)
+- [Which scenes change with affection? Check story differences](affection-differences.md)
+- [Looking for the corresponding CG? Open the Gallery index](../collectibles/gallery.md)

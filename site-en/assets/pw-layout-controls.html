@@ -140,10 +140,54 @@
     }
 
     rootElement.dataset.pwLayoutControlsInitialized = "true";
+
+    // Bare Markdown tables need the same local overflow containment as named tables.
+    document.querySelectorAll("main.content table").forEach((table) => {
+      if (table.closest(".table-responsive, .quarto-bootstrap-table, .pw-table-scroll, .gallery-coordinate-table, #gallery-trigger-index, #gallery-non-gallery-index")) return;
+      const scroll = document.createElement("div");
+      scroll.className = "pw-table-scroll";
+      table.before(scroll);
+      scroll.append(table);
+    });
+
+
+    // Dock the existing return control when the footer is visible, avoiding text overlap.
+    const footer = document.querySelector("footer.footer");
+    footer?.querySelectorAll(".nav-footer > div").forEach((slot) => {
+      if (!slot.textContent.trim() && !slot.children.length) slot.textContent = "";
+    });
+    const footerCenter = footer?.querySelector(".nav-footer-center");
+    const returnControl = document.getElementById("quarto-back-to-top");
+    if (footerCenter && !footerCenter.textContent.trim() && !footerCenter.children.length) {
+      footerCenter.textContent = "";
+      if (returnControl && "IntersectionObserver" in window) {
+        const origin = document.createComment("return-control-origin");
+        returnControl.before(origin);
+        new IntersectionObserver(([entry]) => {
+          if (entry.isIntersecting) footerCenter.append(returnControl);
+          else origin.after(returnControl);
+        }).observe(footer);
+      }
+    }
+
     syncNavbarActive();
 
     const leftSidebar = document.querySelector("#quarto-sidebar");
     const rightSidebar = document.querySelector("#quarto-margin-sidebar");
+
+    // Keep the native theme control's accessible name in sync with its action.
+    const syncThemeLabel = () => {
+      const label = body.classList.contains("quarto-dark")
+        ? "Switch to light mode" : "Switch to dark mode";
+      document.querySelectorAll(".quarto-color-scheme-toggle").forEach((toggle) => {
+        toggle.setAttribute("aria-label", label);
+        toggle.setAttribute("title", label);
+      });
+    };
+    syncThemeLabel();
+    new MutationObserver(syncThemeLabel).observe(body, {
+      attributes: true, attributeFilter: ["class"]
+    });
 
     const installSearchLauncher = () => {
     const navbarInner = document.querySelector(

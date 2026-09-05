@@ -250,6 +250,5 @@ It does not directly assign a character Route, lettered Path, or ending.
 
 ## Related pages
 
-- [Legacy Password Archive](legacy-passwords.md)
-- [Legacy Route Archive](legacy-routes.md)
-- [Major Changes in b0.85](b085-changes.md)
+- [How did old mechanics affect Routes? Open the legacy Route archive](legacy-routes.md)
+- [Checking the current version? Read the b0.85 change overview](b085-changes.md)

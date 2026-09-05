@@ -6,14 +6,14 @@ toc: true
 
 《Password》b0.85 会为六名主要角色分别记录一个隐藏好感度值。
 
-| 角色 | 内部变量 |
-|---|---|
-| Dean | `bearlove` |
-| Tyson | `wolflove` |
-| Roswell | `boarlove` |
-| Orlando | `dragonlove` |
-| Hoss | `lionlove` |
-| Sal | `croclove` |
+<dl class="pw-variable-grid">
+<div><dt>Dean</dt><dd><code>bearlove</code></dd></div>
+<div><dt>Tyson</dt><dd><code>wolflove</code></dd></div>
+<div><dt>Roswell</dt><dd><code>boarlove</code></dd></div>
+<div><dt>Orlando</dt><dd><code>dragonlove</code></dd></div>
+<div><dt>Hoss</dt><dd><code>lionlove</code></dd></div>
+<div><dt>Sal</dt><dd><code>croclove</code></dd></div>
+</dl>
 
 这些数值不会以游戏内量表显示。新游戏中六项均从 0 开始，随后通过特定选择或自动剧情增加，并在后续用于判断文本差异、亲密选项、部分 CG，以及 D19 的关系结果。
 
@@ -33,14 +33,26 @@ toc: true
 
 ## 基本机制
 
+::: {.pw-rule-groups}
+
+**存档与恢复**
+
 - 六个数值都是普通剧情存档变量，不属于持久数据；
 - 读取较早存档会恢复该存档中的好感度值；
+
+**加点与选择**
+
 - 正常游玩中不会扣除好感度；
 - 即使当前不在某名角色线上，部分选择仍可能为该角色加点；
 - D5 电影菜单和 D7 家庭话题菜单可以同时为多名角色加点，但每个菜单仍只能选择一个选项；
+
+**重置例外**
+
 - Path C 有一个重要例外：Sal 的泳池剧情会直接把 Sal 好感度设为 0。
 
-所有阈值判断都使用 `>=`。例如 $15 \leq \texttt{lionlove} < 20$ 表示好感度为 15—19 点。
+:::
+
+所有阈值判断都使用 `>=`。例如 `15 <= lionlove < 20` 表示好感度为 15—19 点。
 
 ## 阈值总览
 
@@ -55,7 +67,11 @@ toc: true
 
 ## D19 关系结果
 
+::: {.pw-key-rule}
+
 D19 不会比较六名角色的数值并选择最高者。游戏只会查看当前角色线对应的好感度。
+
+:::
 
 ::: {.affection-d19-summary-table .table-responsive .table-scroll-large}
 
@@ -78,7 +94,9 @@ Hoss 是最需要规划加点的角色，因为两张画廊图片分别受 D8 �
 
 ### D8 `hosskiss`
 
-在不使用 D1 咖啡杯好感度结果、也不使用 D3 隐藏全员加点的前提下，D8 隐藏图书馆检定前最多可以获得 **13** 点。因此，`lionlove >= 12` 可以只靠普通可见选项达到。
+在不使用 D1 咖啡杯好感度结果、也不使用 D3 隐藏全员加点的前提下，D8 隐藏图书馆检定前最多可以获得 **13** 点。
+
+因此，`lionlove >= 12` 可以只靠普通可见选项达到。
 
 如果进入图书馆时低于 12：
 
@@ -86,7 +104,11 @@ Hoss 是最需要规划加点的角色，因为两张画廊图片分别受 D8 �
 2. 低于 12 点时会自动增加 2 点；
 3. 后续选择 `Hold his hand` 还可再增加 2 点。
 
+::: {.pw-key-rule}
+
 这些后续分数能帮助 D19，但都发生在 D8 检定之后，无法补回本周目已经错过的 CG。
+
+:::
 
 ### D19 `hosskiss2`
 
@@ -352,7 +374,5 @@ D19 关系检定之前也没有其他事件补上这 2 点。该流程最终会�
 
 ## 相关页面
 
-- [CG 画廊查漏索引](../collectibles/gallery.md)
-- [剧情线路总览](../guide/route-overview.md)
-- [字母线系统](../guide/path-system.md)
-- [好感度检定与剧情差异](affection-differences.md)
+- [想查好感度会改变哪些剧情？查看检定与剧情差异](affection-differences.md)
+- [想找对应 CG？查看画廊解锁索引](../collectibles/gallery.md)

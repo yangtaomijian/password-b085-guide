@@ -1,0 +1,19 @@
+/* Search-only reading adjustments; the surrounding site remains unchanged. */
+.aa-DetachedContainer .aa-Input { font-size: 1rem !important; }
+.aa-DetachedContainer .search-result-title { font-size: 1rem !important; font-weight: 700 !important; line-height: 1.4 !important; }
+.aa-DetachedContainer .search-result-section { font-size: .95rem !important; line-height: 1.45 !important; }
+.aa-DetachedContainer .search-result-text { font-size: .9rem !important; line-height: 1.6 !important; -webkit-line-clamp: 3 !important; margin-top: .35rem !important; }
+.aa-DetachedContainer .search-result-crumbs { white-space: normal !important; overflow-wrap: anywhere; font-size: .8rem !important; line-height: 1.45 !important; }
+.aa-DetachedContainer .quarto-search-no-results { color: var(--pw-text-soft); padding: 1rem 1.25rem; line-height: 1.7; }
+.aa-DetachedContainer .aa-Item { scroll-margin-block: .5rem; }
+@media (max-width: 600px) {
+  .aa-DetachedContainer .search-result-title-container { min-width: 0; }
+  .aa-DetachedContainer .search-result-text { -webkit-line-clamp: 3 !important; }
+}
+
+/* Replace Quarto's fixed two-line height, which clipped the larger line height. */
+.aa-DetachedContainer .search-result-text { display: -webkit-box !important; -webkit-box-orient: vertical; max-height: none !important; height: auto !important; overflow: hidden; }
+.aa-DetachedContainer .search-result-title-container { display: grid !important; grid-template-columns: 1.1rem minmax(0, 1fr); column-gap: .6rem; align-items: start; }
+.aa-DetachedContainer .search-result-title-container > * { min-width: 0; max-width: 100%; }
+.aa-DetachedContainer .search-result-icon { grid-column: 1; grid-row: 1 / span 2; margin: 0 !important; }
+.aa-DetachedContainer :is(.search-result-title, .search-result-crumbs) { grid-column: 2; margin-left: 0 !important; }

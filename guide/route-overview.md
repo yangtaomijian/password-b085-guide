@@ -105,6 +105,5 @@ Sal 线在 D10 放弃密码检定后，存档槽可能暂时显示 `Path C`；�
 
 ## 相关内容
 
-- [字母线系统](path-system.md)
-- [密码分级提示](password-hints.md)
-- [旧版本线路档案](../versions/legacy-routes.md)
+- [想查字母线条件？查看分流规则](path-system.md)
+- [卡在密码检定？查看分级提示](password-hints.md)

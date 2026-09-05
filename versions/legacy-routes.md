@@ -11,12 +11,7 @@ toc: true
 ::: {.callout-warning}
 ## 仅供历史参考
 
-不要把本页当作 b0.85 的当前通关流程。
-
-当前结构见：
-
-- [剧情线路总览](../guide/route-overview.md)
-- [字母线系统](../guide/path-system.md)
+不要把本页当作 b0.85 的当前通关流程。当前结构见[剧情线路总览](../guide/route-overview.md)与[字母线系统](../guide/path-system.md)。
 :::
 
 ## 两个版本共有的整体结构
@@ -31,12 +26,7 @@ D4 的**角色线**与之后的**字母线**之间的区别，在 b0.7 中已经
 
 ## D6 离开宅邸分支
 
-b0.7 在 D6 宅邸流程后段曾有一个正常游玩时可以选择的菜单：
-
-```text
-Stay.
-Leave.
-```
+b0.7 在 D6 宅邸流程后段曾有一个正常游玩时可以选择的菜单：**Stay.**／**Leave.**
 
 选择 **Stay.** 会继续进入 D7；选择 **Leave.** 会直接进入 `BAD END: OZ`，本周目到此结束。
 
@@ -117,15 +107,3 @@ b0.85 在后续 Path P 中新增了独立输入，并加入明确的真结局跨
 :::
 
 Dean 相关互动改写以及 D19 关系门槛变化，不会改变字母线结构。具体变化见[b0.85 版本主要变化](b085-changes.md)。
-
-## 当前版本参考
-
-::: {.table-responsive}
-| 主题 | 当前页面 |
-|---|---|
-| 角色线和整体时间线 | [剧情线路总览](../guide/route-overview.md) |
-| Path A–G 与 Path P 条件 | [字母线系统](../guide/path-system.md) |
-| 旧 D7 与 D11 输入 | [旧版本密码档案](legacy-passwords.md) |
-| 已退役互动和回放机制 | [旧版本机制档案](legacy-mechanics.md) |
-| b0.85 综合变化 | [b0.85 版本主要变化](b085-changes.md) |
-:::

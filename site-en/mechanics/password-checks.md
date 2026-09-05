@@ -8,6 +8,14 @@ Most Vault inputs in *Password* b0.85 share the same input rules, but the result
 
 The final Path P password and the D1 coffee-cup name use separate rules. For progressive clues, see [Tiered Password Hints](../guide/password-hints.md).
 
+::: {.pw-reading-summary}
+**Three rules to start with**
+
+- Ordinary Vault inputs ignore capitalization and surrounding spaces; internal spaces, punctuation, and spelling still matter.
+- A valid answer must match the day; the first group on D4/D6 also needs the answer for the current Route.
+- Sal’s and Tyson’s protections change the consequences of failure; they do not turn a failed check into a pass.
+:::
+
 ## How input is recognized
 
 For ordinary Vault passwords, the game:
@@ -62,15 +70,19 @@ D1 and D3 are optional Easter eggs, not progression checks. See [Easter Eggs and
 
 Every character Route reaches the D4 Vault. Only the Roswell Route needs its group-one answer at this visit; the other five Routes perform the same group check on D6.
 
-The D6 input does not stop the player from entering another character's valid word. Doing so can display that character's warning, but it does not protect the partner on the current Route, so the current Route's failure still occurs later.
+The D6 input does not stop the player from entering another character's valid word.
+
+Doing so can display that character's warning, but it does not protect the partner on the current Route, so the current Route's failure still occurs later.
 
 ## Sal and Tyson: avoiding the consequence is not a pass
 
-Giving up on D10 during the Sal Route is still a failed check. Sal's Route-specific story prevents the usual D11 disaster and Path C/D diversion, but Gallery completion still requires the correct password: the successful scene displays Sal's Vault CG and a related image filed under another character's Gallery category.
+Giving up on D10 during the Sal Route is still a failed check. Sal's Route-specific story prevents the usual D11 disaster and Path C/D diversion.
+
+Gallery completion still requires the correct password: the successful scene displays Sal's Vault CG and a related image filed under another character's Gallery category.
 
 Failing or giving up on D17 during the Tyson Route is also not a pass. Later Tyson Route events prevent the D19 disaster and Path F/G diversion.
 
-These exceptions change the consequences of failure; they do not award the successful scene or its exclusive content. See [Lettered Path System](../guide/path-system.md) for the complete branch logic.
+**These exceptions change the consequences of failure; they do not award the successful scene or its exclusive content.** See [Lettered Path System](../guide/path-system.md) for the complete branch logic.
 
 ## D7: the current answer works normally
 
@@ -86,7 +98,5 @@ D11 therefore has no usable password and is not one of the four main checks. See
 
 ## Related guides
 
-- [Tiered Password Hints](../guide/password-hints.md)
-- [Lettered Path System](../guide/path-system.md)
-- [Easter Eggs and Hidden Inputs](../extras/easter-eggs.md)
-- [Legacy Password Archive](../versions/legacy-passwords.md)
+- [Still stuck on the answer? Open the tiered hints](../guide/password-hints.md)
+- [Unexpected Path after a check? Review the branch conditions](../guide/path-system.md)

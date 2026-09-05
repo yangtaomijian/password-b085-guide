@@ -202,7 +202,9 @@ Check these points in order:
 
 The Lore section contains the twelve zodiac entries in traditional order:
 
-::: {.compendium-lore-table .table-responsive .table-scroll-compact}
+:::: {.pw-lore-columns}
+
+::: {.compendium-lore-table .table-responsive}
 
 | Order | Lore | Persistent flag |
 |---:|---|---|
@@ -212,6 +214,13 @@ The Lore section contains the twelve zodiac entries in traditional order:
 | 4 | Cancer | `persistent.cancer` |
 | 5 | Leo | `persistent.leo` |
 | 6 | Virgo | `persistent.virgo` |
+
+:::
+
+::: {.compendium-lore-table .table-responsive}
+
+| Order | Lore | Persistent flag |
+|---:|---|---|
 | 7 | Libra | `persistent.libra` |
 | 8 | Scorpio | `persistent.scorpio` |
 | 9 | Sagittarius | `persistent.sagittarius` |
@@ -221,6 +230,8 @@ The Lore section contains the twelve zodiac entries in traditional order:
 
 :::
 
+::::
+
 Each Lore entry uses the same saved record as its corresponding medal. The final twelve-medal check after Path A counts those same records.
 
 There is no separate Lore collection system and no additional per-medal Route or Path requirement in the Compendium definition.
@@ -228,10 +239,3 @@ There is no separate Lore collection system and no additional per-medal Route or
 Lore may remain locked on screen even when a newly earned medal already counts toward the Path P check. If it is still locked after restarting the game, the medal was probably not formally recorded.
 
 For collection locations and an optimized route order, see [Twelve-Medal Collection Guide](medals.md). For how medal progress is saved and refreshed, see [Medal Persistence and Final Check](../mechanics/medal-persistence.md).
-
-## Related guides
-
-- [Twelve-Medal Collection Guide](medals.md)
-- [Medal Persistence and Final Check](../mechanics/medal-persistence.md)
-- [Lettered Path System](../guide/path-system.md)
-- [Route and Path Overview](../guide/route-overview.md)

@@ -316,9 +316,5 @@ b0.7 会直接退出，不会先清除这些记录。
 
 ## 相关页面
 
-- [剧情线路总览](../guide/route-overview.md)
-- [密码分级提示](../guide/password-hints.md)
-- [后记解锁索引](../collectibles/compendium.md)
-- [旧版本线路档案](legacy-routes.md)
-- [旧版本密码档案](legacy-passwords.md)
-- [旧版本机制档案](legacy-mechanics.md)
+- [准备游玩现行版本？从线路总览开始](../guide/route-overview.md)
+- [需要旧机制细节？查看旧版本机制档案](legacy-mechanics.md)

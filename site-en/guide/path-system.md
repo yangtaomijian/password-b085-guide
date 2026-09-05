@@ -46,7 +46,13 @@ The D8 choice does not immediately change the displayed Path; the game applies t
 
 The Sal Route does not move into Path C or Path D when the player gives up on the D10 password check. The run remains in the shared Path A/B story according to the earlier Oswin state.
 
-This exception does **not** count as passing the password check. Completing it correctly still matters for Gallery completion: the successful Sal Route branch displays Sal's Vault CG and a related image filed under another character's Gallery category. Other Sal Gallery content is unlocked through normal Route progression and does not depend on this check.
+::: {.pw-key-rule}
+
+This exception does **not** count as passing the password check.
+
+:::
+
+Completing it correctly still matters for Gallery completion: the successful Sal Route branch displays Sal's Vault CG and a related image filed under another character's Gallery category. Other Sal Gallery content is unlocked through normal Route progression and does not depend on this check.
 
 ## Later splits: Path E–G
 
@@ -151,6 +157,5 @@ The requirements and recommended collection order are covered in the [Twelve-Med
 
 ## Related guides
 
-- [Route and Path Overview](route-overview.md)
-- [Tiered Password Hints](password-hints.md)
-- [Twelve-Medal Collection Guide](../collectibles/medals.md)
+- [Stuck at a password check? Open the tiered hints](password-hints.md)
+- [Preparing for Path P? Plan all twelve medals](../collectibles/medals.md)

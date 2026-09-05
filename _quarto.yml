@@ -73,7 +73,7 @@ website:
     location: navbar
     type: overlay
     show-item-context: true
-  page-navigation: true
+  page-navigation: false
   back-to-top-navigation: true
   bread-crumbs: true
 
@@ -114,6 +114,11 @@ website:
           - text: "好感度检定与剧情差异"
             href: mechanics/affection-differences.md
 
+      - text: 其他
+        menu:
+          - href: extras/easter-eggs.md
+            text: 彩蛋与隐藏输入
+
       - text: 版本档案
         menu:
           - href: versions/b085-changes.md
@@ -125,11 +130,6 @@ website:
           - href: versions/legacy-mechanics.md
             text: 旧版本机制档案
 
-      - text: 其他
-        menu:
-          - href: extras/easter-eggs.md
-            text: 彩蛋与隐藏输入
-
   sidebar:
     style: docked
     collapse-level: 1
@@ -139,8 +139,6 @@ website:
         contents:
           - href: index.md
             text: 首页
-          - href: guide/faq.md
-            text: 常见问题
 
       - section: "攻略"
         contents:
@@ -150,6 +148,8 @@ website:
             text: 字母线系统
           - href: guide/password-hints.md
             text: 密码分级提示
+          - href: guide/faq.md
+            text: 常见问题
 
       - section: "收集"
         contents:
@@ -171,6 +171,11 @@ website:
           - text: "好感度检定与剧情差异"
             href: mechanics/affection-differences.md
 
+      - section: "其他"
+        contents:
+          - href: extras/easter-eggs.md
+            text: 彩蛋与隐藏输入
+
       - section: "版本档案"
         contents:
           - href: versions/b085-changes.md
@@ -181,11 +186,6 @@ website:
             text: 旧版本密码档案
           - href: versions/legacy-mechanics.md
             text: 旧版本机制档案
-
-      - section: "其他"
-        contents:
-          - href: extras/easter-eggs.md
-            text: 彩蛋与隐藏输入
 
   page-footer:
     left: "Password b0.85 中文攻略与机制资料库"
@@ -200,7 +200,9 @@ website:
       mapping: pathname
       reactions-enabled: true
       input-position: top
-      theme: light
+      theme:
+        light: light
+        dark: dark_dimmed
       language: zh-CN
       loading: lazy
 
@@ -213,9 +215,15 @@ format:
       lang: zh-CN
     theme:
       light: cosmo
-    css: assets/pw-guide-theme.css
+      dark: [cosmo, assets/pw-dark.scss]
+    respect-user-color-scheme: true
+    css:
+      - assets/pw-guide-theme.css
+      - assets/pw-color-schemes.css
+      - assets/pw-search.css
     include-after-body:
       - assets/pw-layout-controls.html
+      - assets/pw-search.html
       - assets/cloudflare-web-analytics.html
     toc: true
     toc-depth: 3

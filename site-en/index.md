@@ -3,11 +3,18 @@ title: "Password b0.85 Guide"
 description: "An unofficial guide and walkthrough reference for Password, Grizz's furry visual novel (FVN), covering b0.85 routes, endings, password hints, medals, Gallery completion, mechanics, and version differences."
 comments: false
 toc: false
+body-classes: pw-home
 ---
+
+::: {.pw-home-shortcuts}
+[Start here](#start-here){.no-external} [Password hints](guide/password-hints.md)
+:::
 
 *Password* is a furry visual novel (FVN) by Grizz. This unofficial guide covers the current b0.85 build, including character Routes and lettered Paths, endings and Path P, password hints, all twelve medals, CG/Gallery completion, the Compendium, affection mechanics, and unlock requirements.
 
 If you're looking for a walkthrough or route guide, start with the Route and Path pages for progression and ending structure. If you're only stuck on a password, medal, Gallery entry, or unlock condition, you can jump directly to the relevant guide or FAQ. A separate version archive compares b0.7 with b0.85 and documents removed branches, retired mechanics, and other changes.
+
+:::: {.pw-home-notices}
 
 ::: {.callout-warning}
 This site contains spoilers for Routes, Bad Endings, medals, CGs, Compendium entries, and ending requirements.
@@ -19,9 +26,11 @@ If you want to experience the story first, read each section after reaching that
 Password help is presented as progressive hints. Start with the first tier and open later hints only when needed; the main guide does not collect every answer on one page.
 :::
 
+::::
+
 ## Start Here
 
-:::: {.grid}
+:::: {.grid .pw-entry-grid}
 
 ::: {.g-col-12 .g-col-md-6}
 ### [Route and Path Overview](guide/route-overview.md)
@@ -36,15 +45,15 @@ Open progressive clues for the four main password checks without revealing every
 :::
 
 ::: {.g-col-12 .g-col-md-6}
-### [Twelve-Medal Collection Guide](collectibles/medals.md)
-
-Plan the Routes and Paths needed to collect all twelve medals and reach Path P.
-:::
-
-::: {.g-col-12 .g-col-md-6}
 ### [Frequently Asked Questions](guide/faq.md)
 
 Find quick answers for common Route, Path, password, collection, and unlock problems.
+:::
+
+::: {.g-col-12 .g-col-md-6}
+### [Twelve-Medal Collection Guide](collectibles/medals.md)
+
+Plan the Routes and Paths needed to collect all twelve medals and reach Path P.
 :::
 
 ::::
@@ -87,7 +96,7 @@ Explore optional Vault inputs, coffee-cup names, hidden drivers, and other Easte
 
 These pages compare b0.7 with b0.85.
 
-:::: {.grid}
+:::: {.grid .pw-entry-grid}
 
 ::: {.g-col-12 .g-col-md-6}
 ### [Major Changes in b0.85](versions/b085-changes.md)

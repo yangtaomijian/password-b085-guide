@@ -3,11 +3,18 @@ title: "Password b0.85 中文攻略"
 description: "Grizz 的 FVN《Password》b0.85 中文攻略：角色路线与结局、密码提示、奖牌、CG/画廊、后记、好感度与解锁机制。"
 comments: false
 toc: false
+body-classes: pw-home
 ---
+
+::: {.pw-home-shortcuts}
+[快速开始](#快速开始){.no-external} [密码分级提示](guide/password-hints.md)
+:::
 
 《Password》是 Grizz 创作的一部 FVN（Furry Visual Novel，兽人视觉小说）。本站是一份面向当前 b0.85 版本的非官方中文攻略与机制资料库，涵盖角色路线与字母线、结局与 Path P、密码提示、十二枚奖牌、CG/画廊收集、后记，以及好感度、解锁条件和其他机制。
 
 如果你正在寻找路线攻略或流程指引，可先从剧情线路总览和字母线系统开始；如果只是卡在密码、奖牌、画廊、结局或解锁条件，也可以直接进入对应页面。版本档案则单独比较 b0.7 与 b0.85 中已经删除或发生变化的线路、密码和机制。
+
+:::: {.pw-home-notices}
 
 ::: {.callout-warning}
 ## 剧透预警
@@ -25,9 +32,11 @@ toc: false
 四次主要密码检定按照逐级提示展开，不会在普通页面中直接集中展示全部答案。彩蛋输入、旧版本密码和其他不影响正常通关的输入会单独说明。
 :::
 
+::::
+
 ## 快速开始
 
-:::: {.grid}
+:::: {.grid .pw-entry-grid}
 
 ::: {.g-col-12 .g-col-md-6}
 ### [剧情线路总览](guide/route-overview.md)
@@ -42,15 +51,15 @@ toc: false
 :::
 
 ::: {.g-col-12 .g-col-md-6}
-### [十二枚奖牌收集指南](collectibles/medals.md)
-
-规划收集十二枚奖牌所需的角色线与字母线，并进入 Path P。
-:::
-
-::: {.g-col-12 .g-col-md-6}
 ### [常见问题与排查](guide/faq.md)
 
 快速排查角色线、字母线、密码、收集和解锁问题。
+:::
+
+::: {.g-col-12 .g-col-md-6}
+### [十二枚奖牌收集指南](collectibles/medals.md)
+
+规划收集十二枚奖牌所需的角色线与字母线，并进入 Path P。
 :::
 
 ::::
@@ -93,7 +102,7 @@ toc: false
 
 单独比较 b0.7 与 b0.85 中已经删除或发生变化的线路、密码、机制与 CG。旧版本档案仅供历史参考，不应与 b0.85 当前攻略混用。
 
-:::: {.grid}
+:::: {.grid .pw-entry-grid}
 
 ::: {.g-col-12 .g-col-md-6}
 ### [b0.85 版本主要变化](versions/b085-changes.md)

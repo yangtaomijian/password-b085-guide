@@ -1011,11 +1011,7 @@
       const matches = applySearch();
 
       if (matches.length > 0) {
-        const record = matches[0];
-        tabSelect.value = record.tab;
-        populateRows(record.tab, record.row);
-        columnSelect.value = String(record.column);
-        locateRecord(record, { mode: "search" });
+        selectSearchRecord(matches[0]);
       }
     }
   });

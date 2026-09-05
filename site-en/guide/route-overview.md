@@ -101,6 +101,5 @@ Two players can share the same lettered Path while seeing different character-ro
 
 ## Related guides
 
-- [Lettered Path System](path-system.md)
-- [Tiered Password Hints](password-hints.md)
-- [Legacy Route Archive](../versions/legacy-routes.md)
+- [Need the conditions for a lettered Path? Check the Path system](path-system.md)
+- [Stuck at a password check? Open the tiered hints](password-hints.md)

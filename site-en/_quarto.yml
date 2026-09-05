@@ -43,7 +43,7 @@ website:
     location: navbar
     type: overlay
     show-item-context: true
-  page-navigation: true
+  page-navigation: false
   back-to-top-navigation: true
   bread-crumbs: true
 
@@ -80,6 +80,11 @@ website:
             text: Affection System and Point Guide
           - href: mechanics/affection-differences.md
             text: Affection Checks and Story Differences
+      - text: Extras
+        menu:
+          - href: extras/easter-eggs.md
+            text: Easter Eggs and Hidden Inputs
+
       - text: Version Archives
         menu:
           - href: versions/b085-changes.md
@@ -90,10 +95,6 @@ website:
             text: Legacy Password Archive
           - href: versions/legacy-mechanics.md
             text: Legacy Mechanics Archive
-      - text: Extras
-        menu:
-          - href: extras/easter-eggs.md
-            text: Easter Eggs and Hidden Inputs
 
   sidebar:
     style: docked
@@ -104,8 +105,6 @@ website:
         contents:
           - href: index.md
             text: Home
-          - href: guide/faq.md
-            text: Frequently Asked Questions
 
       - section: "Guide"
         contents:
@@ -115,6 +114,8 @@ website:
             text: Lettered Path System
           - href: guide/password-hints.md
             text: Tiered Password Hints
+          - href: guide/faq.md
+            text: Frequently Asked Questions
 
       - section: "Collectibles"
         contents:
@@ -136,6 +137,11 @@ website:
           - href: mechanics/affection-differences.md
             text: Affection Checks and Story Differences
 
+      - section: "Extras"
+        contents:
+          - href: extras/easter-eggs.md
+            text: Easter Eggs and Hidden Inputs
+
       - section: "Version Archives"
         contents:
           - href: versions/b085-changes.md
@@ -146,11 +152,6 @@ website:
             text: Legacy Password Archive
           - href: versions/legacy-mechanics.md
             text: Legacy Mechanics Archive
-
-      - section: "Extras"
-        contents:
-          - href: extras/easter-eggs.md
-            text: Easter Eggs and Hidden Inputs
 
   page-footer:
     left: "Unofficial fan-made guide for Password b0.85; later releases may differ."
@@ -164,7 +165,9 @@ website:
       mapping: pathname
       reactions-enabled: true
       input-position: top
-      theme: light
+      theme:
+        light: light
+        dark: dark_dimmed
       language: en
       loading: lazy
 
@@ -175,9 +178,15 @@ format:
       - ../templates/metadata.html
     theme:
       light: cosmo
-    css: assets/pw-guide-theme.css
+      dark: [cosmo, assets/pw-dark.scss]
+    respect-user-color-scheme: true
+    css:
+      - assets/pw-guide-theme.css
+      - assets/pw-color-schemes.css
+      - assets/pw-search.css
     include-after-body:
       - assets/pw-layout-controls.html
+      - assets/pw-search.html
       - assets/cloudflare-web-analytics.html
     toc: true
     toc-depth: 3

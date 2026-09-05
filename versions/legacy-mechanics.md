@@ -252,6 +252,5 @@ b0.85 删除了这个菜单。当前剧情固定为 Oswin 从背后给 Dave 注�
 
 ## 相关页面
 
-- [旧版本密码档案](legacy-passwords.md)
-- [旧版本线路档案](legacy-routes.md)
-- [b0.85 版本主要变化](b085-changes.md)
+- [旧机制如何影响线路？查看旧版线路档案](legacy-routes.md)
+- [想核对现行版本？查看 b0.85 变化汇总](b085-changes.md)

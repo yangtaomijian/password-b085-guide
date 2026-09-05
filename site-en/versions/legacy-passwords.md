@@ -123,10 +123,3 @@ These are story traces from the older sequence, not a hidden password in the cur
 b0.7 did not contain the current standalone input near the end of Path P. b0.85 adds that mandatory interaction after the existing Path A ending and twelve-medal transition into Path P.
 
 Current hints for that input belong to [Tiered Password Hints](../guide/password-hints.md). Its broader version context is covered in [Major Changes in b0.85](b085-changes.md).
-
-## Related pages
-
-- [Tiered Password Hints](../guide/password-hints.md)
-- [Legacy Mechanics Archive](legacy-mechanics.md)
-- [Legacy Route Archive](legacy-routes.md)
-- [Major Changes in b0.85](b085-changes.md)

@@ -211,7 +211,5 @@ Hoss 有两张亲吻 CG 分别受不同好感度结果控制，因此其检定�
 
 ## 相关页面
 
-- [好感度机制与加点](affection.md)
-- [CG 画廊查漏索引](../collectibles/gallery.md)
-- [剧情线路总览](../guide/route-overview.md)
-- [字母线系统](../guide/path-system.md)
+- [分数不够？核对好感度加点清单](affection.md)
+- [想核对 CG 是否解锁？查看画廊索引](../collectibles/gallery.md)

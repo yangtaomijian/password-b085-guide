@@ -65,16 +65,7 @@ Wilson Timber Zylus
 
 输入 `Dave` 会触发专属回应，并让六名主要角色的好感度各增加 1。
 
-输入某名主要角色的姓名，则触发该角色的专属回应，并只增加对应角色的好感度：
-
-| 输入 | 好感度效果 |
-|---|---|
-| `Dean` | Dean `+1` |
-| `Tyson` | Tyson `+1` |
-| `Roswell` | Roswell `+1` |
-| `Orlando` | Orlando `+1` |
-| `Hoss` | Hoss `+1` |
-| `Sal` | Sal `+1` |
+输入 `Dean`、`Tyson`、`Roswell`、`Orlando`、`Hoss` 或 `Sal`，会触发该角色的专属回应，并只为对应角色增加 **1 点好感度**。
 
 这些姓名不会替换司机。
 
@@ -183,8 +174,5 @@ Path A 后期对白会提到**蛇夫座**，它有时被视为第十三个黄道
 
 ## 相关页面
 
-- [密码分级提示](../guide/password-hints.md)
-- [密码输入与检定规则](../mechanics/password-checks.md)
-- [好感度机制与加点](../mechanics/affection.md)
-- [十二枚奖牌收集指南](../collectibles/medals.md)
-- [奖牌持久化与最终检定](../mechanics/medal-persistence.md)
+- [要找主线密码？查看分级提示](../guide/password-hints.md)
+- [想计算彩蛋带来的加点？查看好感度机制](../mechanics/affection.md)

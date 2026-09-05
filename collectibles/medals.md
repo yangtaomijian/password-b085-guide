@@ -139,7 +139,7 @@ Dean、Roswell 和 Sal 的流程可以在 D9 奖牌被正式记录后结束；Ho
 
 以下条目按照传统黄道十二宫顺序排列。
 
-<details>
+<details id="medal-aries">
 <summary><strong>白羊座——Path A</strong></summary>
 
 D23，Dave 在 Roswell 房间的床头柜上发现奖牌。游戏会立即记录白羊座，Oswin 随后确认其身份。
@@ -147,7 +147,7 @@ D23，Dave 在 Roswell 房间的床头柜上发现奖牌。游戏会立即记录
 到达该场景后会自动取得，不需要额外选择。
 </details>
 
-<details>
+<details id="medal-taurus">
 <summary><strong>金牛座——Path A 或 B 一侧</strong></summary>
 
 奖牌在 D7 温室中的巨型南瓜被移走后首次出现。剧情当时已经讨论其身份，但要到 D16 的 A/B 奖牌盘点场景才会被正式记录。
@@ -155,7 +155,7 @@ D23，Dave 在 Roswell 房间的床头柜上发现奖牌。游戏会立即记录
 因此，仅仅看过 D7 的发现剧情还不够。
 </details>
 
-<details>
+<details id="medal-gemini">
 <summary><strong>双子座——Path B</strong></summary>
 
 双子座由两半组成。
@@ -165,7 +165,7 @@ Tyson 线中，Dave 会在 D4 树篱迷宫场景亲眼看到 Tyson 拿出第一�
 Tyson 线有助于了解完整发现背景，但不是收集双子座的必要条件。
 </details>
 
-<details>
+<details id="medal-cancer">
 <summary><strong>巨蟹座——Roswell 线</strong></summary>
 
 D9，Dave 与 Roswell 在博物馆查看书籍时，一枚奖牌从书架中掉出。Roswell 根据图案确认它是巨蟹座，游戏会立即记录这枚奖牌。
@@ -173,7 +173,7 @@ D9，Dave 与 Roswell 在博物馆查看书籍时，一枚奖牌从书架中掉�
 D16 奖牌盘点时可能再次记录同一枚奖牌，但这不是额外要求。
 </details>
 
-<details>
+<details id="medal-leo">
 <summary><strong>狮子座——Path A 或 B 一侧</strong></summary>
 
 D22，Thanatos 指引 Dave 找到一本被挖空的儿童故事书。狮子座与一张 Hammond 家庭照片一起藏在书中。
@@ -181,7 +181,7 @@ D22，Thanatos 指引 Dave 找到一本被挖空的儿童故事书。狮子座�
 奖牌会在该场景中立即确认并正式记录。
 </details>
 
-<details>
+<details id="medal-virgo">
 <summary><strong>处女座——完成 Path A</strong></summary>
 
 Florencia 会在 Path A 的每一种关系结局分支中把处女座交给 Dave。
@@ -189,7 +189,7 @@ Florencia 会在 Path A 的每一种关系结局分支中把处女座交给 Dave
 六种关系结局解锁的都是同一枚处女座，任选一种即可，不要求特定男友对象或角色线。
 </details>
 
-<details>
+<details id="medal-libra">
 <summary><strong>天秤座——Hoss 线，D16 A/B</strong></summary>
 
 D16，Hoss 会在隐藏图书馆中找到天秤座。
@@ -197,7 +197,7 @@ D16，Hoss 会在隐藏图书馆中找到天秤座。
 与 Dean、Roswell 和 Sal 的角色线奖牌不同，天秤座无法在 D9 取得。Hoss 线必须在 Path A 或 Path B 一侧推进到 D16。
 </details>
 
-<details>
+<details id="medal-scorpio">
 <summary><strong>天蝎座——Path A</strong></summary>
 
 D24 A，Dave 读完 Roswell 的信后，会在信件中发现这枚奖牌。游戏会立即记录它，但该场景不会立刻说出其星座名称。
@@ -205,7 +205,7 @@ D24 A，Dave 读完 Roswell 的信后，会在信件中发现这枚奖牌。游�
 其身份会在完整奖牌流程或后记中得到确认。
 </details>
 
-<details>
+<details id="medal-sagittarius">
 <summary><strong>射手座——完成 Path B</strong></summary>
 
 Florencia 会在 Path B 的每一种关系结局分支中把射手座交给 Dave。
@@ -213,7 +213,7 @@ Florencia 会在 Path B 的每一种关系结局分支中把射手座交给 Dave
 部分分支会直接说出名称，另一些只描述箭形符号，但六种 Path B 结局都会正式记录射手座。
 </details>
 
-<details>
+<details id="medal-capricorn">
 <summary><strong>摩羯座——Sal 线</strong></summary>
 
 D9，Dave 与 Sal 会在泳池区域一个异常封闭的储物柜中发现奖牌。他们当时无法识别图案，但游戏会立即记录这枚奖牌。
@@ -221,7 +221,7 @@ D9，Dave 与 Sal 会在泳池区域一个异常封闭的储物柜中发现奖�
 其星座名称要到 D16 的 A/B 奖牌盘点场景才确认；后续再次记录只是重复确认，并不是第二枚奖牌。
 </details>
 
-<details>
+<details id="medal-aquarius">
 <summary><strong>水瓶座——Path A 或 B 一侧</strong></summary>
 
 Orlando 在 D4 树篱迷宫中央找到水瓶座。Orlando 线中，该场景还会直接说出其身份。
@@ -229,7 +229,7 @@ Orlando 在 D4 树篱迷宫中央找到水瓶座。Orlando 线中，该场景还
 但游戏要到 D16 的 A/B 奖牌盘点场景才会正式记录它，因此只看过 D4 的发现剧情并不足以完成解锁。
 </details>
 
-<details>
+<details id="medal-pisces">
 <summary><strong>双鱼座——Dean 线</strong></summary>
 
 D9，Dean 与 Dave 钓鱼时会从河中取出这枚奖牌。他们当时没有正确识别图案，但游戏会立即记录这枚奖牌。
@@ -265,7 +265,5 @@ D9，Dean 与 Dave 钓鱼时会从河中取出这枚奖牌。他们当时没有�
 
 ## 相关页面
 
-- [剧情线路总览](../guide/route-overview.md)
-- [字母线系统](../guide/path-system.md)
-- [密码分级提示](../guide/password-hints.md)
-- [奖牌持久化与最终检定](../mechanics/medal-persistence.md)
+- [奖牌已收齐却没触发结局？检查持久记录与最终检定](../mechanics/medal-persistence.md)
+- [收集途中卡在密码？查看分级提示](../guide/password-hints.md)

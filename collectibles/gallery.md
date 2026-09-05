@@ -311,10 +311,7 @@ toc: true
 
 ## 相关页面
 
-- [字母线系统](../guide/path-system.md)
-- [密码分级提示](../guide/password-hints.md)
-- [十二枚奖牌收集指南](medals.md)
-- [好感度机制与加点](../mechanics/affection.md)
-- [好感度检定与剧情差异](../mechanics/affection-differences.md)
+- [缺少好感度相关 CG？核对加点与阈值](../mechanics/affection.md)
+- [到不了所需字母线？查看分流条件](../guide/path-system.md)
 
 <script src="../assets/gallery-locator.js" defer></script>

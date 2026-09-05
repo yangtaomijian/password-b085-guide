@@ -294,9 +294,5 @@ Use the current b0.85 guides for route, password, Compendium, and collection req
 
 ## Related pages
 
-- [Route and Path Overview](../guide/route-overview.md)
-- [Tiered Password Hints](../guide/password-hints.md)
-- [Compendium Unlock Index](../collectibles/compendium.md)
-- [Legacy Route Archive](legacy-routes.md)
-- [Legacy Password Archive](legacy-passwords.md)
-- [Legacy Mechanics Archive](legacy-mechanics.md)
+- [Ready to play the current version? Start with the Route overview](../guide/route-overview.md)
+- [Need details of old mechanics? Open the legacy mechanics archive](legacy-mechanics.md)

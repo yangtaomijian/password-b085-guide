@@ -311,10 +311,7 @@ In b0.85, this slot may not refresh as expected. If Trauma row 7, column 4 remai
 
 ## Related guides
 
-- [Lettered Path System](../guide/path-system.md)
-- [Tiered Password Hints](../guide/password-hints.md)
-- [Twelve-Medal Collection Guide](medals.md)
-- [Affection System and Point Guide](../mechanics/affection.md)
-- [Affection Checks and Story Differences](../mechanics/affection-differences.md)
+- [Missing an affection-related CG? Check points and thresholds](../mechanics/affection.md)
+- [Cannot reach the required Path? Check its branch conditions](../guide/path-system.md)
 
 <script src="../assets/gallery-locator.js" defer></script>

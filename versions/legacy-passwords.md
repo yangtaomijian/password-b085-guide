@@ -130,10 +130,3 @@ b0.7 在 Path P 后段没有当前版本的独立文字输入。
 b0.85 在原有 Path A 结局、十二枚奖牌检查以及进入 Path P 之后，新增了一次强制输入。它发生在 Path P 内部，不决定玩家是否能够进入 Path P。
 
 当前提示见[密码分级提示](../guide/password-hints.md)，更完整的版本变化背景见[b0.85 版本主要变化](b085-changes.md)。
-
-## 相关页面
-
-- [密码分级提示](../guide/password-hints.md)
-- [旧版本机制档案](legacy-mechanics.md)
-- [旧版本线路档案](legacy-routes.md)
-- [b0.85 版本主要变化](b085-changes.md)

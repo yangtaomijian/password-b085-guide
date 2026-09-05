@@ -138,7 +138,7 @@ Either pattern branches into four runs from the D4 character-route choice: one f
 
 The entries below follow the traditional zodiac order.
 
-<details>
+<details id="medal-aries">
 <summary><strong>Aries — Path A</strong></summary>
 
 On D23, Dave finds the medal on the bedside table in Roswell's room. The game records Aries immediately, and Oswin identifies it moments later.
@@ -146,7 +146,7 @@ On D23, Dave finds the medal on the bedside table in Roswell's room. The game re
 The scene is automatic once reached.
 </details>
 
-<details>
+<details id="medal-taurus">
 <summary><strong>Taurus — Path A or B</strong></summary>
 
 The medal is first found on D7 after the giant pumpkin is removed from the greenhouse. Its identity is discussed at the time, but it is not formally recorded until the D16 A/B inventory scene.
@@ -154,7 +154,7 @@ The medal is first found on D7 after the giant pumpkin is removed from the green
 Seeing the D7 discovery alone is therefore not enough.
 </details>
 
-<details>
+<details id="medal-gemini">
 <summary><strong>Gemini — Path B</strong></summary>
 
 Gemini consists of two halves.
@@ -164,7 +164,7 @@ On the Tyson Route, Dave sees Tyson reveal the first half during the D4 hedge-ma
 Tyson Route is useful for seeing the full discovery context, but it is not required for collection.
 </details>
 
-<details>
+<details id="medal-cancer">
 <summary><strong>Cancer — Roswell Route</strong></summary>
 
 On D9, a medal falls from a museum bookshelf while Dave and Roswell are examining books. Roswell identifies it as Cancer, and the game records it immediately.
@@ -172,7 +172,7 @@ On D9, a medal falls from a museum bookshelf while Dave and Roswell are examinin
 The D16 inventory scene may record the same medal again, but that later record is not required.
 </details>
 
-<details>
+<details id="medal-leo">
 <summary><strong>Leo — Path A or B</strong></summary>
 
 On D22, Thanatos directs Dave to a hollowed-out copy of a children's story. Leo is hidden inside with a Hammond family photograph.
@@ -180,7 +180,7 @@ On D22, Thanatos directs Dave to a hollowed-out copy of a children's story. Leo 
 The medal is identified and recorded immediately.
 </details>
 
-<details>
+<details id="medal-virgo">
 <summary><strong>Virgo — complete Path A</strong></summary>
 
 Florencia gives Virgo to Dave during every Path A relationship-ending branch. No particular boyfriend or character route is required.
@@ -188,7 +188,7 @@ Florencia gives Virgo to Dave during every Path A relationship-ending branch. No
 All six relationship endings unlock the same Virgo medal, so any one of them is enough.
 </details>
 
-<details>
+<details id="medal-libra">
 <summary><strong>Libra — Hoss Route, D16 A/B</strong></summary>
 
 Hoss finds Libra in the hidden library on D16.
@@ -196,7 +196,7 @@ Hoss finds Libra in the hidden library on D16.
 Unlike the route medals for Dean, Roswell, and Sal, Libra is not available on D9. A Hoss run must reach D16 on Path A or B.
 </details>
 
-<details>
+<details id="medal-scorpio">
 <summary><strong>Scorpio — Path A</strong></summary>
 
 On D24 A, Dave finds the medal inside Roswell's letter after reading it. The game records it at once, although the scene itself does not immediately name the zodiac sign.
@@ -204,7 +204,7 @@ On D24 A, Dave finds the medal inside Roswell's letter after reading it. The gam
 Its identity is confirmed later by the complete-set sequence or the Compendium.
 </details>
 
-<details>
+<details id="medal-sagittarius">
 <summary><strong>Sagittarius — complete Path B</strong></summary>
 
 Florencia gives Sagittarius to Dave during every Path B relationship-ending branch.
@@ -212,7 +212,7 @@ Florencia gives Sagittarius to Dave during every Path B relationship-ending bran
 Some branches name it directly and others describe the arrow-shaped symbol, but all six Path B ending branches record Sagittarius.
 </details>
 
-<details>
+<details id="medal-capricorn">
 <summary><strong>Capricorn — Sal Route</strong></summary>
 
 On D9, Dave and Sal find the medal inside an unusually secured pool locker. They cannot identify the symbol at the time, but the game records the medal immediately.
@@ -220,7 +220,7 @@ On D9, Dave and Sal find the medal inside an unusually secured pool locker. They
 The zodiac name is confirmed during the D16 A/B inventory scene. That later record is a repeat, not a second collectible.
 </details>
 
-<details>
+<details id="medal-aquarius">
 <summary><strong>Aquarius — Path A or B</strong></summary>
 
 Orlando finds Aquarius at the center of the hedge maze on D4. On the Orlando Route, its identity is also stated during that scene.
@@ -228,7 +228,7 @@ Orlando finds Aquarius at the center of the hedge maze on D4. On the Orlando Rou
 The medal is not formally recorded until the D16 A/B inventory scene, so the D4 discovery alone does not complete the unlock.
 </details>
 
-<details>
+<details id="medal-pisces">
 <summary><strong>Pisces — Dean Route</strong></summary>
 
 On D9, Dean retrieves the medal from the river while fishing with Dave. They do not correctly identify it at the time, but the game records the medal immediately.
@@ -264,7 +264,5 @@ Treat the Compendium date as a clue, not as a universal definition of when a med
 
 ## Related guides
 
-- [Route and Path Overview](../guide/route-overview.md)
-- [Lettered Path System](../guide/path-system.md)
-- [Tiered Password Hints](../guide/password-hints.md)
-- [Medal Persistence and Final Check](../mechanics/medal-persistence.md)
+- [Have all medals but no ending? Check persistence and the final check](../mechanics/medal-persistence.md)
+- [Stuck on a password while collecting? Open the tiered hints](../guide/password-hints.md)

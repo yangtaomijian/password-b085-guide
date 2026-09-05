@@ -202,7 +202,9 @@ Tyson
 
 背景资料部分包含十二个星座条目，按照传统黄道顺序排列：
 
-::: {.compendium-lore-table .table-responsive .table-scroll-compact}
+:::: {.pw-lore-columns}
+
+::: {.compendium-lore-table .table-responsive}
 
 | 顺序 | 星座 | 持久标记 |
 |---:|---|---|
@@ -212,6 +214,13 @@ Tyson
 | 4 | 巨蟹座 | `persistent.cancer` |
 | 5 | 狮子座 | `persistent.leo` |
 | 6 | 处女座 | `persistent.virgo` |
+
+:::
+
+::: {.compendium-lore-table .table-responsive}
+
+| 顺序 | 星座 | 持久标记 |
+|---:|---|---|
 | 7 | 天秤座 | `persistent.libra` |
 | 8 | 天蝎座 | `persistent.scorpio` |
 | 9 | 射手座 | `persistent.sagittarius` |
@@ -220,6 +229,8 @@ Tyson
 | 12 | 双鱼座 | `persistent.pisces` |
 
 :::
+
+::::
 
 每个背景资料条目与对应奖牌使用同一份收集记录。Path A 结局后的十二枚奖牌检定，统计的也是这组记录。
 
@@ -231,10 +242,3 @@ Tyson
 - 重启游戏后仍锁定的背景资料，通常说明对应奖牌尚未被正式记录。
 
 奖牌位置与推荐收集顺序见[十二枚奖牌收集指南](medals.md)；奖牌如何保存及刷新见[奖牌持久化与最终检定](../mechanics/medal-persistence.md)。
-
-## 相关页面
-
-- [十二枚奖牌收集指南](medals.md)
-- [奖牌持久化与最终检定](../mechanics/medal-persistence.md)
-- [字母线系统](../guide/path-system.md)
-- [剧情线路总览](../guide/route-overview.md)

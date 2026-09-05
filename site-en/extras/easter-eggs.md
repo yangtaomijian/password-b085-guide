@@ -59,16 +59,7 @@ For example, `Dave` works, while `dave` and `DAVE` use the generic response.
 
 Entering `Dave` triggers a dedicated response and adds 1 affection point to each of the six main characters.
 
-Entering a character's name triggers that character's response and adds 1 point only to the matching character:
-
-| Input | Affection effect |
-|---|---|
-| `Dean` | Dean `+1` |
-| `Tyson` | Tyson `+1` |
-| `Roswell` | Roswell `+1` |
-| `Orlando` | Orlando `+1` |
-| `Hoss` | Hoss `+1` |
-| `Sal` | Sal `+1` |
+Entering `Dean`, `Tyson`, `Roswell`, `Orlando`, `Hoss`, or `Sal` triggers that character’s dedicated response and adds **1 affection point only to that character**.
 
 These names do not replace the driver.
 
@@ -168,8 +159,5 @@ See [Twelve-Medal Collection Guide](../collectibles/medals.md) and [Medal Persis
 
 ## Related guides
 
-- [Tiered Password Hints](../guide/password-hints.md)
-- [Vault Input and Password Checks](../mechanics/password-checks.md)
-- [Affection System and Point Guide](../mechanics/affection.md)
-- [Twelve-Medal Collection Guide](../collectibles/medals.md)
-- [Medal Persistence and Final Check](../mechanics/medal-persistence.md)
+- [Looking for main-story passwords? Open the tiered hints](../guide/password-hints.md)
+- [Calculating affection from Easter inputs? Check the point guide](../mechanics/affection.md)

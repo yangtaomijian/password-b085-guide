@@ -211,7 +211,5 @@ The game does not treat 5, 10, 15, and 20 as universal stages such as “friend,
 
 ## Related guides
 
-- [Affection System and Point Guide](affection.md)
-- [CG Gallery Completion Index](../collectibles/gallery.md)
-- [Route and Path Overview](../guide/route-overview.md)
-- [Lettered Path System](../guide/path-system.md)
+- [Not enough points? Check the affection point guide](affection.md)
+- [Checking whether a CG is unlocked? Open the Gallery index](../collectibles/gallery.md)
