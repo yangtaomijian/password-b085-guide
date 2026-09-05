@@ -1,66 +1,52 @@
-# Password b0.85 Bilingual Guide
+# Password b0.85 — 中文攻略 / English Guide
 
-[中文站](https://yangtaomijian.github.io/password-b085-guide/) ·
-[English Site](https://yangtaomijian.github.io/password-b085-guide/en/)
+[阅读中文攻略](https://yangtaomijian.github.io/password-b085-guide/) · [Read the English guide](https://yangtaomijian.github.io/password-b085-guide/en/)
 
-《Password》b0.85 的非官方中英双语攻略与机制资料库。
+《Password》是 **Grizz** 创作的一部 **FVN（Furry Visual Novel，兽人视觉小说）**。玩家会遇到不同角色路线、剧情分支和密码谜题。本项目是面向 **游戏 b0.85 版本**的非官方中英双语攻略与机制资料库，帮助你在卡关时找到线索、理解路线与结局条件，或补齐收集内容。
 
-An unofficial Chinese and English reference guide for *Password* b0.85.
+*Password* is a **furry visual novel (FVN) by Grizz**, featuring character routes, branching story paths, and password puzzles. This unofficial Chinese and English guide and walkthrough reference covers **game build b0.85**, helping players find clues, understand routes and ending requirements, and complete their collections.
 
-## 内容 / Coverage
+## 从哪里开始 / Where to start
 
--   角色 Route 与字母 Path
--   分级密码提示
--   十二枚奖牌与 Path P
--   CG Gallery 检索与触发条件
--   Compendium 解锁条件
--   好感度与剧情差异
--   密码检定、奖牌持久化及彩蛋
--   b0.7 与 b0.85 版本变化，以及旧版线路、密码与机制档案
+- **不清楚路线怎么走？** 从[剧情线路总览](https://yangtaomijian.github.io/password-b085-guide/guide/route-overview.html)开始，再了解角色线与字母线的关系。
+- **卡在密码检定？** 查看[密码分级提示](https://yangtaomijian.github.io/password-b085-guide/guide/password-hints.html)，从一级提示逐步展开。
+- **想补齐收集？** 从[十二枚奖牌](https://yangtaomijian.github.io/password-b085-guide/collectibles/medals.html)、[CG 画廊](https://yangtaomijian.github.io/password-b085-guide/collectibles/gallery.html)或[后记解锁索引](https://yangtaomijian.github.io/password-b085-guide/collectibles/compendium.html)查找缺失项目。
+- **遇到其他问题？** 查看[常见问题](https://yangtaomijian.github.io/password-b085-guide/guide/faq.html)，也可以使用站内搜索，输入角色名、日期或具体线索，例如“咖啡杯”“水瓶座”“D2密码”。
 
-Both language versions cover the current b0.85 guide and include a source-checked comparison archive for b0.7 and b0.85.
+- **Unsure which route to follow?** Start with the [Route Overview](https://yangtaomijian.github.io/password-b085-guide/en/guide/route-overview.html) to understand character Routes and lettered Paths.
+- **Stuck at a password check?** Open the [Tiered Password Hints](https://yangtaomijian.github.io/password-b085-guide/en/guide/password-hints.html) and reveal hints gradually.
+- **Missing collectibles?** Check the [Medal Guide](https://yangtaomijian.github.io/password-b085-guide/en/collectibles/medals.html), [CG Gallery](https://yangtaomijian.github.io/password-b085-guide/en/collectibles/gallery.html), or [Compendium Unlock Index](https://yangtaomijian.github.io/password-b085-guide/en/collectibles/compendium.html).
+- **Have another question?** Browse the [FAQ](https://yangtaomijian.github.io/password-b085-guide/en/guide/faq.html), or search for a character, day, or specific clue such as “coffee cup”, “Aquarius”, or “D2 password”.
 
-## 版本与剧透 / Version and Spoilers
+## 收录内容 / What the guide covers
 
-本站的现行攻略以 **Password b0.85** 为准；版本档案专门比较 **b0.7** 与
-**b0.85**。全站包含大量剧情、Bad Ending、收集内容和结局条件剧透。
+| 中文 | English |
+| --- | --- |
+| 角色路线、字母线、结局与 Path P | Character Routes, lettered Paths, endings, and Path P |
+| 四次主要密码检定的逐级提示 | Progressive hints for the four main password checks |
+| 十二枚奖牌、100 格 CG 画廊与后记解锁条件 | All twelve medals, the 100-slot Gallery, and Compendium unlocks |
+| 好感度加点、关系判定与剧情差异 | Affection gains, relationship checks, and story differences |
+| 密码输入规则、奖牌持久记录与彩蛋 | Vault input rules, persistent medal progress, and Easter eggs |
+| b0.7 与 b0.85 的版本差异及旧版内容档案 | Differences between b0.7 and b0.85, with legacy content archives |
 
-The current walkthrough is specific to **Password b0.85**, while the version archives compare **b0.7** with **b0.85**. The site contains extensive story, bad-ending, collectible, and ending-condition spoilers.
+## 阅读前 / Before you read
 
-## 官方入口 / Official Links
+**本攻略包含剧透**，涉及剧情分支、坏结局、收集内容和结局条件。希望保留解谜体验时，请优先使用分级提示，只展开当前需要的部分。
 
--   [Password on itch.io](https://passwordvn.itch.io/password)
--   [Grizz on Patreon](https://www.patreon.com/PASSWORDVN)
--   [Community Discord](https://discord.gg/CSuEPWt) --- 18+ / NSFW
+现行攻略以 **b0.85** 为准，后续游戏版本可能不同；**b0.7 旧版本档案仅供历史参考**，请勿与当前流程混用。
 
-## 本地构建 / Local Build
+**The guide contains spoilers** for story branches, bad endings, collectibles, and ending requirements. To preserve the puzzle-solving experience, start with tiered hints and reveal only what you need.
 
-需要安装 [Quarto](https://quarto.org/)。
+Current guidance applies to **b0.85** and may differ from later game builds. **The b0.7 archives are historical references**, separate from the current walkthrough.
 
-Requires [Quarto](https://quarto.org/).
+## 官方入口 / Official links
 
-``` bash
-bash scripts/build-bilingual.sh
-python3 -m http.server 8000 --directory _site
-```
+- [Password on itch.io — 游戏介绍与下载 / Game and downloads](https://passwordvn.itch.io/password)
+- [Grizz on Patreon — 支持作者 / Support the creator](https://www.patreon.com/PASSWORDVN)
+- [Password Discord — 玩家社区 / Community](https://discord.gg/CSuEPWt) — 18+ / NSFW
 
-中文站是默认站点，源码位于仓库根目录；英文站作为独立 Quarto 子站维护在
-`site-en/`，发布至 `/en/`。
+## 关于本站 / About this guide
 
-The Chinese site is the default site and is built from the repository root. The English site is maintained as a separate Quarto project under `site-en/` and is published under `/en/`.
+本站是玩家整理的非官方攻略，不隶属于 Grizz 或发行平台，不提供游戏本体、完整脚本、提取后的 CG 或未经授权的游戏资源。游戏、角色及原始素材的相关权利归原作者所有。
 
-本地访问：
-
--   http://localhost:8000/
--   http://localhost:8000/en/
-
-## 说明 / Disclaimer
-
-本项目为非官方玩家资料，与游戏作者及发行平台无隶属关系。
-
-仓库不包含游戏本体、完整脚本、提取后的 CG
-或其他未经授权的游戏资源。游戏名称、角色及原始素材的相关权利归原作者所有。
-
-This is an unofficial fan-made reference project and is not affiliated with the developer or any distribution platform.
-
-The repository does not contain the game, its complete scripts, extracted CG files, or other unauthorized game assets. Rights to the game, characters, and original materials belong to their respective owner.
+This is an unofficial fan-made guide, not affiliated with Grizz or any distribution platform. It does not provide the game, complete scripts, extracted CGs, or unauthorized game assets. Rights to the game, characters, and original materials belong to their respective owner.
