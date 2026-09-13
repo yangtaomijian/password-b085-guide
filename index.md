@@ -1,5 +1,5 @@
 ---
-title: "Password b0.85 中文攻略"
+title: "Password b0.85 中文攻略与机制资料库"
 description: "Grizz 的 FVN《Password》b0.85 中文攻略：角色路线与结局、密码提示、奖牌、CG/画廊、后记、好感度与解锁机制。"
 comments: false
 toc: false

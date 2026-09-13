@@ -228,6 +228,8 @@ format:
     toc: true
     toc-depth: 3
     smooth-scroll: true
+    syntax-definitions:
+      - assets/renpy.xml
     code-copy: true
     code-overflow: wrap
     link-external-newwindow: true

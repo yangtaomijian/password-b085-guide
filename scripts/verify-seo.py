@@ -20,9 +20,9 @@ EN_ROOT = f"{BASE}/en/"
 ZH_IMAGE = f"{BASE}/assets/social/password-b085-guide-zh.png"
 EN_IMAGE = f"{BASE}/en/assets/social/password-b085-guide-en.png"
 ZH_SITE_NAME = "Password b0.85 中文攻略与机制资料库"
-EN_SITE_NAME = "Password b0.85 Guide"
-ZH_HOME_TITLE = "Password b0.85 中文攻略"
-EN_HOME_TITLE = "Password b0.85 Guide"
+EN_SITE_NAME = "Password b0.85 Guide & Mechanics Reference"
+ZH_HOME_TITLE = "Password b0.85 中文攻略与机制资料库"
+EN_HOME_TITLE = "Password b0.85 Guide & Mechanics Reference"
 EN_HOME_DESCRIPTION = "An unofficial guide and walkthrough reference for Password, Grizz’s furry visual novel (FVN), covering b0.85 routes, endings, password hints, medals, Gallery completion, mechanics, and version differences."
 PAIRED = {
     "index.html",

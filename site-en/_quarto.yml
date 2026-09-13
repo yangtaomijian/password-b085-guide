@@ -27,14 +27,14 @@ filters:
 
 seo-language: en
 seo-site-url: "https://yangtaomijian.github.io/password-b085-guide/en/"
-seo-site-title: "Password b0.85 Guide"
-seo-site-name: "Password b0.85 Guide"
+seo-site-title: "Password b0.85 Guide & Mechanics Reference"
+seo-site-name: "Password b0.85 Guide & Mechanics Reference"
 seo-image-url: "https://yangtaomijian.github.io/password-b085-guide/en/assets/social/password-b085-guide-en.png"
 seo-zh-site-url: "https://yangtaomijian.github.io/password-b085-guide/"
 seo-en-site-url: "https://yangtaomijian.github.io/password-b085-guide/en/"
 
 website:
-  title: "Password b0.85 Guide"
+  title: "Password b0.85 Guide & Mechanics Reference"
   description: "An unofficial, version-specific reference guide for Password b0.85."
   site-url: "https://yangtaomijian.github.io/password-b085-guide/en/"
   open-graph: false
@@ -191,6 +191,8 @@ format:
     toc: true
     toc-depth: 3
     smooth-scroll: true
+    syntax-definitions:
+      - assets/renpy.xml
     code-copy: true
     code-overflow: wrap
     link-external-newwindow: true

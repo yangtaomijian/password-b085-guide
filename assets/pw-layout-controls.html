@@ -136,6 +136,32 @@
     const leftSidebar = document.querySelector("#quarto-sidebar");
     const rightSidebar = document.querySelector("#quarto-margin-sidebar");
 
+    // Quarto already follows prefers-color-scheme while its override is absent.
+    // Clear only that override to restore both initial and live system following.
+    const nativeThemeToggle = document.querySelector(".quarto-color-scheme-toggle");
+    if (nativeThemeToggle && !document.querySelector(".pw-theme-auto")) {
+      const english = document.documentElement.lang.startsWith("en");
+      const auto = document.createElement("button");
+      auto.type = "button";
+      auto.className = "pw-theme-auto quarto-navigation-tool";
+      auto.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg>';
+      auto.title = english ? "Follow system appearance" : "跟随系统外观";
+      auto.setAttribute("aria-label", auto.title);
+      const sync = () => auto.setAttribute("aria-pressed", String(safeStorageGet("quarto-color-scheme") === null));
+      sync();
+      new MutationObserver(sync).observe(body, {attributes: true, attributeFilter: ["class"]});
+      auto.addEventListener("click", () => {
+        try {
+          localStorage.removeItem("quarto-color-scheme");
+          window.location.reload();
+        } catch {
+          // No persistent override can be stored when storage is unavailable.
+          auto.setAttribute("aria-pressed", "true");
+        }
+      });
+      nativeThemeToggle.after(auto);
+    }
+
     // Keep the native theme control's accessible name in sync with its action.
     const syncThemeLabel = () => {
       const label = body.classList.contains("quarto-dark")

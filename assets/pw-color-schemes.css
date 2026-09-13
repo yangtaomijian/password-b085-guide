@@ -2,72 +2,92 @@
 body.quarto-light {
   --pw-bg: #fbfaf7;
   --pw-surface: #fffdfa;
-  --pw-surface-soft: #f3f1eb;
-  --pw-surface-hover: #ebe8df;
-  --pw-text: #30332f;
-  --pw-text-soft: #626860;
-  --pw-text-faint: #70766e;
-  --pw-primary: #3e5c66;
-  --pw-primary-hover: #294750;
-  --pw-primary-soft: #e5eceb;
-  --pw-accent: #98713b;
-  --pw-accent-hover: #795525;
-  --pw-border: #dcddd5;
-  --pw-border-strong: #c8ccc2;
-  --pw-code-bg: #eeece7;
-  --pw-code-text: #6c5280;
-  --pw-table-head: #edece4;
-  --pw-table-stripe: #f6f5ef;
-  --pw-table-hover: #eaece4;
-  --pw-heading-3: #35453f;
-  --pw-heading: #252d29;
+  --pw-surface-soft: #f2efe8;
+  --pw-surface-hover: #eae5dc;
+  --pw-text: #30302c;
+  --pw-text-soft: #666158;
+  --pw-text-faint: #746e64;
+  --pw-primary: #806039;
+  --pw-primary-hover: #604522;
+  --pw-primary-soft: #eee7dc;
+  --pw-accent: #947044;
+  --pw-accent-hover: #70502b;
+  --pw-border: #ded9d0;
+  --pw-border-strong: #b7aea0;
+  --pw-code-bg: #efede6;
+  --pw-code-text: #79502f;
+  --pw-table-head: #eeeae2;
+  --pw-table-stripe: #f7f5ef;
+  --pw-table-hover: #eeeae1;
+  --pw-heading-3: #30302c;
+  --pw-heading: #292824;
   --pw-shell-surface: #f1eee7;
   --pw-shell-surface-raised: #f8f6f0;
-  --pw-interactive-surface: #e8e5dc;
-  --pw-shell-hover: #e5e2d8;
-  --pw-shell-border: #dcd8cc;
+  --pw-interactive-surface: #e9e3d8;
+  --pw-shell-hover: #e6dfd3;
+  --pw-shell-border: #ddd6cb;
+  --pw-on-primary: #fffdfa;
+  --pw-focus: #806039;
+  --pw-syntax-keyword: #b94343;
+  --pw-syntax-string: #287e63;
+  --pw-syntax-function: #617c20;
+  --pw-syntax-number: #a64c88;
+  --pw-syntax-comment: #68715f;
+  --pw-accent-soft: #e9dfcd;
+  --pw-note-border: #687d74;
+  --pw-tip-border: #6d8051;
+  --pw-warning-border: #947044;
+  --pw-important-border: #996b70;
+  --pw-caution-border: #a56452;
 }
 body.quarto-dark {
   color-scheme: dark;
-  --pw-bg: #252c2f;
-  --pw-surface: #2d3639;
-  --pw-surface-soft: #303a3d;
-  --pw-surface-hover: #343e40;
-  --pw-text: #f0f0e9;
-  --pw-text-soft: #cad1cd;
-  --pw-text-faint: #b6c0bb;
-  --pw-primary: #a0c7cd;
-  --pw-primary-hover: #c4e2e5;
-  --pw-primary-soft: #303f43;
-  --pw-accent: #d0ac72;
-  --pw-accent-hover: #e6c58f;
-  --pw-accent-soft: rgb(208 172 114 / 0.18);
-  --pw-border: #3b4547;
-  --pw-border-strong: #596668;
-  --pw-code-bg: #354247;
-  --pw-code-text: #e0edf2;
-  --pw-table-head: #3b484c;
-  --pw-table-stripe: #303a3d;
-  --pw-table-hover: #354043;
-  --pw-note-bg: #28373d;
-  --pw-note-border: #98bcc9;
-  --pw-tip-bg: #29382f;
-  --pw-tip-border: #9bb79e;
-  --pw-warning-bg: #373126;
-  --pw-warning-border: #d0ac72;
-  --pw-important-bg: #382e35;
-  --pw-important-border: #c8a0ac;
-  --pw-caution-bg: #3b2d2c;
-  --pw-caution-border: #d3a19a;
-  --pw-heading: #eeeae0;
-  --pw-heading-3: #d4dfd8;
-  --pw-shell-surface: #20272a;
-  --pw-shell-surface-raised: #252e31;
-  --pw-interactive-surface: #303a3d;
-  --pw-shell-hover: #354043;
-  --pw-shell-border: #3b4547;
+  --pw-bg: #242321;
+  --pw-surface: #2b2926;
+  --pw-surface-soft: #2e2c28;
+  --pw-surface-hover: #35322d;
+  --pw-text: #e6e3dc;
+  --pw-text-soft: #b9b3a9;
+  --pw-text-faint: #aaa397;
+  --pw-primary: #d2b17b;
+  --pw-primary-hover: #ead0a5;
+  --pw-primary-soft: #353027;
+  --pw-accent: #c5a16a;
+  --pw-accent-hover: #e0bc86;
+  --pw-accent-soft: #554733;
+  --pw-border: #3b3833;
+  --pw-border-strong: #71685b;
+  --pw-code-bg: #302f29;
+  --pw-code-text: #b6c79b;
+  --pw-table-head: #33302b;
+  --pw-table-stripe: #282724;
+  --pw-table-hover: #302e29;
+  --pw-note-bg: #2b2c29;
+  --pw-note-border: #a7b3ac;
+  --pw-tip-bg: #292d26;
+  --pw-tip-border: #a7bc8d;
+  --pw-warning-bg: #302b24;
+  --pw-warning-border: #c5a16a;
+  --pw-important-bg: #302729;
+  --pw-important-border: #c39b9e;
+  --pw-caution-bg: #302725;
+  --pw-caution-border: #cc9a8b;
+  --pw-heading: #eee9df;
+  --pw-heading-3: #e6e3dc;
+  --pw-shell-surface: #201f1d;
+  --pw-shell-surface-raised: #272522;
+  --pw-interactive-surface: #332f29;
+  --pw-shell-hover: #36322c;
+  --pw-shell-border: #3b3833;
   --pw-shadow-soft: 0 1px 2px rgb(0 0 0 / 0.12);
   --pw-shadow-float: 0 8px 28px rgb(0 0 0 / 0.24);
+  --pw-on-primary: #242321;
+  --pw-focus: #d2b17b;
+  --pw-syntax-keyword: #e67e80;
+  --pw-syntax-string: #83c092;
+  --pw-syntax-function: #a7c080;
+  --pw-syntax-number: #d699b6;
+  --pw-syntax-comment: #a4ac9b;
 }
 html:has(body.quarto-light) { color-scheme: light; }
 html:has(body.quarto-dark) { color-scheme: dark; }
@@ -76,7 +96,7 @@ main.content :is(h1, h2, h4), .quarto-title h1 { color: var(--pw-heading) !impor
 
 /* Preserve a distinct title band, including when a progressive hint is open. */
 .callout .callout-header {
-  background: color-mix(in srgb, var(--pw-callout-color) 15%, var(--pw-surface)) !important;
+  background: color-mix(in srgb, var(--pw-callout-color) 9%, var(--pw-surface)) !important;
 }
 .callout .callout-title-container {
   color: var(--pw-heading) !important;
@@ -98,11 +118,11 @@ main.content .pw-entry-grid h3 {
 }
 main.content .pw-entry-grid h3 a:not(.anchorjs-link) { font-weight: 700; }
 
-body.quarto-dark .callout-note { --pw-callout-color: #98bcc9; }
-body.quarto-dark .callout-tip { --pw-callout-color: #9bb79e; }
-body.quarto-dark .callout-warning { --pw-callout-color: #d0ac72; }
-body.quarto-dark .callout-important { --pw-callout-color: #c8a0ac; }
-body.quarto-dark .callout-caution { --pw-callout-color: #d3a19a; }
+.callout-note { --pw-callout-color: var(--pw-note-border); }
+.callout-tip { --pw-callout-color: var(--pw-tip-border); }
+.callout-warning { --pw-callout-color: var(--pw-warning-border); }
+.callout-important { --pw-callout-color: var(--pw-important-border); }
+.callout-caution { --pw-callout-color: var(--pw-caution-border); }
 
 /* Replace legacy white glass surfaces without changing their dimensions. */
 .aa-DetachedContainer { background: var(--pw-surface) !important; }
@@ -113,7 +133,7 @@ body.quarto-dark .sidebar-item .sidebar-link {
   background-image: none !important;
   border-color: transparent;
 }
-body.quarto-dark .pw-home-shortcuts a:first-child { color: #17272b; }
+body .pw-home-shortcuts a:first-child { color: var(--pw-on-primary); }
 body.quarto-dark .pw-panel-toggle { background: var(--pw-interactive-surface); }
 body.quarto-dark .nav-tabs .nav-link.active {
   background: var(--pw-primary-soft);
@@ -196,13 +216,13 @@ main.content :is(.affection-point-table, .affection-d19-summary-table) td code {
 
 /* Gold is reserved for content links; navigation and controls keep their palette. */
 body.quarto-dark main.content a:not(.nav-link):not(.anchorjs-link):not(.btn):not(.pw-home-shortcuts a):not(.quarto-page-breadcrumbs a) {
-  color: #d8b77c;
-  text-decoration-color: #b59a6a;
+  color: var(--pw-primary);
+  text-decoration-color: var(--pw-accent);
   text-decoration-line: underline;
   text-underline-offset: 0.2em;
 }
 body.quarto-dark main.content a:not(.nav-link):not(.anchorjs-link):not(.btn):not(.pw-home-shortcuts a):not(.quarto-page-breadcrumbs a):is(:hover, :focus-visible) {
-  color: #f0d7a8;
+  color: var(--pw-primary-hover);
   text-decoration-color: currentColor;
 }
 .pw-reading-summary {
@@ -344,4 +364,131 @@ body main.content h3:not(.pw-entry-grid h3) code { color: inherit !important; ba
 main.content .pw-lore-columns > .compendium-lore-table { margin-block: 0 1rem !important; }
 @container (min-width: 48rem) {
   main.content .pw-lore-columns > .compendium-lore-table { display: inline-block; vertical-align: top; margin-right: 1rem !important; }
+}
+
+/* Editorial surfaces and interaction states. Geometry stays in pw-guide-theme.css. */
+body :is(.navbar, .sidebar-link, .pw-panel-toolbar,
+  .pw-panel-toggle, .pw-edge-toggle, .aa-DetachedContainer,
+  #quarto-header .quarto-secondary-nav) {
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+}
+body .navbar { background: var(--pw-shell-surface-raised) !important; box-shadow: none; }
+body :is(#quarto-sidebar, #quarto-margin-sidebar, .pw-panel-toolbar,
+  #quarto-header .quarto-secondary-nav) { background: var(--pw-shell-surface) !important; }
+body :is(.navbar .dropdown-menu, .pw-edge-toggle) { background: var(--pw-surface) !important; }
+body :is(.sidebar-link, .pw-panel-toggle, .pw-edge-toggle) {
+  background-image: none !important;
+  box-shadow: none !important;
+}
+body .sidebar-item .sidebar-link { border-color: transparent; }
+body .sidebar-item .sidebar-link.active::before { box-shadow: none; }
+body :is(.navbar .nav-link.active, .sidebar-item .sidebar-link.active,
+  #TOC .nav-link.active) { color: var(--pw-primary) !important; }
+body #TOC .nav-link:hover { color: var(--pw-primary-hover) !important; }
+body :is(a, button, summary, input, select):focus-visible {
+  outline-color: var(--pw-focus);
+}
+body .pw-home-shortcuts a:first-child:is(:hover, :focus-visible) { color: var(--pw-on-primary); }
+body :is(.callout, .pw-entry-grid > .g-col-12, main.content table, .gallery-locator) {
+  box-shadow: none !important;
+}
+body main.content .pw-entry-grid h3 a:not(.anchorjs-link) {
+  color: var(--pw-heading) !important;
+  text-decoration: none !important;
+}
+body main.content .pw-entry-grid h3 a:is(:hover, :focus-visible) { color: var(--pw-primary) !important; }
+body main.content .pw-entry-grid h3 { border-bottom-color: transparent; }
+body :is(.gallery-locator input, .gallery-locator select, .aa-Input) {
+  background: var(--pw-surface);
+  color: var(--pw-text);
+  border-color: var(--pw-border-strong);
+}
+/* Syntax accents are confined to fenced code; inline identifiers keep one color. */
+body pre code span:is(.kw, .cf) { color: var(--pw-syntax-keyword); }
+body pre code span:is(.st, .ch, .vs) { color: var(--pw-syntax-string); }
+body pre code span:is(.fu, .bu) { color: var(--pw-syntax-function); }
+body pre code span:is(.dv, .bn, .fl) { color: var(--pw-syntax-number); }
+body pre code span:is(.co, .cv) { color: var(--pw-syntax-comment); }
+
+/* Breadcrumb context should stay neutral, including Bootstrap's active item. */
+body .quarto-page-breadcrumbs {
+  --bs-breadcrumb-item-active-color: var(--pw-text-soft);
+  --bs-breadcrumb-divider-color: var(--pw-text-faint);
+}
+body .quarto-page-breadcrumbs .breadcrumb-item.active,
+body .quarto-page-breadcrumbs .breadcrumb-item:last-child a { color: var(--pw-text-soft) !important; }
+body .quarto-page-breadcrumbs .breadcrumb-item::before { color: var(--pw-text-faint); }
+
+/* Inset every menu row equally; Quarto otherwise removes the first/last gap. */
+body .navbar .dropdown-menu {
+  padding: .45rem !important;
+  border-radius: var(--pw-radius-md);
+}
+body .navbar .dropdown-menu .dropdown-item {
+  margin: 0;
+  border-radius: var(--pw-radius-sm);
+}
+body pre code span.op { color: var(--pw-syntax-keyword); }
+body pre code span:is(.cn, .sc, .va) { color: var(--pw-syntax-number); }
+
+/* Highlighted blocks use the same reading surface as plain fenced blocks. */
+body div.sourceCode { background: var(--pw-code-bg) !important; box-shadow: none; }
+body div.sourceCode pre.sourceCode {
+  background: var(--pw-code-bg) !important;
+  border: 0;
+  margin: 0;
+  padding: 1rem 1.05rem;
+  box-shadow: none;
+}
+body pre.sourceCode > code.sourceCode,
+body pre.sourceCode > code.sourceCode > span[id] {
+  color: var(--pw-text);
+  background: transparent;
+}
+
+/* Equal hover/selected geometry in the desktop navigation. */
+body .navbar .nav-link { border-radius: var(--pw-radius-md) !important; }
+/* Extend only the narrow-layout TOC surface through its outer grid gutter. */
+@media (min-width: 760px) and (max-width: 1099.98px) {
+  body #quarto-margin-sidebar {
+    grid-column: body-end / screen-end;
+    width: auto;
+    padding-right: 3vw;
+  }
+}
+body #quarto-margin-sidebar {
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+}
+/* Glass is limited to transient layers; reading surfaces remain opaque. */
+@supports (backdrop-filter: blur(6px)) {
+  body .aa-DetachedOverlay {
+    -webkit-backdrop-filter: blur(6px) !important;
+    backdrop-filter: blur(6px) !important;
+  }
+  body .navbar .dropdown-menu {
+    background: color-mix(in srgb, var(--pw-surface) 96%, transparent) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+    backdrop-filter: blur(8px) !important;
+  }
+}
+@media (prefers-reduced-transparency: reduce), (forced-colors: active) {
+  body :is(.aa-DetachedOverlay, .navbar .dropdown-menu) {
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+  }
+  body .navbar .dropdown-menu { background: var(--pw-surface) !important; }
+}
+/* Match the adjacent theme/language tools; color marks system following. */
+.navbar .quarto-navbar-tools .pw-theme-auto { cursor: pointer; }
+.pw-theme-auto svg { width: 1.12rem; height: 1.12rem; }
+.navbar .quarto-navbar-tools .pw-theme-auto[aria-pressed="true"] {
+  color: var(--pw-primary) !important;
+}
+
+/* Let the brand truncate before full navigation labels overlap the tools. */
+@media (min-width: 992px) {
+  #quarto-header #navbarCollapse { flex: 1 0 auto; }
+  #quarto-header .navbar-nav { column-gap: .25rem; }
 }

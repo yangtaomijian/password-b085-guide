@@ -1,5 +1,5 @@
 ---
-title: "Password b0.85 Guide"
+title: "Password b0.85 Guide & Mechanics Reference"
 description: "An unofficial guide and walkthrough reference for Password, Grizz's furry visual novel (FVN), covering b0.85 routes, endings, password hints, medals, Gallery completion, mechanics, and version differences."
 comments: false
 toc: false

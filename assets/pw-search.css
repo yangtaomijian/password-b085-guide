@@ -17,3 +17,15 @@
 .aa-DetachedContainer .search-result-title-container > * { min-width: 0; max-width: 100%; }
 .aa-DetachedContainer .search-result-icon { grid-column: 1; grid-row: 1 / span 2; margin: 0 !important; }
 .aa-DetachedContainer :is(.search-result-title, .search-result-crumbs) { grid-column: 2; margin-left: 0 !important; }
+
+/* Empty searches have no results surface; no-results headers have no content. */
+.aa-DetachedContainer:has(.aa-Input:placeholder-shown) .aa-Panel { display: none; }
+.aa-SourceHeader:has(.search-result-header-no-results) { display: none; }
+.aa-DetachedContainer .aa-Form:focus-within {
+  box-shadow: none !important;
+  outline: 2px solid var(--pw-focus);
+  outline-offset: 1px;
+}
+.aa-Panel:has(.quarto-search-no-results) .aa-Panel--scrollable {
+  overflow-y: auto;
+}

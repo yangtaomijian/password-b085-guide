@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Ren'Py statement prefixes plus Pandoc's bundled Python lexer.
+     Used only for explicitly labelled renpy blocks; text blocks stay plain. -->
+<language name="Renpy" version="1" kateversion="2.4" section="Scripts" extensions="*.rpy">
+  <highlighting>
+    <list name="statements"><item>default</item><item>define</item><item>label</item><item>jump</item><item>call</item><item>scene</item><item>show</item><item>hide</item></list>
+    <contexts>
+      <context name="Normal" attribute="Normal Text" lineEndContext="#stay">
+        <keyword attribute="Keyword" String="statements" context="#stay"/>
+        <DetectChar attribute="Operator" char="$" context="#stay"/>
+        <IncludeRules context="##Python"/>
+      </context>
+    </contexts>
+    <itemDatas>
+      <itemData name="Normal Text" defStyleNum="dsNormal"/>
+      <itemData name="Keyword" defStyleNum="dsKeyword"/>
+      <itemData name="Operator" defStyleNum="dsOperator"/>
+    </itemDatas>
+  </highlighting>
+</language>
