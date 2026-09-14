@@ -64,6 +64,7 @@ language:
   toggle-navigation: "展开或折叠导航栏"
 
 website:
+  favicon: assets/favicon.svg
   title: "Password b0.85 中文攻略与机制资料库"
   description: "《Password》b0.85 中文路线、密码提示、收集与机制攻略"
   site-url: "https://yangtaomijian.github.io/password-b085-guide/"

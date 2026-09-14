@@ -34,6 +34,7 @@ seo-zh-site-url: "https://yangtaomijian.github.io/password-b085-guide/"
 seo-en-site-url: "https://yangtaomijian.github.io/password-b085-guide/en/"
 
 website:
+  favicon: assets/favicon.svg
   title: "Password b0.85 Guide & Mechanics Reference"
   description: "An unofficial, version-specific reference guide for Password b0.85."
   site-url: "https://yangtaomijian.github.io/password-b085-guide/en/"
