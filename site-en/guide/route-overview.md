@@ -9,7 +9,7 @@ The story structure in *Password* combines two parallel systems:
 - a **character Route**, chosen on D4;
 - a **lettered Path**, shaped by later choices, password checks, and survival outcomes.
 
-These systems interact, but they are not interchangeable. Your character route determines the companion perspective and relationship content for the playthrough, while the lettered Path organizes the broader timeline and major later-story outcomes.
+Your character Route determines whose story and relationship you follow. The lettered Path determines how the main story develops, who survives, and which ending you reach.
 
 ## b0.85 route map
 
@@ -37,7 +37,7 @@ They remain relevant throughout the game, even after the lettered Paths begin to
 
 ## Save-slot route indicators
 
-The overall Save and Load screens do not change to a different character theme. But each individual save slot is tinted according to the selected character route and displays the corresponding character icon in its upper-right area.
+Each save slot uses the selected character Route’s color and displays that character’s portrait in the upper-right corner.
 
 | Character route | Approximate save-slot tint |
 |---|---|
@@ -48,7 +48,7 @@ The overall Save and Load screens do not change to a different character theme. 
 | Hoss Route | purple |
 | Sal Route | bright green |
 
-The icon and tint identify the D4 character route saved in that slot; they do not indicate the current lettered Path, highest-affection character, or boyfriend status.
+The portrait and color correspond to the character you chose on D4.
 
 ## Lettered Paths
 
@@ -59,8 +59,6 @@ The first major split occurs on D8, when the player chooses **Support Benson** o
 Unlike the character route, the current Path can change during the same playthrough. For example, a run can begin on the Path A side and later continue into Path P after the final medal check.
 
 Path changes are not limited to the final Path P transition. A run that begins on the Path C side can also end up on Path D after the D14 survival outcomes.
-
-A lettered Path therefore describes the current timeline and its later outcome rather than a personal route that remains fixed after one choice.
 
 For the full Path requirements and route-specific exceptions, see [Lettered Path System](path-system.md).
 
@@ -75,8 +73,6 @@ For example:
 3. During D11, saves made before Dave discovers Oswin's body can still display `Path A`.
 4. When the body is discovered on D11 night, the game changes the current Path to B immediately.
 5. Saves made after that scene already display `Path B`; the D12 day-transition screen is simply the next new-day display to show B.
-
-An unexpected Path label does not necessarily mean that the player took a wrong turn. The outcome may already be locked in, while the save label waits until Dave learns what happened.
 
 ::: {.callout-note}
 ## Sal Route display quirk
@@ -101,5 +97,5 @@ Two players can share the same lettered Path while seeing different character-ro
 
 ## Related guides
 
-- [Need the conditions for a lettered Path? Check the Path system](path-system.md)
-- [Stuck at a password check? Open the tiered hints](password-hints.md)
+- [Lettered Path System](path-system.md)
+- [Tiered Password Hints](password-hints.md)

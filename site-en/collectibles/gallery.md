@@ -31,16 +31,12 @@ Use the coordinate tables to find the slot and CG ID, then check the trigger ind
 
 Each Gallery button corresponds to an image. When that image appears during the story, the game records it as seen and unlocks the button.
 
-The `Gallery Completion` number is calculated separately from the button state; it is not a second unlock requirement.
-
-Gallery progress is separate from individual story-save slots. Loading or deleting an ordinary save does not clear images already recorded as seen. Only images that actually appear during play count; having the game files alone does not unlock them.
+Gallery progress is separate from individual story-save slots. Loading or deleting an ordinary save does not clear images already recorded as seen.
 
 ::: {.callout-note}
 ## The button state and completion number may refresh at different times
 
-The Gallery button and the displayed completion count update separately.
-
-After seeing a new CG, its button may unlock before the completion number updates. If the total has not changed, restart the game first.
+The Gallery button and the displayed completion count update separately. After seeing a new CG, its button may unlock before the completion number updates. If the total has not changed, restart the game first.
 :::
 
 ::: {.callout-note}
@@ -289,7 +285,7 @@ The index below lists each CG by character, with an early appearance date and ne
 
 ## Images outside the Gallery
 
-These four image IDs are not part of the 100-slot b0.85 Gallery. Three appear during the story, but seeing them does not create a corresponding Gallery button.
+These four image IDs are absent from the b0.85 Gallery. Three appear during the story.
 
 ::: {#gallery-non-gallery-index .gallery-non-gallery-index}
 
@@ -302,7 +298,6 @@ These four image IDs are not part of the 100-slot b0.85 Gallery. Three appear du
 
 :::
 
-
 ::: {.callout-warning}
 ## If `davedead6` is still missing
 
@@ -311,7 +306,7 @@ In b0.85, this slot may not refresh as expected. If Trauma row 7, column 4 remai
 
 ## Related guides
 
-- [Missing an affection-related CG? Check points and thresholds](../mechanics/affection.md)
-- [Cannot reach the required Path? Check its branch conditions](../guide/path-system.md)
+- [Affection System and Point Guide](../mechanics/affection.md)
+- [Lettered Path System](../guide/path-system.md)
 
 <script src="../assets/gallery-locator.js" defer></script>

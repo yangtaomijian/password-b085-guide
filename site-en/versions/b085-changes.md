@@ -4,9 +4,7 @@ description: "Feature, story-interaction, password, Gallery, and CG changes betw
 toc: true
 ---
 
-If you are moving from an older guide to b0.85, start here for the changes that directly affect play and collection progress.
-
-Detailed legacy passwords, mechanics, and routes have their own archive pages.
+If you are moving from an older guide to b0.85, start here for changes that affect play and collection. The legacy archives cover the old passwords, mechanics, and routes in more detail.
 
 ::: {.callout-important}
 ## Comparison scope
@@ -62,7 +60,7 @@ See [Legacy Mechanics Archive](legacy-mechanics.md) for the first-run sequence a
 
 b0.85 adds seven Epilogue entries to Additional Scenes.
 
-The first becomes available after the true ending has been recorded. Completing one Epilogue unlocks the next, creating a fixed replay chain rather than an automatic continuation of Path P inside the normal story.
+The first becomes available after the true ending has been recorded. Completing one Epilogue unlocks the next. Open each one from Additional Scenes in the Compendium.
 
 For the current order and unlock flags, see [Compendium Unlock Index](../collectibles/compendium.md).
 
@@ -70,12 +68,7 @@ For the current order and unlock flags, see [Compendium Unlock Index](../collect
 
 ### D6 mansion departure
 
-b0.7 allowed the player to choose whether to remain at the mansion near the end of D6:
-
-```text
-Stay.
-Leave.
-```
+Near the end of D6, b0.7 offered the choices `Stay.` / `Leave.`.
 
 Choosing `Leave.` entered `BAD END: OZ` and ended the playthrough.
 
@@ -83,11 +76,7 @@ b0.85 removes the menu and its Bad Ending from normal play. See [Legacy Route Ar
 
 ### D7 accepted alternatives
 
-The b0.7 D7 Vault formally accepted two additional words: `PEACEKEEPER` and `ARBITER`.
-
-Each opened a separate warning scene, but neither allowed the player to continue past D8.
-
-b0.85 no longer accepts those two alternatives. The current answer is the only D7 input that advances the story. In b0.7, the older words were **accepted non-progressing alternatives**.
+The b0.7 D7 Vault also accepted `PEACEKEEPER` and `ARBITER`, often called “fake passwords” in the Chinese player community. Each opened its own warning scene, but neither let the player continue past D8. b0.85 no longer accepts either word; the current answer is the only D7 password that advances the story.
 
 See [Legacy Password Archive](legacy-passwords.md).
 
@@ -119,18 +108,11 @@ Several b0.7 scenes involving Dean were substantially more menu-driven. b0.85 pr
 
 ### D3 Dean or Tyson breakfast choice
 
-Before the D4 character Route selection, b0.7 allowed the player to choose whom to sit beside at breakfast:
-
-```text
-Dean
-Tyson
-```
+Before choosing a character Route on D4, b0.7 let the player sit beside `Dean` or `Tyson` at breakfast.
 
 Choosing Tyson opened a substantial independent mansion-exploration scene.
 
 b0.85 removes the menu and the Tyson branch and follows the Dean mansion-tour sequence automatically.
-
-This is a removed pre-Route scene, not a change to the D4 character Route selection itself.
 
 ### D4–D10 Dean interactions
 
@@ -155,13 +137,7 @@ Dean's relationship check changes as follows:
 | b0.85 | `bearlove >= 10`: relationship automatic; `< 10`: rejection |
 :::
 
-b0.85 therefore:
-
-- lowers the automatic relationship threshold from 20 to 10;
-- removes the player's confirmation choice in the old 10–19 range;
-- makes Dean Dave's boyfriend automatically at 10 or more affection.
-
-This changes Dean's relationship outcome, not the lettered Path.
+b0.85 lowers the automatic relationship threshold and removes the confirmation choice previously offered at 10–19 points.
 
 ## Path P additions
 
@@ -189,8 +165,6 @@ For progressive current hints, see [Tiered Password Hints](../guide/password-hin
 In b0.7, Florencia operates the keypad before Oswin opens the Vault further.
 
 In b0.85, Dave enters the new password and operates the keypad himself to open the Vault.
-
-The keypad role moves from **Florencia to Dave**.
 
 ### True-ending record
 
@@ -221,11 +195,9 @@ The reduction comes from the following four slot changes:
 | **Total** | **−4** |
 :::
 
-The three flashlight images remain available under Misc. Their removal from the Dave list eliminates duplicate buttons rather than deleting the images.
+The three flashlight images remain under Misc; their duplicate buttons in the Dave list are removed.
 
 `deanlove` is not part of the b0.85 Gallery and does not appear during normal play.
-
-The four older Dean adult CGs are **not** the reason for the 104-to-100 change. They were absent from the Gallery lists in both builds.
 
 For the current 100-slot structure, see [CG Gallery Completion Index](../collectibles/gallery.md).
 
@@ -233,10 +205,7 @@ For the current 100-slot structure, see [CG Gallery Completion Index](../collect
 
 ### Tyson CG redraws
 
-Two Tyson-related CGs were fully redrawn between b0.7 and b0.85:
-
-- `tysondrive`
-- `tysonmovie`
+Two Tyson CGs, `tysondrive` and `tysonmovie`, were fully redrawn between b0.7 and b0.85.
 
 The newer images change the complete composition, character placement, camera framing, background treatment, line work, and coloring.
 
@@ -250,19 +219,17 @@ These images were not counted in the Gallery total in either build, despite bein
 
 ## Save interface
 
-The route-specific save-slot tint and character portrait already existed in b0.7. They are not b0.85 additions.
+b0.7 already used Route-specific save-slot colors and character portraits.
 
 A visible b0.85 change is the survivor display: generic status boxes are replaced by individual pixel icons showing whether each character is alive or dead.
 
-The Route portrait still represents the D4 character Route rather than the current lettered Path.
+The portrait still corresponds to the character chosen on D4.
 
 ## Other changes
 
 ### Tyson's `Stripes` nickname
 
 b0.85 expands Tyson's use of `Stripes` as a recurring nickname for Dave. The dialogue context connects the name to Dave's striped appearance.
-
-This is a dialogue-characterization change rather than a route mechanic.
 
 ### D1 `THE END` input
 
@@ -275,7 +242,7 @@ Before quitting, b0.85 clears the following completion records:
 
 In b0.7, the game quits without clearing those completion records first.
 
-See [Easter Eggs and Hidden Inputs](../extras/easter-eggs.md) for the full instructions. This input can affect ending-completion records.
+See [Easter Eggs and Hidden Inputs](../extras/easter-eggs.md) for the full instructions.
 
 ## Recognizing an older guide
 
@@ -294,5 +261,5 @@ Use the current b0.85 guides for route, password, Compendium, and collection req
 
 ## Related pages
 
-- [Ready to play the current version? Start with the Route overview](../guide/route-overview.md)
-- [Need details of old mechanics? Open the legacy mechanics archive](legacy-mechanics.md)
+- [Route and Path Overview](../guide/route-overview.md)
+- [Legacy Mechanics Archive](legacy-mechanics.md)

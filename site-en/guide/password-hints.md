@@ -4,7 +4,7 @@ description: "Progressive hints for the four key password checks and the final P
 toc: true
 ---
 
-One of *Password*'s central mechanics is carrying information across timelines. Some passwords are learned from bad endings and revisited through **Resonate?**, while others are hinted at before the input itself.
+One of *Password*'s central mechanics is carrying information across timelines. Most password clues come from the dialogue in bad endings; **Resonate?** then returns you to the earlier password check. A few passwords are hinted at before the input appears.
 
 In b0.85, four password checks have a major effect on the main story:
 
@@ -34,7 +34,7 @@ Every password covered by the four key checks and the final Path P sequence is a
 
 Each of the six character routes has its own password. You must enter the word associated with your current route to receive the warning needed to avoid that route's early failure.
 
-Entering another character's valid password can show the warning vision associated with that character, but it does not protect the character on your current route.
+Entering another character's valid password shows the warning vision associated with that character, but it does not protect the character on your current route.
 
 <details>
 <summary><strong>Tier 1 hint</strong></summary>
@@ -133,7 +133,7 @@ The word describes the deliberate killing of many people in a single event.
 
 Giving up on this password during the Sal Route does not move the run to the ordinary Path C/D side. The earlier intervention in Sal's sleep-related problem prevents that branch.
 
-This is still a failed check, and the correct password remains necessary for Gallery completion. Entering it displays Sal's Vault CG and a related image filed under another character's Gallery category. Other Sal Gallery content is obtained through normal Route progression and does not depend on this password.
+For Gallery completion, you still need to enter the correct password. Entering it displays Sal's Vault CG and a related image filed under another character's Gallery category. Other Sal Gallery content is obtained through normal Route progression and does not depend on this password.
 
 ## Fourth key password
 
@@ -165,7 +165,7 @@ The answer names a legendary human who transforms into a wolf-like creature, usu
 
 ### Tyson Route exception
 
-Failing this check on the Tyson Route does not ultimately divert the run into Path F/G. This protection occurs later and does not count as solving the D17 password.
+On the Tyson Route, the story stays on Path A/B after a failed D17 check.
 
 On D18, Tyson identifies the source of the high-frequency sound and then sleeps in Dave's room, preventing the D19 disaster. No extra affection threshold, romance status, character-survival requirement, or additional choice is needed.
 

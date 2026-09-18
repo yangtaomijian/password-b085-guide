@@ -28,7 +28,7 @@ Cast Files, Additional Scenes, and Lore remain unlocked permanently, but the Com
 
 A newly earned entry may therefore remain `?????` even after it has been saved. Simply closing and reopening the Compendium is not guaranteed to refresh it.
 
-If an entry still displays `?????`, restart the game before checking its collection requirements.
+If an entry still displays `?????`, try restarting the game first, then check its unlock requirements.
 :::
 
 ## Cast Files
@@ -60,9 +60,7 @@ If an entry still displays `?????`, restart the game before checking its collect
 
 ### Dave, David, and Hoyt
 
-All three files unlock during the same D14 A/B flashback sequence.
-
-No character route or affection condition is required once that flashback is reached.
+All three files unlock during the same D14 A/B flashback, on any character Route and at any affection level.
 
 ### Orlando
 
@@ -81,15 +79,11 @@ The in-game locked hint only mentions Orlando Route progression, so it does not 
 
 ### Hoss
 
-The earliest unlock is an optional D3 conversation:
-
-```text
-Message...? → Hoss
-```
+The earliest unlock is the optional D3 conversation `Message...? → Hoss`.
 
 Because the D4 partner choice has not yet occurred, this method does not require the Hoss Route.
 
-An optional D8 hidden-library discovery can also unlock the file. This alternative does not require the Hoss Route, although the player must have opened the relevant library branch.
+An optional D8 hidden-library discovery can also unlock the file. This method also works outside the Hoss Route.
 
 ### Sal
 
@@ -99,13 +93,13 @@ On the Sal Route, failing that password does not permanently lose the file. A D1
 
 ### Thanatos and Thanatos - Part 2
 
-The normal Thanatos file unlocks during the late Path A time-loop material. An incomplete twelve-medal check also provides another opportunity, although the earlier Path A scene normally unlocks it first.
+The normal Thanatos file unlocks during the late Path A time-loop sequence. An incomplete twelve-medal check provides another unlock opportunity.
 
 `Thanatos - Part 2` unlocks after the full Path P sequence is completed.
 
 ### Dominic and Jack
 
-Dominic and Jack unlock consecutively during the same late Path A meeting. Jack has no separate dedicated unlock scene.
+Dominic and Jack unlock consecutively during the same late Path A meeting.
 
 ### Florencia
 
@@ -121,7 +115,7 @@ The earliest unlock point is the Path D ending. Path C, E, and F do not unlock t
 <details>
 <summary><strong>Oswin is not listed</strong></summary>
 
-b0.85 has no Cast File entry for Oswin. Even after the relevant late Path A scenes, no additional slot appears in the Compendium, so the visible total remains 16. This is not a missing collectible.
+b0.85 contains 16 Cast Files. Oswin is not among them.
 </details>
 
 ## Additional Scenes
@@ -146,9 +140,7 @@ b0.85 has no Cast File entry for Oswin. Even after the relevant late Path A scen
 
 ### Dave's Demise and Roswell's Attempt
 
-The first two scenes share the same persistent condition and normally become available together.
-
-They do not form part of the seven-scene Epilogue completion chain, and neither must be completed to unlock the other.
+The first two scenes share an unlock condition and become available together. You can replay them in either order. The seven Epilogues that follow unlock in sequence.
 
 ### Epilogue dependency chain
 
@@ -178,13 +170,13 @@ The first five character Epilogues use the following additional Cast File checks
 
 Only Tyson Epilogue directly requires completion of Path P. Each later scene requires the preceding Epilogue to have been played through.
 
-### Play each Epilogue almost to the end
+### Watch each Epilogue to the end {#play-each-epilogue-almost-to-the-end}
 
 The game counts an Epilogue as completed only near the end of its replay.
 
-Using **End Replay** too early prevents the next scene from unlocking. Merely opening an Epilogue, or watching only part of it, is not enough to advance the chain.
+Using **End Replay** too early prevents the next scene from unlocking.
 
-Even a fully completed Epilogue may not make the next scene appear until the game is restarted. If the next entry still displays `?????`, restart first; replay the previous Epilogue only if it remains locked afterward.
+Even a fully completed Epilogue may not make the next scene appear until the game is restarted. If the next entry still displays `?????`, try restarting first. If it remains locked, try replaying the previous Epilogue.
 
 ::: {.callout-warning}
 ## Epilogue chain stuck on `?????`
@@ -232,9 +224,7 @@ The Lore section contains the twelve zodiac entries in traditional order:
 
 ::::
 
-Each Lore entry uses the same saved record as its corresponding medal. The final twelve-medal check after Path A counts those same records.
-
-There is no separate Lore collection system and no additional per-medal Route or Path requirement in the Compendium definition.
+Each Lore entry unlocks with its corresponding medal. The final twelve-medal check after Path A uses the same records.
 
 Lore may remain locked on screen even when a newly earned medal already counts toward the Path P check. If it is still locked after restarting the game, the medal was probably not formally recorded.
 

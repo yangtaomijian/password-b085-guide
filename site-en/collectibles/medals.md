@@ -26,7 +26,7 @@ This page reveals medal locations, several character-route scenes, and parts of 
 - Orlando Route and Tyson Route have no exclusive collectible medal.
 - Path A provides Aries, Scorpio, and Virgo, while Path B provides Gemini and Sagittarius.
 - Aquarius, Taurus, and Leo can be unlocked on either the Path A or Path B side.
-- Path C–G contain no irreplaceable medal unlocks.
+- You can collect all twelve medals without entering Path C–G.
 
 ::: {.callout-important}
 ## Found, identified, and unlocked are not always the same
@@ -151,7 +151,6 @@ The scene is automatic once reached.
 
 The medal is first found on D7 after the giant pumpkin is removed from the greenhouse. Its identity is discussed at the time, but it is not formally recorded until the D16 A/B inventory scene.
 
-Seeing the D7 discovery alone is therefore not enough.
 </details>
 
 <details id="medal-gemini">
@@ -169,7 +168,6 @@ Tyson Route is useful for seeing the full discovery context, but it is not requi
 
 On D9, a medal falls from a museum bookshelf while Dave and Roswell are examining books. Roswell identifies it as Cancer, and the game records it immediately.
 
-The D16 inventory scene may record the same medal again, but that later record is not required.
 </details>
 
 <details id="medal-leo">
@@ -217,7 +215,7 @@ Some branches name it directly and others describe the arrow-shaped symbol, but 
 
 On D9, Dave and Sal find the medal inside an unusually secured pool locker. They cannot identify the symbol at the time, but the game records the medal immediately.
 
-The zodiac name is confirmed during the D16 A/B inventory scene. That later record is a repeat, not a second collectible.
+The zodiac name is confirmed during the D16 A/B inventory scene.
 </details>
 
 <details id="medal-aquarius">
@@ -260,9 +258,7 @@ Compendium medal dates are clues; they do not consistently mark first discovery,
 - Taurus uses D16 even though the medal first appears on D7.
 - Pisces and Capricorn use D9 even though their identities are confirmed on D16.
 
-Treat the Compendium date as a clue, not as a universal definition of when a medal was first found or permanently unlocked.
-
 ## Related guides
 
-- [Have all medals but no ending? Check persistence and the final check](../mechanics/medal-persistence.md)
-- [Stuck on a password while collecting? Open the tiered hints](../guide/password-hints.md)
+- [Medal Persistence and Final Check](../mechanics/medal-persistence.md)
+- [Tiered Password Hints](../guide/password-hints.md)

@@ -4,7 +4,7 @@ description: "Vault input rules, day restrictions, failure results, and Route ex
 toc: true
 ---
 
-Most Vault inputs in *Password* b0.85 share the same input rules, but the result still varies by day and by a few Route exceptions that are easy to misread. The four main answers are not revealed here.
+Most Vault inputs in *Password* b0.85 share the same input rules. The result depends on the day and, in a few cases, the character Route.
 
 The final Path P password and the D1 coffee-cup name use separate rules. For progressive clues, see [Tiered Password Hints](../guide/password-hints.md).
 
@@ -72,7 +72,7 @@ Every character Route reaches the D4 Vault. Only the Roswell Route needs its gro
 
 The D6 input does not stop the player from entering another character's valid word.
 
-Doing so can display that character's warning, but it does not protect the partner on the current Route, so the current Route's failure still occurs later.
+Doing so displays that character's warning, but it does not protect the partner on the current Route, so the current Route's failure still occurs later.
 
 ## Sal and Tyson: avoiding the consequence is not a pass
 
@@ -82,7 +82,7 @@ Gallery completion still requires the correct password: the successful scene dis
 
 Failing or giving up on D17 during the Tyson Route is also not a pass. Later Tyson Route events prevent the D19 disaster and Path F/G diversion.
 
-**These exceptions change the consequences of failure; they do not award the successful scene or its exclusive content.** See [Lettered Path System](../guide/path-system.md) for the complete branch logic.
+A failed check still misses the successful warning scene and its related exclusive content. See [Lettered Path System](../guide/path-system.md) for the complete branch logic.
 
 ## D7: the current answer works normally
 
@@ -94,9 +94,9 @@ The two other words accepted in b0.7 did not advance the main story and are no l
 
 The D11 story still shows and defines a word from the older sequence, and some later dialogue retains related traces. Normal b0.85 play does not open the matching Vault input or provide a success scene.
 
-D11 therefore has no usable password and is not one of the four main checks. See [Legacy Password Archive](../versions/legacy-passwords.md#d11-optional-vault) for its former entry and effect.
+See [Legacy Password Archive](../versions/legacy-passwords.md#d11-optional-vault) for its former entry and effect.
 
 ## Related guides
 
-- [Still stuck on the answer? Open the tiered hints](../guide/password-hints.md)
-- [Unexpected Path after a check? Review the branch conditions](../guide/path-system.md)
+- [Tiered Password Hints](../guide/password-hints.md)
+- [Lettered Path System](../guide/path-system.md)

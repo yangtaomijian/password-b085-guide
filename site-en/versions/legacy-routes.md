@@ -26,8 +26,6 @@ b0.7 contained a normal D6 choice near the end of the mansion sequence: **Stay.*
 
 Choosing **Stay.** continued to D7. Choosing **Leave.** entered `BAD END: OZ` and ended the playthrough.
 
-This Bad Ending did not create another character Route or lettered Path, and it did not return to the normal story.
-
 b0.85 no longer contains the D6 mansion-departure menu or its Bad Ending during normal play.
 
 ::: {.d6-result-table .table-responsive .table-scroll-compact}

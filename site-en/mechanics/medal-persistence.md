@@ -4,9 +4,7 @@ description: "How Password b0.85 stores medal progress, updates the Compendium, 
 toc: true
 ---
 
-The twelve zodiac medals are not stored inside one ordinary story save. Each medal is tracked through a Ren'Py `persistent` flag, allowing collection progress to carry across routes, Paths, and playthroughs.
-
-The final medal check does not inspect the current save slot for twelve inventory items. Instead, it recounts the same twelve persistent flags after `PATH A: END`.
+The game stores zodiac medal progress in twelve Ren'Py `persistent` flags shared across Routes, Paths, and playthroughs. After `PATH A: END`, it counts those flags to check whether you have all twelve medals.
 
 ::: {.callout-important}
 ## Three separate stages
@@ -43,20 +41,11 @@ default persistent.aquarius = False
 default persistent.pisces = False
 ```
 
-When the corresponding scene is reached, the game changes one flag to `True`, for example:
-
-```renpy
-$ persistent.aries = True
-```
+When you reach the corresponding scene, the game sets the flag to `True`, for example: `$ persistent.aries = True`.
 
 b0.85 has no in-game option that resets the twelve medal flags, and no story branch sets them back to `False`.
 
-Loading an ordinary save restores the story state but does not roll back medal progress.
-
-- medals can be collected across different character routes and lettered Paths;
-- loading an older story save does not restore the medal flags saved in that slot;
-- one playthrough does not need to contain all twelve medals;
-- the final Path A run can use medals obtained during earlier runs.
+Loading an ordinary save restores the story state while keeping medals already collected. You can gather medals across different Routes and playthroughs, then use them all in the final Path A check.
 
 After obtaining a medal, it is sensible to let the scene finish and make a normal save before switching runs or closing the game.
 
@@ -77,9 +66,7 @@ For exact discovery and recording points, see [Twelve-Medal Collection Guide](..
 
 ## Why some medals are recorded more than once
 
-Repeated records do not represent duplicate medals. Alternative story branches or later confirmation scenes may record the same medal again.
-
-Pisces, Cancer, and Capricorn are first recorded during their D9 character-route scenes and may be recorded again during the D16 Path A/B inventory scene. The later record is a confirmation, not a second collectible or an additional requirement.
+The same medal can be recorded in different branches or confirmed again later. Pisces, Cancer, and Capricorn are collected during their D9 character-route scenes; the D16 Path A/B inventory may record them again.
 
 Virgo and Sagittarius are also recorded in several mutually exclusive relationship endings. Any one valid Path A ending awards Virgo, and any one valid Path B ending awards Sagittarius.
 
@@ -91,11 +78,7 @@ You do not need to complete all six relationship endings for the same medal.
 
 ## How the final twelve-medal check works
 
-After `PATH A: END`, the game resets a temporary counter:
-
-```renpy
-$ MedalsFound = 0
-```
+After `PATH A: END`, the game resets a temporary counter: `$ MedalsFound = 0`.
 
 It then checks each persistent medal flag and adds one for every value that is `True`:
 
@@ -109,15 +92,7 @@ After all twelve flags have been checked:
 - fewer than twelve ends the current post-Path-A sequence without entering Path P;
 - all twelve allows the story to continue into the Path P sequence.
 
-`MedalsFound` is not the permanent collection record. It is only a temporary total rebuilt each time the final check runs.
-
-The actual collection state remains:
-
-```text
-persistent.aries
-...
-persistent.pisces
-```
+`MedalsFound` holds the total for this check. The twelve `persistent` flags listed above store the medal progress.
 
 ::: {.callout-note}
 ## The check only runs after Path A
@@ -152,4 +127,4 @@ For the fastest collection order and all twelve locations, see [Twelve-Medal Col
 
 ## Related guides
 
-- [Checking Compendium entries? Open the unlock index](../collectibles/compendium.md)
+- [Compendium Unlock Index](../collectibles/compendium.md)

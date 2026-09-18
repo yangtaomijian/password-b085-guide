@@ -33,24 +33,11 @@ Outside the Sal Route, the normal mapping is:
 
 :::
 
-The split works like this:
-
-- Path A and Path C come from the side where Oswin does not die early.
-- Path B and Path D come from the side where Oswin dies early.
-- Passing the D10 check keeps the run in the shared Path A/B story.
-- Failing the D10 check normally moves a non-Sal run into the Path C/D story.
-
 The D8 choice does not immediately change the displayed Path; the game applies that choice later.
 
 ### Sal Route exception
 
-The Sal Route does not move into Path C or Path D when the player gives up on the D10 password check. The run remains in the shared Path A/B story according to the earlier Oswin state.
-
-::: {.pw-key-rule}
-
-This exception does **not** count as passing the password check.
-
-:::
+On the Sal Route, giving up on the D10 password keeps the story on Path A/B, following the earlier Oswin outcome.
 
 Completing it correctly still matters for Gallery completion: the successful Sal Route branch displays Sal's Vault CG and a related image filed under another character's Gallery category. Other Sal Gallery content is unlocked through normal Route progression and does not depend on this check.
 
@@ -88,15 +75,13 @@ The password is entered on D17, but the consequences of failure occur on D19. On
 
 ### Early bad ending within Path F/G
 
-Failing the D17 check does not immediately produce the later solo-departure Bad Ending. After the D19 disaster moves the story into Path F or Path G, D21 presents the choices **Stay.** and **Leave.**
+After a failed D17 check, the disaster occurs on D19 and the story enters Path F or Path G on D20. D21 then presents the choices **Stay.** and **Leave.**
 
-Choosing **Leave.** causes Dave to leave the group and leads to `BAD END: DOMINIC`. This ends the F/G story early rather than creating a separate Path on D17. Unlike the normal Path F and Path G endings, it does not offer **Resonate?**
+Choosing **Leave.** causes Dave to leave the group and leads to `BAD END: DOMINIC`. Unlike the normal Path F and Path G endings, it does not offer **Resonate?**
 
 ### Tyson Route exception
 
-On the Tyson Route, failing or giving up on the D17 password does not ultimately divert the run into Path F or Path G. The existing A/B direction is preserved.
-
-This does not count as solving the password. The protection comes from later Tyson Route events that prevent the D19 disaster.
+On the Tyson Route, the story stays on its existing A/B Path after a failed D17 password check.
 
 On D18, the Tyson Route reveals the source of the high-frequency sound that would otherwise trigger the D19 disaster. Tyson then sleeps in Dave’s room instead.
 
@@ -104,8 +89,6 @@ No additional affection threshold, romance status, character-survival requiremen
 
 <details>
 <summary><strong>How the Sal and Tyson Route exceptions differ</strong></summary>
-
-Both route exceptions prevent the normal Path diversion after a failed password check, but neither one counts as solving the password.
 
 ::: {.path-exception-comparison-table .table-responsive .table-scroll-wide}
 
@@ -126,7 +109,7 @@ Both route exceptions prevent the normal Path diversion after a failed password 
 
 ## Path P
 
-Path P is not selected during the early route splits. It is the final collection branch reached after completing the main Path A sequence.
+Once all twelve medals have been recorded, completing Path A leads into Path P.
 
 To enter Path P:
 
@@ -157,5 +140,5 @@ The requirements and recommended collection order are covered in the [Twelve-Med
 
 ## Related guides
 
-- [Stuck at a password check? Open the tiered hints](password-hints.md)
-- [Preparing for Path P? Plan all twelve medals](../collectibles/medals.md)
+- [Tiered Password Hints](password-hints.md)
+- [Twelve-Medal Collection Guide](../collectibles/medals.md)

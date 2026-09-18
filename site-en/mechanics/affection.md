@@ -69,10 +69,9 @@ All threshold checks use `>=`. For example, `15 <= lionlove < 20` means an affec
 
 ::: {.pw-key-rule}
 
-D19 does not compare all six characters and choose the highest value. The current character route determines which affection value is checked.
+The D19 relationship check uses the affection value for the current character Route.
 
 :::
-
 
 ::: {.affection-d19-summary-table .table-responsive .table-scroll-large}
 
@@ -351,21 +350,13 @@ Exact menu strings are preserved for comparison with the game. Rows from the sam
 
 ### Path C resets Sal's value
 
-During the Path C Sal pool sequence, the game executes:
-
-```renpy
-$ croclove = 0
-```
-
-This is a direct overwrite rather than a deduction. It removes all Sal affection accumulated earlier in that save.
+During the Path C Sal pool sequence, the game executes `$ croclove = 0`, clearing all Sal affection accumulated earlier in that save.
 
 The other five affection values have no comparable reset during normal play.
 
 ### D16 `Remain still.` awards no points
 
-On the Sal Route, D16 makes `Remain still.` look like a two-point choice, but b0.85 does not add those points. The choice therefore awards **0 points**.
-
-No later event adds the missing two points before the D19 relationship check. A run can therefore finish with two fewer points than the interface suggests.
+On the Sal Route, D16 shows `Remain still.` as a two-point choice, but it awards **0 points** in b0.85. No later event adds those missing points before D19.
 
 ::: {.callout-warning}
 ## Actual b0.85 scoring
@@ -375,5 +366,5 @@ Do not count `Remain still.` as a +2 choice when planning Sal's D19 result; `cro
 
 ## Related guides
 
-- [Which scenes change with affection? Check story differences](affection-differences.md)
-- [Looking for the corresponding CG? Open the Gallery index](../collectibles/gallery.md)
+- [Affection Checks and Story Differences](affection-differences.md)
+- [CG Gallery Completion Index](../collectibles/gallery.md)

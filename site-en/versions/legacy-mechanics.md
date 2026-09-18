@@ -21,11 +21,11 @@ A surviving password word or related line does not make an interaction usable in
 
 ## Path A first-run sequence
 
-Both b0.7 and b0.85 use `persistent.Day23APrime` to distinguish the first normal traversal of late Path A from later traversals.
+Both b0.7 and b0.85 use `persistent.Day23APrime` to distinguish the first visit to late Path A from later visits.
 
 The first-run record is shared across character Routes and save slots rather than belonging to one ordinary save.
 
-### First normal traversal
+### First visit {#first-normal-traversal}
 
 On the first visit, the story continues as follows:
 
@@ -37,13 +37,11 @@ enter the late Path A sequence
 → continue with the later Path A story
 ```
 
-The first traversal does **not** end after those two special segments. It continues directly into the later Path A story. The game records that completion with `persistent.Day23APrime`.
-
 The names **Dave's Demise** and **Roswell's Attempt** were later assigned to the two first-run segments by the b0.85 Additional Scenes interface. They were not separate menu choices in b0.7.
 
-### Later normal traversals
+### Later visits {#later-normal-traversals}
 
-On a later eligible traversal:
+When you reach this part again:
 
 ```text
 common opening material
@@ -51,8 +49,6 @@ common opening material
 → skip the two first-visit segments
 → continue with the later Path A story
 ```
-
-The two first-run segments are skipped.
 
 Starting a new game does not by itself reset this persistent value. Resetting or deleting the game's persistent data restores the default first-run state.
 
@@ -62,8 +58,6 @@ The result depends on where the save was made:
 
 - a save loaded **before** the game checks the first-completion state reads the current profile-wide value and may skip the first-visit segments;
 - a save made **inside** the first-visit sequence can continue from its saved location.
-
-This is why a normal save slot does not behave as an independent copy of the first-run unlock state.
 
 ## Additional Scenes in b0.85
 
@@ -84,7 +78,7 @@ Each entry replays one part of the original Path A story.
 
 `Roswell's Attempt` begins with the Roswell segment and ends before the later Path A story continues.
 
-Both are in-game replays rather than standalone video files. They can still unlock Gallery images shown within their segments and retain any story effects triggered there.
+Replaying these scenes can unlock the Gallery images shown in them and retains any story effects triggered along the way.
 
 ## D8 Oswin free-text conversation
 
@@ -117,14 +111,7 @@ The conversation tracks three states for the current playthrough:
 | `OzWrong` | Counts unmatched inputs |
 :::
 
-It does not directly set:
-
-- a character Route or a lettered Path;
-- a medal;
-- a major ending;
-- a main Vault success flag;
-
-The interaction is therefore not required for completion. However, `OzPast1` and `OzPast2` are read by later dialogue, so selected answers can change text on later days.
+The answers can change later dialogue through `OzPast1` and `OzPast2`. They leave the character Route, lettered Path, medals, major ending, and main Vault success flags unchanged.
 
 ## How b0.7 recognized input
 
@@ -163,8 +150,6 @@ The rabbit interaction is state-dependent, but the second input does not have to
 
 An initial rabbit-, hare-, or story-related response can set `OzPast2`. A later rabbit-related input then receives the follow-up version because the state has changed.
 
-The important condition is whether Dave has already received the first response, not a mandatory two-line command sequence.
-
 ## Conversation prompts to try
 
 The following prompts work in b0.7. They are historical examples only and cannot be entered during normal b0.85 play.
@@ -174,7 +159,7 @@ Some prompts are intentionally abbreviated or grammatically unusual because thos
 <details>
 <summary><strong>Expand the prompt table</strong></summary>
 
-The input box did not understand unrestricted natural language. It looked for groups of keywords, so the lines below are reliable examples rather than the only possible wording.
+The input box matched groups of keywords, allowing different wording for the same topic.
 
 Capitalization does not matter. Type one prompt at a time, and keep spaces in phrases such as `hidden camera`.
 
@@ -240,15 +225,9 @@ This choice is distinct from the optional D11 Vault documented in [Legacy Passwo
 
 In b0.85, the menu is removed. The scene instead follows a fixed sequence in which Oswin injects Dave from behind and later reveals that the substance was saline.
 
-The change:
-
-- removes a normal player decision;
-- removes the two possible `DavePride` gains;
-- uses one fixed order and outcome for the laboratory scene.
-
-It does not directly assign a character Route, lettered Path, or ending.
+The two possible `DavePride` gains are also removed. The character Route, lettered Path, and ending are unaffected.
 
 ## Related pages
 
-- [How did old mechanics affect Routes? Open the legacy Route archive](legacy-routes.md)
-- [Checking the current version? Read the b0.85 change overview](b085-changes.md)
+- [Legacy Route Archive](legacy-routes.md)
+- [Major Changes in b0.85](b085-changes.md)

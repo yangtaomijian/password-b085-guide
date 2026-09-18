@@ -58,7 +58,7 @@ See [Twelve-Medal Collection Guide](../collectibles/medals.md).
 
 Some medals appear before the game records them. Aquarius and Taurus, for example, are not added to the collection until the D16 inventory scene.
 
-Restart the game before using a locked Lore entry as confirmation that a medal is missing. See [Medal Persistence and Final Check](../mechanics/medal-persistence.md).
+If a Lore entry is still locked, try restarting the game first so the Compendium can refresh. See [Medal Persistence and Final Check](../mechanics/medal-persistence.md).
 
 ### Will deleting normal save slots remove my medals?
 
@@ -82,7 +82,7 @@ It changes dialogue, intimate options, some CGs, and the D19 relationship outcom
 
 ### Why is a Compendium entry still locked?
 
-First restart the game, because the Compendium may not display an unlock earned during the current session.
+Try restarting the game first so the Compendium can display any entries you just unlocked.
 
 If it remains locked, check the entry's requirement in [Compendium Unlock Index](../collectibles/compendium.md). For an Epilogue, make sure the previous Replay reached its ending instead of using **End Replay** early.
 
@@ -96,7 +96,7 @@ Some late Path A scenes can also change the menu character temporarily. Continue
 
 ### Why does my game not match this guide?
 
-This guide covers Password b0.85 only. If Routes, password scenes, or CG locations differ substantially, check the version and download source; information written for older releases may not apply.
+The main guide covers Password b0.85, with separate archives for b0.7 and the differences between the two builds. If Routes, password scenes, or CG locations differ substantially, check your game version and download source.
 
 For older material, see:
 
@@ -107,7 +107,7 @@ For older material, see:
 
 ## Still Stuck?
 
-When asking for help, include:
+You’re welcome to get in touch if you’re stuck. To help me understand what happened, include:
 
 1. the game version and current day;
 2. the character Route and Path shown in the relevant save;

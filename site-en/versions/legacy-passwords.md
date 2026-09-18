@@ -31,15 +31,13 @@ They did not, however, have the same effect on the following day.
 | Current D7 answer | Advances the main story | Benson's death warning | Satisfies the requirement to continue past D8 |
 :::
 
-The older alternatives were therefore not invalid entries: the Vault accepted them and opened their warning scenes. They did not advance the story because only the current answer allows the player to continue past D8.
-
-Entering either older alternative still leads into the Benson Bad Ending timeline.
+Either older alternative leads into the Benson Bad Ending timeline. Only the current answer allows the player to continue past D8.
 
 ## How the old hint structure worked
 
-The b0.7 puzzle was more indirect than the current D7 check, but the game did not require a fixed three-step order.
+The b0.7 D7 puzzle was more roundabout and difficult than the current check.
 
-A normal D7 failure leads into a Bad Ending that supplies clues for both older alternatives. The player can then enter either `PEACEKEEPER` or `ARBITER` directly; the game does not require one to be completed before the other.
+A normal D7 failure leads into a Bad Ending that supplies clues for both older alternatives. The player can then enter either `PEACEKEEPER` or `ARBITER` directly.
 
 Both accepted alternatives later converge on the same investigation sequence. That shared sequence provides the clue for the answer that actually continues the story past D8.
 
@@ -54,7 +52,7 @@ either accepted alternative
 → clue for the answer that continues the story
 ```
 
-Older guides may arrange the three words in a recommended discovery order, but the game did not enforce that order.
+Older guides may suggest an order for discovering the three words, but you can enter the correct password straight away if you already know it.
 
 ## Trauma images and Gallery unlocks
 
@@ -89,12 +87,7 @@ persistent.metempsychosis_check == True
 BensonAround == True
 ```
 
-The option becomes available after the relevant Oswin-alive D11 laboratory sequence has already been completed once. On a later eligible run through the A/B-side D11 material, the player can receive an additional choice:
-
-```text
-Visit the Vault.
-Stay here.
-```
+The option becomes available after the relevant Oswin-alive D11 laboratory sequence has already been completed once. On a later eligible run through the A/B-side D11 material, the player can choose `Visit the Vault.` or `Stay here.`
 
 `Visit the Vault.` opens the password input. `Stay here.` continues without using it.
 
@@ -102,15 +95,11 @@ Because the condition is persistent, it is shared across save slots and characte
 
 ### Hint and successful input
 
-The word is shown in the earlier laboratory material, so the later input is intended as a memory or timeline-recognition check rather than a mandatory puzzle.
+The word appears in the earlier laboratory scene.
 
 A successful entry records `METEMPSYCHOSIS = True` for the current playthrough; it is not shared across saves.
 
-It changes the D11 laboratory sequence and several later conditional dialogue passages. It does not directly change:
-
-- the selected character Route or the current lettered Path;
-- medal completion;
-- the final ending outcome.
+It changes the D11 laboratory sequence and some later dialogue, leaving the character Route, lettered Path, medals, and ending unchanged.
 
 ## D11 legacy content in b0.85
 

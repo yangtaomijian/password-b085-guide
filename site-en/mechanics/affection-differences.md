@@ -82,7 +82,7 @@ The tables cover differences caused by **affection checks**:
 | `wolflove >= 10` | D9 morning; D9 night Tyson event; D19 relationship check | On D9 morning, reaching 16 uses a different comfort scene | Dave directly asks for a hug, and Tyson stays to comfort him. During D9 night, Tyson explains more of his trust, grooming sensitivity, and relationship to his wolf identity. On D19, values from 10 through 19 show `I love you.` / `...`. |
 | `wolflove >= 15` | D9 night; D15 A/B; D16 A/B morning; D18 Tyson scenes | At some locations, reaching 18 uses a different version | On D9 night, Dave says that being at home with Tyson could matter more than the mansion. In the D15 dream, he says that he loves Tyson, and in the waking conversation he nearly says it aloud. On D16 morning, Dave begins framing the attachment as possible romantic love rather than only brotherhood. D18 adds further conflict around whether their bond is familial or romantic. |
 | `wolflove >= 16` | D9 morning | Replaces the 10-point morning scene | Dave directly says that he wants his father. Tyson gives a fuller embrace and acknowledges that Dave's father was almost a father to him as well, making their shared loss explicit. |
-| `wolflove >= 17` | D9 Tyson character event | Reach the conversation about Dave's father | Adds one short acknowledgment that Tyson also wishes he could receive fatherly advice. This is a small dialogue variation, not a separate major relationship stage. |
+| `wolflove >= 17` | D9 Tyson character event | Reach the conversation about Dave's father | Adds one short acknowledgment that Tyson also wishes he could receive fatherly advice. |
 | `wolflove >= 18` | D9 night; D10 Tyson investigation; D16 A/B Tyson event | The D9 version replaces the 15-point scene | On D9 night, Dave comes close to a confession and says that he still wants Tyson even when the relationship hurts. On D10, Tyson asks Dave to promise that he will remain happy regardless of what happens. The D16 event adds more direct physical attraction, relationship anxiety, and emotional openness. |
 | `wolflove >= 20` | D18 Tyson scenes; D19 Tyson Route | Corresponding Tyson scenes | D18 adds stronger gaze, touch, hugging, and romantic framing. On D19, Dave more directly calls Tyson special and automatically answers the confession, entering `TysonBoyfriend` and the later intimate scene. |
 
@@ -136,7 +136,7 @@ Hoss has two kiss CGs tied to different affection outcomes, making his checks es
 | `lionlove >= 5` | D6 pool and lunch sequence | Hoss Route | Hoss treats the time together more like a date and flirts more openly, including saying that he better understands why Dean is interested in Dave. Below 5, his response is more restrained. |
 | `lionlove >= 12` | D8 morning; D8 room and hidden library; D9 morning and night | The formal library kiss requires the Hoss Route | Hoss gives Dave a cheek kiss on D8 morning and later refers back to it. In the hidden-library scene on the Hoss Route, he sets `HossKiss = True`, kisses Dave, and displays `hosskiss`. D9 adds stronger concern, flirting, and references to wanting another kiss. Below 12 in the library, the kiss is skipped and the game instead awards 2 affection points. |
 | `lionlove >= 15` | D15 A/B; D16 A/B morning and Hoss event; D18; D19 | Corresponding Hoss scenes | In the D15 dream, Dave nearly kisses Hoss. In waking conversation, Hoss gives a forehead kiss but tells Dave to resolve his feelings for Dean. On D16, Dave directly asks whether Hoss likes him romantically. D18 hints that someone else could pursue Dave if Dean does not. D19 shows `Try dating.` / `Stay friends.` when 20 is not reached. |
-| `lionlove >= 16` | D10 Hoss investigation | Only if Dave has already kissed Hoss | Changes only a small set of lines about Hoss envying Tyson's willingness to care for Dave openly. It does **not** trigger the D10 kiss. If Dave has not yet kissed Hoss, another story condition determines whether the D10 kiss occurs; the 16-point threshold does not. |
+| `lionlove >= 16` | D10 Hoss investigation | Only if Dave has already kissed Hoss | Adds lines about Hoss envying Tyson's willingness to care for Dave openly. If Dave has not yet kissed Hoss, a separate story condition determines whether the D10 kiss occurs. |
 | `lionlove >= 20` | D19 Hoss Route | Reach the final Hoss relationship conversation | Adds more direct relationship discussion, begins the relationship automatically, and displays `hosskiss2`. No acceptance or rejection menu appears at this level. |
 
 :::
@@ -164,7 +164,7 @@ Hoss has two kiss CGs tied to different affection outcomes, making his checks es
 
 :::
 
-If the D8 hidden-library check is below 12 and `HossKiss` therefore remains `False`, raising `lionlove` to 12 or higher before the D9 night Hoss scene can still trigger a mouth kiss and set `HossKiss = True`. This does not retroactively unlock the missed D8 `hosskiss` CG, so missing that CG does not mean Dave cannot kiss Hoss later in the same playthrough.
+If the D8 hidden-library check is below 12 and `HossKiss` therefore remains `False`, raising `lionlove` to 12 or higher before the D9 night Hoss scene can still trigger a mouth kiss and set `HossKiss = True`. This does not retroactively unlock the missed D8 `hosskiss` CG.
 
 For coordinates and the earliest normal display locations, see [CG Gallery Completion Index](../collectibles/gallery.md).
 
@@ -175,7 +175,7 @@ For coordinates and the earliest normal display locations, see [CG Gallery Compl
 | Check | Main story locations | Additional conditions | Dialogue or story effect |
 |---|---|---|---|
 | `croclove >= 8` | D8; D9 morning | On D9, this result is used from 8 through 14 | D8 adds only a brief glance and muted response. On D9, Sal notices that Dave is troubled and explains that he came to check on him, but remains restrained. |
-| `croclove >= 15` | D9 morning and Sal event; D9 night; D15 A/B; D16 A/B; D18; D19 | Most locations require the Sal Route or the corresponding Sal scene | Sal asks more directly what is upsetting Dave. The D9 character scene expands the Abi discussion, and `Approach.` succeeds as a hug instead of being rejected. Sal stays on D9 night at both high and low affection; this threshold changes the invitation and cuddle-related text rather than determining whether he remains. D15–D18 adds greater physical closeness, Sal's affection for Dave despite his imperfections, and conflict over whether loving Dave would betray Dean. D19 shows `Romantic` / `Platonic` when 20 is not reached. |
+| `croclove >= 15` | D9 morning and Sal event; D9 night; D15 A/B; D16 A/B; D18; D19 | Most locations require the Sal Route or the corresponding Sal scene | Sal asks more directly what is upsetting Dave. The D9 character scene expands the Abi discussion, and `Approach.` succeeds as a hug instead of being rejected. Sal stays on D9 night at any affection level; reaching this threshold changes the invitation and cuddle dialogue. D15–D18 adds greater physical closeness, Sal's affection for Dave despite his imperfections, and conflict over whether loving Dave would betray Dean. D19 shows `Romantic` / `Platonic` when 20 is not reached. |
 | `croclove >= 16` | D11 A/B Sal dialogue | Reach the relevant conversation | When asked whether he likes someone, Sal admits that he does and that the feeling is recent and still difficult to process. He does not identify the person here. Below 16, this short answer is omitted. |
 | `croclove >= 20` | D19 Sal sequence | Reach the final Sal relationship flow | Adds the injured-Sal arrival material and later has Sal explicitly call his feelings a crush and ask about dating after leaving the mountain. Dave accepts automatically. |
 
@@ -198,18 +198,10 @@ For coordinates and the earliest normal display locations, see [CG Gallery Compl
 ::: {.callout-warning}
 ## Do not interpret the numbers as fixed relationship ranks
 
-The same affection value can serve very different purposes at different points:
-
-- one check may add only a few lines of internal narration;
-- another may replace an entire comfort or intimacy scene;
-- another may offer a player choice;
-- another may automatically establish a relationship;
-- reaching a higher threshold may switch to a different scene.
-
-The game does not treat 5, 10, 15, and 20 as universal stages such as “friend,” “crush,” or “partner.”
+Affection has no universal relationship ranks. The same value can affect narration, intimate scenes, dialogue choices, or a relationship depending on the scene, so it cannot simply be labeled “friend,” “crush,” or “partner.”
 :::
 
 ## Related guides
 
-- [Not enough points? Check the affection point guide](affection.md)
-- [Checking whether a CG is unlocked? Open the Gallery index](../collectibles/gallery.md)
+- [Affection System and Point Guide](affection.md)
+- [CG Gallery Completion Index](../collectibles/gallery.md)

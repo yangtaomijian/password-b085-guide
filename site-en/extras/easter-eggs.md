@@ -95,7 +95,7 @@ The replacement driver is a fox named Wilson. Roswell compares him to Charon, th
 
 Timber's cup has circles around its base that may form a bear. Roswell suggests that someone tried to make the coffee resemble the milk tea Hoss likes.
 
-Timber is an exceptionally large bear. The group reacts to his size, and Dean becomes noticeably competitive. After arriving at the mansion, Timber privately tells Dave to take care of himself.
+Timber is an exceptionally large bear. The group is astonished by his size, and Dean becomes noticeably competitive. After arriving at the mansion, Timber privately tells Dave to take care of himself, as though he senses what lies ahead.
 
 Timber is credited as a **Diamond Patron**.
 
@@ -151,13 +151,11 @@ For accepted-password hints, see [Tiered Password Hints](../guide/password-hints
 
 ## Ophiuchus and the Twelve-Medal Limit
 
-Late Path A dialogue mentions **Ophiuchus**, sometimes treated as a thirteenth zodiac sign. In b0.85 it is a story reference, not a collectible medal.
-
-The Compendium contains twelve Lore entries, and the final Path P check counts the twelve standard zodiac medals. No Ophiuchus medal or hidden thirteenth-medal password is required.
+Late Path A dialogue mentions **Ophiuchus**, but the game has no corresponding medal or hidden password. The Compendium and the final Path P check both cover the twelve zodiac medals.
 
 See [Twelve-Medal Collection Guide](../collectibles/medals.md) and [Medal Persistence and Final Check](../mechanics/medal-persistence.md) for the complete collection rules.
 
 ## Related guides
 
-- [Looking for main-story passwords? Open the tiered hints](../guide/password-hints.md)
-- [Calculating affection from Easter inputs? Check the point guide](../mechanics/affection.md)
+- [Tiered Password Hints](../guide/password-hints.md)
+- [Affection System and Point Guide](../mechanics/affection.md)

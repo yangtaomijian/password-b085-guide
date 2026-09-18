@@ -4,12 +4,12 @@ description: "Password b0.85 中 Path A—G 与 Path P 的基本分支关系"
 toc: true
 ---
 
-《Password》中存在两套彼此独立、但会相互影响的路线系统：
+《Password》中存在两套彼此独立、但会相互影响的路线系统，它们共同构成了游戏的核心推进力：
 
 - **角色线**在 D4 选择搭档后确定，包括 Dean、Tyson、Roswell、Orlando、Hoss 和 Sal；
 - **字母线**主要由 D8 的选择，以及 D10、D17 的密码检定和后续剧情状态决定。
 
-选择某条角色线，并不等于自动进入某条字母线。角色线主要决定同行角色和具体剧情，字母线则决定后半段主线的发展方向。
+选择某条角色线并不等于自动进入了某条字母线。角色线主要决定同行角色和具体剧情，字母线则决定后半段主线的发展方向。
 
 两套系统的整体区别见[剧情线路总览](route-overview.md)。
 
@@ -39,24 +39,11 @@ D8 的 **Support Benson** 与 **Reveal Oz** 是字母线的第一个主要分歧
 
 :::
 
-概括来说：
-
-- Path A 和 Path C 来自 Oswin 没有早死的一侧；
-- Path B 和 Path D 来自 Oswin 早死的一侧；
-- D10 检定成功会让流程留在共同的 Path A/B 剧情；
-- 非 Sal 线在 D10 放弃检定，通常会转入 Path C/D 剧情。
-
 D8 的选择会先锁定后续方向，但不会立刻改变画面或存档中显示的字母线；具体字母线要到之后的事件中才会确定。
 
 ### Sal 线的特殊情况
 
-Sal 线在 D10 放弃密码检定后，不会进入 Path C 或 Path D，而是根据此前 Oswin 的状态继续留在 Path A/B 剧情。
-
-::: {.pw-key-rule}
-
-这一豁免**不等于通过了密码检定**。
-
-:::
+Sal 线在 D10 放弃密码检定后，会根据此前 Oswin 的状态继续留在 Path A/B 剧情。
 
 正确完成检定仍然关系到画廊收集：成功分支会显示 Sal 的金库 CG，并同时显示一张归入其他角色分类的相关图像；Sal 的其他画廊内容则通过角色线正常推进获得，不依赖这次检定。
 
@@ -94,24 +81,20 @@ Path A 和 Path B 则会继续推进到 D17 的密码检定。
 
 ### Path F/G 内的提前坏结局
 
-D17 检定失败后，并不会立刻出现“独自离开”的坏结局。流程会先经历 D19 灾难，在 D20 进入 Path F 或 Path G，随后 D21 才会出现 **Stay.** 与 **Leave.** 的选择。
+D17 检定失败后，流程会经历 D19 灾难，在 D20 进入 Path F 或 Path G，随后 D21 出现 **Stay.** 与 **Leave.** 的选择。
 
-选择 **Leave.** 会使 Dave 独自离开队伍，并进入 `BAD END: DOMINIC`。这段坏结局发生在进入 F/G 流程之后，并不是 D17 当场产生的独立字母线。与正常的 Path F、Path G 结局不同，该分支不会提供 **Resonate?**。
+选择 **Leave.** 会使 Dave 独自离开队伍，并进入 `BAD END: DOMINIC`。与正常的 Path F、Path G 结局不同，该分支不会提供 **Resonate?**。
 
 ### Tyson 线的特殊情况
 
-Tyson 线即使在 D17 输错密码或选择放弃，也不会最终转入 Path F 或 Path G，而是保留此前已经形成的 Path A/B 方向。
+Tyson 线在 D17 输错密码或选择放弃后，仍会沿此前的 Path A/B 方向继续。
 
-这一保护同样**不等于完成了密码检定**。
-
-D17 的输入和失败场景本身不会被跳过；真正的保护发生在后续剧情中：D18 会揭示高频声音的来源，Tyson 随后改在 Dave 的房间睡觉，从而避免 D19 的灾难。
+D18 会揭示高频声音的来源，Tyson 随后改在 Dave 的房间睡觉，从而避免 D19 的灾难。
 
 该保护不要求额外好感度、恋爱状态、特定角色存活或附加选项。Tyson 线仍然可能因为更早的 D10 失败进入 Path C/D；它只豁免 D17 失败所导致的 F/G 分流。
 
 <details>
 <summary><strong>Sal 线与 Tyson 线的豁免有何不同？</strong></summary>
-
-两种角色线豁免都会阻止密码检定失败后的常规字母线分流，但都不会把密码判定为成功。
 
 ::: {.path-exception-comparison-table .table-responsive .table-scroll-wide}
 
@@ -132,7 +115,7 @@ D17 的输入和失败场景本身不会被跳过；真正的保护发生在后�
 
 ## Path P
 
-Path P 不是前期可以单独选择的路线，而是完成 Path A 主干后的最终收集分支。
+收齐十二枚奖牌并完成 Path A 后，剧情会继续进入 Path P。
 
 进入 Path P 需要：
 
@@ -163,5 +146,5 @@ Path P 不是前期可以单独选择的路线，而是完成 Path A 主干后�
 
 ## 相关页面
 
-- [卡在密码检定？查看分级提示](password-hints.md)
-- [准备进入 Path P？规划十二枚奖牌收集](../collectibles/medals.md)
+- [密码分级提示](password-hints.md)
+- [十二枚奖牌收集指南](../collectibles/medals.md)

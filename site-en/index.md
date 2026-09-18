@@ -23,7 +23,7 @@ If you want to experience the story first, read each section after reaching that
 :::
 
 ::: {.callout-important}
-Password help is presented as progressive hints. Start with the first tier and open later hints only when needed; the main guide does not collect every answer on one page.
+The four main password checks use progressive hints to preserve the puzzles, without spelling out the answers. Start with the first tier and open later hints as needed. Easter eggs and legacy passwords are covered separately.
 :::
 
 ::::
@@ -41,7 +41,7 @@ Learn how the D4 character Route and the later lettered Path system work togethe
 ::: {.g-col-12 .g-col-md-6}
 ### [Tiered Password Hints](guide/password-hints.md)
 
-Open progressive clues for the four main password checks without revealing every answer at once.
+Work through progressively clearer clues for the four main password checks.
 :::
 
 ::: {.g-col-12 .g-col-md-6}
@@ -107,7 +107,7 @@ Read an overview of major feature, interaction, Gallery, and CG changes between 
 ::: {.g-col-12 .g-col-md-6}
 ### [Legacy Route Archive](versions/legacy-routes.md)
 
-Review removed route-adjacent branches, including the former D6 mansion-departure Bad Ending, with context on the largely retained lettered Path structure.
+Read about the D6 mansion-departure branch removed in b0.85 and the route differences between the two versions.
 :::
 
 ::: {.g-col-12 .g-col-md-6}
@@ -132,4 +132,10 @@ Review the Path A first-run sequence and replays, the retired D8 Oswin question 
 
 ## About This Guide
 
-This is an unofficial fan-made guide and is not affiliated with Grizz or itch.io. It does not provide the game, full script, extracted CGs, or unauthorized third-party material.
+I’m [yangtaomijian](https://github.com/yangtaomijian). I put this guide together between 2023 and 2026 with information shared by the player community. The guide is unofficial and unaffiliated with Grizz or itch.io. It does not provide the game, full script, extracted CGs, or unauthorized third-party material.
+
+If you spot a mistake, you’re welcome to contact me with a correction.
+
+## Sources
+
+This site grew out of my [original guide on Bilibili](https://www.bilibili.com/opus/753129391801761813), with updated b0.85 information and comparisons with b0.7. It focuses on routes, collection requirements, mechanics, and version differences; the longer plot summaries remain in the original article.
