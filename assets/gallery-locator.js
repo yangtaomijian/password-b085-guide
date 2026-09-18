@@ -7,6 +7,81 @@
     return;
   }
 
+  const setupIndexToggle = () => {
+    const index = document.querySelector("#gallery-trigger-index");
+    const oldHeader = index?.querySelector(":scope > .callout-header");
+    const body = index?.querySelector(":scope > .callout-collapse");
+    if (!oldHeader || !body) return;
+
+    // Keep Quarto's collapse target and use a native keyboard-accessible button.
+    const header = document.createElement("button");
+    for (const { name, value } of oldHeader.attributes) {
+      header.setAttribute(name, value);
+    }
+    header.type = "button";
+    header.append(...oldHeader.childNodes);
+    oldHeader.replaceWith(header);
+    const title = header.querySelector(".callout-title-container");
+    const titleCopy = title.cloneNode(true);
+    titleCopy.querySelectorAll(".screen-reader-only").forEach((node) => node.remove());
+    const closedTitle = titleCopy.textContent.trim();
+    const action = document.createElement("span");
+    action.className = "gallery-index-action";
+    action.setAttribute("aria-hidden", "true");
+    header.append(action);
+
+    const navigation = document.querySelector("#quarto-header");
+    const updateOffset = () => {
+      const bottom = Math.max(0, navigation?.getBoundingClientRect().bottom || 0);
+      index.style.setProperty("--gallery-index-top", `${bottom}px`);
+      return bottom;
+    };
+    let pendingFrame = 0;
+    const scheduleOffset = () => {
+      if (pendingFrame) return;
+      pendingFrame = requestAnimationFrame(() => {
+        pendingFrame = 0;
+        updateOffset();
+        if (navigation?.getAnimations().some((animation) => animation.playState === "running")) {
+          scheduleOffset();
+        }
+      });
+    };
+    window.addEventListener("scroll", scheduleOffset, { passive: true });
+    window.addEventListener("resize", scheduleOffset);
+    if (navigation) {
+      new ResizeObserver(scheduleOffset).observe(navigation);
+      navigation.addEventListener("transitionrun", scheduleOffset);
+      navigation.addEventListener("transitionend", scheduleOffset);
+    }
+
+    const setExpanded = (expanded) => {
+      index.classList.toggle("gallery-index-open", expanded);
+      title.textContent = expanded ? "完整索引" : closedTitle;
+      action.textContent = expanded ? "收起" : "展开";
+      header.setAttribute("aria-label", expanded ? "收起完整索引" : "展开完整索引");
+      updateOffset();
+    };
+    let returnToHeader = false;
+    body.addEventListener("show.bs.collapse", () => setExpanded(true));
+    body.addEventListener("hide.bs.collapse", () => {
+      returnToHeader = index.getBoundingClientRect().top < updateOffset();
+    });
+    body.addEventListener("hidden.bs.collapse", () => {
+      setExpanded(false);
+      if (returnToHeader) {
+        window.scrollBy({
+          top: index.getBoundingClientRect().top - (navigation?.offsetHeight || 0) - 8,
+          behavior: "instant"
+        });
+        header.focus({ preventScroll: true });
+      }
+      returnToHeader = false;
+    });
+    setExpanded(body.classList.contains("show"));
+  };
+  setupIndexToggle();
+
   const EXPECTED_COUNTS = {
     Memories: 72,
     Trauma: 28
@@ -468,7 +543,7 @@
             <option value="4">4</option>
           </select>
 
-          <button type="button" id="gallery-locator-go">定位 CG</button>
+          <button type="button" id="gallery-locator-go">查看详情</button>
         </div>
         <div class="gallery-location-output">
           <div class="gallery-location-status" aria-live="polite"></div>
@@ -515,9 +590,6 @@
   );
   const searchDetailElement = root.querySelector(
     ".gallery-search-detail"
-  );
-  const reducedMotion = window.matchMedia(
-    "(prefers-reduced-motion: reduce)"
   );
   let debounceTimer;
   let currentTarget = null;
@@ -630,13 +702,6 @@
 
     currentTarget.cellElement.classList.remove("gallery-cell-target");
 
-    if (
-      currentTarget.cellElement.dataset.galleryTemporaryTabindex === "true"
-    ) {
-      currentTarget.cellElement.removeAttribute("tabindex");
-      delete currentTarget.cellElement.dataset.galleryTemporaryTabindex;
-    }
-
     currentTarget = null;
     currentMode = null;
   };
@@ -683,18 +748,6 @@
     currentTarget = record;
     currentMode = mode;
     record.cellElement.classList.add("gallery-cell-target");
-
-    if (!record.cellElement.hasAttribute("tabindex")) {
-      record.cellElement.setAttribute("tabindex", "-1");
-      record.cellElement.dataset.galleryTemporaryTabindex = "true";
-    }
-
-    record.cellElement.scrollIntoView({
-      behavior: reducedMotion.matches ? "auto" : "smooth",
-      block: "center",
-      inline: "nearest"
-    });
-    record.cellElement.focus({ preventScroll: true });
 
     const statusMessage =
       `${record.tab} · 第 ${record.row} 行第 ${record.column} 列 · ` +

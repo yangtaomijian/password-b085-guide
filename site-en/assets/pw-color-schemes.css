@@ -126,7 +126,7 @@ main.content .pw-entry-grid h3 a:not(.anchorjs-link) { font-weight: 700; }
 
 /* Replace legacy white glass surfaces without changing their dimensions. */
 .aa-DetachedContainer { background: var(--pw-surface) !important; }
-body.quarto-dark :is(.aa-DetachedContainer, .sidebar-link, .pw-panel-toggle, .pw-edge-toggle, .gallery-locator) {
+body.quarto-dark :is(.aa-DetachedContainer, .pw-panel-toggle, .pw-edge-toggle, .gallery-locator) {
   box-shadow: var(--pw-shadow-soft) !important;
 }
 body.quarto-dark .sidebar-item .sidebar-link {
